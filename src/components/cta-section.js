@@ -24,12 +24,12 @@ const Cta = () => {
           <p className="mt-4 text-lg leading-6 text-emerald-200">
             {item.description}
           </p>
-          <a
-            href={item.buttonPlainLink}
+          <Link
+            to={item.buttonPlainLink}
             className="mt-8 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-emerald-400 bg-white hover:bg-emerald-50 sm:w-auto"
           >
             {item.buttonPlain}
-          </a>
+          </Link>
         </div>
       ))}
     </div>
