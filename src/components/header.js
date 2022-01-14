@@ -9,7 +9,7 @@ import {
   MenuIcon,
   XIcon,
 } from "@heroicons/react/outline"
-import { ChevronDownIcon } from "@heroicons/react/solid"
+import { SearchIcon } from '@heroicons/react/solid'
 
 const services = [
   {
@@ -72,7 +72,38 @@ function classNames(...classes) {
 const Header = () => {
   return (
     <Popover className="relative bg-white">
-      <div className="flex justify-between items-center px-4 py-6 sm:px-6 md:justify-start md:space-x-10">
+      <div className="flex justify-between items-center px-4 py-2 border-b-emerald-400 border sm:px-6 md:justify-end md:space-x-10">
+        <div className="flex space-x-4 items-center md:ml-12">
+          <Link
+            to="tel 1-877-286-5731"
+            className="text-sm font-medium text-emerald-400 hover:text-emerald-500"
+          >
+            1-877-286-5731
+          </Link>
+          <Link
+            to="#"
+            className="ml-8 inline-flex items-center justify-center px-4 py-2 border-2 border-emerald-400 rounded-md shadow-sm text-sm font-medium text-emerald-400 bg-white hover:bg-emerald-500"
+          >
+            Contact Us
+          </Link>
+          <Link
+            to="#"
+            className="text-sm font-medium text-emerald-400 hover:text-emerald-500"
+          >
+            Client Reviews
+          </Link>
+          <select
+            className="text-sm font-medium text-emerald-400 border border-emerald-400 px-4 py-2 rounded-md"
+            data-placeholder="English"
+          >
+            <option value="EN" active>
+              English
+            </option>
+            <option value="ES">Spanish</option>
+          </select>
+        </div>
+      </div>
+      <div className="flex justify-between items-center px-4 py-2 border-b-emerald-400 border sm:px-6 md:justify-start md:space-x-10">
         <div>
           <Link to="#" className="flex">
             <span className="sr-only">Workflow</span>
@@ -90,180 +121,45 @@ const Header = () => {
           </Popover.Button>
         </div>
         <div className="hidden md:flex-1 md:flex md:items-center md:justify-between">
-          <Popover.Group as="nav" className="flex space-x-4 items-center">
-            <Link
-              to="#"
-              className="text-sm font-medium text-emerald-400 hover:text-emerald-500"
-            >
-              Client Reviews
-            </Link>
-            <Popover className="relative">
-              {({ open }) => (
-                <>
-                  <Popover.Button
-                    className={classNames(
-                      open ? "text-emerald-400" : "text-emerald-400",
-                      "group bg-white rounded-md inline-flex items-center text-sm font-medium hover:text-emerald-500 focus:outline-none"
-                    )}
-                  >
-                    <span>Our Services</span>
-                    <ChevronDownIcon
-                      className={classNames(
-                        open ? "text-emerald-400" : "text-emerald-400",
-                        "ml-2 h-5 w-5 group-hover:text-emerald-500"
-                      )}
-                      aria-hidden="true"
-                    />
-                  </Popover.Button>
-
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-200"
-                    enterFrom="opacity-0 translate-y-1"
-                    enterTo="opacity-100 translate-y-0"
-                    leave="transition ease-in duration-150"
-                    leaveFrom="opacity-100 translate-y-0"
-                    leaveTo="opacity-0 translate-y-1"
-                  >
-                    <Popover.Panel className="absolute z-10 -ml-4 mt-3 transform w-screen max-w-lg lg:max-w-3xl">
-                      <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-                        <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-2">
-                          {services.map(item => (
-                            <Link
-                              key={item.name}
-                              to={item.href}
-                              className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
-                            >
-                              <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-emerald-400 text-white sm:h-12 sm:w-12">
-                                <item.icon
-                                  className="h-6 w-6"
-                                  aria-hidden="true"
-                                />
-                              </div>
-                              <div className="ml-4">
-                                <p className="text-sm font-medium text-emerald-400 mb-0">
-                                  {item.name}
-                                </p>
-                                <p className="mt-1 text-sm text-gray-700 mb-0">
-                                  {item.description}
-                                </p>
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
-                        <div className="bg-gray-50">
-                          <div className="max-w-7xl mx-auto space-y-6 px-4 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-6 lg:px-8">
-                            {allServices.map(item => (
-                              <div key={item.name} className="flow-root">
-                                <Link
-                                  onTouchEnd={item.href}
-                                  className="-m-3 p-3 flex items-center rounded-md text-sm font-medium text-emerald-400 hover:bg-gray-400 transition ease-in-out duration-150"
-                                >
-                                  <item.icon
-                                    className="flex-shrink-0 h-6 w-6 text-emerald-400"
-                                    aria-hidden="true"
-                                  />
-                                  <span className="ml-3">{item.name}</span>
-                                </Link>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </Popover.Panel>
-                  </Transition>
-                </>
-              )}
-            </Popover>
-            <Popover className="relative">
-              {({ open }) => (
-                <>
-                  <Popover.Button
-                    className={classNames(
-                      open ? "text-emerald-400" : "text-emerald-400",
-                      "group bg-white rounded-md inline-flex items-center text-sm font-medium hover:text-emerald-500 focus:outline-none"
-                    )}
-                  >
-                    <span>Branding Tools</span>
-                    <ChevronDownIcon
-                      className={classNames(
-                        open ? "text-gray-600" : "text-emerald-400",
-                        "ml-2 h-5 w-5 group-hover:text-emerald-500"
-                      )}
-                      aria-hidden="true"
-                    />
-                  </Popover.Button>
-
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-200"
-                    enterFrom="opacity-0 translate-y-1"
-                    enterTo="opacity-100 translate-y-0"
-                    leave="transition ease-in duration-150"
-                    leaveFrom="opacity-100 translate-y-0"
-                    leaveTo="opacity-0 translate-y-1"
-                  >
-                    <Popover.Panel className="absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-xs sm:px-0">
-                      <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-                        <div className="relative grid gap-4 bg-white px-5 py-6 sm:gap-4 sm:p-8">
-                          {brandingTools.map(item => (
-                            <Link
-                              key={item.name}
-                              to={item.href}
-                              className="-m-3 mb-0 p-3 block rounded-md hover:bg-gray-50"
-                            >
-                              <p className="text-sm font-medium text-emerald-400 mb-0">
-                                {item.name}
-                              </p>
-                              <p className="mt-1 text-sm text-gray-700 mb-0">
-                                {item.description}
-                              </p>
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    </Popover.Panel>
-                  </Transition>
-                </>
-              )}
-            </Popover>
-            <Link
-              to="#"
-              className="text-sm font-medium text-emerald-400 hover:text-emerald-500"
-            >
-              About Us
-            </Link>
-            <Link
-              to="#"
-              className="text-sm font-medium text-emerald-400 hover:text-emerald-500"
-            >
-              Free Trademark
-            </Link>
+          <Popover.Group as="nav" className="flex space-x-4 items-center justify-between w-full">
+            <div>
+              <Link
+                to="#"
+                className="mr-3 text-sm font-medium text-emerald-400 hover:text-emerald-500"
+              >
+                Our Services
+              </Link>
+              <Link
+                to="#"
+                className="mr-3 text-sm font-medium text-emerald-400 hover:text-emerald-500"
+              >
+                Branding Tools
+              </Link>
+              <Link
+                to="#"
+                className="mr-3 text-sm font-medium text-emerald-400 hover:text-emerald-500"
+              >
+                About Us
+              </Link>
+            </div>
+            <div className="max-w-lg w-1/2 lg:max-w-xs">
+              <label htmlFor="search" className="sr-only">
+                Search
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <SearchIcon className="h-5 w-5 text-emerald-400" aria-hidden="true" />
+                </div>
+                <input
+                  id="search"
+                  name="search"
+                  className="block w-full pl-10 pr-3 py-2 border border-emerald-400 rounded-md leading-5 bg-tranparent text-emerald-500 placeholder-emerald-200 focus:outline-none focus:bg-white focus:border-emerald-500 focus:ring-white focus:text-emerald-500 sm:text-sm"
+                  placeholder="Search"
+                  type="search"
+                />
+              </div>
+            </div>
           </Popover.Group>
-          <div className="flex space-x-4 items-center md:ml-12">
-            <select
-              className="text-sm font-medium text-emerald-400"
-              data-placeholder="English"
-            >
-              <option value="EN" active>
-                English
-              </option>
-              <option value="ES">Spanish</option>
-            </select>
-            <Link
-              to="tel 1-877-286-5731"
-              className="text-sm font-medium text-emerald-400 hover:text-emerald-500"
-            >
-              1-877-286-5731
-            </Link>
-            <Link
-              to="#"
-              className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-emerald-400 hover:bg-emerald-500"
-              id="contactChat"
-            >
-              Contact Us
-            </Link>
-          </div>
         </div>
       </div>
 
