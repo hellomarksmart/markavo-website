@@ -1,5 +1,5 @@
 import * as React from "react"
-/* This example requires Tailwind CSS v2.0+ */
+
 const heading = [
   {
     title: "Frequently asked questions",
@@ -49,15 +49,18 @@ const FAQs = () => {
   return (
     <div className="bg-gray-50">
       <div className="max-w-max mx-auto pt-12 pb-2 px-4 divide-y divide-gray-200 sm:px-6 lg:py-0 lg:px-8">
-        {heading.map((heading) => (
+        {heading.map(heading => (
           <h2 className="text-3xl font-extrabold text-gray-900">
             {heading.title}
           </h2>
         ))}
         <div className="mt-8">
           <dl className="divide-y divide-gray-200">
-            {faqs.map((faq) => (
-              <div key={faq.id} className="pt-6 pb-2 md:grid md:grid-cols-12 md:gap-8">
+            {faqs.map(faq => (
+              <div
+                key={faq.id}
+                className="pt-6 pb-2 md:grid md:grid-cols-12 md:gap-8"
+              >
                 <dt className="text-base font-sans font-medium text-gray-900 md:col-span-5">
                   {faq.question}
                 </dt>
