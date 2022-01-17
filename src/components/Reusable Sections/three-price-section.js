@@ -95,19 +95,19 @@ const thirdCardButton = [
   },
 ]
 
-const ThreePrice = () => {
+const ThreePriceServiceSection = () => {
   return (
-    <div className="bg-emerald-700">
+    <div className="bg-emerald-900">
       <div className="pt-12 px-4 sm:px-6 lg:px-8 lg:pt-20">
         {threeCardsHeader.map(item => (
           <div className="text-center">
-            <h2 className="text-lg leading-6 font-semibold text-emerald-100 uppercase tracking-wider">
+            <h2 className="text-lg leading-6 font-semibold text-emerald-300 uppercase tracking-wider">
               {item.subheading}
             </h2>
             <p className="mt-2 text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl">
               {item.heading}
             </p>
-            <p className="mt-3 max-w-4xl mx-auto text-xl text-emerald-100 sm:mt-5 sm:text-2xl">
+            <p className="mt-3 max-w-4xl mx-auto text-xl text-emerald-300 sm:mt-5 sm:text-2xl">
               {item.description}
             </p>
           </div>
@@ -116,7 +116,7 @@ const ThreePrice = () => {
 
       <div className="mt-16 bg-white pb-12 lg:mt-20 lg:pb-20">
         <div className="relative z-0">
-          <div className="absolute inset-0 h-5/6 bg-emerald-700 lg:h-2/3" />
+          <div className="absolute inset-0 h-5/6 bg-emerald-900 lg:h-2/3" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="relative lg:grid lg:grid-cols-7">
               <div className="mx-auto max-w-md lg:mx-0 lg:max-w-none lg:col-start-1 lg:col-end-3 lg:row-start-2 lg:row-end-3">
@@ -147,8 +147,8 @@ const ThreePrice = () => {
                         </div>
                       ))}
                     </div>
-                    <div className="flex-1 flex flex-col justify-between border-t-2 border-emerald-100 p-6 bg-emerald-50 sm:p-10 lg:p-6 xl:p-10">
-                      <ul role="list" className="space-y-4">
+                    <div className="flex-1 flex flex-col justify-between border-t-2 border-gray-100 p-6 bg-gray-50 sm:p-10 lg:p-6 xl:p-10">
+                      <ul className="space-y-4">
                         {firstCardFeatures.map(item => (
                           <li key={item.features} className="flex items-start">
                             <div className="flex-shrink-0">
@@ -168,7 +168,7 @@ const ThreePrice = () => {
                           {firstCardButton.map(item => (
                             <Link
                               to={item.link}
-                              className="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-emerald-400 hover:bg-emerald-50"
+                              className="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-emerald-600 hover:bg-gray-50"
                               aria-describedby="tier-hobby"
                             >
                               {item.name}
@@ -183,12 +183,12 @@ const ThreePrice = () => {
               <div className="mt-10 max-w-lg mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-start-3 lg:col-end-6 lg:row-start-1 lg:row-end-4">
                 <div className="relative z-10 rounded-lg shadow-xl">
                   <div
-                    className="pointer-events-none absolute inset-0 rounded-lg border-2 border-emerald-400"
+                    className="pointer-events-none absolute inset-0 rounded-lg border-2 border-emerald-600"
                     aria-hidden="true"
                   />
                   <div className="absolute inset-x-0 top-0 transform translate-y-px">
                     <div className="flex justify-center transform -translate-y-1/2">
-                      <span className="inline-flex rounded-full bg-emerald-400 px-4 py-1 text-sm font-semibold tracking-wider uppercase text-white">
+                      <span className="inline-flex rounded-full bg-emerald-600 px-4 py-1 text-sm font-semibold tracking-wider uppercase text-white">
                         Most popular
                       </span>
                     </div>
@@ -216,8 +216,8 @@ const ThreePrice = () => {
                       </div>
                     ))}
                   </div>
-                  <div className="border-t-2 border-emerald-100 rounded-b-lg pt-10 pb-8 px-6 bg-emerald-50 sm:px-10 sm:py-10">
-                    <ul role="list" className="space-y-4">
+                  <div className="border-t-2 border-gray-100 rounded-b-lg pt-10 pb-8 px-6 bg-gray-50 sm:px-10 sm:py-10">
+                    <ul className="space-y-4">
                       {secondCardFeatures.map(item => (
                         <li key={item.features} className="flex items-start">
                           <div className="flex-shrink-0">
@@ -237,7 +237,7 @@ const ThreePrice = () => {
                         {secondCardButton.map(item => (
                           <Link
                             to={item.link}
-                            className="block w-full text-center rounded-lg border border-transparent bg-emerald-400 px-6 py-4 text-xl leading-6 font-medium text-white hover:bg-emerald-500"
+                            className="block w-full text-center rounded-lg border border-transparent bg-emerald-600 px-6 py-4 text-xl leading-6 font-medium text-white hover:bg-emerald-700"
                             aria-describedby="tier-growth"
                           >
                             {item.name}
@@ -276,8 +276,8 @@ const ThreePrice = () => {
                         </div>
                       ))}
                     </div>
-                    <div className="flex-1 flex flex-col justify-between border-t-2 border-emerald-100 p-6 bg-emerald-50 sm:p-10 lg:p-6 xl:p-10">
-                      <ul role="list" className="space-y-4">
+                    <div className="flex-1 flex flex-col justify-between border-t-2 border-gray-100 p-6 bg-gray-50 sm:p-10 lg:p-6 xl:p-10">
+                      <ul className="space-y-4">
                         {thirdCardFeatures.map(item => (
                           <li key={item.features} className="flex items-start">
                             <div className="flex-shrink-0">
@@ -297,7 +297,7 @@ const ThreePrice = () => {
                           {thirdCardButton.map(item => (
                             <Link
                               to={item.link}
-                              className="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-emerald-400 hover:bg-emerald-50"
+                              className="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-emerald-600 hover:bg-gray-50"
                               aria-describedby="tier-scale"
                             >
                               {item.name}
@@ -317,4 +317,4 @@ const ThreePrice = () => {
   )
 }
 
-export default ThreePrice
+export default ThreePriceServiceSection
