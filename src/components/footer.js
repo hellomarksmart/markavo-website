@@ -134,7 +134,7 @@ const Footer = () => {
             <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
               <button
                 type="submit"
-                className="w-full bg-emerald-400 border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-sm font-medium text-white hover:bg-white focus:outline-none"
+                className="w-full bg-emerald-400 border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-sm font-medium text-white hover:bg-white hover:border-emerald-400 hover:text-emerald-400 focus:outline-none"
               >
                 Subscribe
               </button>

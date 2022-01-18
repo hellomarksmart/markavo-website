@@ -9,7 +9,7 @@ import {
   MenuIcon,
   XIcon,
 } from "@heroicons/react/outline"
-import { SearchIcon } from '@heroicons/react/solid'
+import { SearchIcon } from "@heroicons/react/solid"
 
 const services = [
   {
@@ -82,7 +82,7 @@ const Header = () => {
           </Link>
           <Link
             to="#"
-            className="ml-8 inline-flex items-center justify-center px-4 py-2 border-2 border-emerald-400 rounded-md shadow-sm text-sm font-medium text-emerald-400 bg-white hover:bg-emerald-500"
+            className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-emerald-400 rounded-md shadow-sm text-sm font-medium text-emerald-400 bg-white hover:text-white hover:bg-emerald-400"
           >
             Contact Us
           </Link>
@@ -121,7 +121,10 @@ const Header = () => {
           </Popover.Button>
         </div>
         <div className="hidden md:flex-1 md:flex md:items-center md:justify-between">
-          <Popover.Group as="nav" className="flex space-x-4 items-center justify-between w-full">
+          <Popover.Group
+            as="nav"
+            className="flex space-x-4 items-center justify-between w-full"
+          >
             <div>
               <Link
                 to="#"
@@ -148,7 +151,10 @@ const Header = () => {
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <SearchIcon className="h-5 w-5 text-emerald-400" aria-hidden="true" />
+                  <SearchIcon
+                    className="h-5 w-5 text-emerald-400"
+                    aria-hidden="true"
+                  />
                 </div>
                 <input
                   id="search"
