@@ -34,7 +34,7 @@ const navigation = {
 const Footer = () => {
   return (
     <footer className="bg-white" aria-labelledby="footer-heading">
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+      <div className="max-w-8xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-7">
         <div className="pb-8 xl:grid xl:grid-cols-4 xl:gap-4">
           <div className="grid grid-cols-2 gap-4 xl:col-span-4">
             <div className="md:grid md:grid-cols-2 md:gap-4">
@@ -42,12 +42,12 @@ const Footer = () => {
                 <h3 className="text-sm font-semibold text-emerald-400 tracking-wider uppercase">
                   Applications
                 </h3>
-                <ul role="list" className="mt-4 space-y-4 ml-0">
+                <ul className="mt-4 space-y-4 ml-0">
                   {navigation.applications.map(item => (
                     <li key={item.name}>
                       <Link
                         to={item.href}
-                        className="text-sm text-emerald-400 hover:text-emerald-600"
+                        className="text-sm font-sans text-emerald-400 hover:text-emerald-600"
                       >
                         {item.name}
                       </Link>
@@ -59,7 +59,7 @@ const Footer = () => {
                 <h3 className="text-sm font-semibold text-emerald-400 tracking-wider uppercase">
                   Registrations
                 </h3>
-                <ul role="list" className="mt-4 space-y-4 ml-0">
+                <ul className="mt-4 space-y-4 ml-0">
                   {navigation.registrations.map(item => (
                     <li key={item.name}>
                       <Link
@@ -78,7 +78,7 @@ const Footer = () => {
                 <h3 className="text-sm font-semibold text-emerald-400 tracking-wider uppercase">
                   Disputes
                 </h3>
-                <ul role="list" className="mt-4 space-y-4 ml-0">
+                <ul className="mt-4 space-y-4 ml-0">
                   {navigation.disputes.map(item => (
                     <li key={item.name}>
                       <Link
@@ -95,7 +95,7 @@ const Footer = () => {
                 <h3 className="text-sm font-semibold text-emerald-400 tracking-wider uppercase">
                   Company
                 </h3>
-                <ul role="list" className="mt-4 space-y-4 ml-0">
+                <ul className="mt-4 space-y-4 ml-0">
                   {navigation.company.map(item => (
                     <li key={item.name}>
                       <Link
