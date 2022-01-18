@@ -73,44 +73,52 @@ function classNames(...classes) {
 const Header = () => {
   return (
     <Popover className="relative bg-white">
-      <div className="flex justify-between items-center px-4 py-2 border-b-emerald-400 border sm:px-6 md:justify-end md:space-x-10">
+      <div className="flex justify-between items-center px-4 py-4 border-b-emerald-200 border sm:px-6 md:justify-end md:space-x-10 md:flex sm:hidden hidden">
         <div className="flex space-x-4 items-center md:ml-12">
-          <Link
-            to="tel 1-877-286-5731"
-            className="text-sm font-medium text-emerald-400 hover:text-emerald-500"
-          >
-            1-877-286-5731
-          </Link>
+          <div className="flex px-3">
+            <PhoneIcon
+              className="h-6 w-6 text-transparent fill-emerald-400"
+              aria-hidden="true"
+            />
+            <Link
+              to="tel:+1-877-286-5731"
+              className="text-md font-sans font-semibold text-emerald-400 pl-1 hover:text-emerald-500"
+            >
+              1-877-286-5731
+            </Link>
+          </div>
           <Link
             to="#"
-            className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-emerald-400 rounded-md shadow-sm text-sm font-medium text-emerald-400 bg-white hover:text-white hover:bg-emerald-400"
+            className="ml-8 inline-flex items-center justify-center px-3 py-[0.32rem] border-2 border-emerald-400 rounded-md shadow-sm font-sans text-sm font-medium text-emerald-400 bg-white hover:text-white hover:bg-emerald-400"
           >
             Contact Us
           </Link>
           <Link
             to="#"
-            className="text-sm font-medium text-emerald-400 hover:text-emerald-500"
+            className="text-md font-sans font-medium text-emerald-400 px-3 hover:text-emerald-500"
           >
             Client Reviews
           </Link>
           <select
-            className="text-sm font-medium text-emerald-400 border border-emerald-400 px-4 py-2 rounded-md"
+            className="text-sm font-sans font-medium text-emerald-400 border border-emerald-400 px-12 py-[0.35rem] rounded-md lg:px-12 md:px-6"
             data-placeholder="English"
           >
             <option value="EN" active>
               English
             </option>
-            <option value="ES">Spanish</option>
+            <option value="ES">
+              Spanish
+            </option>
           </select>
         </div>
       </div>
-      <div className="flex justify-between items-center px-4 py-2 border-b-emerald-400 border sm:px-6 md:justify-start md:space-x-10">
-        <div>
-          <Link to="#" className="flex">
+      <div className="flex justify-between items-center px-4 py-4 border-b-emerald-200 border sm:px-6 md:justify-start md:space-x-10">
+        <div className="lg:w-auto sm:w-3/12 w-4/12">
+          <Link to="/" className="flex">
             <span className="sr-only">Workflow</span>
             <StaticImage
               src="../images/markavo-logo.png"
-              width={250}
+              width={202}
               quality={95}
               formats={["auto", "webp", "avif"]}
               alt="Markavo"
@@ -126,29 +134,29 @@ const Header = () => {
         <div className="hidden md:flex-1 md:flex md:items-center md:justify-between">
           <Popover.Group
             as="nav"
-            className="flex space-x-4 items-center justify-between w-full"
+            className="flex space-x-4 items-center lg:justify-between md:justify-end w-full"
           >
             <div>
               <Link
-                to="#"
-                className="mr-3 text-sm font-medium text-emerald-400 hover:text-emerald-500"
+                to="/all-services"
+                className="mr-6 text-md font-sans font-medium text-emerald-400 hover:text-emerald-500"
               >
                 Our Services
               </Link>
               <Link
-                to="#"
-                className="mr-3 text-sm font-medium text-emerald-400 hover:text-emerald-500"
+                to="/"
+                className="mr-6 text-md font-sans font-medium text-emerald-400 hover:text-emerald-500"
               >
                 Branding Tools
               </Link>
               <Link
-                to="#"
-                className="mr-3 text-sm font-medium text-emerald-400 hover:text-emerald-500"
+                to="/about"
+                className="mr-3 text-md font-sans font-medium text-emerald-400 hover:text-emerald-500"
               >
                 About Us
               </Link>
             </div>
-            <div className="max-w-lg w-1/2 lg:max-w-xs">
+            <div className="max-w-lg w-auto lg:max-w-xs">
               <label htmlFor="search" className="sr-only">
                 Search
               </label>
@@ -162,7 +170,7 @@ const Header = () => {
                 <input
                   id="search"
                   name="search"
-                  className="block w-full pl-10 pr-3 py-2 border border-emerald-400 rounded-md leading-5 bg-tranparent text-emerald-500 placeholder-emerald-200 focus:outline-none focus:bg-white focus:border-emerald-500 focus:ring-white focus:text-emerald-500 sm:text-sm"
+                  className="block lg:w-[10.5rem] md:w-[7.5rem] pl-10 pr-3 py-2 border border-emerald-400 rounded-md leading-5 bg-tranparent text-emerald-500 placeholder-emerald-300 focus:outline-none focus:bg-white focus:border-emerald-500 focus:ring-white focus:text-emerald-500 sm:text-sm"
                   placeholder="Search"
                   type="search"
                 />
@@ -183,15 +191,17 @@ const Header = () => {
       >
         <Popover.Panel
           focus
-          className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+          className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-10"
         >
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
                 <div>
-                  <img
-                    className="h-8 w-auto"
-                    src="logo/markavo-logo.png"
+                  <StaticImage
+                    src="../images/markavo-logo.png"
+                    width={202}
+                    quality={95}
+                    formats={["auto", "webp", "avif"]}
                     alt="Markavo"
                   />
                 </div>
@@ -213,7 +223,7 @@ const Header = () => {
                       <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-emerald-400 text-white">
                         <item.icon className="h-6 w-6" aria-hidden="true" />
                       </div>
-                      <div className="ml-4 text-sm font-medium text-emerald-400">
+                      <div className="ml-4 text-sm font-sans font-medium text-emerald-400">
                         {item.name}
                       </div>
                     </Link>
@@ -224,20 +234,20 @@ const Header = () => {
             <div className="py-6 px-5">
               <div className="grid grid-cols-2 gap-4">
                 <Link
-                  to="#"
-                  className="text-sm font-medium text-emerald-400 hover:text-emerald-500"
+                  to="/client-reviews"
+                  className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-500"
                 >
                   Client Reviews
                 </Link>
                 <Link
-                  to="#"
-                  className="text-sm font-medium text-emerald-400 hover:text-emerald-500"
+                  to="/about"
+                  className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-500"
                 >
                   About Us
                 </Link>
                 <Link
                   to="#"
-                  className="text-sm font-medium text-emerald-400 hover:text-emerald-500"
+                  className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-500"
                 >
                   Free Trademark
                 </Link>
@@ -245,7 +255,7 @@ const Header = () => {
                 {allServices.map(item => (
                   <Link
                     onTouchEnd={item.href}
-                    className="text-sm font-medium text-emerald-400 hover:text-emerald-500"
+                    className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-500"
                   >
                     {item.name}
                   </Link>
@@ -255,42 +265,60 @@ const Header = () => {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className="text-sm font-medium text-emerald-400 hover:text-emerald-500"
+                    className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-500"
                   >
                     {item.name}
                   </Link>
                 ))}
               </div>
-              <div className="mt-6">
+              <div className="mt-12">
                 <div className="pb-6 text-center text-sm font-medium text-emerald-400">
                   <select
-                    className="text-sm font-medium text-emerald-400"
+                    className="w-full font-sans text-sm font-medium text-emerald-400 px-4 py-2 border border-emerald-400 rounded-md shadow-sm"
                     data-placeholder="English"
                   >
                     <option value="EN" active>
                       English
                     </option>
-                    <option value="ES">Spanish</option>
+                    <option value="ES">
+                      Spanish
+                    </option>
                   </select>
                 </div>
+
                 <Link
                   to="#"
-                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-emerald-400 hover:bg-emerald-500"
+                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-sans font-medium text-white bg-emerald-400 hover:bg-emerald-500"
                 >
                   Contact Us
                 </Link>
-                <p className="mt-6 text-center text-sm font-medium text-emerald-400">
+
+                {/* <p className="mt-6 text-center text-sm font-medium text-emerald-400">
                   <Link
-                    to="tel 1-877-286-5731"
-                    className="text-emerald-400 hover:text-emerald-500"
+                    to="tel:+1-877-286-5731"
+                    className="font-sans text-emerald-400 hover:text-emerald-500"
                   >
                     1-877-286-5731
                   </Link>
-                </p>
+                </p> */}
+
+                <div className="flex justify-center px-3 mt-6">
+                  <PhoneIcon
+                    className="h-6 w-6 text-transparent fill-emerald-400"
+                    aria-hidden="true"
+                  />
+                  <Link
+                    to="tel:+1-877-286-5731"
+                    className="text-md text-center font-sans font-semibold text-emerald-400 pl-1 hover:text-emerald-500"
+                  >
+                    1-877-286-5731
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </Popover.Panel>
+
       </Transition>
     </Popover>
   )
