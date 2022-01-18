@@ -1,5 +1,6 @@
 import React, { Fragment } from "react"
 import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 import { Popover, Transition } from "@headlessui/react"
 import {
   ChartBarIcon,
@@ -76,9 +77,11 @@ const Header = () => {
         <div>
           <Link to="#" className="flex">
             <span className="sr-only">Workflow</span>
-            <img
-              className="h-8 w-auto sm:h-10 mb-0"
-              src="logo/markavo-logo.png"
+            <StaticImage
+              src="../images/markavo-logo.png"
+              width={250}
+              quality={95}
+              formats={["auto", "webp", "avif"]}
               alt="Markavo"
             />
           </Link>
