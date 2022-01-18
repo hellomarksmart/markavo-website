@@ -47,7 +47,7 @@ const Footer = () => {
                     <li key={item.name}>
                       <Link
                         to={item.href}
-                        className="text-sm text-emerald-400 hover:text-emerald-600"
+                        className="text-sm font-sans text-emerald-400 hover:text-emerald-600"
                       >
                         {item.name}
                       </Link>
