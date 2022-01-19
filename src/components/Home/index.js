@@ -5,7 +5,7 @@ import ThreePriceServiceSection from "../Reusable Sections/three-price-section"
 import Statistics from "../Reusable Sections/statistics-section"
 import Cta from "../Reusable Sections/cta-section"
 
-const Home = () => (
+const Home = (data) => (
   <>
     <Banner />
     <Deploy />

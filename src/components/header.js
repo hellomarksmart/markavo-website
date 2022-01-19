@@ -67,9 +67,9 @@ const brandingTools = [
   },
 ]
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ")
-}
+// function classNames(...classes) {
+//   return classes.filter(Boolean).join(" ")
+// }
 
 const Header = () => {
   return (
@@ -104,7 +104,7 @@ const Header = () => {
             className="text-sm font-sans font-medium text-emerald-400 border border-emerald-400 px-12 py-[0.35rem] rounded-md lg:px-12 md:px-6"
             data-placeholder="English"
           >
-            <option value="EN" active>
+            <option value="EN" active="true">
               English
             </option>
             <option value="ES">Spanish</option>
@@ -323,9 +323,9 @@ const Header = () => {
               </div>
               <div className="mt-6">
                 <nav className="grid gap-6">
-                  {services.map(item => (
+                  {services.map((item, i) => (
                     <Link
-                      key={item.name}
+                      key={i}
                       to={item.href}
                       className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
                     >
@@ -361,17 +361,19 @@ const Header = () => {
                   Free Trademark Search
                 </Link>
 
-                {allServices.map(item => (
+                {allServices.map((item, i) => (
                   <Link
+                    key={i}
                     onTouchEnd={item.href}
                     className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-500"
                   >
                     {item.name}
                   </Link>
                 ))}
-                {brandingTools.map(item => (
+
+                {brandingTools.map((item, i) => (
                   <Link
-                    key={item.name}
+                    key={i}
                     to={item.href}
                     className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-500"
                   >
@@ -385,7 +387,7 @@ const Header = () => {
                     className="w-full font-sans text-sm font-medium text-emerald-400 px-4 py-2 border border-emerald-400 rounded-md shadow-sm"
                     data-placeholder="English"
                   >
-                    <option value="EN" active>
+                    <option value="EN" active="true">
                       English
                     </option>
                     <option value="ES">Spanish</option>

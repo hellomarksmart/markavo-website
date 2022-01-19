@@ -99,8 +99,8 @@ const ThreePriceServiceSection = () => {
   return (
     <div className="bg-emerald-900">
       <div className="pt-12 px-4 sm:px-6 lg:px-8 lg:pt-20">
-        {threeCardsHeader.map(item => (
-          <div className="text-center">
+        {threeCardsHeader.map((item, i) => (
+          <div key={i} className="text-center">
             <h2 className="text-lg leading-6 font-semibold text-emerald-300 uppercase tracking-wider">
               {item.subheading}
             </h2>
@@ -123,8 +123,8 @@ const ThreePriceServiceSection = () => {
                 <div className="h-full flex flex-col rounded-lg shadow-lg overflow-hidden lg:rounded-none lg:rounded-l-lg">
                   <div className="flex-1 flex flex-col">
                     <div className="bg-white px-6 py-10">
-                      {firstCardPricing.map(item => (
-                        <div>
+                      {firstCardPricing.map((item, i) => (
+                        <div key={i}>
                           <h3
                             className="text-center text-2xl font-medium text-gray-900"
                             id="tier-hobby"
@@ -149,8 +149,8 @@ const ThreePriceServiceSection = () => {
                     </div>
                     <div className="flex-1 flex flex-col justify-between border-t-2 border-gray-100 p-6 bg-gray-50 sm:p-10 lg:p-6 xl:p-10">
                       <ul className="space-y-4">
-                        {firstCardFeatures.map(item => (
-                          <li key={item.features} className="flex items-start">
+                        {firstCardFeatures.map((item, i) => (
+                          <li key={i} className="flex items-start">
                             <div className="flex-shrink-0">
                               <CheckIcon
                                 className="flex-shrink-0 h-6 w-6 text-green-500"
@@ -165,8 +165,9 @@ const ThreePriceServiceSection = () => {
                       </ul>
                       <div className="mt-8">
                         <div className="rounded-lg shadow-md">
-                          {firstCardButton.map(item => (
+                          {firstCardButton.map((item, i) => (
                             <Link
+                              key={i}
                               to={item.link}
                               className="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-emerald-600 hover:bg-gray-50"
                               aria-describedby="tier-hobby"
@@ -194,8 +195,8 @@ const ThreePriceServiceSection = () => {
                     </div>
                   </div>
                   <div className="bg-white rounded-t-lg px-6 pt-12 pb-10">
-                    {secondCardPricing.map(item => (
-                      <div>
+                    {secondCardPricing.map((item, i) => (
+                      <div key={i}>
                         <h3
                           className="text-center text-3xl font-semibold text-gray-900 sm:-mx-6"
                           id="tier-growth"
@@ -218,8 +219,8 @@ const ThreePriceServiceSection = () => {
                   </div>
                   <div className="border-t-2 border-gray-100 rounded-b-lg pt-10 pb-8 px-6 bg-gray-50 sm:px-10 sm:py-10">
                     <ul className="space-y-4">
-                      {secondCardFeatures.map(item => (
-                        <li key={item.features} className="flex items-start">
+                      {secondCardFeatures.map((item, i) => (
+                        <li key={i} className="flex items-start">
                           <div className="flex-shrink-0">
                             <CheckIcon
                               className="flex-shrink-0 h-6 w-6 text-green-500"
@@ -234,8 +235,9 @@ const ThreePriceServiceSection = () => {
                     </ul>
                     <div className="mt-10">
                       <div className="rounded-lg shadow-md">
-                        {secondCardButton.map(item => (
+                        {secondCardButton.map((item, i) => (
                           <Link
+                            key={i}
                             to={item.link}
                             className="block w-full text-center rounded-lg border border-transparent bg-emerald-600 px-6 py-4 text-xl leading-6 font-medium text-white hover:bg-emerald-700"
                             aria-describedby="tier-growth"
@@ -252,8 +254,8 @@ const ThreePriceServiceSection = () => {
                 <div className="h-full flex flex-col rounded-lg shadow-lg overflow-hidden lg:rounded-none lg:rounded-r-lg">
                   <div className="flex-1 flex flex-col">
                     <div className="bg-white px-6 py-10">
-                      {thirdCardPricing.map(item => (
-                        <div>
+                      {thirdCardPricing.map((item, i) => (
+                        <div key={i}>
                           <h3
                             className="text-center text-2xl font-medium text-gray-900"
                             id="tier-scale"
@@ -278,8 +280,8 @@ const ThreePriceServiceSection = () => {
                     </div>
                     <div className="flex-1 flex flex-col justify-between border-t-2 border-gray-100 p-6 bg-gray-50 sm:p-10 lg:p-6 xl:p-10">
                       <ul className="space-y-4">
-                        {thirdCardFeatures.map(item => (
-                          <li key={item.features} className="flex items-start">
+                        {thirdCardFeatures.map((item, i) => (
+                          <li key={i} className="flex items-start">
                             <div className="flex-shrink-0">
                               <CheckIcon
                                 className="flex-shrink-0 h-6 w-6 text-green-500"
@@ -294,8 +296,9 @@ const ThreePriceServiceSection = () => {
                       </ul>
                       <div className="mt-8">
                         <div className="rounded-lg shadow-md">
-                          {thirdCardButton.map(item => (
+                          {thirdCardButton.map((item, i) => (
                             <Link
+                              key={i}
                               to={item.link}
                               className="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-emerald-600 hover:bg-gray-50"
                               aria-describedby="tier-scale"

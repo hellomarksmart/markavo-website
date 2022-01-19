@@ -15,8 +15,8 @@ const CTAContent = [
 const Cta = () => {
   return (
     <div className="bg-emerald-400">
-      {CTAContent.map(item => (
-        <div className="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+      {CTAContent.map((item, i) => (
+        <div key={i} className="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
             <span className="block">{item.heading}</span>
             <span className="block">{item.headingSecond}</span>

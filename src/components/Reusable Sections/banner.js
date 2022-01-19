@@ -96,8 +96,8 @@ const Banner = () => {
 
       <div className="relative pt-6 pb-16 sm:pb-24">
         <div className="text-center">
-          {BannerContent.map(item => (
-            <div>
+          {BannerContent.map((item, i) => (
+            <div key={i}>
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                 <span className="block xl:inline">{item.heading}</span>{" "}
                 <span className="block text-emerald-400 xl:inline">
@@ -109,8 +109,8 @@ const Banner = () => {
               </p>
             </div>
           ))}
-          {BannerButtons.map(item => (
-            <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+          {BannerButtons.map((item, i) => (
+            <div key={i} className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
               <div className="rounded-md shadow">
                 <Link
                   key={item.buttonColored}

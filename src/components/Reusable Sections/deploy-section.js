@@ -36,8 +36,8 @@ const Deploy = () => {
   return (
     <div className="relative bg-white pt-16 sm:pt-24 lg:pt-32">
       <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
-        {headings.map(item => (
-          <>
+        {headings.map((item, i) => (
+          <div key={i}>
             <h2 className="text-base font-semibold font-sans tracking-wider text-emerald-500 uppercase">
               {item.title}
             </h2>
@@ -47,13 +47,13 @@ const Deploy = () => {
             <p className="mt-5 max-w-prose mx-auto font-sans text-xl text-gray-500">
               {item.sub_heading}
             </p>
-          </>
+          </div>
         ))}
 
         <div className="mt-12 bg-white">
           <div className="bg-white grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map(feature => (
-              <div key={feature.name} className="pt-6">
+            {features.map((feature, i) => (
+              <div key={i} className="pt-6">
                 <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8">
                   <div className="-mt-6">
                     <div>
