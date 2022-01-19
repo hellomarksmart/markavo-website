@@ -111,7 +111,7 @@ const Header = () => {
           </select>
         </div>
       </div>
-      <div className="flex justify-between items-center px-4 py-4 border-b-emerald-200 border sm:px-6 md:justify-start md:space-x-10">
+      <div className="flex justify-between items-center px-4 py-4 border-b-emerald-200 border sm:px-6 md:justify-start lg:space-x-10">
         <div className="lg:w-auto sm:w-2/12 w-4/12">
           <Link to="/" className="flex">
             <span className="sr-only">Workflow</span>
@@ -142,14 +142,14 @@ const Header = () => {
                     <Popover.Button
                       className={classNames(
                         open ? "text-emerald-400" : "text-emerald-400",
-                        "group inline-flex items-center lg:mr-6 md:mr-2 text-md font-sans font-medium text-emerald-400 hover:text-emerald-500"
+                        "group inline-flex items-center lg:mr-6 md:mr-2 text-md md:text-sm font-sans font-medium text-emerald-400 hover:text-emerald-500"
                       )}
                     >
                       <span>Our Services</span>
                       <ChevronDownIcon
                         className={classNames(
                           open ? "text-emerald-400" : "text-emerald-400",
-                          "ml-2 h-5 w-5 group-hover:text-emerald-500"
+                          "lg:ml-2 md:ml-0 h-5 w-5 group-hover:text-emerald-500"
                         )}
                         aria-hidden="true"
                       />
@@ -220,14 +220,14 @@ const Header = () => {
                     <Popover.Button
                       className={classNames(
                         open ? "text-emerald-400" : "text-emerald-400",
-                        "group inline-flex items-center lg:mr-6 md:mr-2 text-md font-sans font-medium text-emerald-400 hover:text-emerald-500"
+                        "group inline-flex items-center lg:mr-6 md:mr-2 text-md md:text-sm font-sans font-medium text-emerald-400 hover:text-emerald-500"
                       )}
                     >
                       <span>Branding Tools</span>
                       <ChevronDownIcon
                         className={classNames(
                           open ? "text-gray-600" : "text-emerald-400",
-                          "ml-2 h-5 w-5 group-hover:text-emerald-500"
+                          "lg:ml-2 md:ml-0 h-5 w-5 group-hover:text-emerald-500"
                         )}
                         aria-hidden="true"
                       />
@@ -269,16 +269,16 @@ const Header = () => {
 
               <Link
                 to="/about"
-                className="mr-3 text-md font-sans font-medium text-emerald-400 hover:text-emerald-500"
+                className="lg:mr-3 mr-0 text-md font-sans font-medium md:text-sm text-emerald-400 hover:text-emerald-500"
               >
                 About Us
               </Link>
             </div>
-            <div className="max-w-lg w-auto lg:max-w-xs">
+            <div className="max-w-none w-auto lg:max-w-xs">
               <div className="relative">
                 <Link
                   to="/search"
-                  className="ml-8 inline-flex items-center justify-center px-3 py-[0.32rem] border border-emerald-400 rounded-md shadow-sm font-sans text-sm font-medium text-emerald-400 bg-white hover:text-white hover:bg-emerald-400"
+                  className=" inline-flex items-center justify-center px-3 py-[0.32rem] border border-emerald-400 rounded-md shadow-sm font-sans text-sm md:text-xs font-medium text-emerald-400 bg-white hover:text-white hover:bg-emerald-400"
                 >
                   <span>Free Trademark Search</span>
                   <SearchIcon className="ml-2 h-5 w-5" aria-hidden="true" />
