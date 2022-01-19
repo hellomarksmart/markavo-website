@@ -90,12 +90,12 @@ const Header = () => {
           </div>
           <Link
             to="#"
-            className="ml-8 inline-flex items-center justify-center px-3 py-[0.32rem] border-2 border-emerald-400 rounded-md shadow-sm font-sans text-sm font-medium text-emerald-400 bg-white hover:text-white hover:bg-emerald-400"
+            className="ml-8 inline-flex items-center justify-center px-3 py-[0.32rem] border border-emerald-400 rounded-md shadow-sm font-sans text-sm font-medium text-emerald-400 bg-white hover:text-white hover:bg-emerald-400"
           >
             Contact Us
           </Link>
           <Link
-            to="#"
+            to="/client-reviews"
             className="text-md font-sans font-medium text-emerald-400 px-3 hover:text-emerald-500"
           >
             Client Reviews
@@ -107,9 +107,7 @@ const Header = () => {
             <option value="EN" active>
               English
             </option>
-            <option value="ES">
-              Spanish
-            </option>
+            <option value="ES">Spanish</option>
           </select>
         </div>
       </div>
@@ -166,7 +164,7 @@ const Header = () => {
                       leaveFrom="opacity-100 translate-y-0"
                       leaveTo="opacity-0 translate-y-1"
                     >
-                      <Popover.Panel className="absolute z-10  mt-3 transform w-[100%] left-0 ">
+                      <Popover.Panel className="absolute z-10  mt-3 transform w-[90%] left-[20px] ">
                         <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                           <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-2 xl:grid-cols-4 ">
                             {services.map(item => (
@@ -277,23 +275,14 @@ const Header = () => {
               </Link>
             </div>
             <div className="max-w-lg w-auto lg:max-w-xs">
-              <label htmlFor="search" className="sr-only">
-                Search
-              </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <SearchIcon
-                    className="h-5 w-5 text-emerald-400"
-                    aria-hidden="true"
-                  />
-                </div>
-                <input
-                  id="search"
-                  name="search"
-                  className="block lg:w-[10.5rem] md:w-[7.5rem] pl-10 pr-3 py-2 border border-emerald-400 rounded-md leading-5 bg-tranparent text-emerald-500 placeholder-emerald-400 focus:outline-none focus:bg-white focus:border-emerald-500 focus:ring-white focus:text-emerald-500 sm:text-sm"
-                  placeholder="Search"
-                  type="search"
-                />
+                <Link
+                  to="/search"
+                  className="ml-8 inline-flex items-center justify-center px-3 py-[0.32rem] border border-emerald-400 rounded-md shadow-sm font-sans text-sm font-medium text-emerald-400 bg-white hover:text-white hover:bg-emerald-400"
+                >
+                  <span>Free Trademark Search</span>
+                  <SearchIcon className="ml-2 h-5 w-5" aria-hidden="true" />
+                </Link>
               </div>
             </div>
           </Popover.Group>
@@ -366,10 +355,10 @@ const Header = () => {
                   About Us
                 </Link>
                 <Link
-                  to="#"
+                  to="/search"
                   className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-500"
                 >
-                  Free Trademark
+                  Free Trademark Search
                 </Link>
 
                 {allServices.map(item => (
@@ -399,9 +388,7 @@ const Header = () => {
                     <option value="EN" active>
                       English
                     </option>
-                    <option value="ES">
-                      Spanish
-                    </option>
+                    <option value="ES">Spanish</option>
                   </select>
                 </div>
                 <Link
@@ -436,7 +423,6 @@ const Header = () => {
             </div>
           </div>
         </Popover.Panel>
-
       </Transition>
     </Popover>
   )
