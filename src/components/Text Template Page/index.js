@@ -1,10 +1,10 @@
 import * as React from "react"
-import textTemplateSection from "../Text Template Page/text-template-section"
+import TextTemplateSection from "../Text Template Page/text-template-section"
 
-const textTemplateComponent = () => (
+const TextTemplateComponent = () => (
   <>
-    <textTemplateSection />
+    <TextTemplateSection />
   </>
 )
 
-export default textTemplateComponent
+export default TextTemplateComponent
