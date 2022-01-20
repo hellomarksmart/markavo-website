@@ -36,9 +36,7 @@ const Deploy = ({
   title,
   heading,
   sub_heading,
-  card_name,
-  card_icon,
-  card_desc,
+  cards
 }) => {
   return (
     <div className="relative bg-white pt-16 sm:pt-24 lg:pt-32">
@@ -56,30 +54,35 @@ const Deploy = ({
         </div>
 
         <div className="mt-12 bg-white">
-          <div className="bg-white grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             <div className="pt-6">
-              <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8">
-                <div className="-mt-6">
-                  {card_icon ? (
-                    <div>
-                      <span className="inline-flex items-center justify-center p-3 bg-emerald-500 rounded-md shadow-lg">
-                        {card_icon}
-                      </span>
+              <div className="bg-white grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                {cards?.map((item, i) => {
+                  return (
+                    <div
+                      key={i}
+                      className="flow-root bg-gray-50 rounded-lg px-6 pb-8"
+                    >
+                      {item?.icon.url ? (
+                        <div>
+                          <span className="inline-flex items-center justify-center p-3 bg-emerald-500 rounded-md shadow-lg">
+                            {item?.icon.url}
+                          </span>
+                        </div>
+                      ) : (
+                        ""
+                      )}
+                      <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">
+                        {item?.title.text}
+                      </h3>
+                      <p className="mt-5 text-base font-sans text-gray-500">
+                        {item?.content.text}
+                      </p>
                     </div>
-                  ) : (
-                    ""
-                  )}
-                  <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">
-                    {card_name}
-                  </h3>
-                  <p className="mt-5 text-base font-sans text-gray-500">
-                    {card_desc}
-                  </p>
-                </div>
+                  )
+                })}
               </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
   )
