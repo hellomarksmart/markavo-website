@@ -2,116 +2,47 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { CheckIcon } from "@heroicons/react/outline"
 
-const threeCardsHeader = [
-  {
-    subheading: "pricing",
-    heading: "The right price for you, whoever you are",
-    description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit numquam eligendi quos odit doloribus molestiae voluptatum.",
-  },
-]
-
-const firstCardPricing = [
-  {
-    title: "Hobby",
-    currency: "$",
-    price: "79",
-    period: "/month",
-  },
-]
-const firstCardFeatures = [
-  {
-    features: "Pariatur quod similique",
-  },
-  {
-    features: "Sapiente libero doloribus",
-  },
-  {
-    features: "Vel ipsa esse repudiandae",
-  },
-]
-const firstCardButton = [
-  {
-    name: "Start your trial",
-    link: "#",
-  },
-]
-
-const secondCardPricing = [
-  {
-    title: "Growth",
-    currency: "$",
-    price: "149",
-    period: "/month",
-  },
-]
-const secondCardFeatures = [
-  {
-    features: "Quia rem est sed impedit magnam",
-  },
-  {
-    features: "Dolorem vero ratione voluptates",
-  },
-  {
-    features: "Qui sed ab doloribus voluptatem dolore",
-  },
-  {
-    features: "Laborum commodi molestiae id et fugiat",
-  },
-  {
-    features: "Nam ut ipsa nesciunt culpa modi dolor",
-  },
-]
-const secondCardButton = [
-  {
-    name: "Start your trial",
-    link: "#",
-  },
-]
-
-const thirdCardPricing = [
-  {
-    title: "Scale",
-    currency: "$",
-    price: "349",
-    period: "/month",
-  },
-]
-const thirdCardFeatures = [
-  {
-    features: "Pariatur quod similique",
-  },
-  {
-    features: "Sapiente libero doloribus",
-  },
-  {
-    features: "Vel ipsa esse repudiandae",
-  },
-]
-const thirdCardButton = [
-  {
-    name: "Start your trial",
-    link: "#",
-  },
-]
-
-const ThreePriceServiceSection = () => {
+const ThreePriceServiceSection = ({
+  title,
+  heading,
+  description,
+  left_card_title,
+  left_card_currency,
+  left_card_price,
+  left_card_period,
+  left_card_features,
+  left_card_button,
+  left_card_buttonLink,
+  center_card_subheading,
+  center_card_title,
+  center_card_currency,
+  center_card_price,
+  center_card_period,
+  center_card_features,
+  center_card_button,
+  center_card_buttonLink,
+  right_card_title,
+  right_card_currency,
+  right_card_price,
+  right_card_period,
+  right_card_features,
+  right_card_button,
+  right_card_buttonLink,
+}) => {
   return (
     <div className="bg-emerald-900">
       <div className="pt-12 px-4 sm:px-6 lg:px-8 lg:pt-20">
-        {threeCardsHeader.map((item, i) => (
-          <div key={i} className="text-center">
-            <h2 className="text-lg leading-6 font-semibold text-emerald-300 uppercase tracking-wider">
-              {item.subheading}
-            </h2>
-            <p className="mt-2 text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl">
-              {item.heading}
-            </p>
-            <p className="mt-3 max-w-4xl mx-auto text-xl text-emerald-300 sm:mt-5 sm:text-2xl">
-              {item.description}
-            </p>
-          </div>
-        ))}
+        <div className="text-center">
+          <h2 className="text-lg leading-6 font-semibold text-emerald-300 uppercase tracking-wider">
+            {title}
+          </h2>
+          <p className="mt-2 text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl">
+            {heading}
+          </p>
+          <p className="mt-3 max-w-4xl mx-auto text-xl text-emerald-300 sm:mt-5 sm:text-2xl">
+            {description}
+          </p>
+        </div>
       </div>
 
       <div className="mt-16 bg-white pb-12 lg:mt-20 lg:pb-20">
@@ -123,33 +54,31 @@ const ThreePriceServiceSection = () => {
                 <div className="h-full flex flex-col rounded-lg shadow-lg overflow-hidden lg:rounded-none lg:rounded-l-lg">
                   <div className="flex-1 flex flex-col">
                     <div className="bg-white px-6 py-10">
-                      {firstCardPricing.map((item, i) => (
-                        <div key={i}>
-                          <h3
-                            className="text-center text-2xl font-medium text-gray-900"
-                            id="tier-hobby"
-                          >
-                            {item.title}
-                          </h3>
-                          <div className="mt-4 flex items-center justify-center">
-                            <span className="px-3 flex items-start text-6xl tracking-tight text-gray-900">
-                              <span className="mt-2 mr-2 text-4xl font-medium">
-                                {item.currency}
-                              </span>
-                              <span className="font-extrabold">
-                                {item.price}
-                              </span>
+                      <div>
+                        <h3
+                          className="text-center text-2xl font-medium text-gray-900"
+                          id="tier-hobby"
+                        >
+                          {left_card_title}
+                        </h3>
+                        <div className="mt-4 flex items-center justify-center">
+                          <span className="px-3 flex items-start text-6xl tracking-tight text-gray-900">
+                            <span className="mt-2 mr-2 text-4xl font-medium">
+                              {left_card_currency}
                             </span>
-                            <span className="text-xl font-medium text-gray-500">
-                              {item.period}
+                            <span className="font-extrabold">
+                              {left_card_price}
                             </span>
-                          </div>
+                          </span>
+                          <span className="text-xl font-medium text-gray-500">
+                            {left_card_period}
+                          </span>
                         </div>
-                      ))}
+                      </div>
                     </div>
                     <div className="flex-1 flex flex-col justify-between border-t-2 border-gray-100 p-6 bg-gray-50 sm:p-10 lg:p-6 xl:p-10">
                       <ul className="space-y-4">
-                        {firstCardFeatures.map((item, i) => (
+                        {left_card_features?.map((item, i) => (
                           <li key={i} className="flex items-start">
                             <div className="flex-shrink-0">
                               <CheckIcon
@@ -158,23 +87,27 @@ const ThreePriceServiceSection = () => {
                               />
                             </div>
                             <p className="ml-3 text-base font-medium text-gray-500">
-                              {item.features}
+                              {item?.feature.text}
                             </p>
                           </li>
                         ))}
                       </ul>
                       <div className="mt-8">
                         <div className="rounded-lg shadow-md">
-                          {firstCardButton.map((item, i) => (
+                          {left_card_buttonLink ? (
                             <Link
-                              key={i}
-                              to={item.link}
+                              key={left_card_button}
+                              to={left_card_buttonLink}
                               className="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-emerald-600 hover:bg-gray-50"
                               aria-describedby="tier-hobby"
                             >
-                              {item.name}
+                              {left_card_button}
                             </Link>
-                          ))}
+                          ) : (
+                            <div className="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-emerald-600 hover:bg-gray-50">
+                              {left_card_button}
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -190,36 +123,36 @@ const ThreePriceServiceSection = () => {
                   <div className="absolute inset-x-0 top-0 transform translate-y-px">
                     <div className="flex justify-center transform -translate-y-1/2">
                       <span className="inline-flex rounded-full bg-emerald-600 px-4 py-1 text-sm font-semibold tracking-wider uppercase text-white">
-                        Most popular
+                        {center_card_subheading}
                       </span>
                     </div>
                   </div>
                   <div className="bg-white rounded-t-lg px-6 pt-12 pb-10">
-                    {secondCardPricing.map((item, i) => (
-                      <div key={i}>
-                        <h3
-                          className="text-center text-3xl font-semibold text-gray-900 sm:-mx-6"
-                          id="tier-growth"
-                        >
-                          {item.title}
-                        </h3>
-                        <div className="mt-4 flex items-center justify-center">
-                          <span className="px-3 flex items-start text-6xl tracking-tight text-gray-900 sm:text-6xl">
-                            <span className="mt-2 mr-2 text-4xl font-medium">
-                              {item.currency}
-                            </span>
-                            <span className="font-extrabold">{item.price}</span>
+                    <div>
+                      <h3
+                        className="text-center text-3xl font-semibold text-gray-900 sm:-mx-6"
+                        id="tier-growth"
+                      >
+                        {center_card_title}
+                      </h3>
+                      <div className="mt-4 flex items-center justify-center">
+                        <span className="px-3 flex items-start text-6xl tracking-tight text-gray-900 sm:text-6xl">
+                          <span className="mt-2 mr-2 text-4xl font-medium">
+                            {center_card_currency}
                           </span>
-                          <span className="text-2xl font-medium text-gray-500">
-                            {item.period}
+                          <span className="font-extrabold">
+                            {center_card_price}
                           </span>
-                        </div>
+                        </span>
+                        <span className="text-2xl font-medium text-gray-500">
+                          {center_card_period}
+                        </span>
                       </div>
-                    ))}
+                    </div>
                   </div>
                   <div className="border-t-2 border-gray-100 rounded-b-lg pt-10 pb-8 px-6 bg-gray-50 sm:px-10 sm:py-10">
                     <ul className="space-y-4">
-                      {secondCardFeatures.map((item, i) => (
+                      {center_card_features?.map((item, i) => (
                         <li key={i} className="flex items-start">
                           <div className="flex-shrink-0">
                             <CheckIcon
@@ -228,23 +161,27 @@ const ThreePriceServiceSection = () => {
                             />
                           </div>
                           <p className="ml-3 text-base font-medium text-gray-500">
-                            {item.features}
+                            {item?.feature.text}
                           </p>
                         </li>
                       ))}
                     </ul>
                     <div className="mt-10">
                       <div className="rounded-lg shadow-md">
-                        {secondCardButton.map((item, i) => (
+                        {center_card_buttonLink ? (
                           <Link
-                            key={i}
-                            to={item.link}
+                            key={center_card_button}
+                            to={center_card_buttonLink}
                             className="block w-full text-center rounded-lg border border-transparent bg-emerald-600 px-6 py-4 text-xl leading-6 font-medium text-white hover:bg-emerald-700"
                             aria-describedby="tier-growth"
                           >
-                            {item.name}
+                            {center_card_button}
                           </Link>
-                        ))}
+                        ) : (
+                          <div className="block w-full text-center rounded-lg border border-transparent bg-emerald-600 px-6 py-4 text-xl leading-6 font-medium text-white hover:bg-emerald-700">
+                            {center_card_button}
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -254,33 +191,31 @@ const ThreePriceServiceSection = () => {
                 <div className="h-full flex flex-col rounded-lg shadow-lg overflow-hidden lg:rounded-none lg:rounded-r-lg">
                   <div className="flex-1 flex flex-col">
                     <div className="bg-white px-6 py-10">
-                      {thirdCardPricing.map((item, i) => (
-                        <div key={i}>
-                          <h3
-                            className="text-center text-2xl font-medium text-gray-900"
-                            id="tier-scale"
-                          >
-                            {item.title}
-                          </h3>
-                          <div className="mt-4 flex items-center justify-center">
-                            <span className="px-3 flex items-start text-6xl tracking-tight text-gray-900">
-                              <span className="mt-2 mr-2 text-4xl font-medium">
-                                {item.currency}
-                              </span>
-                              <span className="font-extrabold">
-                                {item.price}
-                              </span>
+                      <div>
+                        <h3
+                          className="text-center text-2xl font-medium text-gray-900"
+                          id="tier-scale"
+                        >
+                          {right_card_title}
+                        </h3>
+                        <div className="mt-4 flex items-center justify-center">
+                          <span className="px-3 flex items-start text-6xl tracking-tight text-gray-900">
+                            <span className="mt-2 mr-2 text-4xl font-medium">
+                              {right_card_currency}
                             </span>
-                            <span className="text-xl font-medium text-gray-500">
-                              {item.period}
+                            <span className="font-extrabold">
+                              {right_card_price}
                             </span>
-                          </div>
+                          </span>
+                          <span className="text-xl font-medium text-gray-500">
+                            {right_card_period}
+                          </span>
                         </div>
-                      ))}
+                      </div>
                     </div>
                     <div className="flex-1 flex flex-col justify-between border-t-2 border-gray-100 p-6 bg-gray-50 sm:p-10 lg:p-6 xl:p-10">
                       <ul className="space-y-4">
-                        {thirdCardFeatures.map((item, i) => (
+                        {right_card_features?.map((item, i) => (
                           <li key={i} className="flex items-start">
                             <div className="flex-shrink-0">
                               <CheckIcon
@@ -289,23 +224,27 @@ const ThreePriceServiceSection = () => {
                               />
                             </div>
                             <p className="ml-3 text-base font-medium text-gray-500">
-                              {item.features}
+                              {item?.feature.text}
                             </p>
                           </li>
                         ))}
                       </ul>
                       <div className="mt-8">
                         <div className="rounded-lg shadow-md">
-                          {thirdCardButton.map((item, i) => (
+                          {right_card_buttonLink ? (
                             <Link
-                              key={i}
-                              to={item.link}
+                              key={right_card_button}
+                              to={right_card_buttonLink}
                               className="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-emerald-600 hover:bg-gray-50"
                               aria-describedby="tier-scale"
                             >
-                              {item.name}
+                              {right_card_button}
                             </Link>
-                          ))}
+                          ) : (
+                            <div className="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-emerald-600 hover:bg-gray-50">
+                              {right_card_button}
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
