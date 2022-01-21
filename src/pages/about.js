@@ -6,7 +6,7 @@ import About from "../components/About/index"
 
 const IndexPage = () => (
   <Layout>
-    <Seo title="About" />
+    <Seo title="Home" />
     <About />
   </Layout>
 )

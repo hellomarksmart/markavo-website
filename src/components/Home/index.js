@@ -1,20 +1,18 @@
 import * as React from "react"
 import Banner from "../Reusable Sections/banner"
 import Deploy from "../Reusable Sections/deploy-section"
-import TwoPriceServiceSection from "../Two Price Service/two-price-service-section"
+import ThreePriceServiceSection from "../Reusable Sections/three-price-section"
 import Statistics from "../Reusable Sections/statistics-section"
 import Cta from "../Reusable Sections/cta-section"
-import FAQs from "../Reusable Sections/faq-section"
 
-const TwoPrice = () => (
+const Home = () => (
   <>
     <Banner />
     <Deploy />
-    <TwoPriceServiceSection />
+    <ThreePriceServiceSection />
     <Statistics />
-    <FAQs />
     <Cta />
   </>
 )
 
-export default TwoPrice
+export default Home
