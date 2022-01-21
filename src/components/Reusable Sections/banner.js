@@ -1,25 +1,15 @@
 import * as React from "react"
 import { Link } from "gatsby"
 
-const BannerContent = [
-  {
-    heading: "Data to enrich your",
-    headingColored: "online business",
-    description:
-      "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.",
-  },
-]
-
-const BannerButtons = [
-  {
-    buttonColored: "Get started",
-    buttonColoredLink: "#",
-    buttonPlain: "Live demo",
-    buttonPlainLink: "#",
-  },
-]
-
-const Banner = () => {
+const Banner = ({
+  heading,
+  headingColored,
+  description,
+  buttonColored,
+  buttonColoredLink,
+  buttonPlain,
+  buttonPlainLink,
+}) => {
   return (
     <div className="relative overflow-hidden">
       <div
@@ -96,41 +86,49 @@ const Banner = () => {
 
       <div className="relative pt-6 pb-16 sm:pb-24">
         <div className="text-center">
-          {BannerContent.map(item => (
-            <div>
-              <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                <span className="block xl:inline">{item.heading}</span>{" "}
-                <span className="block text-emerald-400 xl:inline">
-                  {item.headingColored}
-                </span>
-              </h1>
-              <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                {item.description}
-              </p>
-            </div>
-          ))}
-          {BannerButtons.map(item => (
-            <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
-              <div className="rounded-md shadow">
+          <div>
+            <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+              <span className="block xl:inline">{heading}</span>{" "}
+              <span className="block text-emerald-400 xl:inline">
+                {headingColored}
+              </span>
+            </h1>
+            <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+              {description}
+            </p>
+          </div>
+          <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+            <div className="rounded-md shadow">
+              {buttonColoredLink ? (
                 <Link
-                  key={item.buttonColored}
-                  to={item.buttonColoredLink}
+                  key={buttonColored}
+                  to={buttonColoredLink}
                   className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-400 hover:bg-emerald-500 md:py-4 md:text-lg md:px-10"
                 >
-                  {item.buttonColored}
+                  {buttonColored}
                 </Link>
-              </div>
-              <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+              ) : (
+                <div className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-400 hover:bg-emerald-500 md:py-4 md:text-lg md:px-10">
+                  {buttonColored}
+                </div>
+              )}
+            </div>
+            <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+              {buttonPlainLink ? (
                 <Link
-                  key={item.buttonPlain}
-                  to={item.buttonPlainLink}
+                  key={buttonPlain}
+                  to={buttonPlainLink}
                   className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-emerald-400 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10"
                 >
-                  {item.buttonPlain}
+                  {buttonPlain}
                 </Link>
-              </div>
+              ) : (
+                <div className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-emerald-400 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
+                  {buttonPlain}
+                </div>
+              )}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </div>
