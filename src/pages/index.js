@@ -63,7 +63,7 @@ const IndexPage = props => {
         nameLeft={homeData.name_left.text}
         statsLeft={homeData.stats_left.text}
         nameCenter={homeData.name_center.text}
-        statsCeneter={homeData.stats_center.text}
+        statsCenter={homeData.stats_center.text}
         nameRight={homeData.name_right.text}
         statsRight={homeData.stats_right.text}
       />

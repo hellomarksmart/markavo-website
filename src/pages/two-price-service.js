@@ -6,7 +6,7 @@ import TwoPrice from "../components/Two Price Service/index"
 
 const TwoPriceService = () => (
   <Layout>
-    <Seo title="Home" />
+    <Seo title="Two Price Service" />
     <TwoPrice />
   </Layout>
 )

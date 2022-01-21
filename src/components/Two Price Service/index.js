@@ -11,17 +11,44 @@ const TwoPrice = () => (
     <Banner
       heading={"Data to enrich your"}
       headingColored={"online business"}
-      description={"Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua."}
+      description={
+        "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua."
+      }
       buttonColored={"Get started"}
       buttonColoredLink={"#"}
       buttonPlain={"Live demo"}
       buttonPlainLink={"#"}
     />
-    <Deploy />
+    <Deploy
+      title={"DEPLOY FASTER"}
+      heading={"Everything you need to deploy your app"}
+      description={
+        "Phasellus lorem quam molestie id quisque diam aenean nulla in. Accumsan in quis quis nunc, ullamcorper malesuada. Eleifend condimentum id viverra nulla."
+      }
+    />
     <TwoPriceServiceSection />
-    <Statistics />
+    <Statistics
+      heading={"Trusted by developers from over 80 planets"}
+      description={
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus repellat laudantium."
+      }
+      nameLeft={"Pepperoni"}
+      statsLeft={"100%"}
+      nameCenter={"Delivery"}
+      statsCenter={"24/7"}
+      nameRight={"Calories"}
+      statsRight={"100k"}
+    />
     <FAQs />
-    <Cta />
+    <Cta
+      heading={"Boost your productivity."}
+      headingSecond={"Start using Workflow today."}
+      description={
+        "Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec."
+      }
+      buttonPlain={"Sign up for free"}
+      buttonPlainLink={"#"}
+    />
   </>
 )
 
