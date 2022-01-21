@@ -115,9 +115,6 @@ export const OnePriceServiceQuery = graphql`
           content {
             text
           }
-          icon {
-            url
-          }
           title {
             text
           }

@@ -127,9 +127,6 @@ export const ThreePriceServiceQuery = graphql`
           content {
             text
           }
-          icon {
-            url
-          }
           title {
             text
           }

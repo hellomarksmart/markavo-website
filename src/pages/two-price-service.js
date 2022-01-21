@@ -124,9 +124,6 @@ export const TwoPriceServiceQuery = graphql`
           content {
             text
           }
-          icon {
-            url
-          }
           title {
             text
           }

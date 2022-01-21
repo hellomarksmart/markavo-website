@@ -118,9 +118,6 @@ export const HomeQuery = graphql`
           content {
             text
           }
-          icon {
-            url
-          }
           title {
             text
           }
