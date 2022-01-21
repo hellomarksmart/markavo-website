@@ -1,9 +1,5 @@
 import * as React from "react"
-import {
-  CloudUploadIcon,
-  LockClosedIcon,
-  RefreshIcon,
-} from "@heroicons/react/outline"
+import { CloudUploadIcon } from "@heroicons/react/outline"
 
 const Deploy = ({ title, heading, description, cards }) => {
   return (
@@ -30,15 +26,20 @@ const Deploy = ({ title, heading, description, cards }) => {
                     key={i}
                     className="flow-root bg-gray-50 rounded-lg px-6 pb-8"
                   >
-                    {item?.icon.url ? (
+                    {/* {item?.icon.url ? (
                       <div>
-                        <span className="inline-flex items-center justify-center p-3 bg-emerald-500 rounded-md shadow-lg">
-                          {item?.icon.url}
-                        </span>
+                        <span className="inline-flex items-center justify-center p-3 bg-emerald-500 rounded-md shadow-lg"></span>
                       </div>
-                    ) : (
-                      ""
-                    )}
+                    ) : ( */}
+                    <div>
+                      <span className="inline-flex items-center justify-center p-3 bg-emerald-500 rounded-md shadow-lg">
+                        <CloudUploadIcon
+                          className="h-6 w-6 text-white"
+                          aria-hidden="true"
+                        />
+                      </span>
+                    </div>
+                    {/* )} */}
                     <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">
                       {item?.title.text}
                     </h3>
