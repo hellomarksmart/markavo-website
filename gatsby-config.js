@@ -27,6 +27,7 @@ module.exports = {
           client_reviews_page: require("./src/schema/client-reviews.json"),
           services_page: require("./src/schema/services.json"),
           one_price_service: require("./src/schema/one-price-service.json"),
+          two_price_service: require("./src/schema/two-price-service.json"),
           three_price_service: require("./src/schema/three-price-service.json"),
         },
       },

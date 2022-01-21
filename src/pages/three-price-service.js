@@ -16,7 +16,6 @@ const ThreePriceService = props => {
   return (
     <Layout>
       <Seo title="Three Price Service" />
-      <Seo title="One Price Service" />
       <Banner
         heading={ThreePriceServiceData.banner_heading.text}
         headingColored={ThreePriceServiceData.banner_heading_colored.text}
