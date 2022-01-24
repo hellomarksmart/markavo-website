@@ -1,0 +1,62 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "404 Page"
+      }
+    },
+    "heading_1": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "label": "Heading 1"
+      }
+    },
+    "heading_2": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "label": "Heading 2"
+      }
+    },
+    "description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "label": "Description"
+      }
+    },
+    "button_1_label": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "allowTargetBlank": true,
+        "label": "Button 1 Label"
+      }
+    },
+    "button_1": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "Button 1",
+        "select": null
+      }
+    },
+    "button_2_label": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "allowTargetBlank": true,
+        "label": "Button 2 Label"
+      }
+    },
+    "button_2": {
+      "type": "Link",
+      "config": {
+        "label": "Button 2",
+        "select": null
+      }
+    }
+  }
+}
