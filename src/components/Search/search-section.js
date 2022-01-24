@@ -1,4 +1,6 @@
 import * as React from "react"
+import { useState } from "react"
+import api from '../../../api/api.js'
 
 const BannerContent = [
   {
@@ -10,6 +12,23 @@ const BannerContent = [
 ]
 
 const SearchSection = () => {
+  const [keyword, setKeyword] = useState('');
+  let [responseData, setResponseData] = React.useState('')
+
+  const fetchData = (e) => {
+    e.preventDefault()
+    api.getData(keyword)
+    .then((response)=>{
+        setResponseData(response.data)
+        console.log(response)
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+  }
+
+  console.log(responseData.items);
+
   return (
     <div className="relative overflow-hidden">
       <div
@@ -122,15 +141,20 @@ const SearchSection = () => {
                 type="text"
                 className="shadow h-14 w-96 pl-10 pr-20 rounded-lg z-0 focus:shadow focus:outline-none"
                 placeholder="Search millions of trademarks"
+                value={keyword}
+                onChange={(e) => setKeyword(e.target.value)}
               />
               <div className="absolute top-2 right-2">
                 {" "}
-                <button className="h-10 w-20 text-white rounded-lg bg-emerald-400 hover:bg-emerald-500">
+                <button onClick={fetchData} className="h-10 w-20 text-white rounded-lg bg-emerald-400 hover:bg-emerald-500">
                   Search
                 </button>{" "}
               </div>
             </div>
           </div>
+          {responseData.items && responseData.items.map(item => {
+                return <p>{item.keyword}</p>
+            })}
         </div>
       </div>
     </div>
