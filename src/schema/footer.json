@@ -6,18 +6,26 @@
         "label": "Footer"
       }
     },
-    "first_set_links": {
+    "footer_heading": {
       "type": "Group",
       "config": {
         "fields": {
-          "link_title": {
+          "title": {
             "type": "StructuredText",
             "config": {
               "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
               "allowTargetBlank": true,
-              "label": "Footer Link Label"
+              "label": "Footer Link Heading"
             }
-          },
+          }
+        },
+        "label": "Footer Heading"
+      }
+    },
+    "footer_links": {
+      "type": "Group",
+      "config": {
+        "fields": {
           "link": {
             "type": "Link",
             "config": {
@@ -26,7 +34,7 @@
               "select": null
             }
           },
-          "link_name": {
+          "link_title": {
             "type": "StructuredText",
             "config": {
               "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
