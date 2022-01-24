@@ -4,8 +4,9 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Banner from "../components/Reusable Sections/banner"
+import ClientReviewsSection from "../components/Reusable Sections/client-reviews-section"
 import Cta from "../components/Reusable Sections/cta-section"
-import Reviews from "../components/Client Reviews/index"
+import Pagination from "../components/Reusable Sections/pagination-section"
 
 const ClientReviews = props => {
   const clientReviewsData = props.data.prismicClientReviewsPage.data
@@ -22,7 +23,8 @@ const ClientReviews = props => {
         buttonPlain={clientReviewsData.button_2_label.text}
         buttonPlainLink={clientReviewsData.button_2.url}
       />
-      <Reviews />
+      <ClientReviewsSection reviews={clientReviewsData.reviews} />
+      <Pagination />
       <Cta
         heading={clientReviewsData.cta_heading.text}
         headingSecond={clientReviewsData.cta_heading_2.text}
@@ -60,6 +62,15 @@ export const ClientReviewsQuery = graphql`
         }
         button_2 {
           url
+        }
+        reviews {
+          reviewer_rate
+          reviewer_name {
+            text
+          }
+          reviewer_message {
+            text
+          }
         }
         cta_heading {
           text

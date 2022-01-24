@@ -58,6 +58,34 @@
         "select": null
       }
     },
+    "reviews": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "reviewer_rate": {
+            "type": "Number",
+            "config": {
+              "label": "Rating"
+            }
+          },
+          "reviewer_name": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "label": "Reviewer Name"
+            }
+          },
+          "reviewer_message": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "label": "Reviewer Messgae"
+            }
+          }
+        },
+        "label": "Reviews"
+      }
+    },
     "cta_heading": {
       "type": "StructuredText",
       "config": {

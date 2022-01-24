@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 const navigation = {
   applications: [
@@ -31,7 +31,8 @@ const navigation = {
   ],
 }
 
-const Footer = () => {
+const Footer = props => {
+  // const footerData = props.data.prismicFooter.data
   return (
     <footer className="bg-white" aria-labelledby="footer-heading">
       <div className="max-w-8xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-7">
@@ -153,3 +154,23 @@ const Footer = () => {
 }
 
 export default Footer
+
+export const ClientReviewsQuery = graphql`
+  query FooterQuery {
+    prismicFooter {
+      data {
+        first_set_links {
+          link_title {
+            text
+          }
+          link {
+            url
+          }
+          link_name {
+            text
+          }
+        }
+      }
+    }
+  }
+`
