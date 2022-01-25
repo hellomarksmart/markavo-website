@@ -13,6 +13,9 @@ export default {
   getData: (keyword) =>
   instance({
       'method':'GET',
-      'url': `/trademarkSearch/${keyword}/active`
+      'url': `/trademarkSearch/${keyword}/active`,
+      'params': {
+        "per_page":15
+      }
   })
 }

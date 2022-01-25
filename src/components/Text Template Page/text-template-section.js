@@ -9,31 +9,6 @@ const pageHeading = [
       "Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque id at vitae feugiat egestas ac. Diam nulla orci at in viverra scelerisque eget. Eleifend egestas fringilla sapien.",
   },
 ]
-
-const listContents = [
-  {
-    text: "Quis elit egestas venenatis mattis dignissim.",
-  },
-  {
-    text: "Cras cras lobortis vitae vivamus ultricies facilisis tempus.",
-  },
-  {
-    text: "Orci in sit morbi dignissim metus diam arcu pretium.",
-  },
-]
-const blockquoteContent = [
-  {
-    quoteText:
-      "Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique pellentesque. Blandit amet, sed aenean erat arcu morbi.",
-  },
-]
-const figureContent = [
-  {
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&w=1310&h=873&q=80&facepad=3",
-    imageCaption: "Sagittis scelerisque nulla cursus in enim consectetur quam.",
-  },
-]
 const textContent = [
   {
     heading: "",
