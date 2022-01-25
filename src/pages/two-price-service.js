@@ -3,12 +3,12 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Banner from "../components/Reusable Sections/banner"
-import Deploy from "../components/Reusable Sections/deploy-section"
-import TwoPriceServiceSection from "../components/Reusable Sections/two-price-service-section"
-import Statistics from "../components/Reusable Sections/statistics-section"
-import FAQs from "../components/Reusable Sections/faq-section"
-import Cta from "../components/Reusable Sections/cta-section"
+import Banner from "../components/banner"
+import Deploy from "../components/deploy-section"
+import TwoPriceServiceSection from "../components/two-price-service-section"
+import Statistics from "../components/statistics-section"
+import FAQs from "../components/faq-section"
+import Cta from "../components/cta-section"
 
 const TwoPriceService = props => {
   const twoPriceServiceData = props.data.prismicTwoPriceService.data

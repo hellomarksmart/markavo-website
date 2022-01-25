@@ -89,7 +89,7 @@ const Header = () => {
             </Link>
           </div>
           <Link
-            to="#"
+            to="/contact-us"
             className="ml-8 inline-flex items-center justify-center px-3 py-[0.32rem] border border-emerald-400 rounded-md shadow-sm font-sans text-sm font-medium text-emerald-400 bg-white hover:text-white hover:bg-emerald-400"
           >
             Contact Us
@@ -104,7 +104,7 @@ const Header = () => {
             className="text-sm font-sans font-medium text-emerald-400 border border-emerald-400 px-12 py-[0.35rem] rounded-md lg:px-12 md:px-6"
             data-placeholder="English"
           >
-            <option value="EN" active>
+            <option value="EN" active="true">
               English
             </option>
             <option value="ES">Spanish</option>
@@ -167,9 +167,9 @@ const Header = () => {
                       <Popover.Panel className="absolute z-10  mt-3 transform w-[90%] left-[20px] ">
                         <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                           <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-2 xl:grid-cols-4 ">
-                            {services.map(item => (
+                            {services.map((item, i) => (
                               <Link
-                                key={item.name}
+                                key={i}
                                 to={item.href}
                                 className="-m-3 p-3 font-sans flex items-start rounded-lg hover:bg-gray-50"
                               >
@@ -192,8 +192,8 @@ const Header = () => {
                           </div>
                           <div className="bg-gray-50">
                             <div className="font-sans max-w-7xl mx-auto space-y-6 px-4 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-6 lg:px-8">
-                              {allServices.map(item => (
-                                <div key={item.name} className="flow-root">
+                              {allServices.map((item, i) => (
+                                <div key={i} className="flow-root">
                                   <Link
                                     onTouchEnd={item.href}
                                     className="-m-3 p-3 flex items-center rounded-md text-sm font-medium text-emerald-400 hover:bg-gray-400 transition ease-in-out duration-150"
@@ -245,9 +245,9 @@ const Header = () => {
                       <Popover.Panel className="absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-xs sm:px-0">
                         <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                           <div className="relative grid gap-4 bg-white px-5 py-6 sm:gap-4 sm:p-8">
-                            {brandingTools.map(item => (
+                            {brandingTools.map((item, i) => (
                               <Link
-                                key={item.name}
+                                key={i}
                                 to={item.href}
                                 className="-m-3 mb-0 p-3 font-sans block rounded-md hover:bg-gray-50"
                               >
@@ -323,9 +323,9 @@ const Header = () => {
               </div>
               <div className="mt-6">
                 <nav className="grid gap-6">
-                  {services.map(item => (
+                  {services.map((item, i) => (
                     <Link
-                      key={item.name}
+                      key={i}
                       to={item.href}
                       className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
                     >
@@ -361,17 +361,18 @@ const Header = () => {
                   Free Trademark Search
                 </Link>
 
-                {allServices.map(item => (
+                {allServices.map((item, i) => (
                   <Link
+                    key={i}
                     onTouchEnd={item.href}
                     className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-500"
                   >
                     {item.name}
                   </Link>
                 ))}
-                {brandingTools.map(item => (
+                {brandingTools.map((item, i) => (
                   <Link
-                    key={item.name}
+                    key={i}
                     to={item.href}
                     className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-500"
                   >
@@ -385,28 +386,18 @@ const Header = () => {
                     className="w-full font-sans text-sm font-medium text-emerald-400 px-4 py-2 border border-emerald-400 rounded-md shadow-sm"
                     data-placeholder="English"
                   >
-                    <option value="EN" active>
+                    <option value="EN" active="true">
                       English
                     </option>
                     <option value="ES">Spanish</option>
                   </select>
                 </div>
                 <Link
-                  to="#"
+                  to="/contact-us"
                   className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-sans font-medium text-white bg-emerald-400 hover:bg-emerald-500"
                 >
                   Contact Us
                 </Link>
-
-                {/* <p className="mt-6 text-center text-sm font-medium text-emerald-400">
-                  <Link
-                    to="tel:+1-877-286-5731"
-                    className="font-sans text-emerald-400 hover:text-emerald-500"
-                  >
-                    1-877-286-5731
-                  </Link>
-                </p> */}
-
                 <div className="flex justify-center px-3 mt-6">
                   <PhoneIcon
                     className="h-6 w-6 text-transparent fill-emerald-400"

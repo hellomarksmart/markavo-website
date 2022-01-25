@@ -3,10 +3,10 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Banner from "../components/Reusable Sections/banner"
-import ClientReviewsSection from "../components/Reusable Sections/client-reviews-section"
-import Cta from "../components/Reusable Sections/cta-section"
-import Pagination from "../components/Reusable Sections/pagination-section"
+import Banner from "../components/banner"
+import ClientReviewsSection from "../components/client-reviews-section"
+import Cta from "../components/cta-section"
+import Pagination from "../components/pagination-section"
 
 const ClientReviews = props => {
   const clientReviewsData = props.data.prismicClientReviewsPage.data

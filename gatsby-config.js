@@ -7,12 +7,13 @@ module.exports = {
     title: `Markavo`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://markavowebsitestaging.gatsbyjs.io/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-plugin-postcss`,
+    "gatsby-plugin-sitemap",
     {
       resolve: `gatsby-source-prismic`,
       options: {
@@ -33,6 +34,9 @@ module.exports = {
           about_us_page: require("./src/schema/about-us.json"),
           not_found: require("./src/schema/not-found.json"),
           payment_received: require("./src/schema/payment-received.json"),
+          contact_us_page: require("./src/schema/contact-us.json"),
+          text_template: require("./src/schema/text-template.json"),
+          search_page: require("./src/schema/search.json"),
         },
       },
     },

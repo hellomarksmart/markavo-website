@@ -5,14 +5,14 @@ const Deploy = ({ title, heading, description, cards }) => {
   return (
     <div className="relative bg-white pt-16 pb-4 sm:pt-18 lg:pt-18">
       <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
-        <div>
+        <div className="max-w-[90%] mx-auto">
           <h2 className="text-[16px] font-semibold font-sans tracking-wider text-emerald-500 uppercase mb-2">
             {title}
           </h2>
-          <p className="mt-0 text-3xl font-extrabold font-sans text-gray-900 tracking-tight sm:text-[36px]">
+          <p className="mt-0 text-3xl font-extrabold font-sans text-gray-900 tracking-tight sm:text-[36px] md:max-w-full sm:max-w-md sm:mx-auto">
             {heading}
           </p>
-          <p className="mt-5 max-w-prose mx-auto font-sans text-[20px] text-gray-500">
+          <p className="mt-5 max-w-prose mx-auto font-sans text-base sm:text-[20px] text-gray-500 md:max-w-[47rem] sm:max-w-md">
             {description}
           </p>
         </div>

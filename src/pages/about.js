@@ -3,36 +3,36 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Banner from "../components/Reusable Sections/banner"
-import AboutSection from "../components/Reusable Sections/about-section"
-import Cta from "../components/Reusable Sections/cta-section"
+import Banner from "../components/banner"
+import AboutSection from "../components/about-section"
+import Cta from "../components/cta-section"
 
 const About = props => {
-  const abouteData = props.data.prismicAboutUsPage.data
+  const aboutData = props.data.prismicAboutUsPage.data
 
   return (
     <Layout>
       <Seo title="About" />
       <Banner
-        heading={abouteData.banner_heading.text}
-        headingColored={abouteData.banner_heading_colored.text}
-        description={abouteData.banner_description.text}
-        buttonColored={abouteData.button_1_label.text}
-        buttonColoredLink={abouteData.button_1.url}
-        buttonPlain={abouteData.button_2_label.text}
-        buttonPlainLink={abouteData.button_2.url}
+        heading={aboutData.banner_heading.text}
+        headingColored={aboutData.banner_heading_colored.text}
+        description={aboutData.banner_description.text}
+        buttonColored={aboutData.button_1_label.text}
+        buttonColoredLink={aboutData.button_1.url}
+        buttonPlain={aboutData.button_2_label.text}
+        buttonPlainLink={aboutData.button_2.url}
       />
       <AboutSection
-        heading={abouteData.about_section_heading.text}
-        description={abouteData.about_section_description.text}
-        about_items={abouteData.about_items}
+        heading={aboutData.about_section_heading.text}
+        description={aboutData.about_section_description.text}
+        about_items={aboutData.about_items}
       />
       <Cta
-        heading={abouteData.cta_heading.text}
-        headingSecond={abouteData.cta_heading_2.text}
-        description={abouteData.cta_description.text}
-        buttonPlain={abouteData.cta_button_label.text}
-        buttonPlainLink={abouteData.cta_button.url}
+        heading={aboutData.cta_heading.text}
+        headingSecond={aboutData.cta_heading_2.text}
+        description={aboutData.cta_description.text}
+        buttonPlain={aboutData.cta_button_label.text}
+        buttonPlainLink={aboutData.cta_button.url}
       />
     </Layout>
   )
