@@ -15,7 +15,9 @@ const Cta = ({
           <span className="block">{heading}</span>
           <span className="block">{headingSecond}</span>
         </h2>
-        <p className="mt-0 text-[18px] font-sans leading-6 text-emerald-200">{description}</p>
+        <p className="mt-0 mx-auto text-base sm:text-[18px] font-sans leading-6 text-emerald-200 sm:max-w-md sm:mx-auto md:max-w-[47rem]">
+          {description}
+        </p>
         {buttonPlainLink ? (
           <Link
             key={buttonPlain}
