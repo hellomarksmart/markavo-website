@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import ServicesSection from "../components/Reusable Sections/services-section"
+import ServicesSection from "../components/services-section"
 
 const AllServices = props => {
   const servcicesData = props.data.prismicServicesPage.data

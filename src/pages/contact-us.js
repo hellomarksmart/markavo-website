@@ -3,8 +3,8 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import ContactSection from "../components/Reusable Sections/contact-us-section"
-import Cta from "../components/Reusable Sections/cta-section"
+import ContactSection from "../components/contact-us-section"
+import Cta from "../components/cta-section"
 
 const Contact = props => {
   const contactData = props.data.prismicContactUsPage.data
