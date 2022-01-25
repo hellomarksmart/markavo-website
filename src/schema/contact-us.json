@@ -1,0 +1,91 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "Contact Us"
+      }
+    },
+    "heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "Contact Section Heading"
+      }
+    },
+    "description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+        "label": "Contact Us Description"
+      }
+    },
+    "contact_items": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "qr_code": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [],
+              "label": "QR Code"
+            }
+          },
+          "contact_title": {
+            "type": "StructuredText",
+            "config": {
+              "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+              "label": "Contact Title"
+            }
+          },
+          "contact_details": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+              "label": "Contact Details"
+            }
+          }
+        },
+        "label": "Contact Items"
+      }
+    },
+    "cta_heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "CTA Heading"
+      }
+    },
+    "cta_heading_2": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "CTA Heading 2"
+      }
+    },
+    "cta_description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "label": "CTA Section Description"
+      }
+    },
+    "cta_button_label": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "allowTargetBlank": true,
+        "label": "Button Label"
+      }
+    },
+    "cta_button": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "Button",
+        "select": null
+      }
+    }
+  }
+}
