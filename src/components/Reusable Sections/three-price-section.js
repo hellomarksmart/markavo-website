@@ -31,15 +31,15 @@ const ThreePriceServiceSection = ({
 }) => {
   return (
     <div className="bg-emerald-900">
-      <div className="pt-12 px-4 sm:px-6 lg:px-8 lg:pt-20">
+      <div className="max-w-[90%] mx-auto pt-12 px-4 sm:px-6 lg:px-8 lg:pt-20">
         <div className="text-center">
           <h2 className="text-[18px] leading-6 font-semibold text-emerald-300 uppercase tracking-wider">
             {title}
           </h2>
-          <p className="text-3xl font-sans font-bold text-white sm:text-4xl lg:text-[48px]">
+          <p className="text-3xl font-sans font-bold text-white sm:text-4xl sm:max-w-md md:max-w-3xl lg:max-w-4xl lg:text-[48px] mx-auto">
             {heading}
           </p>
-          <p className="mt-3 max-w-4xl mx-auto text-xl font-sans text-emerald-300 sm:mt-5 sm:text-[24px]">
+          <p className="mt-3 max-w-4xl mx-auto text-base font-sans text-emerald-300 sm:mt-5 sm:text-[20px] md:text-[24px] md:max-w-[46rem] sm:max-w-md">
             {description}
           </p>
         </div>
