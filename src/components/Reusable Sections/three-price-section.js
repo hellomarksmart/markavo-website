@@ -144,7 +144,7 @@ const ThreePriceServiceSection = ({
                             {center_card_price}
                           </span>
                         </span>
-                        <span className="text-2xl font-normal text-gray-500">
+                        <span className="text-[24px] font-normal text-gray-500">
                           {center_card_period}
                         </span>
                       </div>
@@ -172,7 +172,7 @@ const ThreePriceServiceSection = ({
                           <Link
                             key={center_card_button}
                             to={center_card_buttonLink}
-                            className="block w-full text-center rounded-lg border border-transparent bg-emerald-600 px-6 py-4 text-[20px] leading-6 font-sans font-medium text-white hover:bg-emerald-700"
+                            className="block w-full text-center rounded-lg border border-transparent bg-emerald-600 md:py-[16px] md:px-[40px] text-[20px] leading-6 font-sans font-medium text-white hover:bg-emerald-700"
                             aria-describedby="tier-growth"
                           >
                             {center_card_button}
