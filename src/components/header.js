@@ -89,7 +89,7 @@ const Header = () => {
             </Link>
           </div>
           <Link
-            to="#"
+            to="/contact-us"
             className="ml-8 inline-flex items-center justify-center px-3 py-[0.32rem] border border-emerald-400 rounded-md shadow-sm font-sans text-sm font-medium text-emerald-400 bg-white hover:text-white hover:bg-emerald-400"
           >
             Contact Us
@@ -360,8 +360,7 @@ const Header = () => {
                 >
                   Free Trademark Search
                 </Link>
-
-                {allServices.map((item, i) => (
+                {allServices.map(item => (
                   <Link
                     key={i}
                     onTouchEnd={item.href}
@@ -393,21 +392,11 @@ const Header = () => {
                   </select>
                 </div>
                 <Link
-                  to="#"
+                  to="/contact-us"
                   className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-sans font-medium text-white bg-emerald-400 hover:bg-emerald-500"
                 >
                   Contact Us
                 </Link>
-
-                {/* <p className="mt-6 text-center text-sm font-medium text-emerald-400">
-                  <Link
-                    to="tel:+1-877-286-5731"
-                    className="font-sans text-emerald-400 hover:text-emerald-500"
-                  >
-                    1-877-286-5731
-                  </Link>
-                </p> */}
-
                 <div className="flex justify-center px-3 mt-6">
                   <PhoneIcon
                     className="h-6 w-6 text-transparent fill-emerald-400"
