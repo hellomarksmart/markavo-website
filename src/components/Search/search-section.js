@@ -1,6 +1,7 @@
 import * as React from "react"
 import { useState } from "react"
-import api from '../../../api/api.js'
+import api from "../../../api/api.js"
+import Pagination from "../Reusable Sections/pagination-section.js"
 
 const BannerContent = [
   {
@@ -12,22 +13,30 @@ const BannerContent = [
 ]
 
 const SearchSection = () => {
-  const [keyword, setKeyword] = useState('');
+  const [keyword, setKeyword] = useState("")
   let [responseData, setResponseData] = React.useState('')
+  let [responseLength, setResponseLength] = React.useState('')
 
-  const fetchData = (e) => {
+  const fetchData = e => {
     e.preventDefault()
-    api.getData(keyword)
-    .then((response)=>{
+    api
+      .getData(keyword)
+      .then(response => {
         setResponseData(response.data)
-        console.log(response)
-    })
-    .catch((error) => {
+        setResponseLength(response.data.items.length)
+      })
+      .catch(error => {
         console.log(error)
-    })
+      })
   }
 
-  console.log(responseData.items);
+  console.log(responseData.items)
+
+  const pages = Math.round(responseLength / 10)
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const startIndex = currentPage * 10 - 10
+  const endIndex = startIndex + 10
 
   return (
     <div className="relative overflow-hidden">
@@ -105,8 +114,8 @@ const SearchSection = () => {
 
       <div className="relative pt-6 pb-16 sm:pb-24">
         <div className="text-center">
-          {BannerContent.map(item => (
-            <div>
+          {BannerContent.map((item, i) => (
+            <div key={i}>
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                 <span className="block xl:inline">{item.heading}</span>{" "}
                 <span className="block text-emerald-400 xl:inline">
@@ -142,19 +151,76 @@ const SearchSection = () => {
                 className="shadow h-14 w-96 pl-10 pr-20 rounded-lg z-0 focus:shadow focus:outline-none"
                 placeholder="Search millions of trademarks"
                 value={keyword}
-                onChange={(e) => setKeyword(e.target.value)}
+                onChange={e => setKeyword(e.target.value)}
               />
               <div className="absolute top-2 right-2">
                 {" "}
-                <button onClick={fetchData} className="h-10 w-20 text-white rounded-lg bg-emerald-400 hover:bg-emerald-500">
+                <button
+                  onClick={fetchData}
+                  className="h-10 w-20 text-white rounded-lg bg-emerald-400 hover:bg-emerald-500"
+                >
                   Search
                 </button>{" "}
               </div>
             </div>
           </div>
-          {responseData.items && responseData.items.map(item => {
-                return <p>{item.keyword}</p>
-            })}
+          {responseData.items && 
+              <div className="text-left px-12 my-12">
+                <p className="text-2xl font-bold mb-2">Trademark Search Results</p>
+                <p><b className="text-emerald-500">{keyword}</b> may be available if it is not generic, 
+                descriptive, too confusingly similar to another unregistered trademark that is being used in commerce,
+                or too confunsingly similar a live registered trademark. 
+                  <b className="text-emerald-500">
+                    Work with Markavo to navigate this complicated legal process for as little as $185.
+                  </b>
+                </p>
+                {
+                  responseData.items.slice(startIndex, endIndex).map((item, i) => {
+                      const formatter = new Intl.DateTimeFormat('eng', { 
+                        month: 'long',
+                        day: '2-digit',
+                        year: 'numeric'
+                      });
+                      const newDate = formatter.format(new Date(item.filing_date))
+                      // const fileMonth = newDate.getMonth().toString()
+                      // const fileDay = newDate.getDate().toString()
+                      // const fileYear = newDate.getFullYear().toString()
+
+                      return (
+                        <div key={i} className="my-3 p-8 border border-slate-200 max-w-screen-md">
+                          <p className="text-emerald-500 font-bold">{item.keyword}</p>
+                          <div className="flex items-center">
+                            <p className="mr-2 mb-0 text-slate-400">Filed:</p>
+                            {/* <p className="mb-0 text-slate-400">{fileMonth} {fileDay}, {fileYear}</p> */}
+                            <p className="mb-0 text-slate-400">{newDate}</p>
+                          </div>
+                          <p className="truncate my-1">{item.description}</p>
+                          <div className="flex items-center">
+                            <p className="mr-2 mb-0 font-bold">Owned by:</p>
+                            {item.owners.map((owner, i) => {
+                                return <p key={i} className="mb-0 text-emerald-500">{owner.name}</p>
+                              })
+                            }
+                          </div>
+                          <div className="flex items-center">
+                            <p className="mr-2 mb-0 font-bold">Serial Number:</p>
+                            <p className="mb-0 text-emerald-500">{item.serial_number}</p>
+                          </div>
+                        </div>
+                      )
+                  })
+                }
+              </div>
+            }
+            {responseLength > 9 ? 
+              <Pagination 
+                currentPage={currentPage}
+                pages={pages}
+                totalItems={responseLength}
+                setCurrentPage={setCurrentPage}
+              />
+              : ''
+            }
         </div>
       </div>
     </div>
