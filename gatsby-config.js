@@ -33,7 +33,7 @@ module.exports = {
           about_us_page: require("./src/schema/about-us.json"),
           not_found: require("./src/schema/not-found.json"),
           payment_received: require("./src/schema/payment-received.json"),
-          contact_us_page: {}
+          contact_us_page: require("./src/schema/contact-us.json"),
         },
       },
     },
