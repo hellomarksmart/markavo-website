@@ -3,9 +3,9 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Banner from "../components/Reusable Sections/banner"
-import AboutSection from "../components/Reusable Sections/about-section"
-import Cta from "../components/Reusable Sections/cta-section"
+import Banner from "../components/banner"
+import AboutSection from "../components/about-section"
+import Cta from "../components/cta-section"
 
 const About = props => {
   const aboutData = props.data.prismicAboutUsPage.data

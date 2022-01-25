@@ -3,7 +3,8 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import TextTemplateSection from "../components/Reusable Sections/text-template-section"
+import Breadcrumb from "../components/breadcrumbs"
+import TextTemplateSection from "../components/text-template-section"
 
 const TextTemplate = props => {
   const textTemplateData = props.data.prismicTextTemplate.data
@@ -11,6 +12,7 @@ const TextTemplate = props => {
   return (
     <Layout>
       <Seo title="Text Template" />
+      <Breadcrumb breadcrumbs_item={textTemplateData.breadcrumbs} />
       <TextTemplateSection
         sub_heading={textTemplateData.sub_heading.text}
         heading={textTemplateData.heading.text}
@@ -27,6 +29,15 @@ export const TextTemplateQuery = graphql`
   query TextTemplateQuery {
     prismicTextTemplate {
       data {
+        breadcrumbs {
+          page_current
+          page_current_label {
+            text
+          }
+          page_current_link {
+            url
+          }
+        }
         sub_heading {
           text
         }

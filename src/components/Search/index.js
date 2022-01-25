@@ -1,8 +1,8 @@
 import * as React from "react"
 
 import SearchSection from "../Search/search-section"
-import FAQs from "../Reusable Sections/faq-section"
-import Cta from "../Reusable Sections/cta-section"
+import FAQs from "../faq-section"
+import Cta from "../cta-section"
 
 const SearchTrademark = () => (
   <>
