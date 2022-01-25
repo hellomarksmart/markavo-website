@@ -36,6 +36,7 @@ module.exports = {
           payment_received: require("./src/schema/payment-received.json"),
           contact_us_page: require("./src/schema/contact-us.json"),
           text_template: require("./src/schema/text-template.json"),
+          search_page: require("./src/schema/search.json"),
         },
       },
     },

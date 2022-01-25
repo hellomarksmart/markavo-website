@@ -1,0 +1,97 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "Search"
+      }
+    },
+    "banner_heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "Banner Heading"
+      }
+    },
+    "banner_heading_colored": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "Banner Heading Colored"
+      }
+    },
+    "banner_description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "label": "Banner Section Description"
+      }
+    },
+    "faq_heading": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
+        "label": "FAQs Section Heading"
+      }
+    },
+    "faq_contents": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "faq_question": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "label": "FAQ Question"
+            }
+          },
+          "faq_answer": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "label": "FAQ Answer"
+            }
+          }
+        },
+        "label": "FAQ Contents"
+      }
+    },
+    "cta_heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "CTA Heading"
+      }
+    },
+    "cta_heading_2": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "CTA Heading 2"
+      }
+    },
+    "cta_description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "label": "CTA Section Description"
+      }
+    },
+    "cta_button_label": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "allowTargetBlank": true,
+        "label": "Button Label"
+      }
+    },
+    "cta_button": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "Button",
+        "select": null
+      }
+    }
+  }
+}
