@@ -84,26 +84,26 @@ const Banner = ({
         </div>
       </div>
 
-      <div className="relative pt-6 pb-16 sm:pb-24">
+      <div className="relative pt-16 pb-16 sm:pb-16">
         <div className="text-center">
-          <div>
-            <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+          <div className="max-w-[90%] mx-auto">
+            <h1 className="text-3xl sm:text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-[60px]">
               <span className="block xl:inline">{heading}</span>{" "}
               <span className="block text-emerald-400 xl:inline">
                 {headingColored}
               </span>
             </h1>
-            <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+            <p className="mt-3 max-w-sm mx-auto font-sans text-base text-gray-500 sm:max-w-md sm:text-lg md:mt-5 md:text-[20px] md:max-w-[47rem]">
               {description}
             </p>
           </div>
-          <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+          <div className="mt-5 max-w-[16rem] sm:max-w-sm mx-auto sm:flex sm:justify-center md:mt-8">
             <div className="rounded-md shadow">
               {buttonColoredLink ? (
                 <Link
                   key={buttonColored}
                   to={buttonColoredLink}
-                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-400 hover:bg-emerald-500 md:py-4 md:text-lg md:px-10"
+                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-sans font-medium rounded-md text-white bg-emerald-400 hover:bg-emerald-500 md:py-4 md:text-xl md:px-10"
                 >
                   {buttonColored}
                 </Link>
@@ -118,7 +118,7 @@ const Banner = ({
                 <Link
                   key={buttonPlain}
                   to={buttonPlainLink}
-                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-emerald-400 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10"
+                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-sans font-medium rounded-md text-emerald-400 bg-white hover:bg-gray-50 md:py-4 md:text-xl md:px-10"
                 >
                   {buttonPlain}
                 </Link>
