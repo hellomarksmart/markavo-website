@@ -4,7 +4,7 @@ const AboutSection = ({ heading, description, about_items }) => {
   return (
     <div className="bg-white">
       <div className="mx-auto py-0 px-4 max-w-7xl sm:px-6 lg:px-8 lg:pt-16">
-        <div className="space-y-12 lg:grid lg:grid-cols-3 lg:gap-8 lg:space-y-0">
+        <div className="space-y-12 xl:grid xl:grid-cols-3 xl:gap-8 xl:space-y-0">
           <div className="space-y-5 sm:space-y-4">
             <h2 className="text-3xl font-extrabold tracking-tight sm:text-[36px]">
               {heading}
@@ -18,10 +18,10 @@ const AboutSection = ({ heading, description, about_items }) => {
               {about_items?.map((item, i) => {
                 return (
                   <li key={i} className="sm:py-[32px] mb-0">
-                    <div className="space-y-4 sm:grid sm:grid-cols-3 sm:items-start sm:gap-6 sm:space-y-0">
-                      <div className="aspect-w-3 aspect-h-2 sm:aspect-w-3 sm:aspect-h-4 w-[250px]">
+                    <div className="space-y-4 sm:space-y-0 sm:flex sm:flex-row">
+                      <div className="aspect-w-3 aspect-h-2 sm:aspect-w-3 sm:aspect-h-4 ">
                         <img
-                          className="h-[332px] object-cover shadow-lg rounded-lg"
+                          className="h-[332px] w-[250px] object-cover shadow-lg rounded-lg"
                           src={item?.image.url}
                           alt=""
                         />
