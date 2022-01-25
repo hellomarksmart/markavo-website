@@ -45,7 +45,7 @@ const Pagination = ({
       <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
         <div>
           <p className="text-sm text-gray-700">
-            Showing <span className="font-medium">page {currentPage} </span> 
+            Showing <span className="font-medium">page {currentPage} </span>
             {/* to{" "}
             <span className="font-medium">{currentPage + 9}</span>  */}
             of{" "}
@@ -56,15 +56,15 @@ const Pagination = ({
           <nav
             className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
             aria-label="Pagination"
-          >        
-          <button
-            onClick={goToPreviousPage}
-            className="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
-            disabled={currentPage === 1 ? true : false}
           >
-            <span className="sr-only">Previous</span>
-            <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
-          </button>
+            <button
+              onClick={goToPreviousPage}
+              className="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+              disabled={currentPage === 1 ? true : false}
+            >
+              <span className="sr-only">Previous</span>
+              <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
+            </button>
 
             {/* show page numbers */}
             {getPaginationGroup().map((item, index) => {
@@ -72,17 +72,17 @@ const Pagination = ({
               return (
                 <button
                   key={index}
-                  onClick={changePage}              
+                  onClick={changePage}
                   className={currentPage === item ?
                     `bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium`
                     :
                     `bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium`
                   }
-                  >
+                >
                   <span>{item}</span>
                 </button>
               )
-              })}
+            })}
 
             <button
               onClick={goToNextPage}
