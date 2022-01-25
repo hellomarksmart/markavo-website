@@ -26,31 +26,35 @@ const Pagination = ({
 
   return (
     <div className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
-      <div className="flex-1 flex justify-between sm:hidden font-sans">
-        <Link
-          to="#"
-          className="relative inline-flex items-center px-4 py-2 ml-1 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
+      <div className="flex-1 flex justify-between sm:hidden">
+        <button
+          onClick={goToPreviousPage}
+          className="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
+          disabled={currentPage === 1 ? true : false}
         >
           Previous
-        </Link>
-        <Link
-          to="#"
-          className="ml-3 relative inline-flex items-center px-4 py-2 mr-1 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
+        </button>
+        <button
+          onClick={goToNextPage}
+          className="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
+          disabled={currentPage === pages ? true : false}
         >
           Next
         </button>
       </div>
       <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
         <div>
-          <p className="text-sm font-sans text-gray-500 py-3 mb-0">
-            Showing <span className="font-medium">1</span> to{" "}
-            <span className="font-medium">10</span> of{" "}
-            <span className="font-medium">97</span> results
+          <p className="text-sm text-gray-700">
+            Showing <span className="font-medium">page {currentPage} </span>
+            {/* to{" "}
+            <span className="font-medium">{currentPage + 9}</span>  */}
+            of{" "}
+            <span className="font-medium">{pages}</span> results
           </p>
         </div>
         <div>
           <nav
-            className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px font-sans"
+            className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
             aria-label="Pagination"
           >
             <button
