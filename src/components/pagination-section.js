@@ -40,7 +40,7 @@ const Pagination = ({ currentPage, pages, setCurrentPage }) => {
       </div>
       <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
         <div>
-          <p className="text-sm text-gray-700">
+          <p className="text-sm text-gray-700 mb-0">
             Showing <span className="font-medium">page {currentPage} </span>
             {/* to{" "}
             <span className="font-medium">{currentPage + 9}</span>  */}
