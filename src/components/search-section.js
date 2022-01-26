@@ -1,12 +1,11 @@
-import * as React from "react"
-import { useState } from "react"
+import React, { useState } from "react"
 import api from "../../api/api"
 import Pagination from "../components/pagination-section"
 
 const SearchSection = ({ heading, headingColored, description }) => {
   const [keyword, setKeyword] = useState("")
-  let [responseData, setResponseData] = React.useState("")
-  let [responseLength, setResponseLength] = React.useState("")
+  let [responseData, setResponseData] = useState("")
+  let [responseLength, setResponseLength] = useState("")
 
   const fetchData = e => {
     e.preventDefault()
@@ -210,18 +209,18 @@ const SearchSection = ({ heading, headingColored, description }) => {
               })}
             </div>
           )}
-          {responseLength > 9 ? (
-            <Pagination
-              currentPage={currentPage}
-              pages={pages}
-              totalItems={responseLength}
-              setCurrentPage={setCurrentPage}
-            />
-          ) : (
-            ""
-          )}
         </div>
       </div>
+      {responseLength > 9 ? (
+        <Pagination
+          currentPage={currentPage}
+          pages={pages}
+          totalItems={responseLength}
+          setCurrentPage={setCurrentPage}
+        />
+      ) : (
+        ""
+      )}
     </div>
   )
 }
