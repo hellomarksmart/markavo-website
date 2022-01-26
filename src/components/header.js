@@ -209,7 +209,9 @@ const Header = () => {
                               {allServices.map((item, i) => (
                                 <div key={i} className="flow-root">
                                   <Link
-                                    onTouchEnd={item.link.uid ? item.link.uid : '#'}
+                                    onTouchEnd={
+                                      item.link.uid ? item.link.uid : "#"
+                                    }
                                     className="-m-3 p-3 flex items-center rounded-md text-sm font-medium text-emerald-400 hover:bg-gray-400 transition ease-in-out duration-150"
                                   >
                                     {item.icon.url ? (
@@ -224,7 +226,9 @@ const Header = () => {
                                         aria-hidden="true"
                                       />
                                     )}
-                                    <span className="ml-3">{item.name.text ? item.name.text : ''}</span>
+                                    <span className="ml-3">
+                                      {item.name.text ? item.name.text : ""}
+                                    </span>
                                   </Link>
                                 </div>
                               ))}
@@ -270,14 +274,16 @@ const Header = () => {
                             {brandingTools.map((item, i) => (
                               <Link
                                 key={i}
-                                to={item.link.uid ? item.link.uid : '#'}
+                                to={item.link.uid ? item.link.uid : "#"}
                                 className="-m-3 mb-0 p-3  block rounded-md hover:bg-gray-50"
                               >
                                 <p className="text-sm font-medium text-emerald-400 mb-0">
-                                  {item.name.text ? item.name.text : ''}
+                                  {item.name.text ? item.name.text : ""}
                                 </p>
                                 <p className="mt-1 text-sm text-gray-700 mb-0">
-                                  {item.description.text ? item.description.text : ''}
+                                  {item.description.text
+                                    ? item.description.text
+                                    : ""}
                                 </p>
                               </Link>
                             ))}
@@ -303,7 +309,10 @@ const Header = () => {
                   className="inline-flex items-center justify-center px-3 py-[0.32rem] border border-emerald-400 rounded-md shadow-sm text-sm lg:text-sm md:text-xs font-medium text-emerald-400 bg-white hover:text-white hover:bg-emerald-400"
                 >
                   <span>Free Trademark Search</span>
-                  <SearchIcon className="ml-2 lg:h-4 lg:w-4 md:h-3 md:w-3" aria-hidden="true" />
+                  <SearchIcon
+                    className="ml-2 lg:h-4 lg:w-4 md:h-3 md:w-3"
+                    aria-hidden="true"
+                  />
                 </Link>
               </div>
             </div>
@@ -328,13 +337,14 @@ const Header = () => {
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
                 <div>
-                  <StaticImage
+                  {/* <StaticImage
                     src="../images/markavo-logo.png"
                     width={202}
                     quality={95}
                     formats={["auto", "webp", "avif"]}
                     alt="Markavo"
-                  />
+                  /> */}
+                  <img className="mb-0" src={headerLogo} width={202} alt="Markavo" />
                 </div>
                 <div className="-mr-2">
                   <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -348,14 +358,21 @@ const Header = () => {
                   {services.map((item, i) => (
                     <Link
                       key={i}
-                      to={item.href}
+                      to={item.link.uid ? item.link.uid : "#"}
                       className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
                     >
                       <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-emerald-400 text-white">
-                        <item.icon className="h-6 w-6" aria-hidden="true" />
+                        {item.icon.url ? (
+                          <img src={item.icon.url} className="h-6 w-6" alt="" />
+                        ) : (
+                          <ChartBarIcon
+                            className="h-6 w-6"
+                            aria-hidden="true"
+                          />
+                        )}
                       </div>
                       <div className="ml-4 text-sm  font-medium text-emerald-400">
-                        {item.name}
+                        {item.name.text ? item.name.text : ''}
                       </div>
                     </Link>
                   ))}
@@ -386,19 +403,19 @@ const Header = () => {
                 {allServices.map((item, i) => (
                   <Link
                     key={i}
-                    onTouchEnd={item.href}
+                    onTouchEnd={item.link.uid ? item.link.uid : "#"}
                     className="text-sm  font-medium text-emerald-400 hover:text-emerald-500"
                   >
-                    {item.name}
+                    {item.name.text ? item.name.text : ''}
                   </Link>
                 ))}
                 {brandingTools.map((item, i) => (
                   <Link
                     key={i}
-                    to={item.href}
+                    to={item.link.uid ? item.link.uid : "#"}
                     className="text-sm  font-medium text-emerald-400 hover:text-emerald-500"
                   >
-                    {item.name}
+                    {item.name.text ? item.name.text : ''}
                   </Link>
                 ))}
               </div>
@@ -426,10 +443,10 @@ const Header = () => {
                     aria-hidden="true"
                   />
                   <a
-                    href="tel:+1-877-286-5731"
+                    href={`tel:+${phoneNumber}`}
                     className="text-md text-center  font-semibold text-emerald-400 pl-1 hover:text-emerald-500"
                   >
-                    1-877-286-5731
+                    {phoneNumber}
                   </a>
                 </div>
               </div>
