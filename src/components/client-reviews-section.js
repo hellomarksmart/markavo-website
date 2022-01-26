@@ -33,7 +33,7 @@ const ClientReviewsSection = ({ reviews }) => {
                   <p className="font-bold text-gray-900 sm:mb-[1.45rem] mb-0 pl-1">
                     {item?.reviewer_name.text}
                   </p>
-                  <div className="flex items-center sm:pl-2 pl-0">
+                  <div className="flex items-center pl-2">
                     {[0, 1, 2, 3, 4].map(reviewer_rate => (
                       <StarIcon
                         key={reviewer_rate}
@@ -50,7 +50,7 @@ const ClientReviewsSection = ({ reviews }) => {
                 </div>
                 <div className="lg:col-start-5 lg:col-span-8 xl:col-start-4 xl:col-span-9 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:items-start">
                   <div className="mt-4 lg:mt-6 xl:mt-0 xl:col-span-2">
-                    <h3 className="font-medium text-sm text-gray-900 mb-0 pl-1">
+                    <h3 className="font-medium text-sm text-gray-900 mb-0">
                       {item?.reviewer_message.text}
                     </h3>
                   </div>

@@ -1,38 +1,63 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
-const navigation = {
-  applications: [
-    { name: "U.S. Trademark Application Service", href: "#" },
-    { name: "File an International Trademark", href: "#" },
-    { name: "U.S. Trademark Office Action Response Service", href: "#" },
-    { name: "U.S. Trademark Statement of Use (or Extension)", href: "#" },
-    { name: "U.S. Trademark Search Services", href: "#" },
-  ],
-  registrations: [
-    { name: "U.S. Trademark Renewal Services", href: "#" },
-    { name: "U.S. Trademark Ownership Assignments", href: "#" },
-    { name: "U.S. Trademark Address Updates", href: "#" },
-    { name: "U.S. Trademark Monitoring Service", href: "#" },
-  ],
-  disputes: [
-    { name: "Letter of Protest", href: "#" },
-    { name: "Expungement Proceedings", href: "#" },
-    { name: "Reexamination Proceedings", href: "#" },
-    { name: "Cease and Desist Letters", href: "#" },
-    { name: "Respond to an Extension to Oppose", href: "#" },
-  ],
-  company: [
-    { name: "About Us", href: "#" },
-    { name: "Client Reviews", href: "#" },
-    { name: "Contact Us", href: "#" },
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
-  ],
-}
+const Footer = () => {
+  const footerData = useStaticQuery(graphql`
+    query FooterQuery {
+      prismicFooter {
+        data {
+          applications {
+            link {
+              url
+            }
+            link_name {
+              text
+            }
+            link_title {
+              text
+            }
+          }
+          company {
+            link {
+              url
+            }
+            link_name {
+              text
+            }
+            link_title {
+              text
+            }
+          }
+          disputes {
+            link {
+              url
+            }
+            link_name {
+              text
+            }
+            link_title {
+              text
+            }
+          }
+          registrations {
+            link {
+              url
+            }
+            link_name {
+              text
+            }
+            link_title {
+              text
+            }
+          }
+          footer_copyright {
+            text
+          }
+        }
+      }
+    }
+  `)
 
-const Footer = props => {
-  // const footerData = props.data.prismicFooter.data
   return (
     <footer className="bg-white" aria-labelledby="footer-heading">
       <div className="max-w-8xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-7">
@@ -44,16 +69,27 @@ const Footer = props => {
                   Applications
                 </h3>
                 <ul className="mt-4 space-y-4 ml-0">
-                  {navigation.applications.map(item => (
-                    <li key={item.name}>
-                      <Link
-                        to={item.href}
-                        className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-600"
-                      >
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
+                  {footerData.prismicFooter.data.applications.map((item, i) => {
+                    return (
+                      <li key={i}>
+                        {item.link.url ?
+                          <a
+                            href={item.link.url}
+                            className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-600"
+                            title={item.link_title.text}
+                          >
+                            {item.link_name.text}
+                          </a>
+                          :
+                            <p
+                              className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-600"
+                            >
+                              {item.link_name.text}
+                            </p>
+                        }
+                      </li>
+                    )
+                  })}
                 </ul>
               </div>
               <div className="mt-12 md:mt-0">
@@ -61,14 +97,23 @@ const Footer = props => {
                   Registrations
                 </h3>
                 <ul className="mt-4 space-y-4 ml-0">
-                  {navigation.registrations.map(item => (
-                    <li key={item.name}>
-                      <Link
-                        to={item.href}
+                  {footerData.prismicFooter.data.registrations.map((item, i) => (
+                    <li key={i}>
+                    {item.link.url ?
+                      <a
+                        href={item.link.url}
                         className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-600"
+                        title={item.link_title.text}
                       >
-                        {item.name}
-                      </Link>
+                        {item.link_name.text}
+                      </a>
+                      :
+                        <p
+                          className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-600"
+                        >
+                          {item.link_name.text}
+                        </p>
+                    }
                     </li>
                   ))}
                 </ul>
@@ -80,14 +125,23 @@ const Footer = props => {
                   Disputes
                 </h3>
                 <ul className="mt-4 space-y-4 ml-0">
-                  {navigation.disputes.map(item => (
-                    <li key={item.name}>
-                      <Link
-                        to={item.href}
-                        className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-600"
-                      >
-                        {item.name}
-                      </Link>
+                  {footerData.prismicFooter.data.disputes.map((item, i) => (
+                    <li key={i}>
+                      {item.link.url ?
+                        <a
+                          href={item.link.url}
+                          className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-600"
+                          title={item.link_title.text}
+                        >
+                          {item.link_name.text}
+                        </a>
+                        :
+                          <p
+                            className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-600"
+                          >
+                            {item.link_name.text}
+                          </p>
+                      }
                     </li>
                   ))}
                 </ul>
@@ -97,14 +151,23 @@ const Footer = props => {
                   Company
                 </h3>
                 <ul className="mt-4 space-y-4 ml-0">
-                  {navigation.company.map(item => (
-                    <li key={item.name}>
-                      <Link
-                        to={item.href}
-                        className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-600"
-                      >
-                        {item.name}
-                      </Link>
+                  {footerData.prismicFooter.data.company.map((item, i) => (
+                    <li key={i}>
+                      {item.link.url ?
+                        <a
+                          href={item.link.url}
+                          className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-600"
+                          title={item.link_title.text}
+                        >
+                          {item.link_name.text}
+                        </a>
+                        :
+                          <p
+                            className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-600"
+                          >
+                            {item.link_name.text}
+                          </p>
+                      }
                     </li>
                   ))}
                 </ul>
@@ -144,8 +207,7 @@ const Footer = props => {
         </div>
         <div className="mt-8 border-t border-emerald-400 pt-8 md:flex md:items-center md:justify-between">
           <p className="mt-8 text-sm font-sans font-light text-emerald-400 md:mt-0 md:order-1">
-            Markavo® is a registered trademark. Copyright © 2022 Markavo, LLC.
-            All Rights Reserved.
+            {footerData.prismicFooter.data.footer_copyright.text}
           </p>
         </div>
       </div>
@@ -154,23 +216,3 @@ const Footer = props => {
 }
 
 export default Footer
-
-export const ClientReviewsQuery = graphql`
-  query FooterQuery {
-    prismicFooter {
-      data {
-        first_set_links {
-          link_title {
-            text
-          }
-          link {
-            url
-          }
-          link_name {
-            text
-          }
-        }
-      }
-    }
-  }
-`
