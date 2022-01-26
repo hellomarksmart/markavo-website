@@ -30,8 +30,6 @@ const SearchSection = ({ heading, headingColored, description }) => {
       })
   }
 
-  console.log(responseData.items)
-
   const pages = Math.round(responseLength / 10)
   const [currentPage, setCurrentPage] = useState(1)
 
