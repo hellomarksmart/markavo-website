@@ -25,12 +25,12 @@ const ClientReviewsSection = ({ reviews }) => {
   return (
     <div className="bg-white">
       <div className="lg:max-w-5xl md:max-w-2xl sm:max-w-[90%] max-w-[full] ml-0 pb-0 px-4 sm:pb-0 sm:px-6 lg:px-8">
-        <div className="mt-0 pb-10 border-b border-gray-200 divide-y divide-gray-200 space-y-10">
+        <div className="mt-0 pb-10 border-b border-gray-200 divide-y divide-gray-200">
           {dataReviews?.slice(startIndex, endIndex).map((item, i) => {
             return (
               <div key={i} className="sm:py-10 py-5">
                 <div className="mt-6 flex items-start text-sm lg:mt-0 lg:col-start-1 lg:col-span-4 lg:row-start-1 sm-flex-col sm:items-start xl:col-span-3">
-                  <p className="font-bold font-sans text-gray-900 sm:mb-[1.45rem] mb-0 pl-1">
+                  <p className="font-bold text-gray-900 sm:mb-[1.45rem] mb-0 pl-1">
                     {item?.reviewer_name.text}
                   </p>
                   <div className="flex items-center sm:pl-2 pl-0">
