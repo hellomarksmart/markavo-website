@@ -78,30 +78,30 @@ const Header = () => {
         <div className="flex space-x-4 items-center md:ml-12">
           <div className="flex px-3">
             <PhoneIcon
-              className="h-6 w-6 text-transparent fill-emerald-400"
+              className="h-6 w-6 md:h-5 md:w-5 md:mt-[2px] text-transparent fill-emerald-400"
               aria-hidden="true"
             />
-            <Link
-              to="tel:+1-877-286-5731"
-              className="text-md font-sans font-semibold text-emerald-400 pl-1 hover:text-emerald-500"
+            <a
+              href="tel:+1-877-286-5731"
+              className="text-md lg:text-base md:text-sm font-semibold text-emerald-400 pl-1 hover:text-emerald-500"
             >
               1-877-286-5731
-            </Link>
+            </a>
           </div>
           <Link
             to="/contact-us"
-            className="ml-8 inline-flex items-center justify-center px-3 py-[0.32rem] border border-emerald-400 rounded-md shadow-sm font-sans text-sm font-medium text-emerald-400 bg-white hover:text-white hover:bg-emerald-400"
+            className="ml-8 inline-flex items-center justify-center px-3 py-[0.32rem] border border-emerald-400 rounded-md shadow-sm lg:text-sm md:text-[15px] font-medium text-emerald-400 bg-white hover:text-white hover:bg-emerald-400"
           >
             Contact Us
           </Link>
           <Link
             to="/client-reviews"
-            className="text-md font-sans font-medium text-emerald-400 px-3 hover:text-emerald-500"
+            className="text-md lg:text-base md:text-sm font-medium text-emerald-400 px-3 hover:text-emerald-500"
           >
             Client Reviews
           </Link>
           <select
-            className="text-sm font-sans font-medium text-emerald-400 border border-emerald-400 px-12 py-[0.35rem] rounded-md lg:px-12 md:px-6"
+            className="text-sm lg:text-sm md:text-[15px] font-medium text-emerald-400 border border-emerald-400 px-12 py-[0.35rem] rounded-md lg:px-12 md:px-6"
             data-placeholder="English"
           >
             <option value="EN" active="true">
@@ -142,14 +142,14 @@ const Header = () => {
                     <Popover.Button
                       className={classNames(
                         open ? "text-emerald-400" : "text-emerald-400",
-                        "group inline-flex items-center lg:mr-6 md:mr-2 text-md md:text-sm font-sans font-medium text-emerald-400 hover:text-emerald-500"
+                        "group inline-flex items-center lg:mr-6 md:mr-2 text-md lg:text-base md:text-sm font-medium text-emerald-400 hover:text-emerald-500"
                       )}
                     >
                       <span>Our Services</span>
                       <ChevronDownIcon
                         className={classNames(
                           open ? "text-emerald-400" : "text-emerald-400",
-                          "lg:ml-2 md:ml-0 h-5 w-5 group-hover:text-emerald-500"
+                          "lg:ml-1 md:ml-0 mt-1 md:mt-0 lg:h-5 lg:w-5 md:h-4 md:w-4 group-hover:text-emerald-500"
                         )}
                         aria-hidden="true"
                       />
@@ -171,7 +171,7 @@ const Header = () => {
                               <Link
                                 key={i}
                                 to={item.href}
-                                className="-m-3 p-3 font-sans flex items-start rounded-lg hover:bg-gray-50"
+                                className="-m-3 p-3  flex items-start rounded-lg hover:bg-gray-50"
                               >
                                 <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-emerald-400 text-white sm:h-12 sm:w-12">
                                   <item.icon
@@ -191,7 +191,7 @@ const Header = () => {
                             ))}
                           </div>
                           <div className="bg-gray-50">
-                            <div className="font-sans max-w-7xl mx-auto space-y-6 px-4 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-6 lg:px-8">
+                            <div className=" max-w-full mx-auto space-y-6 px-4 py-5 sm:flex sm:justify-center sm:space-y-0 sm:space-x-10 sm:px-6 lg:px-8">
                               {allServices.map((item, i) => (
                                 <div key={i} className="flow-root">
                                   <Link
@@ -220,14 +220,14 @@ const Header = () => {
                     <Popover.Button
                       className={classNames(
                         open ? "text-emerald-400" : "text-emerald-400",
-                        "group inline-flex items-center lg:mr-6 md:mr-2 text-md md:text-sm font-sans font-medium text-emerald-400 hover:text-emerald-500"
+                        "group inline-flex items-center lg:mr-6 md:mr-2 text-md lg:text-base md:text-sm font-medium text-emerald-400 hover:text-emerald-500"
                       )}
                     >
                       <span>Branding Tools</span>
                       <ChevronDownIcon
                         className={classNames(
                           open ? "text-gray-600" : "text-emerald-400",
-                          "lg:ml-2 md:ml-0 h-5 w-5 group-hover:text-emerald-500"
+                          "lg:ml-1 md:ml-0 mt-1 md:mt-0 lg:h-5 lg:w-5 md:h-4 md:w-4 group-hover:text-emerald-500"
                         )}
                         aria-hidden="true"
                       />
@@ -249,7 +249,7 @@ const Header = () => {
                               <Link
                                 key={i}
                                 to={item.href}
-                                className="-m-3 mb-0 p-3 font-sans block rounded-md hover:bg-gray-50"
+                                className="-m-3 mb-0 p-3  block rounded-md hover:bg-gray-50"
                               >
                                 <p className="text-sm font-medium text-emerald-400 mb-0">
                                   {item.name}
@@ -269,7 +269,7 @@ const Header = () => {
 
               <Link
                 to="/about"
-                className="lg:mr-3 mr-0 text-md font-sans font-medium md:text-sm text-emerald-400 hover:text-emerald-500"
+                className="lg:mr-3 mr-0 text-md lg:text-base md:text-sm font-medium text-emerald-400 hover:text-emerald-500 lg:pt-0 md:pt-[3px]"
               >
                 About Us
               </Link>
@@ -278,10 +278,10 @@ const Header = () => {
               <div className="relative">
                 <Link
                   to="/search"
-                  className=" inline-flex items-center justify-center px-3 py-[0.32rem] border border-emerald-400 rounded-md shadow-sm font-sans text-sm md:text-xs font-medium text-emerald-400 bg-white hover:text-white hover:bg-emerald-400"
+                  className="inline-flex items-center justify-center px-3 py-[0.32rem] border border-emerald-400 rounded-md shadow-sm text-sm lg:text-sm md:text-xs font-medium text-emerald-400 bg-white hover:text-white hover:bg-emerald-400"
                 >
                   <span>Free Trademark Search</span>
-                  <SearchIcon className="ml-2 h-5 w-5" aria-hidden="true" />
+                  <SearchIcon className="ml-2 lg:h-4 lg:w-4 md:h-3 md:w-3" aria-hidden="true" />
                 </Link>
               </div>
             </div>
@@ -332,7 +332,7 @@ const Header = () => {
                       <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-emerald-400 text-white">
                         <item.icon className="h-6 w-6" aria-hidden="true" />
                       </div>
-                      <div className="ml-4 text-sm font-sans font-medium text-emerald-400">
+                      <div className="ml-4 text-sm  font-medium text-emerald-400">
                         {item.name}
                       </div>
                     </Link>
@@ -344,19 +344,19 @@ const Header = () => {
               <div className="grid grid-cols-2 gap-4">
                 <Link
                   to="/client-reviews"
-                  className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-500"
+                  className="text-sm  font-medium text-emerald-400 hover:text-emerald-500"
                 >
                   Client Reviews
                 </Link>
                 <Link
                   to="/about"
-                  className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-500"
+                  className="text-sm  font-medium text-emerald-400 hover:text-emerald-500"
                 >
                   About Us
                 </Link>
                 <Link
                   to="/search"
-                  className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-500"
+                  className="text-sm  font-medium text-emerald-400 hover:text-emerald-500"
                 >
                   Free Trademark Search
                 </Link>
@@ -365,7 +365,7 @@ const Header = () => {
                   <Link
                     key={i}
                     onTouchEnd={item.href}
-                    className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-500"
+                    className="text-sm  font-medium text-emerald-400 hover:text-emerald-500"
                   >
                     {item.name}
                   </Link>
@@ -374,7 +374,7 @@ const Header = () => {
                   <Link
                     key={i}
                     to={item.href}
-                    className="text-sm font-sans font-medium text-emerald-400 hover:text-emerald-500"
+                    className="text-sm  font-medium text-emerald-400 hover:text-emerald-500"
                   >
                     {item.name}
                   </Link>
@@ -383,7 +383,7 @@ const Header = () => {
               <div className="mt-12">
                 <div className="pb-6 text-center text-sm font-medium text-emerald-400">
                   <select
-                    className="w-full font-sans text-sm font-medium text-emerald-400 px-4 py-2 border border-emerald-400 rounded-md shadow-sm"
+                    className="w-full  text-sm font-medium text-emerald-400 px-4 py-2 border border-emerald-400 rounded-md shadow-sm"
                     data-placeholder="English"
                   >
                     <option value="EN" active="true">
@@ -394,7 +394,7 @@ const Header = () => {
                 </div>
                 <Link
                   to="/contact-us"
-                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-sans font-medium text-white bg-emerald-400 hover:bg-emerald-500"
+                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm  font-medium text-white bg-emerald-400 hover:bg-emerald-500"
                 >
                   Contact Us
                 </Link>
@@ -403,12 +403,12 @@ const Header = () => {
                     className="h-6 w-6 text-transparent fill-emerald-400"
                     aria-hidden="true"
                   />
-                  <Link
-                    to="tel:+1-877-286-5731"
-                    className="text-md text-center font-sans font-semibold text-emerald-400 pl-1 hover:text-emerald-500"
+                  <a
+                    href="tel:+1-877-286-5731"
+                    className="text-md text-center  font-semibold text-emerald-400 pl-1 hover:text-emerald-500"
                   >
                     1-877-286-5731
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
