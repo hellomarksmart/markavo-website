@@ -6,6 +6,35 @@
         "label": "uid"
       }
     },
+    "breadcrumbs": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "page_current": {
+            "type": "Boolean",
+            "config": {
+              "default_value": false,
+              "label": "Page Current"
+            }
+          },
+          "page_current_label": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+              "label": "Page Current Label"
+            }
+          },
+          "page_current_link": {
+            "type": "Link",
+            "config": {
+              "label": "Page Current Link",
+              "select": null
+            }
+          }
+        },
+        "label": "Breadcrumbs"
+      }
+    },
     "sub_heading": {
       "type": "StructuredText",
       "config": {
