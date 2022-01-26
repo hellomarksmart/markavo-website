@@ -1,5 +1,5 @@
 import React, { Fragment } from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { Popover, Transition } from "@headlessui/react"
 import { ChevronDownIcon } from "@heroicons/react/solid"
@@ -13,65 +13,68 @@ import {
 } from "@heroicons/react/outline"
 import { SearchIcon } from "@heroicons/react/solid"
 
-const services = [
-  {
-    name: "New Trademark Applications",
-    description: "Register brand names, logos, and taglines.",
-    href: "#",
-    icon: ChartBarIcon,
-  },
-  {
-    name: "Office Action Responses",
-    description: "Get assistance overcoming trademark refusals.",
-    href: "#",
-    icon: ChartBarIcon,
-  },
-  {
-    name: "Statements of Use",
-    description: "Prove that you are using your trademark in commerce.",
-    href: "#",
-    icon: ChartBarIcon,
-  },
-  {
-    name: "Trademark Renewals",
-    description: "Keep your registration up to date and in good standing.",
-    href: "#",
-    icon: ChartBarIcon,
-  },
-]
-
-const allServices = [
-  { name: "All Services - Applications", href: "#", icon: PlayIcon },
-  { name: "All Services - Registrations", href: "#", icon: CheckCircleIcon },
-  { name: "All Services - Disputes", href: "#", icon: PhoneIcon },
-]
-
-const brandingTools = [
-  {
-    name: "Naming Contests",
-    description:
-      "Get hundreds of crowdsourced trademark ideas in just a few days.",
-    href: "#",
-  },
-  {
-    name: "Logo Design Contests",
-    description:
-      "Receive eye-catching logos from talented artists and use only your favourite design.",
-    href: "#",
-  },
-  {
-    name: "Premium Domain Marketplace",
-    description:
-      "Select from the best names on the web to build an amazing brand quickly.",
-    href: "#",
-  },
-]
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 
 const Header = () => {
+  const headerData = useStaticQuery(graphql`
+    query MyQuery {
+      prismicHeader {
+        data {
+          phone_number {
+            text
+          }
+          header_logo {
+            url
+          }
+          services {
+            name {
+              text
+            }
+            link {
+              uid
+            }
+            icon {
+              url
+            }
+            description {
+              text
+            }
+          }
+          all_services {
+            name {
+              text
+            }
+            link {
+              uid
+            }
+            icon {
+              url
+            }
+          }
+          branding_tools {
+            name {
+              text
+            }
+            link {
+              uid
+            }
+            description {
+              text
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const headerLogo = headerData.prismicHeader.data.header_logo.url
+  const phoneNumber = headerData.prismicHeader.data.phone_number.text
+  const services = headerData.prismicHeader.data.services
+  const allServices = headerData.prismicHeader.data.all_services
+  const brandingTools = headerData.prismicHeader.data.branding_tools
+
   return (
     <Popover className="relative bg-white">
       <div className="flex justify-between items-center px-4 py-4 border-b-emerald-200 border sm:px-6 md:justify-end md:space-x-10 md:flex sm:hidden hidden">
@@ -81,12 +84,12 @@ const Header = () => {
               className="h-6 w-6 text-transparent fill-emerald-400"
               aria-hidden="true"
             />
-            <Link
-              to="tel:+1-877-286-5731"
+            <a
+              href={`tel:+${phoneNumber}`}
               className="text-md font-sans font-semibold text-emerald-400 pl-1 hover:text-emerald-500"
             >
-              1-877-286-5731
-            </Link>
+              {phoneNumber}
+            </a>
           </div>
           <Link
             to="/contact-us"
@@ -115,13 +118,14 @@ const Header = () => {
         <div className="lg:w-auto sm:w-2/12 w-4/12">
           <Link to="/" className="flex">
             <span className="sr-only">Workflow</span>
-            <StaticImage
-              src="../images/markavo-logo.png"
+            {/* <StaticImage
+              src={headerLogo}
               width={202}
               quality={95}
               formats={["auto", "webp", "avif"]}
               alt="Markavo"
-            />
+            /> */}
+            <img className="mb-0" src={headerLogo} width={202} alt="Markavo" />
           </Link>
         </div>
         <div className="-mr-2 -my-2 md:hidden">
@@ -170,21 +174,31 @@ const Header = () => {
                             {services.map((item, i) => (
                               <Link
                                 key={i}
-                                to={item.href}
+                                to={item.link.uid ? item.link.uid : "#"}
                                 className="-m-3 p-3 font-sans flex items-start rounded-lg hover:bg-gray-50"
                               >
                                 <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-emerald-400 text-white sm:h-12 sm:w-12">
-                                  <item.icon
-                                    className="h-6 w-6"
-                                    aria-hidden="true"
-                                  />
+                                  {item.icon.url ? (
+                                    <img
+                                      src={item.icon.url}
+                                      className="h-6 w-6"
+                                      alt=""
+                                    />
+                                  ) : (
+                                    <ChartBarIcon
+                                      className="h-6 w-6"
+                                      aria-hidden="true"
+                                    />
+                                  )}
                                 </div>
                                 <div className="ml-4">
                                   <p className="text-sm font-medium text-emerald-400 mb-0">
-                                    {item.name}
+                                    {item.name.text ? item.name.text : ""}
                                   </p>
                                   <p className="mt-1 text-sm text-gray-700 mb-0">
-                                    {item.description}
+                                    {item.description.text
+                                      ? item.description.text
+                                      : ""}
                                   </p>
                                 </div>
                               </Link>
@@ -195,14 +209,22 @@ const Header = () => {
                               {allServices.map((item, i) => (
                                 <div key={i} className="flow-root">
                                   <Link
-                                    onTouchEnd={item.href}
+                                    onTouchEnd={item.link.uid ? item.link.uid : '#'}
                                     className="-m-3 p-3 flex items-center rounded-md text-sm font-medium text-emerald-400 hover:bg-gray-400 transition ease-in-out duration-150"
                                   >
-                                    <item.icon
-                                      className="flex-shrink-0 h-6 w-6 text-emerald-400"
-                                      aria-hidden="true"
-                                    />
-                                    <span className="ml-3">{item.name}</span>
+                                    {item.icon.url ? (
+                                      <img
+                                        src={item.icon.url}
+                                        className="flex-shrink-0 h-6 w-6 text-emerald-400"
+                                        alt=""
+                                      />
+                                    ) : (
+                                      <PlayIcon
+                                        className="flex-shrink-0 h-6 w-6 text-emerald-400"
+                                        aria-hidden="true"
+                                      />
+                                    )}
+                                    <span className="ml-3">{item.name.text ? item.name.text : ''}</span>
                                   </Link>
                                 </div>
                               ))}
@@ -248,14 +270,14 @@ const Header = () => {
                             {brandingTools.map((item, i) => (
                               <Link
                                 key={i}
-                                to={item.href}
+                                to={item.link.uid ? item.link.uid : '#'}
                                 className="-m-3 mb-0 p-3 font-sans block rounded-md hover:bg-gray-50"
                               >
                                 <p className="text-sm font-medium text-emerald-400 mb-0">
-                                  {item.name}
+                                  {item.name.text ? item.name.text : ''}
                                 </p>
                                 <p className="mt-1 text-sm text-gray-700 mb-0">
-                                  {item.description}
+                                  {item.description.text ? item.description.text : ''}
                                 </p>
                               </Link>
                             ))}

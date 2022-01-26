@@ -5,7 +5,7 @@ const instance = axios.create({
   headers: {
       'content-type':'application/octet-stream',
       'x-rapidapi-host': 'uspto-trademark.p.rapidapi.com',
-      'x-rapidapi-key': `${process.env.RAPIDAPI_KEY}`
+      'x-rapidapi-key': 'ca1f7a7097mshf6fe1392046155ap13d466jsna1dbf48de3ec'
   },
 });
 
