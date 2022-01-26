@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Markavo`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `We help Chinese companies register their trademarks in the United States.`,
     author: `@gatsbyjs`,
     siteUrl: `https://markavowebsitestaging.gatsbyjs.io/`,
   },
@@ -21,8 +21,8 @@ module.exports = {
         accessToken: `${process.env.PRISMIC_ACCESS_TOKEN}`,
         linkResolver:
           ({ node, key, value }) =>
-          post =>
-            `/${post.uid}`,
+            post =>
+              `/${post.uid}`,
         schemas: {
           home_page: require("./src/schema/home.json"),
           client_reviews_page: require("./src/schema/client-reviews.json"),
@@ -37,6 +37,7 @@ module.exports = {
           contact_us_page: require("./src/schema/contact-us.json"),
           text_template: require("./src/schema/text-template.json"),
           search_page: require("./src/schema/search.json"),
+          header: require("./src/schema/header.json"),
         },
       },
     },

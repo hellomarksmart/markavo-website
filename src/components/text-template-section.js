@@ -112,34 +112,46 @@ const TextTemplateSection = ({
         </div>
       </div>
       <div className="relative px-4 sm:px-6 lg:px-8">
-        <div className="text-lg max-w-prose mx-auto">
+        <div className="text-lg max-w-4xl mx-auto">
           <h1>
-            <span className="block text-base text-center text-emerald-600 font-semibold tracking-wide uppercase">
+            <span className="block text-[16px] text-center text-emerald-600 font-semibold tracking-wide uppercase">
               {sub_heading}
             </span>
-            <span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            <span className="mt-2 block text-[30px] text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-[36px]">
               {heading}
             </span>
           </h1>
-          <p className="mt-8 text-xl text-gray-500 leading-8">{description}</p>
+          <p className="mt-8 text-[20px] text-gray-500 leading-8">
+            {description}
+          </p>
         </div>
 
-        <div className="mt-6 text-lg max-w-prose mx-auto text-gray-500">
+        <div className="mt-6 text-lg max-w-4xl mx-auto text-gray-500">
           {page_content?.map((item, i) => {
             return (
               <div key={i}>
-                {item?.heading1.text ? <h2>{item?.heading1.text}</h2> : ""}
-                {item?.paragraph.text ? <p>{item?.paragraph.text}</p> : ""}
+                {item?.heading1.text ? (
+                  <h2 className="text-[30px] text-gray-900">
+                    {item?.heading1.text}
+                  </h2>
+                ) : (
+                  ""
+                )}
+                {item?.paragraph.text ? (
+                  <p className="text-[18px]">{item?.paragraph.text}</p>
+                ) : (
+                  ""
+                )}
                 {item?.list.text ? (
                   <ul>
-                    <li>{item?.list.text}</li>
+                    <li className="text-[18px]">{item?.list.text}</li>
                   </ul>
                 ) : (
                   ""
                 )}
                 {item?.blockquote.text ? (
                   <blockquote>
-                    <p>{item?.blockquote.text}</p>
+                    <p className="text-[18px]">{item?.blockquote.text}</p>
                   </blockquote>
                 ) : (
                   ""

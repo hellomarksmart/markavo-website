@@ -1,7 +1,11 @@
 import * as React from "react"
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid"
 
-const Pagination = ({ currentPage, pages, setCurrentPage }) => {
+const Pagination = ({
+  currentPage,
+  pages,
+  setCurrentPage
+}) => {
   function goToNextPage() {
     setCurrentPage(page => page + 1)
   }
@@ -40,44 +44,45 @@ const Pagination = ({ currentPage, pages, setCurrentPage }) => {
       </div>
       <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
         <div>
-          <p className="text-sm text-gray-700 mb-0">
-            Showing <span className="font-medium">page {currentPage} </span>
+          <p className="text-sm text-gray-700">
+            Showing <span className="font-medium">page {currentPage} </span> 
             {/* to{" "}
             <span className="font-medium">{currentPage + 9}</span>  */}
-            of <span className="font-medium">{pages}</span> results
+            of{" "}
+            <span className="font-medium">{pages}</span> results
           </p>
         </div>
         <div>
           <nav
-            className="relative z-0 inline-flex rounded-md shadow-sm"
+            className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
             aria-label="Pagination"
+          >        
+          <button
+            onClick={goToPreviousPage}
+            className="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+            disabled={currentPage === 1 ? true : false}
           >
-            <button
-              onClick={goToPreviousPage}
-              className="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
-              disabled={currentPage === 1 ? true : false}
-            >
-              <span className="sr-only">Previous</span>
-              <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
-            </button>
+            <span className="sr-only">Previous</span>
+            <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
+          </button>
 
             {/* show page numbers */}
             {getPaginationGroup().map((item, index) => {
-              console.log(item)
+              console.log(item);
               return (
                 <button
                   key={index}
-                  onClick={changePage}
-                  className={
-                    currentPage === item
-                      ? `bg-emerald-50 border-emerald-500 text-emerald-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium`
-                      : `bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium`
+                  onClick={changePage}              
+                  className={currentPage === item ?
+                    `bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium`
+                    :
+                    `bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium`
                   }
-                >
+                  >
                   <span>{item}</span>
                 </button>
               )
-            })}
+              })}
 
             <button
               onClick={goToNextPage}

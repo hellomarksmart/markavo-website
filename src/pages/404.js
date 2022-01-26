@@ -9,34 +9,36 @@ const NotFoundPage = props => {
   return (
     <Layout>
       <Seo title="404: Not found" />
-      <div class="bg-white min-h-full px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
+      <div class="bg-white min-h-full px-4 py-16 sm:px-6 sm:py-52 md:grid md:place-items-center lg:px-8">
         <div class="max-w-max mx-auto">
           <div class="sm:flex">
-            <p class="text-4xl font-extrabold text-emerald-600 sm:text-5xl">
+            <p class="text-4xl font-extrabold text-emerald-600 sm:text-[48px] mb-2">
               {notFoundData.heading_1.text}
             </p>
             <div class="sm:ml-6">
               <div class="sm:border-l sm:border-gray-200 sm:pl-6">
-                <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">
+                <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-[48px] mb-4">
                   {notFoundData.heading_2.text}
                 </h1>
-                <p class="mt-1 text-base text-gray-500">
+                <p class="mt-1 text-[16px] text-gray-500">
                   {notFoundData.description.text}
                 </p>
               </div>
-              <div class="mt-10 flex space-x-3 sm:border-l sm:border-transparent sm:pl-6">
+              <div class="mt-4 flex flex-col max-w-full mx-auto sm:max-w-md sm:flex-row space-x-3 sm:border-l sm:border-transparent sm:pl-6 sm:ml-0">
                 <Link
                   to={notFoundData.button_1.url}
-                  class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  class="items-center px-[32px] py-[16px] border border-transparent text-[18px] font-medium rounded-md shadow-sm text-white text-center bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-0 ml-[13px] sm:mt-[9px] mt-0"
                 >
                   {notFoundData.button_1_label.text}
                 </Link>
+
                 <Link
                   to={notFoundData.button_2.url}
-                  class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-emerald-700 bg-emerald-100 hover:bg-emerald-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  class="items-center sm:px-[32px] py-[16px] px-[32px] border border-transparent text-[18px] font-medium rounded-md text-emerald-700 bg-emerald-100 text-center hover:bg-emerald-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mt-2"
                 >
                   {notFoundData.button_2_label.text}
                 </Link>
+
               </div>
             </div>
           </div>

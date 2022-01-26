@@ -12,7 +12,7 @@ const Search = props => {
 
   return (
     <Layout>
-      <Seo title="Search" />
+      <Seo title="Free Trademark Search" />
       <SearchSection
         heading={saerchData.banner_heading.text}
         headingColored={saerchData.banner_heading_colored.text}

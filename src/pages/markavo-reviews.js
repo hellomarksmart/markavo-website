@@ -6,14 +6,13 @@ import Seo from "../components/seo"
 import Banner from "../components/banner"
 import ClientReviewsSection from "../components/client-reviews-section"
 import Cta from "../components/cta-section"
-import Pagination from "../components/pagination-section"
 
 const ClientReviews = props => {
   const clientReviewsData = props.data.prismicClientReviewsPage.data
 
   return (
     <Layout>
-      <Seo title="Client Reviews" />
+      <Seo title="Reviews" />
       <Banner
         heading={clientReviewsData.banner_heading.text}
         headingColored={clientReviewsData.banner_heading_colored.text}
@@ -24,7 +23,6 @@ const ClientReviews = props => {
         buttonPlainLink={clientReviewsData.button_2.url}
       />
       <ClientReviewsSection reviews={clientReviewsData.reviews} />
-      <Pagination />
       <Cta
         heading={clientReviewsData.cta_heading.text}
         headingSecond={clientReviewsData.cta_heading_2.text}

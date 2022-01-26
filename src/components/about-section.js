@@ -9,7 +9,7 @@ const AboutSection = ({ heading, description, about_items }) => {
             <h2 className="text-3xl font-extrabold tracking-tight sm:text-[36px]">
               {heading}
             </h2>
-            <p className="font-sans text-[20px] text-gray-500">
+            <p className="  text-[20px] text-gray-500">
               {description}
             </p>
           </div>
@@ -28,16 +28,16 @@ const AboutSection = ({ heading, description, about_items }) => {
                       </div>
                       <div className="sm:w-[66%] w-[100%] sm:col-span-2">
                         <div className="space-y-4 mt-0">
-                          <div className="font-sans leading-6 font-medium space-y-1">
+                          <div className="leading-6 font-medium space-y-1">
                             <h3 className="mb-1 text-[18px]">
                               {item?.name.text}
                             </h3>
-                            <p className="font-sans text-emerald-600 text-[18px]">
+                            <p className="text-emerald-600 text-[18px] pb-3">
                               {item?.position.text}
                             </p>
                           </div>
                           <div className="text-lg">
-                            <p className="font-sans text-gray-500 text-[18px] sm:-mt-[1rem]">
+                            <p className="text-gray-500 text-[18px] sm:-mt-[1rem]">
                               {item?.description.text}
                             </p>
                           </div>
