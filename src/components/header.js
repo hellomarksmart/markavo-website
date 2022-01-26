@@ -98,7 +98,7 @@ const Header = () => {
             Contact Us
           </Link>
           <Link
-            to="/client-reviews"
+            to="/markavo-reviews"
             className="text-md lg:text-base md:text-sm font-medium text-emerald-400 px-3 hover:text-emerald-500"
           >
             Client Reviews
@@ -117,7 +117,7 @@ const Header = () => {
       <div className="flex justify-between items-center px-4 py-4 border-b-emerald-200 border sm:px-6 md:justify-start lg:space-x-10">
         <div className="lg:w-auto sm:w-2/12 w-4/12">
           <Link to="/" className="flex">
-            <span className="sr-only">Workflow</span>
+            <span className="sr-only">Markvao</span>
             {/* <StaticImage
               src={headerLogo}
               width={202}
@@ -296,7 +296,7 @@ const Header = () => {
               </Popover>
 
               <Link
-                to="/about"
+                to="/about-us"
                 className="lg:mr-3 mr-0 text-md lg:text-base md:text-sm font-medium text-emerald-400 hover:text-emerald-500 lg:pt-0 md:pt-[3px]"
               >
                 About Us
@@ -305,7 +305,7 @@ const Header = () => {
             <div className="max-w-none w-auto lg:max-w-xs">
               <div className="relative">
                 <Link
-                  to="/search"
+                  to="/free-trademark-search"
                   className="inline-flex items-center justify-center px-3 py-[0.32rem] border border-emerald-400 rounded-md shadow-sm text-sm lg:text-sm md:text-xs font-medium text-emerald-400 bg-white hover:text-white hover:bg-emerald-400"
                 >
                   <span>Free Trademark Search</span>
@@ -344,7 +344,12 @@ const Header = () => {
                     formats={["auto", "webp", "avif"]}
                     alt="Markavo"
                   /> */}
-                  <img className="mb-0" src={headerLogo} width={202} alt="Markavo" />
+                  <img
+                    className="mb-0"
+                    src={headerLogo}
+                    width={202}
+                    alt="Markavo"
+                  />
                 </div>
                 <div className="-mr-2">
                   <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -372,7 +377,7 @@ const Header = () => {
                         )}
                       </div>
                       <div className="ml-4 text-sm  font-medium text-emerald-400">
-                        {item.name.text ? item.name.text : ''}
+                        {item.name.text ? item.name.text : ""}
                       </div>
                     </Link>
                   ))}
@@ -382,19 +387,19 @@ const Header = () => {
             <div className="py-6 px-5">
               <div className="grid grid-cols-2 gap-4">
                 <Link
-                  to="/client-reviews"
+                  to="/markavo-reviews"
                   className="text-sm  font-medium text-emerald-400 hover:text-emerald-500"
                 >
                   Client Reviews
                 </Link>
                 <Link
-                  to="/about"
+                  to="/about-us"
                   className="text-sm  font-medium text-emerald-400 hover:text-emerald-500"
                 >
                   About Us
                 </Link>
                 <Link
-                  to="/search"
+                  to="/free-trademark-search"
                   className="text-sm  font-medium text-emerald-400 hover:text-emerald-500"
                 >
                   Free Trademark Search
@@ -406,7 +411,7 @@ const Header = () => {
                     onTouchEnd={item.link.uid ? item.link.uid : "#"}
                     className="text-sm  font-medium text-emerald-400 hover:text-emerald-500"
                   >
-                    {item.name.text ? item.name.text : ''}
+                    {item.name.text ? item.name.text : ""}
                   </Link>
                 ))}
                 {brandingTools.map((item, i) => (
@@ -415,7 +420,7 @@ const Header = () => {
                     to={item.link.uid ? item.link.uid : "#"}
                     className="text-sm  font-medium text-emerald-400 hover:text-emerald-500"
                   >
-                    {item.name.text ? item.name.text : ''}
+                    {item.name.text ? item.name.text : ""}
                   </Link>
                 ))}
               </div>

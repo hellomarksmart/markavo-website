@@ -54,6 +54,7 @@
     "button_2": {
       "type": "Link",
       "config": {
+        "allowTargetBlank": true,
         "label": "Button 2",
         "select": null
       }
