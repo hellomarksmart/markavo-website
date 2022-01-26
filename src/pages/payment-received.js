@@ -12,7 +12,7 @@ const IndexPage = props => {
       <Seo title="Home" />
       <div className="relative py-16 bg-white overflow-hidden">
         <div className="relative px-4 sm:px-6 lg:px-8">
-          <div className="text-lg max-w-prose mx-auto">
+          <div className="text-lg max-w-4xl mx-auto">
             <p className="mt-8 text-xl text-gray-500 leading-8">
               {paymentReceivedData.message_1.text}
             </p>
