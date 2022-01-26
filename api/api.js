@@ -4,7 +4,7 @@ const instance = axios.create({
   baseURL: 'https://uspto-trademark.p.rapidapi.com/v1',
   headers: {
       'content-type':'application/octet-stream',
-      'x-rapidapi-host': `${process.env.RAPIDAPI_HOST}`,
+      'x-rapidapi-host': 'uspto-trademark.p.rapidapi.com',
       'x-rapidapi-key': `${process.env.RAPIDAPI_KEY}`
   },
 });
