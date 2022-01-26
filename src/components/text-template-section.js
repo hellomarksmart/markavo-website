@@ -131,7 +131,9 @@ const TextTemplateSection = ({
             return (
               <div key={i}>
                 {item?.heading1.text ? (
-                  <h2 className="text-[30px]">{item?.heading1.text}</h2>
+                  <h2 className="text-[30px] text-gray-900">
+                    {item?.heading1.text}
+                  </h2>
                 ) : (
                   ""
                 )}
