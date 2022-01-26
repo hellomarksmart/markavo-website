@@ -12,7 +12,7 @@ const About = props => {
 
   return (
     <Layout>
-      <Seo title="About" />
+      <Seo title="About Us" />
       <Banner
         heading={aboutData.banner_heading.text}
         headingColored={aboutData.banner_heading_colored.text}

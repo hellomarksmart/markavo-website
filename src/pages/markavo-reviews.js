@@ -12,7 +12,7 @@ const ClientReviews = props => {
 
   return (
     <Layout>
-      <Seo title="Client Reviews" />
+      <Seo title="Reviews" />
       <Banner
         heading={clientReviewsData.banner_heading.text}
         headingColored={clientReviewsData.banner_heading_colored.text}

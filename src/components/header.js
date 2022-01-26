@@ -84,12 +84,12 @@ const Header = () => {
               className="h-6 w-6 md:h-5 md:w-5 md:mt-[2px] text-transparent fill-emerald-400"
               aria-hidden="true"
             />
-            <a
+            <Link
               href={`tel:+${phoneNumber}`}
               className="text-md lg:text-base md:text-sm font-semibold text-emerald-400 pl-1 hover:text-emerald-500"
             >
               {phoneNumber}
-            </a>
+            </Link>
           </div>
           <Link
             to="/contact-us"
@@ -442,12 +442,12 @@ const Header = () => {
                     className="h-6 w-6 text-transparent fill-emerald-400"
                     aria-hidden="true"
                   />
-                  <a
+                  <Link
                     href={`tel:+${phoneNumber}`}
                     className="text-md text-center  font-semibold text-emerald-400 pl-1 hover:text-emerald-500"
                   >
                     {phoneNumber}
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
