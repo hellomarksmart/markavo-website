@@ -3,15 +3,6 @@ import { useState } from "react"
 import api from "../../api/api"
 import Pagination from "../components/pagination-section"
 
-const BannerContent = [
-  {
-    heading: "Data to enrich your",
-    headingColored: "online business",
-    description:
-      "Search millions of trademarks that are live or pending with the USPTO",
-  },
-]
-
 const SearchSection = ({ heading, headingColored, description }) => {
   const [keyword, setKeyword] = useState("")
   let [responseData, setResponseData] = React.useState("")
@@ -112,20 +103,20 @@ const SearchSection = ({ heading, headingColored, description }) => {
         </div>
       </div>
 
-      <div className="relative pt-6 pb-16 sm:pb-24">
+      <div className="relative pt-16 pb-16 sm:pb-16">
         <div className="text-center">
-          <div>
-            <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+          <div className="max-w-[90%] mx-auto">
+            <h1 className="text-3xl sm:text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-[60px]">
               <span className="block xl:inline">{heading}</span>{" "}
               <span className="block text-emerald-400 xl:inline">
                 {headingColored}
               </span>
             </h1>
-            <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+            <p className="mt-3 max-w-sm mx-auto text-base text-gray-500 sm:max-w-md sm:text-lg md:mt-5 md:text-[20px] md:max-w-[47rem]">
               {description}
             </p>
           </div>
-          <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+          <div className="mt-5 max-w-[16rem] sm:max-w-sm mx-auto sm:flex sm:justify-center md:mt-8">
             <div className="relative">
               <div className="absolute top-4 left-3">
                 {" "}
@@ -146,7 +137,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
               </div>{" "}
               <input
                 type="text"
-                className="shadow h-14 w-96 pl-10 pr-20 rounded-lg z-0 focus:shadow focus:outline-none"
+                className="shadow h-14 w-96 pl-10 pr-20 rounded-lg z-0 text-base focus:shadow focus:outline-none"
                 placeholder="Search millions of trademarks"
                 value={keyword}
                 onChange={e => setKeyword(e.target.value)}
@@ -155,7 +146,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                 {" "}
                 <button
                   onClick={fetchData}
-                  className="h-10 w-20 text-white rounded-lg bg-emerald-400 hover:bg-emerald-500"
+                  className="h-10 w-20 text-white text-base rounded-lg bg-emerald-400 hover:bg-emerald-500"
                 >
                   Search
                 </button>{" "}
@@ -191,7 +182,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                 return (
                   <div
                     key={i}
-                    className="my-3 p-8 border border-slate-200 max-w-screen-md"
+                    className="my-3 p-8 bg-white border border-slate-200 max-w-screen-md"
                   >
                     <p className="text-emerald-500 font-bold">{item.keyword}</p>
                     <div className="flex items-center">

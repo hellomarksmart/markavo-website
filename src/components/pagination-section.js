@@ -1,11 +1,7 @@
 import * as React from "react"
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid"
 
-const Pagination = ({
-  currentPage,
-  pages,
-  setCurrentPage
-}) => {
+const Pagination = ({ currentPage, pages, setCurrentPage }) => {
   function goToNextPage() {
     setCurrentPage(page => page + 1)
   }
@@ -48,13 +44,12 @@ const Pagination = ({
             Showing <span className="font-medium">page {currentPage} </span>
             {/* to{" "}
             <span className="font-medium">{currentPage + 9}</span>  */}
-            of{" "}
-            <span className="font-medium">{pages}</span> results
+            of <span className="font-medium">{pages}</span> results
           </p>
         </div>
         <div>
           <nav
-            className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
+            className="relative z-0 inline-flex rounded-md shadow-sm"
             aria-label="Pagination"
           >
             <button
@@ -68,15 +63,15 @@ const Pagination = ({
 
             {/* show page numbers */}
             {getPaginationGroup().map((item, index) => {
-              console.log(item);
+              console.log(item)
               return (
                 <button
                   key={index}
                   onClick={changePage}
-                  className={currentPage === item ?
-                    `bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium`
-                    :
-                    `bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium`
+                  className={
+                    currentPage === item
+                      ? `bg-emerald-50 border-emerald-500 text-emerald-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium`
+                      : `bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium`
                   }
                 >
                   <span>{item}</span>
