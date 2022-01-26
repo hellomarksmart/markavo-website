@@ -55,7 +55,7 @@ const OnePriceServiceSection = ({
                     </h4>
                     <div className="flex-1 border-t-2 border-gray-200" />
                   </div>
-                  <ul className="mt-8 space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5">
+                  <ul className="mt-8 space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5 ml-0">
                     {card_features?.map((item, i) => (
                       <li key={i} className="flex items-start lg:col-span-1">
                         <div className="flex-shrink-0">
@@ -73,7 +73,7 @@ const OnePriceServiceSection = ({
                 </div>
               </div>
               <div className="py-8 px-6 text-center bg-emerald-50 lg:flex-shrink-0 lg:flex lg:flex-col lg:justify-center lg:p-12">
-                <p className="text-[18px] leading-6 font-medium text-gray-900">
+                <p className="text-[18px] leading-6 font-medium text-gray-900 mb-0">
                   {right_card_subheading}
                 </p>
                 <div className="mt-4 flex items-center justify-center text-[48px] font-extrabold text-gray-900">
@@ -85,7 +85,7 @@ const OnePriceServiceSection = ({
                     {card_currency_text}
                   </span>
                 </div>
-                <p className="mt-4 text-[14px]">
+                <p className="mt-4 text-[14px] mb-0">
                   {card_link ? (
                     <Link
                       key={card_link_label}
