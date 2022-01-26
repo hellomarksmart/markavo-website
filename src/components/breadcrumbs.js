@@ -6,7 +6,7 @@ import { ChevronRightIcon, HomeIcon } from "@heroicons/react/solid"
 const Breadcrumb = ({ breadcrumbs_item }) => {
   return (
     <nav className="flex pt-10 pl-40" aria-label="Breadcrumb">
-      <ol role="list" className="flex items-center space-x-4">
+      <ol className="flex items-center space-x-4">
         <li>
           <div>
             <Link to="/" className="text-gray-400 hover:text-gray-500">

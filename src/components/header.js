@@ -1,12 +1,10 @@
 import React, { Fragment } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 import { Popover, Transition } from "@headlessui/react"
 import { ChevronDownIcon } from "@heroicons/react/solid"
 import {
   ChartBarIcon,
   PlayIcon,
-  CheckCircleIcon,
   PhoneIcon,
   MenuIcon,
   XIcon,

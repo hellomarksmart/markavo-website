@@ -7,20 +7,18 @@ function classNames(...classes) {
 }
 
 const ClientReviewsSection = ({ reviews }) => {
-  const [dataReviews, setDataReviews] = useState(reviews)
+  const [dataReviews] = useState(reviews)
   let [responseLength, setResponseLength] = useState("")
 
   useEffect(() => {
     setResponseLength(reviews.length)
-  }, [])
+  }, [reviews.length])
 
   const pages = Math.round(responseLength / 50)
   const [currentPage, setCurrentPage] = useState(1)
 
   const startIndex = currentPage * 50 - 50
   const endIndex = startIndex + 50
-
-  console.log(responseLength)
 
   return (
     <div className="bg-white">
