@@ -10,12 +10,13 @@ import {
   XIcon,
 } from "@heroicons/react/outline"
 import { SearchIcon } from "@heroicons/react/solid"
+import { LanguageToggle } from "../components/language-toggle"
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 
-const Header = () => {
+const Header = ({ activeDoc }) => {
   const headerData = useStaticQuery(graphql`
     query MyQuery {
       prismicHeader {
@@ -101,15 +102,7 @@ const Header = () => {
           >
             Client Reviews
           </Link>
-          <select
-            className="text-sm lg:text-sm md:text-[15px] font-medium text-emerald-400 border border-emerald-400 px-12 py-[0.35rem] rounded-md lg:px-12 md:px-6"
-            data-placeholder="English"
-          >
-            <option value="EN" active="true">
-              English
-            </option>
-            <option value="ES">Spanish</option>
-          </select>
+          {activeDoc ? <LanguageToggle activeDocMeta={activeDoc} /> : ""}
         </div>
       </div>
       <div className="flex justify-between items-center px-4 py-4 border-b-emerald-200 border sm:px-6 md:justify-start lg:space-x-10">
@@ -423,17 +416,13 @@ const Header = () => {
                 ))}
               </div>
               <div className="mt-12">
-                <div className="pb-6 text-center text-sm font-medium text-emerald-400">
-                  <select
-                    className="w-full  text-sm font-medium text-emerald-400 px-4 py-2 border border-emerald-400 rounded-md shadow-sm"
-                    data-placeholder="English"
-                  >
-                    <option value="EN" active="true">
-                      English
-                    </option>
-                    <option value="ES">Spanish</option>
-                  </select>
-                </div>
+                {activeDoc ? (
+                  <div className="pb-6 text-center text-sm font-medium text-emerald-400">
+                    <LanguageToggle activeDocMeta={activeDoc} />
+                  </div>
+                ) : (
+                  ""
+                )}
                 <Link
                   to="/contact-us"
                   className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm  font-medium text-white bg-emerald-400 hover:bg-emerald-500"

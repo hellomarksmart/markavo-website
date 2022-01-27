@@ -1,6 +1,5 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Banner from "../components/banner"
@@ -8,12 +7,27 @@ import Deploy from "../components/deploy-section"
 import ThreePriceServiceSection from "../components/three-price-section"
 import Statistics from "../components/statistics-section"
 import Cta from "../components/cta-section"
+import PricingSection from "../components/pricing-section"
 
-const IndexPage = props => {
-  const homeData = props.data.prismicHomePage.data
+const HomepageTemplate = ({ data }) => {
+  if (!data) return null
+
+  const homepage = data.prismicHomePage || {}
+  const homeData = data.prismicHomePage.data || {}
+
+  const { lang, type, url } = data.prismicHomePage || {}
+  const alternateLanguages = homepage.alternate_languages || []
+  const activeDoc = {
+    lang,
+    type,
+    url,
+    alternateLanguages,
+  }
+
+  console.log("body length", homeData.body.length)
 
   return (
-    <Layout>
+    <Layout activeDoc={activeDoc}>
       <Seo title="Home" />
       <Banner
         heading={homeData.banner_heading.text}
@@ -30,7 +44,8 @@ const IndexPage = props => {
         description={homeData.grid_section_description.text}
         cards={homeData.grid_cards}
       />
-      <ThreePriceServiceSection
+      {homeData.body.length !== 0 ? <PricingSection pricingBody={homeData.body} /> : ""}
+      {/* <ThreePriceServiceSection
         title={homeData.pricing_section_title.text}
         heading={homeData.pricing_section_heading.text}
         description={homeData.pricing_section_description.text}
@@ -56,7 +71,7 @@ const IndexPage = props => {
         right_card_features={homeData.right_card_features}
         right_card_button={homeData.right_card_button.text}
         right_card_buttonLink={homeData.right_card_buttonLink.url}
-      />
+      /> */}
       <Statistics
         heading={homeData.stats_heading.text}
         description={homeData.stats_description.text}
@@ -78,12 +93,53 @@ const IndexPage = props => {
   )
 }
 
-export default IndexPage
+export default HomepageTemplate
 
-export const HomeQuery = graphql`
-  query HomeQuery {
-    prismicHomePage {
+export const query = graphql`
+  query HomeQuery($lang: String) {
+    prismicHomePage(lang: { eq: $lang }) {
+      alternate_languages {
+        uid
+        type
+        lang
+      }
+      lang
+      url
+      type
       data {
+        body {
+          ... on PrismicHomePageDataBodyPricingTable {
+            primary {
+              eyebrow_headline {
+                text
+              }
+              title {
+                text
+              }
+              description {
+                text
+              }
+            }
+            items {
+              plan_title {
+                text
+              }
+              price_option {
+                text
+              }
+              features {
+                raw
+                text
+              }
+              call_to_action_text {
+                text
+              }
+              call_to_action {
+                url
+              }
+            }
+          }
+        }
         banner_heading {
           text
         }
