@@ -479,26 +479,12 @@
                   "placeholder": "Simple, Gold, Premium..."
                 }
               },
-              "currency": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "paragraph",
-                  "label": "Currency"
-                }
-              },
               "price_option": {
                 "type": "StructuredText",
                 "config": {
                   "multi": "heading4",
                   "label": "Price Option",
                   "placeholder": "Free, $19, Contact us..."
-                }
-              },
-              "subscription": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "paragraph",
-                  "label": "Subscription"
                 }
               },
               "features": {
