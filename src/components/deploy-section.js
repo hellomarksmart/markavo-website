@@ -32,7 +32,7 @@ const Deploy = ({ title, heading, description, cards }) => {
                       </div>
                     ) : ( */}
                     <div>
-                      <span className="inline-flex items-center justify-center p-[.65rem] bg-emerald-500 rounded-md shadow-lg">
+                      <span className="inline-flex items-center justify-center py-[.65rem] px-[0.7rem] bg-emerald-500 rounded-md shadow-lg">
                         <CloudUploadIcon
                           className="h-5 w-5 text-white"
                           aria-hidden="true"
