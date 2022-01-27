@@ -76,7 +76,7 @@ const Header = ({ activeDoc }) => {
 
   return (
     <Popover className="relative bg-white">
-      <div className="flex justify-between items-center px-4 py-4 border-b-emerald-200 border sm:px-6 md:justify-end md:space-x-10 md:flex sm:hidden hidden">
+      <div className="flex justify-between items-center px-4 py-4 border-b-emerald-200 border border-t-0 border-r-0 border-l-0 sm:px-6 md:justify-end md:space-x-10 md:flex sm:hidden hidden">
         <div className="flex space-x-4 items-center md:ml-12">
           <div className="flex px-3">
             <PhoneIcon
@@ -105,7 +105,7 @@ const Header = ({ activeDoc }) => {
           {activeDoc ? <LanguageToggle activeDocMeta={activeDoc} /> : ""}
         </div>
       </div>
-      <div className="flex justify-between items-center px-4 py-4 border-b-emerald-200 border sm:px-6 md:justify-start lg:space-x-10">
+      <div className="flex justify-between items-center px-4 py-4 border-b-emerald-200 border border-t-0 border-r-0 border-l-0 sm:px-6 md:justify-start lg:space-x-10">
         <div className="lg:w-auto sm:w-2/12 w-4/12">
           <Link to="/" className="flex">
             <span className="sr-only">Markvao</span>
@@ -159,8 +159,8 @@ const Header = ({ activeDoc }) => {
                       leaveFrom="opacity-100 translate-y-0"
                       leaveTo="opacity-0 translate-y-1"
                     >
-                      <Popover.Panel className="absolute z-10  mt-3 transform w-[90%] left-[20px] ">
-                        <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
+                      <Popover.Panel className="absolute z-10  mt-3 transform w-[100%] left-[0]">
+                        <div className="rounded-b-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                           <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-2 xl:grid-cols-4 ">
                             {services.map((item, i) => (
                               <Link

@@ -25,26 +25,18 @@ const Deploy = ({ title, heading, description, cards }) => {
                     key={i}
                     className="flow-root bg-gray-50 rounded-lg px-6 pb-8"
                   >
-                    <div className="-mt-6">
-                      {item?.icon.url ? (
-                        <div>
-                          <span className="inline-flex items-center justify-center py-[.65rem] px-[0.7rem] bg-emerald-500 rounded-md shadow-lg">
-                            <img
-                              src={item?.icon.url}
-                              className="h-5 w-5 text-white mb-0 invert"
-                              alt="icon"
-                            />
-                          </span>
-                        </div>
-                      ) : (
-                        ""
-                      )}
-                      <h3 className="mt-8 mb-3 text-[18px] font-medium text-gray-900 tracking-tight">
-                        {item?.title.text}
-                      </h3>
-                      <p className="mt-2 text-[16px] text-gray-500">
-                        {item?.content.text}
-                      </p>
+                    {/* {item?.icon.url ? (
+                      <div>
+                        <span className="inline-flex items-center justify-center p-3 bg-emerald-500 rounded-md shadow-lg"></span>
+                      </div>
+                    ) : ( */}
+                    <div className="-mt-2">
+                      <span className="inline-flex items-center justify-center py-[.65rem] px-[0.7rem] bg-emerald-500 rounded-md shadow-lg">
+                        <CloudUploadIcon
+                          className="h-5 w-5 text-white"
+                          aria-hidden="true"
+                        />
+                      </span>
                     </div>
                   </div>
                 )
