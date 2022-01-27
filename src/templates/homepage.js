@@ -181,9 +181,6 @@ export const query = graphql`
           text
         }
         grid_cards {
-          icon {
-            url
-          }
           content {
             text
           }
