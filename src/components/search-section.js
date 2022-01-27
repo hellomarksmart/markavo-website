@@ -119,7 +119,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                 {" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-emerald-400"
+                  className="h-4 w-4 mt-0 sm:h-6 sm:w-6 text-emerald-400"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -134,7 +134,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
               </div>{" "}
               <input
                 type="text"
-                className="shadow h-14 w-96 pl-10 pr-20 rounded-lg z-0 text-base focus:shadow focus:outline-none"
+                className="shadow h-12 sm:h-14 sm:h-14 w-64 sm:w-96 pl-10 pr-20 rounded-lg z-0 text-sm sm:text-base focus:shadow focus:outline-none"
                 placeholder="Search millions of trademarks"
                 value={keyword}
                 onChange={e => setKeyword(e.target.value)}
@@ -143,7 +143,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                 {" "}
                 <button
                   onClick={fetchData}
-                  className="h-10 w-20 text-white text-base rounded-lg bg-emerald-400 hover:bg-emerald-500"
+                  className="mt-0 h-8 sm:h-10 w-16 sm:w-20 text-white text-xs sm:text-base rounded-lg bg-emerald-400 hover:bg-emerald-500"
                 >
                   Search
                 </button>{" "}
