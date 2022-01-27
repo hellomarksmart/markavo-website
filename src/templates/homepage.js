@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { graphql } from 'gatsby'
+import * as React from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Banner from "../components/banner"
@@ -7,7 +7,7 @@ import Deploy from "../components/deploy-section"
 import ThreePriceServiceSection from "../components/three-price-section"
 import Statistics from "../components/statistics-section"
 import Cta from "../components/cta-section"
-
+import PricingSection from "../components/pricing-section"
 
 const HomepageTemplate = ({ data }) => {
   if (!data) return null
@@ -24,12 +24,10 @@ const HomepageTemplate = ({ data }) => {
     alternateLanguages,
   }
 
-  console.log(homeData.body);
+  console.log("body length", homeData.body.length)
 
   return (
-    <Layout
-      activeDoc={activeDoc}
-    >
+    <Layout activeDoc={activeDoc}>
       <Seo title="Home" />
       <Banner
         heading={homeData.banner_heading.text}
@@ -46,7 +44,8 @@ const HomepageTemplate = ({ data }) => {
         description={homeData.grid_section_description.text}
         cards={homeData.grid_cards}
       />
-      <ThreePriceServiceSection
+      {homeData.body.length !== 0 ? <PricingSection pricingBody={homeData.body} /> : ""}
+      {/* <ThreePriceServiceSection
         title={homeData.pricing_section_title.text}
         heading={homeData.pricing_section_heading.text}
         description={homeData.pricing_section_description.text}
@@ -72,7 +71,7 @@ const HomepageTemplate = ({ data }) => {
         right_card_features={homeData.right_card_features}
         right_card_button={homeData.right_card_button.text}
         right_card_buttonLink={homeData.right_card_buttonLink.url}
-      />
+      /> */}
       <Statistics
         heading={homeData.stats_heading.text}
         description={homeData.stats_description.text}
@@ -129,6 +128,7 @@ export const query = graphql`
                 text
               }
               features {
+                raw
                 text
               }
               call_to_action_text {
@@ -302,5 +302,3 @@ export const query = graphql`
     }
   }
 `
-
-
