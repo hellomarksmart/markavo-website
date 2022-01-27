@@ -85,23 +85,23 @@ const OnePriceServiceSection = ({
                     {card_currency_text}
                   </span>
                 </div>
-                <p className="mt-4 text-[14px] mb-0">
+                <p className="mt-4 text-[14px]">
                   {card_link ? (
                     <Link
                       key={card_link_label}
                       to={card_link}
-                      className="font-medium text-emerald-500 underline"
+                      className="font-medium text-emerald-500"
                     >
                       {card_link_label}
                     </Link>
                   ) : (
-                    <div className="font-medium text-emerald-500 underline">
+                    <div className="font-medium text-emerald-500">
                       {card_link_label}
                     </div>
                   )}
                 </p>
                 <div className="mt-6">
-                  <div className="rounded-md shadow">
+                  <div>
                     {card_button_link ? (
                       <Link
                         key={card_buuton_label}

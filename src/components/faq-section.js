@@ -3,7 +3,7 @@ import * as React from "react"
 const FAQs = ({ heading, faq_contents }) => {
   return (
     <div className="bg-gray-50">
-      <div className="max-w-max mx-auto pt-12 pb-2 px-4 divide-y divide-gray-200 sm:px-6 lg:py-0 lg:px-8">
+      <div className="max-w-max mx-auto pt-8 pb-2 px-4 divide-y divide-gray-200 sm:px-6  lg:px-8">
         <h2 className="text-[30px] font-extrabold text-gray-900">{heading}</h2>
         <div className="mt-8">
           <dl className="divide-y divide-gray-200">
