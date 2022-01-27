@@ -4,11 +4,23 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const IndexPage = props => {
-  const paymentReceivedData = props.data.prismicPaymentReceived.data
+const IndexPage = ({ data }) => {
+  if (!data) return null
+
+  const paymentReceived = data.prismicPaymentReceived || {}
+  const paymentReceivedData = data.prismicPaymentReceived.data || {}
+
+  const { lang, type, url } = data.prismicPaymentReceived || {}
+  const alternateLanguages = paymentReceived.prismicPaymentReceived || []
+  const activeDoc = {
+    lang,
+    type,
+    url,
+    alternateLanguages,
+  }
 
   return (
-    <Layout>
+    <Layout activeDoc={activeDoc}>
       <Seo title="Home" />
       <div className="relative py-16 bg-white overflow-hidden">
         <div className="relative px-4 sm:px-6 lg:px-8">
@@ -32,8 +44,16 @@ const IndexPage = props => {
 export default IndexPage
 
 export const PaymentReceivedQuery = graphql`
-  query PaymentReceivedQuery {
-    prismicPaymentReceived {
+  query PaymentReceivedQuery($lang: String) {
+    prismicPaymentReceived(lang: { eq: $lang }) {
+      alternate_languages {
+        uid
+        type
+        lang
+      }
+      lang
+      url
+      type
       data {
         message_1 {
           text

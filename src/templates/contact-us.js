@@ -6,11 +6,23 @@ import Seo from "../components/seo"
 import ContactSection from "../components/contact-us-section"
 import Cta from "../components/cta-section"
 
-const Contact = props => {
-  const contactData = props.data.prismicContactUsPage.data
+const Contact = ({ data }) => {
+  if (!data) return null
+
+  const notFound = data.prismicContactUsPage || {}
+  const contactData = data.prismicContactUsPage.data || {}
+
+  const { lang, type, url } = data.prismicContactUsPage || {}
+  const alternateLanguages = notFound.alternate_languages || []
+  const activeDoc = {
+    lang,
+    type,
+    url,
+    alternateLanguages,
+  }
 
   return (
-    <Layout>
+    <Layout activeDoc={activeDoc}>
       <Seo title="Contact" />
       <ContactSection
         heading={contactData.heading.text}
@@ -31,8 +43,16 @@ const Contact = props => {
 export default Contact
 
 export const ContactUsPageQuery = graphql`
-  query ContactUsPageQuery {
-    prismicContactUsPage {
+  query ContactUsPageQuery($lang: String) {
+    prismicContactUsPage(lang: { eq: $lang }) {
+      alternate_languages {
+        uid
+        type
+        lang
+      }
+      lang
+      url
+      type
       data {
         heading {
           text

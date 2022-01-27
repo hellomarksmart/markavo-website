@@ -1,4 +1,4 @@
-const { defaultLanguage } = require('../../prismic-configuration')
+const { defaultLanguage } = require("../../prismic-configuration")
 
 /**
  * The Link Resolver used for the Prismic repository. This function converts a
@@ -13,19 +13,67 @@ const { defaultLanguage } = require('../../prismic-configuration')
  *
  * @type import('@prismicio/helpers').LinkResolverFunction
  */
-exports.linkResolver = (doc) => {
+exports.linkResolver = doc => {
   switch (doc.type) {
-    case 'home_page': {
-      return doc.lang === defaultLanguage ? '/' : `/${doc.lang}`
+    case "home_page": {
+      return doc.lang === defaultLanguage ? "/" : `/${doc.lang}`
     }
 
-    case 'page': {
+    case "page": {
       return doc.lang === defaultLanguage
         ? `/page/${doc.uid}`
         : `/page/${doc.lang}/${doc.uid}`
     }
 
+    case "client_reviews_page": {
+      return doc.lang === defaultLanguage
+        ? `/${doc.uid}`
+        : `/${doc.uid}/${doc.lang}`
+    }
+
+    case "not_found": {
+      return doc.lang === defaultLanguage
+        ? `/${doc.uid}`
+        : `/${doc.uid}/${doc.lang}`
+    }
+
+    case "about_us_page": {
+      return doc.lang === defaultLanguage
+        ? `/${doc.uid}`
+        : `/${doc.uid}/${doc.lang}`
+    }
+
+    case "services_page": {
+      return doc.lang === defaultLanguage
+        ? `/${doc.uid}`
+        : `/${doc.uid}/${doc.lang}`
+    }
+
+    case "payment_received": {
+      return doc.lang === defaultLanguage
+        ? `/${doc.uid}`
+        : `/${doc.uid}/${doc.lang}`
+    }
+
+    case "contact_us_page": {
+      return doc.lang === defaultLanguage
+        ? `/${doc.uid}`
+        : `/${doc.uid}/${doc.lang}`
+    }
+
+    case "text_template": {
+      return doc.lang === defaultLanguage
+        ? `/${doc.uid}`
+        : `/${doc.uid}/${doc.lang}`
+    }
+
+    case "search_page": {
+      return doc.lang === defaultLanguage
+        ? `/${doc.uid}`
+        : `/${doc.uid}/${doc.lang}`
+    }
+
     default:
-      return '/'
+      return "/"
   }
 }
