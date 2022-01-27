@@ -84,6 +84,14 @@
       "type": "Group",
       "config": {
         "fields": {
+          "icon": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [],
+              "label": "Icon"
+            }
+          },
           "title": {
             "type": "StructuredText",
             "config": {

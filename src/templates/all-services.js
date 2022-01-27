@@ -5,11 +5,23 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import ServicesSection from "../components/services-section"
 
-const AllServices = props => {
-  const servcicesData = props.data.prismicServicesPage.data
+const AllServices = ({ data }) => {
+  if (!data) return null
+
+  const services = data.prismicServicesPage || {}
+  const servcicesData = data.prismicServicesPage.data || {}
+
+  const { lang, type, url } = data.prismicServicesPage || {}
+  const alternateLanguages = services.alternate_languages || []
+  const activeDoc = {
+    lang,
+    type,
+    url,
+    alternateLanguages,
+  }
 
   return (
-    <Layout>
+    <Layout activeDoc={activeDoc}>
       <Seo title="Services" />
       <ServicesSection
         title={servcicesData.service_section_title.text}
@@ -24,8 +36,16 @@ const AllServices = props => {
 export default AllServices
 
 export const ServicesQuery = graphql`
-  query ServicesQuery {
-    prismicServicesPage {
+  query ServicesQuery($lang: String) {
+    prismicServicesPage(lang: { eq: $lang }) {
+      alternate_languages {
+        uid
+        type
+        lang
+      }
+      lang
+      url
+      type
       data {
         service_section_title {
           text

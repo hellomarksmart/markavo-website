@@ -4,10 +4,23 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const NotFoundPage = props => {
-  const notFoundData = props.data.prismicNotFound.data
+const NotFoundPage = ({ data }) => {
+  if (!data) return null
+
+  const notFound = data.prismicNotFound || {}
+  const notFoundData = data.prismicNotFound.data || {}
+
+  const { lang, type, url } = data.prismicNotFound || {}
+  const alternateLanguages = notFound.alternate_languages || []
+  const activeDoc = {
+    lang,
+    type,
+    url,
+    alternateLanguages,
+  }
+
   return (
-    <Layout>
+    <Layout activeDoc={activeDoc}>
       <Seo title="404: Not found" />
       <div class="bg-white min-h-full px-4 py-16 sm:px-6 sm:py-52 md:grid md:place-items-center lg:px-8">
         <div class="max-w-max mx-auto">
@@ -38,7 +51,6 @@ const NotFoundPage = props => {
                 >
                   {notFoundData.button_2_label.text}
                 </Link>
-
               </div>
             </div>
           </div>
@@ -51,8 +63,16 @@ const NotFoundPage = props => {
 export default NotFoundPage
 
 export const NotFoundQuery = graphql`
-  query NotFoundQuery {
-    prismicNotFound {
+  query NotFoundQuery($lang: String) {
+    prismicNotFound(lang: { eq: $lang }) {
+      alternate_languages {
+        uid
+        type
+        lang
+      }
+      lang
+      url
+      type
       data {
         heading_1 {
           text
