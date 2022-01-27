@@ -142,13 +142,58 @@ const TextTemplateSection = ({
                 ) : (
                   ""
                 )}
-                {item?.list.text ? (
-                  <ul>
-                    <li className="text-[18px]">{item?.list.text}</li>
-                  </ul>
-                ) : (
-                  ""
-                )}
+                <ul className="list-disc">
+                  {item?.list_one.text ? (
+                    <li className="text-[18px]">{item?.list_one.text}</li>
+                  ) : (
+                    ""
+                  )}
+                  {item?.list_two.text ? (
+                    <li className="text-[18px]">{item?.list_two.text}</li>
+                  ) : (
+                    ""
+                  )}
+                  {item?.list_three.text ? (
+                    <li className="text-[18px]">{item?.list_three.text}</li>
+                  ) : (
+                    ""
+                  )}
+                  {item?.list_four.text ? (
+                    <li className="text-[18px]">{item?.list_four.text}</li>
+                  ) : (
+                    ""
+                  )}
+                  {item?.list_five.text ? (
+                    <li className="text-[18px]">{item?.list_five.text}</li>
+                  ) : (
+                    ""
+                  )}
+                  {item?.list_six.text ? (
+                    <li className="text-[18px]">{item?.list_six.text}</li>
+                  ) : (
+                    ""
+                  )}
+                  {item?.list_seven.text ? (
+                    <li className="text-[18px]">{item?.list_seven.text}</li>
+                  ) : (
+                    ""
+                  )}
+                  {item?.list_eight.text ? (
+                    <li className="text-[18px]">{item?.list_eight.text}</li>
+                  ) : (
+                    ""
+                  )}
+                  {item?.list_nine.text ? (
+                    <li className="text-[18px]">{item?.list_nine.text}</li>
+                  ) : (
+                    ""
+                  )}
+                  {item?.list_ten.text ? (
+                    <li className="text-[18px]">{item?.list_ten.text}</li>
+                  ) : (
+                    ""
+                  )}
+                </ul>
                 {item?.blockquote.text ? (
                   <blockquote>
                     <p className="text-[18px]">{item?.blockquote.text}</p>
