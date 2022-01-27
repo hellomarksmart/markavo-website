@@ -7,11 +7,23 @@ import Banner from "../components/banner"
 import AboutSection from "../components/about-section"
 import Cta from "../components/cta-section"
 
-const About = props => {
-  const aboutData = props.data.prismicAboutUsPage.data
+const About = ({ data }) => {
+  if (!data) return null
+
+  const about = data.prismicAboutUsPage || {}
+  const aboutData = data.prismicAboutUsPage.data || {}
+
+  const { lang, type, url } = data.prismicAboutUsPage || {}
+  const alternateLanguages = about.alternate_languages || []
+  const activeDoc = {
+    lang,
+    type,
+    url,
+    alternateLanguages,
+  }
 
   return (
-    <Layout>
+    <Layout activeDoc={activeDoc}>
       <Seo title="About Us" />
       <Banner
         heading={aboutData.banner_heading.text}
@@ -41,8 +53,16 @@ const About = props => {
 export default About
 
 export const AboutUsPageQuery = graphql`
-  query AboutUsPageQuery {
-    prismicAboutUsPage {
+  query AboutUsPageQuery($lang: String) {
+    prismicAboutUsPage(lang: { eq: $lang }) {
+      alternate_languages {
+        uid
+        type
+        lang
+      }
+      lang
+      url
+      type
       data {
         banner_heading {
           text

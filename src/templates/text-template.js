@@ -6,11 +6,23 @@ import Seo from "../components/seo"
 import Breadcrumb from "../components/breadcrumbs"
 import TextTemplateSection from "../components/text-template-section"
 
-const TextTemplate = props => {
-  const textTemplateData = props.data.prismicTextTemplate.data
+const TextTemplate = ({ data }) => {
+  if (!data) return null
+
+  const textTemplate = data.prismicTextTemplate || {}
+  const textTemplateData = data.prismicTextTemplate.data || {}
+
+  const { lang, type, url } = data.prismicTextTemplate || {}
+  const alternateLanguages = textTemplate.alternate_languages || []
+  const activeDoc = {
+    lang,
+    type,
+    url,
+    alternateLanguages,
+  }
 
   return (
-    <Layout>
+    <Layout activeDoc={activeDoc}>
       <Seo title="Text Template" />
       <Breadcrumb breadcrumbs_item={textTemplateData.breadcrumbs} />
       <TextTemplateSection
@@ -26,8 +38,16 @@ const TextTemplate = props => {
 export default TextTemplate
 
 export const TextTemplateQuery = graphql`
-  query TextTemplateQuery {
-    prismicTextTemplate {
+  query TextTemplateQuery($lang: String) {
+    prismicTextTemplate(lang: { eq: $lang }) {
+      alternate_languages {
+        uid
+        type
+        lang
+      }
+      lang
+      url
+      type
       data {
         breadcrumbs {
           page_current

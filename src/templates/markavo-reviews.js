@@ -7,11 +7,23 @@ import Banner from "../components/banner"
 import ClientReviewsSection from "../components/client-reviews-section"
 import Cta from "../components/cta-section"
 
-const ClientReviews = props => {
-  const clientReviewsData = props.data.prismicClientReviewsPage.data
+const ClientReviews = ({ data }) => {
+  if (!data) return null
+
+  const clientReviews = data.prismicClientReviewsPage || {}
+  const clientReviewsData = data.prismicClientReviewsPage.data || {}
+
+  const { lang, type, url } = data.prismicClientReviewsPage || {}
+  const alternateLanguages = clientReviews.alternate_languages || []
+  const activeDoc = {
+    lang,
+    type,
+    url,
+    alternateLanguages,
+  }
 
   return (
-    <Layout>
+    <Layout activeDoc={activeDoc}>
       <Seo title="Reviews" />
       <Banner
         heading={clientReviewsData.banner_heading.text}
@@ -37,8 +49,16 @@ const ClientReviews = props => {
 export default ClientReviews
 
 export const ClientReviewsQuery = graphql`
-  query ClientReviewsQuery {
-    prismicClientReviewsPage {
+  query ClientReviewsQuery($lang: String) {
+    prismicClientReviewsPage(lang: { eq: $lang }) {
+      alternate_languages {
+        uid
+        type
+        lang
+      }
+      lang
+      url
+      type
       data {
         banner_heading {
           text

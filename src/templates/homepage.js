@@ -44,7 +44,11 @@ const HomepageTemplate = ({ data }) => {
         description={homeData.grid_section_description.text}
         cards={homeData.grid_cards}
       />
-      {homeData.body.length !== 0 ? <PricingSection pricingBody={homeData.body} /> : ""}
+      {homeData.body.length !== 0 ? (
+        <PricingSection pricingBody={homeData.body} />
+      ) : (
+        ""
+      )}
       {/* <ThreePriceServiceSection
         title={homeData.pricing_section_title.text}
         heading={homeData.pricing_section_heading.text}

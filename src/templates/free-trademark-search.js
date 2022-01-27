@@ -7,11 +7,23 @@ import SearchSection from "../components/search-section"
 import Cta from "../components/cta-section"
 import FAQs from "../components/faq-section"
 
-const Search = props => {
-  const saerchData = props.data.prismicSearchPage.data
+const Search = ({ data }) => {
+  if (!data) return null
+
+  const saerch = data.prismicSearchPage || {}
+  const saerchData = data.prismicSearchPage.data || {}
+
+  const { lang, type, url } = data.prismicSearchPage || {}
+  const alternateLanguages = saerch.alternate_languages || []
+  const activeDoc = {
+    lang,
+    type,
+    url,
+    alternateLanguages,
+  }
 
   return (
-    <Layout>
+    <Layout activeDoc={activeDoc}>
       <Seo title="Free Trademark Search" />
       <SearchSection
         heading={saerchData.banner_heading.text}
@@ -36,8 +48,16 @@ const Search = props => {
 export default Search
 
 export const SearchQuery = graphql`
-  query SearchQuery {
-    prismicSearchPage {
+  query SearchQuery($lang: String) {
+    prismicSearchPage(lang: { eq: $lang }) {
+      alternate_languages {
+        uid
+        type
+        lang
+      }
+      lang
+      url
+      type
       data {
         banner_heading {
           text
