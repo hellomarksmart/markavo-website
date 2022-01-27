@@ -2,9 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 
+#PricingCard {
+  width: 33%;
+  min-height: 530px;
+}
+
 #PricingCards #PricingCard:nth-child(2) {
+  width: 588px;
   --tw-border-opacity: 1;
   border-color: rgb(5 150 105/var(--tw-border-opacity));
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: -5px;
+  margin-right: -5px;
+  z-index: 10;
+}
+
+#PricingCards #PricingCard:nth-child(2) .cta a {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 150 105/var(--tw-bg-opacity));
+  color: white;
+}
+
+#PricingCard ul {
+  list-style: circle;
+}
+
+#PricingCard ul li {
+  text-align: left;
+}
+
+#PricingCards #PricingCard:nth-child(2) .card-body {
+  min-height: 630px;
+}
+
+#PricingCards #PricingCard:nth-child(2)::before {
+  content: 'MOST POPULAR';
+  position: absolute;
+  top: -12px;
+  left: 35%;
+  padding-top: 0.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 150 105/var(--tw-bg-opacity));
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255/var(--tw-text-opacity));
+  border-radius: 40px;
+}
+
+@media (max-width: 1024px) {
+  #PricingCards #PricingCard,
+  #PricingCards #PricingCard:nth-child(2) {
+    width: unset;
+    min-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  #PricingCards #PricingCard {
+    margin-bottom: 25px;
+  }
+
+  #PricingCards #PricingCard:nth-child(2) {
+    width: 90%;
+  }
+
+  #PricingCards #PricingCard {
+    width: 85%;
+    min-width: 280px;
+  }
+
+  #PricingCards #PricingCard:nth-child(2) .card-body
+  #PricingCards #PricingCard .card-body {
+    min-height: unset;
+  }
+
+  #PricingCards #PricingCard:nth-child(2)::before {
+    left: 37%;
+  }
+}
+
+@media (max-width: 575px) {
+  #PricingCards #PricingCard:nth-child(2)
+  #PricingCards #PricingCard {
+    width: 100%;
+  }
+  
+  #PricingCards #PricingCard:nth-child(2)::before {
+    left: 29%;
+  }
 }

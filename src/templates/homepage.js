@@ -124,11 +124,17 @@ export const query = graphql`
               plan_title {
                 text
               }
+              currency {
+                text
+              }
+              subscription {
+                text
+              }
               price_option {
                 text
               }
               features {
-                raw
+                richText
                 text
               }
               call_to_action_text {
