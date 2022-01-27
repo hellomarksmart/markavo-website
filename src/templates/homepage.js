@@ -1,6 +1,5 @@
-import * as React from "react"
-import { graphql } from "gatsby"
-
+import * as React from 'react'
+import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Banner from "../components/banner"
@@ -9,11 +8,28 @@ import ThreePriceServiceSection from "../components/three-price-section"
 import Statistics from "../components/statistics-section"
 import Cta from "../components/cta-section"
 
-const IndexPage = props => {
-  const homeData = props.data.prismicHomePage.data
+
+const HomepageTemplate = ({ data }) => {
+  if (!data) return null
+
+  const homepage = data.prismicHomePage || {}
+  const homeData = data.prismicHomePage.data || {}
+
+  const { lang, type, url } = data.prismicHomePage || {}
+  const alternateLanguages = homepage.alternate_languages || []
+  const activeDoc = {
+    lang,
+    type,
+    url,
+    alternateLanguages,
+  }
+
+  console.log(homeData.body);
 
   return (
-    <Layout>
+    <Layout
+      activeDoc={activeDoc}
+    >
       <Seo title="Home" />
       <Banner
         heading={homeData.banner_heading.text}
@@ -78,12 +94,52 @@ const IndexPage = props => {
   )
 }
 
-export default IndexPage
+export default HomepageTemplate
 
-export const HomeQuery = graphql`
-  query HomeQuery {
-    prismicHomePage {
+export const query = graphql`
+  query HomeQuery($lang: String) {
+    prismicHomePage(lang: { eq: $lang }) {
+      alternate_languages {
+        uid
+        type
+        lang
+      }
+      lang
+      url
+      type
       data {
+        body {
+          ... on PrismicHomePageDataBodyPricingTable {
+            primary {
+              eyebrow_headline {
+                text
+              }
+              title {
+                text
+              }
+              description {
+                text
+              }
+            }
+            items {
+              plan_title {
+                text
+              }
+              price_option {
+                text
+              }
+              features {
+                text
+              }
+              call_to_action_text {
+                text
+              }
+              call_to_action {
+                url
+              }
+            }
+          }
+        }
         banner_heading {
           text
         }
@@ -246,3 +302,5 @@ export const HomeQuery = graphql`
     }
   }
 `
+
+

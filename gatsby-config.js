@@ -2,6 +2,8 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+const prismicConfig = require('./prismic-configuration')
+
 module.exports = {
   siteMetadata: {
     title: `Markavo`,
@@ -17,12 +19,9 @@ module.exports = {
     {
       resolve: `gatsby-source-prismic`,
       options: {
-        repositoryName: `${process.env.GATSBY_PRISMIC_REPO_NAME}`,
+        repositoryName: prismicConfig.prismicRepo,
         accessToken: `${process.env.PRISMIC_ACCESS_TOKEN}`,
-        linkResolver:
-          ({ node, key, value }) =>
-            post =>
-              `/${post.uid}`,
+        linkResolver: require('./src/utils/linkResolver').linkResolver,
         schemas: {
           home_page: require("./src/schema/home.json"),
           client_reviews_page: require("./src/schema/client-reviews.json"),
