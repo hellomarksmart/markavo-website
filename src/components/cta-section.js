@@ -15,7 +15,7 @@ const Cta = ({
           <span className="block">{heading}</span>
           <span className="block">{headingSecond}</span>
         </h2>
-        <p className="mt-0 mx-auto text-base sm:text-[18px] leading-6 text-emerald-200 sm:max-w-md sm:mx-auto md:max-w-[47rem]">
+        <p className="mt-0 mx-auto text-base sm:text-[18px] leading-6 text-white sm:max-w-md sm:mx-auto md:max-w-[47rem]">
           {description}
         </p>
         {buttonPlainLink ? (
@@ -27,7 +27,7 @@ const Cta = ({
             {buttonPlain}
           </Link>
         ) : (
-          <div className="mt-8 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-emerald-400 bg-white hover:bg-emerald-50 sm:w-auto">
+          <div className="w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-emerald-400 bg-white hover:bg-emerald-50 sm:w-auto">
             {buttonPlain}
           </div>
         )}
