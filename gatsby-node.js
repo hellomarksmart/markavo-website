@@ -195,4 +195,15 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  singleService.forEach(page => {
+    createPage({
+      path: `/services/${page.uid}`,
+      component: path.resolve(__dirname, "src/templates/service.js"),
+      context: {
+        id: page.id,
+        lang: page.lang,
+      },
+    })
+  })
 }

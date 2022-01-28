@@ -10,10 +10,7 @@ const PricingSection = ({ pricingBody }) => {
       className={
         pricingBody[0].items.length === 1
           ? `bg-gray-100`
-          : `bg-emerald-900 px-5` ||
-        pricingBody[0].items.length === 2
-        ? `bg-emerald-700`
-        : `bg-emerald-900 px-5`
+          : `bg-emerald-900 px-5`
       }
     >
       <div className="max-w-[90%] mx-auto pt-12 px-4 sm:px-6 lg:px-8 lg:pt-20">
@@ -34,7 +31,7 @@ const PricingSection = ({ pricingBody }) => {
             className={`mt-3 max-w-4xl mx-auto text-base ${
               pricingBody[0].items.length === 1
                 ? `text-gray-600`
-                : `text-emerald-100`
+                : `text-gray-600`
             } sm:mt-5 sm:text-[20px] md:text-[24px] md:max-w-[46rem] sm:max-w-md`}
           >
             {pricingBody[0].primary.description.text}
@@ -43,8 +40,7 @@ const PricingSection = ({ pricingBody }) => {
       </div>
       <div
         className={`mt-16 ${
-          pricingBody[0].items.length === 1 ? "" : `bg-emerald-900` || 
-          pricingBody[0].items.length === 2 ? `bg-emerald-50` : `bg-emerald-900`
+          pricingBody[0].items.length === 1 ? "" : `bg-emerald-900`
         } pb-12 lg:mt-20 lg:pb-20`}
       >
         <div
@@ -131,57 +127,18 @@ const PricingSection = ({ pricingBody }) => {
             </>
           )}
           {pricingBody[0].items.length === 2 && (
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="max-w-md mx-auto space-y-4 lg:max-w-5xl lg:grid lg:grid-cols-2 lg:gap-5 lg:space-y-0">
-                {pricingBody[0].items.map((item, i) => {
-                  return (
-                    <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
-                      <div className="px-6 py-8 bg-white sm:p-10 sm:pb-6">
-                        <div>
-                          <h3
-                            className="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-emerald-100 text-emerald-600"
-                            id="tier-standard"
-                          >
-                            {item.plan_title.text}
-                          </h3>
-                        </div>
-                        <div className="mt-4 flex items-baseline text-6xl font-extrabold">
-                          {item.currency.text}
-                          {item.price_option.text}
-                          <span className="ml-1 text-2xl font-medium text-gray-500">
-                            /{item.frequency.text}
-                          </span>
-                        </div>
-                        <p className="mt-5 text-lg text-gray-500">
-                          <RichText render={item.plan_description.richText} />
-                        </p>
-                      </div>
-                      <div className="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-gray-50 space-y-6 sm:p-10 sm:pt-6">
-                        <RichText render={item.features.richText} />
-                        <div className="rounded-md shadow">
-                          {item.call_to_action.url ? (
-                            <Link
-                              to={item.call_to_action.url}
-                              className="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-800 hover:bg-emerald-900"
-                              aria-describedby="tier-standard"
-                            >
-                              {item.call_to_action_text.text}
-                            </Link>
-                          ) : (
-                            <div
-                              className="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-800 hover:bg-emerald-900"
-                              aria-describedby="tier-standard"
-                            >
-                              {item.call_to_action_text.text}
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
+            <>
+              {pricingBody[0].items.map((item, i) => {
+                return (
+                  <div
+                    id="PricingCard"
+                    className="relative border-2 rounded-md bg-white text-center"
+                  >
+                    <p>2 cards here</p>
+                  </div>
+                )
+              })}
+            </>
           )}
           {pricingBody[0].items.length === 3 && (
             <>
