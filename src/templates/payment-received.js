@@ -4,14 +4,14 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const IndexPage = ({ data }) => {
+const PaymentReceived = ({ data }) => {
   if (!data) return null
 
   const paymentReceived = data.prismicPaymentReceived || {}
   const paymentReceivedData = data.prismicPaymentReceived.data || {}
 
   const { lang, type, url } = data.prismicPaymentReceived || {}
-  const alternateLanguages = paymentReceived.prismicPaymentReceived || []
+  const alternateLanguages = paymentReceived.alternate_languages || []
   const activeDoc = {
     lang,
     type,
@@ -41,7 +41,7 @@ const IndexPage = ({ data }) => {
   )
 }
 
-export default IndexPage
+export default PaymentReceived
 
 export const PaymentReceivedQuery = graphql`
   query PaymentReceivedQuery($lang: String) {
