@@ -80,7 +80,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const notFound = result.data.not_found.nodes
   const aboutUsPage = result.data.about_us_page.nodes
   const servicesPage = result.data.services_page.nodes
-
   const paymentReceived = result.data.payment_received.nodes
   const contactUsPage = result.data.contact_us_page.nodes
   const textTemplate = result.data.text_template.nodes
@@ -186,12 +185,5 @@ exports.createPages = async ({ graphql, actions }) => {
         lang: page.lang,
       },
     })
-  })
-
-  createPage({
-    path: "/using-dsg",
-    component: require.resolve("./src/templates/using-dsg.js"),
-    context: {},
-    defer: true,
   })
 }

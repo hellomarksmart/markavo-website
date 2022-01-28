@@ -9,17 +9,19 @@ import TextTemplateSection from "../components/text-template-section"
 const TextTemplate = ({ data }) => {
   if (!data) return null
 
-  const textTemplate = data.prismicTextTemplate || {}
+  const textTemp = data.prismicTextTemplate || {}
   const textTemplateData = data.prismicTextTemplate.data || {}
 
   const { lang, type, url } = data.prismicTextTemplate || {}
-  const alternateLanguages = textTemplate.alternate_languages || []
+  const alternateLanguages = textTemp.alternate_languages || []
   const activeDoc = {
     lang,
     type,
     url,
     alternateLanguages,
   }
+
+  console.log("lang text template", alternateLanguages)
 
   return (
     <Layout activeDoc={activeDoc}>
