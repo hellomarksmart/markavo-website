@@ -3,7 +3,7 @@
     "uid": {
       "type": "UID",
       "config": {
-        "label": "Home Page"
+        "label": "Page handle"
       }
     },
     "banner_heading": {
@@ -112,228 +112,6 @@
         "label": "Grid Cards"
       }
     },
-    "pricing_section_title": {
-      "type": "StructuredText",
-      "config": {
-        "single": "paragraph",
-        "label": "Pricing Section Title"
-      }
-    },
-    "pricing_section_heading": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
-        "label": "Pricing Section Heading"
-      }
-    },
-    "pricing_section_description": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-        "allowTargetBlank": true,
-        "label": "Pricing Section description"
-      }
-    },
-    "left_card_title": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
-        "allowTargetBlank": true,
-        "label": "Title"
-      }
-    },
-    "left_card_currency": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
-        "allowTargetBlank": true,
-        "label": "Currency"
-      }
-    },
-    "left_card_price": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
-        "allowTargetBlank": true,
-        "label": "Price"
-      }
-    },
-    "left_card_period": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
-        "allowTargetBlank": true,
-        "label": "Period"
-      }
-    },
-    "left_card_features": {
-      "type": "Group",
-      "config": {
-        "fields": {
-          "feature": {
-            "type": "StructuredText",
-            "config": {
-              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-              "allowTargetBlank": true,
-              "label": "Card Feature"
-            }
-          }
-        },
-        "label": "Left Card Features"
-      }
-    },
-    "left_card_button": {
-      "type": "StructuredText",
-      "config": {
-        "single": "paragraph",
-        "allowTargetBlank": true,
-        "label": "Button Label"
-      }
-    },
-    "left_card_buttonLink": {
-      "type": "Link",
-      "config": {
-        "allowTargetBlank": true,
-        "label": "Button Link",
-        "select": null
-      }
-    },
-    "center_card_subheading": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
-        "allowTargetBlank": true,
-        "label": "Subheading"
-      }
-    },
-    "center_card_title": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
-        "allowTargetBlank": true,
-        "label": "Title"
-      }
-    },
-    "center_card_currency": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
-        "allowTargetBlank": true,
-        "label": "Currency"
-      }
-    },
-    "center_card_price": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
-        "allowTargetBlank": true,
-        "label": "Price"
-      }
-    },
-    "center_card_period": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
-        "allowTargetBlank": true,
-        "label": "Period"
-      }
-    },
-    "center_card_features": {
-      "type": "Group",
-      "config": {
-        "fields": {
-          "feature": {
-            "type": "StructuredText",
-            "config": {
-              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-              "allowTargetBlank": true,
-              "label": "Card Feature"
-            }
-          }
-        },
-        "label": "Left Card Features"
-      }
-    },
-    "center_card_button": {
-      "type": "StructuredText",
-      "config": {
-        "single": "paragraph",
-        "allowTargetBlank": true,
-        "label": "Button Label"
-      }
-    },
-    "center_card_buttonLink": {
-      "type": "Link",
-      "config": {
-        "allowTargetBlank": true,
-        "label": "Button Link",
-        "select": null
-      }
-    },
-    "right_card_title": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
-        "allowTargetBlank": true,
-        "label": "Title"
-      }
-    },
-    "right_card_currency": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
-        "allowTargetBlank": true,
-        "label": "Currency"
-      }
-    },
-    "right_card_price": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
-        "allowTargetBlank": true,
-        "label": "Price"
-      }
-    },
-    "right_card_period": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
-        "allowTargetBlank": true,
-        "label": "Period"
-      }
-    },
-    "right_card_features": {
-      "type": "Group",
-      "config": {
-        "fields": {
-          "feature": {
-            "type": "StructuredText",
-            "config": {
-              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-              "allowTargetBlank": true,
-              "label": "Card Feature"
-            }
-          }
-        },
-        "label": "Left Card Features"
-      }
-    },
-    "right_card_button": {
-      "type": "StructuredText",
-      "config": {
-        "single": "paragraph",
-        "allowTargetBlank": true,
-        "label": "Button Label"
-      }
-    },
-    "right_card_buttonLink": {
-      "type": "Link",
-      "config": {
-        "allowTargetBlank": true,
-        "label": "Button Link",
-        "select": null
-      }
-    },
     "stats_heading": {
       "type": "StructuredText",
       "config": {
@@ -392,6 +170,35 @@
         "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
         "allowTargetBlank": true,
         "label": "Stats Name"
+      }
+    },
+    "faq_heading": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
+        "label": "FAQs Section Heading"
+      }
+    },
+    "faq_contents": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "faq_question": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "label": "FAQ Question"
+            }
+          },
+          "faq_answer": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "label": "FAQ Answer"
+            }
+          }
+        },
+        "label": "FAQ Contents"
       }
     },
     "cta_heading": {
@@ -471,6 +278,13 @@
               }
             },
             "repeat": {
+              "headline": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                  "label": "headline"
+                }
+              },
               "plan_title": {
                 "type": "StructuredText",
                 "config": {
@@ -479,11 +293,26 @@
                   "placeholder": "Simple, Gold, Premium..."
                 }
               },
+              "bottomline": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                  "label": "Bottomline"
+                }
+              },
+              "plan_description": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                  "label": "Plan Description"
+                }
+              },
               "currency": {
                 "type": "StructuredText",
                 "config": {
                   "single": "paragraph",
-                  "label": "Currency"
+                  "label": "Currency",
+                  "placeholder": "$"
                 }
               },
               "price_option": {
@@ -498,7 +327,8 @@
                 "type": "StructuredText",
                 "config": {
                   "single": "paragraph",
-                  "label": "Subscription"
+                  "label": "Frequency",
+                  "placeholder": "month"
                 }
               },
               "features": {
@@ -524,6 +354,13 @@
                   "multi": "paragraph",
                   "label": "Call To Action Text",
                   "placeholder": "Start your free trial"
+                }
+              },
+              "cta_bottom_text": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                  "label": "CTA Bottom Text"
                 }
               }
             }

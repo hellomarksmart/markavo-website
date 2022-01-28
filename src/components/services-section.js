@@ -14,9 +14,7 @@ const ServicesSection = ({ title, heading, description, service_items }) => {
           <p className="mt-2 text-[30px] font-extrabold text-gray-900">
             {heading}
           </p>
-          <p className="mt-4 text-[18px] text-gray-500">
-            {description}
-          </p>
+          <p className="mt-4 text-[18px] text-gray-500">{description}</p>
         </div>
         <div className="mt-12 lg:mt-0 lg:col-span-2">
           <dl className="space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:grid-rows-4 sm:grid-flow-col sm:gap-x-6 sm:gap-y-10 lg:gap-x-8">
