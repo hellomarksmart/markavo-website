@@ -68,6 +68,14 @@ exports.createPages = async ({ graphql, actions }) => {
           url
         }
       }
+      service_single: allPrismicServiceSinglePage {
+        nodes {
+          uid
+          id
+          lang
+          url
+        }
+      }
     }
   `)
 
@@ -84,6 +92,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const contactUsPage = result.data.contact_us_page.nodes
   const textTemplate = result.data.text_template.nodes
   const searchPage = result.data.search_page.nodes
+  const singleService = result.data.service_single.nodes
 
   homePage.forEach(page => {
     createPage({
@@ -180,6 +189,17 @@ exports.createPages = async ({ graphql, actions }) => {
         __dirname,
         "src/templates/free-trademark-search.js"
       ),
+      context: {
+        id: page.id,
+        lang: page.lang,
+      },
+    })
+  })
+
+  singleService.forEach(page => {
+    createPage({
+      path: `/services/${page.uid}`,
+      component: path.resolve(__dirname, "src/templates/service.js"),
       context: {
         id: page.id,
         lang: page.lang,

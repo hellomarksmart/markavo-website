@@ -130,7 +130,7 @@ export const query = graphql`
               currency {
                 text
               }
-              subscription {
+              frequency {
                 text
               }
               price_option {

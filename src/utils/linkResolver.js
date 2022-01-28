@@ -73,6 +73,12 @@ exports.linkResolver = doc => {
         : `/${doc.uid}/${doc.lang}`
     }
 
+    case "service_single_page": {
+      return doc.lang === defaultLanguage
+        ? `/services/${doc.uid}`
+        : `/services/${doc.uid}/${doc.lang}`
+    }
+
     default:
       return "/"
   }
