@@ -6,7 +6,7 @@ import { ArrowRightIcon } from "@heroicons/react/solid"
 const ServicesSection = ({ title, heading, description, service_items }) => {
   return (
     <div className="bg-white">
-      <div className="max-w-7xl mx-auto pt-10 lg:pt-16 md:pt-10 px-4 sm:px-6 lg:px-8 lg:grid lg:grid-cols-3 lg:gap-x-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 lg:pt-16 md:pt-10 lg:grid lg:grid-cols-3 lg:gap-x-8">
         <div>
           <h2 className="pt-1 text-[16px] font-semibold text-emerald-400 uppercase tracking-wide">
             {title}

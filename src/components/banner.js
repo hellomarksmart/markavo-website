@@ -84,20 +84,18 @@ const Banner = ({
         </div>
       </div>
 
-      <div className="relative pt-16 pb-16 sm:pb-16">
+      <div className="relative pt-16 pb-16 sm:pb-16 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <div className="max-w-[90%] mx-auto">
-            <h1 className="text-3xl sm:text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-[60px]">
-              <span className="block xl:inline">{heading}</span>{" "}
-              <span className="block text-emerald-400 xl:inline">
-                {headingColored}
-              </span>
-            </h1>
-            <p className="mt-3 max-w-sm mx-auto text-base text-gray-500 sm:max-w-md sm:text-lg md:mt-5 md:text-[20px] md:max-w-[47rem]">
-              {description}
-            </p>
-          </div>
-          <div className="mt-5 max-w-[16rem] sm:max-w-sm mx-auto sm:flex sm:justify-center md:mt-8">
+          <h1 className="text-3xl sm:text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-[60px]">
+            <span className="block xl:inline">{heading}</span>{" "}
+            <span className="block text-emerald-400 xl:inline">
+              {headingColored}
+            </span>
+          </h1>
+          <p className="mt-3 max-w-sm mx-auto text-base text-gray-500 sm:max-w-md sm:text-lg md:mt-5 md:text-[20px] md:max-w-[47rem]">
+            {description}
+          </p>
+          <div className="mt-5 sm:max-w-sm mx-auto sm:flex sm:justify-center md:mt-8">
             <div className="rounded-md">
               {buttonColoredLink ? (
                 <Link

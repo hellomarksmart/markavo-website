@@ -24,7 +24,11 @@ const TextTemplate = ({ data }) => {
   console.log("lang text template", alternateLanguages)
 
   return (
-    <Layout activeDoc={activeDoc}>
+    <Layout
+      activeDoc={activeDoc}
+      headerBody={data.prismicHeader}
+      footerBody={data.prismicFooter}
+    >
       <Seo title="Text Template" />
       <Breadcrumb breadcrumbs_item={textTemplateData.breadcrumbs} />
       <TextTemplateSection
@@ -82,34 +86,8 @@ export const TextTemplateQuery = graphql`
           paragraph {
             text
           }
-          list_one {
-            text
-          }
-          list_two {
-            text
-          }
-          list_three {
-            text
-          }
-          list_four {
-            text
-          }
-          list_five {
-            text
-          }
-          list_six {
-            text
-          }
-          list_seven {
-            text
-          }
-          list_eight {
-            text
-          }
-          list_nine {
-            text
-          }
-          list_ten {
+          list {
+            richText
             text
           }
           blockquote {
@@ -121,6 +99,103 @@ export const TextTemplateQuery = graphql`
           video_title {
             text
           }
+        }
+      }
+    }
+    prismicHeader(lang: { eq: $lang }) {
+      data {
+        phone_number {
+          text
+        }
+        header_logo {
+          url
+        }
+        services {
+          name {
+            text
+          }
+          link {
+            uid
+          }
+          icon {
+            url
+          }
+          description {
+            text
+          }
+        }
+        all_services {
+          name {
+            text
+          }
+          link {
+            uid
+          }
+          icon {
+            url
+          }
+        }
+        branding_tools {
+          name {
+            text
+          }
+          link {
+            uid
+          }
+          description {
+            text
+          }
+        }
+      }
+    }
+    prismicFooter(lang: { eq: $lang }) {
+      data {
+        applications {
+          link {
+            url
+          }
+          link_name {
+            text
+          }
+          link_title {
+            text
+          }
+        }
+        company {
+          link {
+            url
+          }
+          link_name {
+            text
+          }
+          link_title {
+            text
+          }
+        }
+        disputes {
+          link {
+            url
+          }
+          link_name {
+            text
+          }
+          link_title {
+            text
+          }
+        }
+        registrations {
+          link {
+            url
+          }
+          link_name {
+            text
+          }
+          link_title {
+            text
+          }
+        }
+        footer_copyright {
+          text
         }
       }
     }

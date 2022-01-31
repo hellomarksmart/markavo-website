@@ -23,10 +23,12 @@ const HomepageTemplate = ({ data }) => {
     alternateLanguages,
   }
 
-  console.log("body length", homeData.body.length)
-
   return (
-    <Layout activeDoc={activeDoc}>
+    <Layout 
+      activeDoc={activeDoc} 
+      headerBody={data.prismicHeader}
+      footerBody={data.prismicFooter}
+    >
       <Seo title="Home" />
       <Banner
         heading={homeData.banner_heading.text}
@@ -286,6 +288,103 @@ export const query = graphql`
         }
         cta_button {
           url
+        }
+      }
+    }
+    prismicHeader(lang: { eq: $lang }) {
+      data {
+        phone_number {
+          text
+        }
+        header_logo {
+          url
+        }
+        services {
+          name {
+            text
+          }
+          link {
+            uid
+          }
+          icon {
+            url
+          }
+          description {
+            text
+          }
+        }
+        all_services {
+          name {
+            text
+          }
+          link {
+            uid
+          }
+          icon {
+            url
+          }
+        }
+        branding_tools {
+          name {
+            text
+          }
+          link {
+            uid
+          }
+          description {
+            text
+          }
+        }
+      }
+    }
+    prismicFooter(lang: { eq: $lang }) {
+      data {
+        applications {
+          link {
+            url
+          }
+          link_name {
+            text
+          }
+          link_title {
+            text
+          }
+        }
+        company {
+          link {
+            url
+          }
+          link_name {
+            text
+          }
+          link_title {
+            text
+          }
+        }
+        disputes {
+          link {
+            url
+          }
+          link_name {
+            text
+          }
+          link_title {
+            text
+          }
+        }
+        registrations {
+          link {
+            url
+          }
+          link_name {
+            text
+          }
+          link_title {
+            text
+          }
+        }
+        footer_copyright {
+          text
         }
       }
     }

@@ -102,7 +102,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
 
       <div className="relative pt-16 pb-16 sm:pb-16">
         <div className="text-center">
-          <div className="max-w-[90%] mx-auto">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl sm:text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-[60px]">
               <span className="block xl:inline">{heading}</span>{" "}
               <span className="block text-emerald-400 xl:inline">
@@ -151,7 +151,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
             </div>
           </div>
           {responseData.items && (
-            <div className="text-left px-12 my-12">
+            <div className="text-left px-12 my-12 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
               <p className="text-2xl font-bold mb-2">
                 Trademark Search Results
               </p>
@@ -179,7 +179,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                 return (
                   <div
                     key={i}
-                    className="my-3 p-8 bg-white border border-slate-200 max-w-screen-md"
+                    className="my-3 p-8 bg-white border border-slate-200"
                   >
                     <p className="text-emerald-500 font-bold">{item.keyword}</p>
                     <div className="flex items-center">

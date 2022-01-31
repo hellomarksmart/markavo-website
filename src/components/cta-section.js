@@ -10,7 +10,7 @@ const Cta = ({
 }) => {
   return (
     <div className="bg-emerald-400">
-      <div className="max-w-[90%] mx-auto text-center py-16 px-4 sm:py-16 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto text-center py-16 px-4 sm:py-16 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-gray-900 sm:text-[36px] pb-0">
           <span className="block">{heading}</span>
           <span className="block">{headingSecond}</span>

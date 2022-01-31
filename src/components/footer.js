@@ -1,62 +1,7 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 
-const Footer = () => {
-  const footerData = useStaticQuery(graphql`
-    query FooterQuery {
-      prismicFooter {
-        data {
-          applications {
-            link {
-              url
-            }
-            link_name {
-              text
-            }
-            link_title {
-              text
-            }
-          }
-          company {
-            link {
-              url
-            }
-            link_name {
-              text
-            }
-            link_title {
-              text
-            }
-          }
-          disputes {
-            link {
-              url
-            }
-            link_name {
-              text
-            }
-            link_title {
-              text
-            }
-          }
-          registrations {
-            link {
-              url
-            }
-            link_name {
-              text
-            }
-            link_title {
-              text
-            }
-          }
-          footer_copyright {
-            text
-          }
-        }
-      }
-    }
-  `)
+const Footer = ({ footerBody }) => {
+  const footerData = footerBody
 
   return (
     <footer className="bg-white" aria-labelledby="footer-heading">
@@ -69,7 +14,7 @@ const Footer = () => {
                   Applications
                 </h3>
                 <ul className="mt-4 space-y-4 ml-0">
-                  {footerData.prismicFooter.data.applications.map((item, i) => {
+                  {footerData.data.applications.map((item, i) => {
                     return (
                       <li key={i}>
                         {item.link.url ? (
@@ -95,7 +40,7 @@ const Footer = () => {
                   Registrations
                 </h3>
                 <ul className="mt-4 space-y-4 ml-0">
-                  {footerData.prismicFooter.data.registrations.map(
+                  {footerData.data.registrations.map(
                     (item, i) => (
                       <li key={i}>
                         {item.link.url ? (
@@ -123,7 +68,7 @@ const Footer = () => {
                   Disputes
                 </h3>
                 <ul className="mt-4 space-y-4 ml-0">
-                  {footerData.prismicFooter.data.disputes.map((item, i) => (
+                  {footerData.data.disputes.map((item, i) => (
                     <li key={i}>
                       {item.link.url ? (
                         <a
@@ -147,7 +92,7 @@ const Footer = () => {
                   Company
                 </h3>
                 <ul className="mt-4 space-y-4 ml-0">
-                  {footerData.prismicFooter.data.company.map((item, i) => (
+                  {footerData.data.company.map((item, i) => (
                     <li key={i}>
                       {item.link.url ? (
                         <a
@@ -201,7 +146,7 @@ const Footer = () => {
         </div>
         <div className="mt-8 border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between">
           <p className="mt-8 text-sm font-light text-gray-500 md:mt-0 md:order-1">
-            {footerData.prismicFooter.data.footer_copyright.text}
+            {footerData.data.footer_copyright.text}
           </p>
         </div>
       </div>

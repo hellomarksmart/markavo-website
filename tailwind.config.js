@@ -1,7 +1,10 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    maxWidth: {
+      default: '1440px',
+      tablet: '768px'
+    }
   },
   plugins: [],
 }

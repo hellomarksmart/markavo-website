@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -25,10 +25,12 @@ const Service = ({ data }) => {
     alternateLanguages,
   }
 
-  console.log(singleService)
-
   return (
-    <Layout activeDoc={activeDoc}>
+    <Layout
+      activeDoc={activeDoc}
+      headerBody={data.prismicHeader}
+      footerBody={data.prismicFooter}
+    >
       <Seo title="Service" />
       <Banner
         heading={singleServiceData.banner_heading.text}
@@ -47,6 +49,7 @@ const Service = ({ data }) => {
       />
       <PricingSection pricingBody={singleServiceData.body} />
       <Statistics
+        title={singleServiceData.stats_title.text}
         heading={singleServiceData.stats_heading.text}
         description={singleServiceData.stats_description.text}
         nameLeft={singleServiceData.name_left.text}
@@ -57,7 +60,9 @@ const Service = ({ data }) => {
         statsRight={singleServiceData.stats_right.text}
       />
       <FAQs
+        title={singleServiceData.faq_title.text}
         heading={singleServiceData.faq_heading.text}
+        description={singleServiceData.faq_description.text}
         faq_contents={singleServiceData.faq_contents}
       />
       <Cta
@@ -97,6 +102,18 @@ export const ServiceSingleQuery = graphql`
               }
               description {
                 richText
+                text
+              }
+              discounted_pill_text {
+                text
+              }
+              discount_description {
+                richText
+              }
+              discount_cta_link {
+                url
+              }
+              discount_cta_label {
                 text
               }
             }
@@ -170,6 +187,7 @@ export const ServiceSingleQuery = graphql`
         grid_cards {
           content {
             richText
+            text
           }
           icon {
             url
@@ -177,6 +195,9 @@ export const ServiceSingleQuery = graphql`
           title {
             text
           }
+        }
+        stats_title {
+          text
         }
         stats_heading {
           text
@@ -202,15 +223,21 @@ export const ServiceSingleQuery = graphql`
         name_center {
           text
         }
+        faq_title {
+          text
+        }
         faq_heading {
           text
         }
+        faq_description {
+          text
+        }
         faq_contents {
-          faq_answer {
+          faq_question {
             text
           }
-          faq_question {
-            richText
+          faq_answer {
+            text
           }
         }
         cta_heading_2 {
@@ -227,6 +254,103 @@ export const ServiceSingleQuery = graphql`
         }
         cta_button {
           url
+        }
+      }
+    }
+    prismicHeader(lang: { eq: $lang }) {
+      data {
+        phone_number {
+          text
+        }
+        header_logo {
+          url
+        }
+        services {
+          name {
+            text
+          }
+          link {
+            uid
+          }
+          icon {
+            url
+          }
+          description {
+            text
+          }
+        }
+        all_services {
+          name {
+            text
+          }
+          link {
+            uid
+          }
+          icon {
+            url
+          }
+        }
+        branding_tools {
+          name {
+            text
+          }
+          link {
+            uid
+          }
+          description {
+            text
+          }
+        }
+      }
+    }
+    prismicFooter(lang: { eq: $lang }) {
+      data {
+        applications {
+          link {
+            url
+          }
+          link_name {
+            text
+          }
+          link_title {
+            text
+          }
+        }
+        company {
+          link {
+            url
+          }
+          link_name {
+            text
+          }
+          link_title {
+            text
+          }
+        }
+        disputes {
+          link {
+            url
+          }
+          link_name {
+            text
+          }
+          link_title {
+            text
+          }
+        }
+        registrations {
+          link {
+            url
+          }
+          link_name {
+            text
+          }
+          link_title {
+            text
+          }
+        }
+        footer_copyright {
+          text
         }
       }
     }

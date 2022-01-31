@@ -21,12 +21,10 @@ export const LanguageToggle = ({ activeDocMeta }) => {
     navigate(event.target.value)
   }
 
-  console.log(activeDocMeta.alternateLanguages)
-
   return (
     <div className="language-switcher">
       <select
-        className="w-full  text-sm font-medium text-gray-900 px-4 py-2 border border-gray-400 rounded-md shadow-sm"
+        className="w-full  text-sm font-medium text-gray-900 px-4 py-[0.32rem] border border-gray-400 rounded-md shadow-sm"
         value={currentLang}
         onChange={handleLangChange}
       >
