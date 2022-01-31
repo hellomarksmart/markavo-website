@@ -24,7 +24,7 @@ const TextTemplate = ({ data }) => {
   console.log("lang text template", alternateLanguages)
 
   return (
-    <Layout activeDoc={activeDoc}>
+    <Layout activeDoc={activeDoc} headerBody={data.prismicHeader}>
       <Seo title="Text Template" />
       <Breadcrumb breadcrumbs_item={textTemplateData.breadcrumbs} />
       <TextTemplateSection
@@ -93,6 +93,52 @@ export const TextTemplateQuery = graphql`
             url
           }
           video_title {
+            text
+          }
+        }
+      }
+    }
+    prismicHeader(lang: { eq: $lang }) {
+      data {
+        phone_number {
+          text
+        }
+        header_logo {
+          url
+        }
+        services {
+          name {
+            text
+          }
+          link {
+            uid
+          }
+          icon {
+            url
+          }
+          description {
+            text
+          }
+        }
+        all_services {
+          name {
+            text
+          }
+          link {
+            uid
+          }
+          icon {
+            url
+          }
+        }
+        branding_tools {
+          name {
+            text
+          }
+          link {
+            uid
+          }
+          description {
             text
           }
         }
