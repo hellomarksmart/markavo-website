@@ -2,23 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
+#PricingCards .one-features ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 1rem;
+  width: 100%;
+}
+
+#PricingCards .one-features ul li {
+  position: relative;
+}
+
+#PricingCards .one-features ul li::before {
+  content: url('../images/check-service-list.svg');
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 24px;
+  height: 24px;
+}
+
+#PricingCards .two-price {
+  padding-left: 15px;
+}
+
+#PricingCards .two-price ul {
+  list-style: none;
+}
+
+#PricingCards .two-price ul li {
+  position: relative;
+}
+
+#PricingCards .two-price ul li::before {
+  content: url('../images/check-icon.svg');
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 24px;
+  height: 24px;
+}
+
 #PricingCard {
   width: 33%;
-  min-height: 530px;
 }
 
 #PricingCards #PricingCard:nth-child(2) {
   width: 588px;
   --tw-border-opacity: 1;
+<<<<<<< HEAD
   border-color: rgb(5 150 105 / var(--tw-border-opacity));
+=======
+  border-color: rgba(6, 95, 70, 1);
+>>>>>>> e577c6c (fix: polish pricing section [desktop to mobile] + Add discounted section on pricing)
   margin-left: -5px;
   margin-right: -5px;
   z-index: 10;
 }
 
 #PricingCards #PricingCard:nth-child(2) .cta a {
+<<<<<<< HEAD
   --tw-bg-opacity: 1;
   background-color: rgb(5 150 105 / var(--tw-bg-opacity));
+=======
+  background: #111827;
+>>>>>>> e577c6c (fix: polish pricing section [desktop to mobile] + Add discounted section on pricing)
   color: white;
 }
 
@@ -30,24 +78,36 @@
   text-align: left;
 }
 
+<<<<<<< HEAD
 #PricingCards #PricingCard:nth-child(2) .card-body {
   min-height: 630px;
 }
 
 #PricingCards #PricingCard:nth-child(2)::before {
   content: "MOST POPULAR";
+=======
+#PricingCards .most-popular::before {
+  content: 'MOST POPULAR';
+>>>>>>> e577c6c (fix: polish pricing section [desktop to mobile] + Add discounted section on pricing)
   position: absolute;
-  top: -12px;
-  left: 35%;
-  padding-top: 0.25rem;
+  padding-top: 2px;
   padding-left: 1rem;
   padding-right: 1rem;
+<<<<<<< HEAD
   padding-bottom: 0.25rem;
   --tw-bg-opacity: 1;
   background-color: rgb(5 150 105 / var(--tw-bg-opacity));
   text-align: center;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+=======
+  padding-bottom: 2px;
+  background-color:rgba(6, 95, 70, 1);
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255/var(--tw-text-opacity));
+  font-size: 14px;
+>>>>>>> e577c6c (fix: polish pricing section [desktop to mobile] + Add discounted section on pricing)
   border-radius: 40px;
 }
 
@@ -76,6 +136,7 @@
     width: 85%;
     min-width: 280px;
   }
+<<<<<<< HEAD
 
   #PricingCards
     #PricingCard:nth-child(2)
@@ -100,3 +161,13 @@
     left: 29%;
   }
 }
+=======
+}
+
+@media (max-width: 575px) {
+  #PricingCards #PricingCard:nth-child(2),
+  #PricingCards #PricingCard {
+    width: 100%;
+  }
+}
+>>>>>>> e577c6c (fix: polish pricing section [desktop to mobile] + Add discounted section on pricing)

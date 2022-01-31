@@ -3,16 +3,8 @@ import * as React from "react"
 const FAQs = ({ title, heading, description, faq_contents }) => {
   return (
     <div className="bg-gray-50">
-      <div className="max-w-max mx-auto pt-8 pb-2 px-4 sm:px-6  lg:px-8">
-        <h2 className="text-[16px] text-center font-bold tracking-wider text-emerald-500 uppercase mb-2">
-          {title}
-        </h2>
-        <h2 className="text-[30px] text-center font-extrabold text-gray-900">
-          {heading}
-        </h2>
-        <p className="mt-3 text-base sm:text-[20px] text-center font-normal text-gray-500 sm:mt-4 sm:max-w-md sm:mx-auto md:max-w-3xl">
-          {description}
-        </p>
+      <div className="max-w-default mx-auto pt-8 pb-2 px-4 divide-y divide-gray-200 sm:px-6  lg:px-8">
+        <h2 className="text-[30px] font-extrabold text-gray-900">{heading}</h2>
         <div className="mt-8">
           <dl className="divide-y divide-gray-200">
             {faq_contents?.map((item, i) => {

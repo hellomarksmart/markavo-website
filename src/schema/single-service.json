@@ -112,7 +112,7 @@
         "label": "Grid Cards"
       }
     },
-<<<<<<< HEAD
+
     "stats_title": {
       "type": "StructuredText",
       "config": {
@@ -120,8 +120,7 @@
         "label": "Stats Section Title"
       }
     },
-=======
->>>>>>> 51e6a64 (feat: single service page)
+
     "stats_heading": {
       "type": "StructuredText",
       "config": {
@@ -182,7 +181,7 @@
         "label": "Stats Name"
       }
     },
-<<<<<<< HEAD
+
     "faq_title": {
       "type": "StructuredText",
       "config": {
@@ -190,8 +189,7 @@
         "label": "FAQ Section Title"
       }
     },
-=======
->>>>>>> 51e6a64 (feat: single service page)
+
     "faq_heading": {
       "type": "StructuredText",
       "config": {
@@ -199,7 +197,7 @@
         "label": "FAQs Section Heading"
       }
     },
-<<<<<<< HEAD
+
     "faq_description": {
       "type": "StructuredText",
       "config": {
@@ -208,8 +206,7 @@
         "label": "FAQ Section description"
       }
     },
-=======
->>>>>>> 51e6a64 (feat: single service page)
+
     "faq_contents": {
       "type": "Group",
       "config": {
@@ -306,17 +303,41 @@
                   "label": "Description",
                   "placeholder": "Choose the version that works for you ..."
                 }
+              },
+              "discounted_pill_text": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph",
+                  "label": "Discounted Pill Text"
+                }
+              },
+              "discount_description": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                  "label": "Discount description"
+                }
+              },
+              "discount_cta_label": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph",
+                  "label": "Discount CTA Label"
+                }
+              },
+              "discount_cta_link": {
+                "type": "Link",
+                "config": {
+                  "allowTargetBlank": true,
+                  "label": "Discount CTA Link"
+                }
               }
             },
             "repeat": {
               "headline": {
                 "type": "StructuredText",
                 "config": {
-<<<<<<< HEAD
                   "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-=======
-                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
->>>>>>> 51e6a64 (feat: single service page)
                   "label": "headline"
                 }
               },
@@ -331,22 +352,14 @@
               "bottomline": {
                 "type": "StructuredText",
                 "config": {
-<<<<<<< HEAD
                   "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-=======
-                  "single": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
->>>>>>> 51e6a64 (feat: single service page)
                   "label": "Bottomline"
                 }
               },
               "plan_description": {
                 "type": "StructuredText",
                 "config": {
-<<<<<<< HEAD
                   "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-=======
-                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
->>>>>>> 51e6a64 (feat: single service page)
                   "label": "Plan Description"
                 }
               },
@@ -402,11 +415,7 @@
               "cta_bottom_text": {
                 "type": "StructuredText",
                 "config": {
-<<<<<<< HEAD
                   "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-=======
-                  "single": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
->>>>>>> 51e6a64 (feat: single service page)
                   "label": "CTA Bottom Text"
                 }
               }

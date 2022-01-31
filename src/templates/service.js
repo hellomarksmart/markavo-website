@@ -99,6 +99,18 @@ export const ServiceSingleQuery = graphql`
                 richText
                 text
               }
+              discounted_pill_text {
+                text
+              }
+              discount_description {
+                richText
+              }
+              discount_cta_link {
+                url
+              }
+              discount_cta_label {
+                text
+              }
             }
             items {
               plan_title {
