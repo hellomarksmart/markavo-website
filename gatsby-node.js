@@ -68,6 +68,14 @@ exports.createPages = async ({ graphql, actions }) => {
           url
         }
       }
+      service_single: allPrismicServiceSinglePage {
+        nodes {
+          uid
+          id
+          lang
+          url
+        }
+      }
     }
   `)
 
@@ -80,11 +88,11 @@ exports.createPages = async ({ graphql, actions }) => {
   const notFound = result.data.not_found.nodes
   const aboutUsPage = result.data.about_us_page.nodes
   const servicesPage = result.data.services_page.nodes
-
   const paymentReceived = result.data.payment_received.nodes
   const contactUsPage = result.data.contact_us_page.nodes
   const textTemplate = result.data.text_template.nodes
   const searchPage = result.data.search_page.nodes
+  const singleService = result.data.service_single.nodes
 
   homePage.forEach(page => {
     createPage({
@@ -188,10 +196,14 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  createPage({
-    path: "/using-dsg",
-    component: require.resolve("./src/templates/using-dsg.js"),
-    context: {},
-    defer: true,
+  singleService.forEach(page => {
+    createPage({
+      path: `/services/${page.uid}`,
+      component: path.resolve(__dirname, "src/templates/service.js"),
+      context: {
+        id: page.id,
+        lang: page.lang,
+      },
+    })
   })
 }

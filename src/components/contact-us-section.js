@@ -1,4 +1,3 @@
-
 import * as React from "react"
 
 const ContactSection = ({ heading, description, contact_items }) => {

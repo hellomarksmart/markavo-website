@@ -1,145 +1,145 @@
 {
-  "Main" : {
-    "uid" : {
-      "type" : "UID",
-      "config" : {
-        "label" : "Footer"
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "Footer"
       }
     },
-    "applications" : {
-      "type" : "Group",
-      "config" : {
-        "fields" : {
-          "link_title" : {
-            "type" : "StructuredText",
-            "config" : {
-              "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-              "allowTargetBlank" : true,
-              "label" : "Footer Link Title"
+    "applications": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "link_title": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "allowTargetBlank": true,
+              "label": "Footer Link Title"
             }
           },
-          "link" : {
-            "type" : "Link",
-            "config" : {
-              "allowTargetBlank" : true,
-              "label" : "Footer Link",
-              "select" : null
+          "link": {
+            "type": "Link",
+            "config": {
+              "allowTargetBlank": true,
+              "label": "Footer Link",
+              "select": null
             }
           },
-          "link_name" : {
-            "type" : "StructuredText",
-            "config" : {
-              "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-              "allowTargetBlank" : true,
-              "label" : "Footer Link Label"
+          "link_name": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "allowTargetBlank": true,
+              "label": "Footer Link Label"
             }
           }
         },
-        "label" : "Applications"
+        "label": "Applications"
       }
     },
-    "registrations" : {
-      "type" : "Group",
-      "config" : {
-        "fields" : {
-          "link_title" : {
-            "type" : "StructuredText",
-            "config" : {
-              "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-              "allowTargetBlank" : true,
-              "label" : "Footer Link Title"
+    "registrations": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "link_title": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "allowTargetBlank": true,
+              "label": "Footer Link Title"
             }
           },
-          "link" : {
-            "type" : "Link",
-            "config" : {
-              "label" : "Footer Link",
-              "allowTargetBlank" : true,
-              "select" : null
+          "link": {
+            "type": "Link",
+            "config": {
+              "label": "Footer Link",
+              "allowTargetBlank": true,
+              "select": null
             }
           },
-          "link_name" : {
-            "type" : "StructuredText",
-            "config" : {
-              "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-              "allowTargetBlank" : true,
-              "label" : "Footer Link Label"
+          "link_name": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "allowTargetBlank": true,
+              "label": "Footer Link Label"
             }
           }
         },
-        "label" : "Registrations"
+        "label": "Registrations"
       }
     },
-    "disputes" : {
-      "type" : "Group",
-      "config" : {
-        "fields" : {
-          "link_title" : {
-            "type" : "StructuredText",
-            "config" : {
-              "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-              "allowTargetBlank" : true,
-              "label" : "Footer Link Title"
+    "disputes": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "link_title": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "allowTargetBlank": true,
+              "label": "Footer Link Title"
             }
           },
-          "link" : {
-            "type" : "Link",
-            "config" : {
-              "allowTargetBlank" : true,
-              "label" : "Footer Link",
-              "select" : null
+          "link": {
+            "type": "Link",
+            "config": {
+              "allowTargetBlank": true,
+              "label": "Footer Link",
+              "select": null
             }
           },
-          "link_name" : {
-            "type" : "StructuredText",
-            "config" : {
-              "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-              "allowTargetBlank" : true,
-              "label" : "Footer Link Label"
+          "link_name": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "allowTargetBlank": true,
+              "label": "Footer Link Label"
             }
           }
         },
-        "label" : "Disputes"
+        "label": "Disputes"
       }
     },
-    "company" : {
-      "type" : "Group",
-      "config" : {
-        "fields" : {
-          "link_title" : {
-            "type" : "StructuredText",
-            "config" : {
-              "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-              "allowTargetBlank" : true,
-              "label" : "Footer Link Title"
+    "company": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "link_title": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "allowTargetBlank": true,
+              "label": "Footer Link Title"
             }
           },
-          "link" : {
-            "type" : "Link",
-            "config" : {
-              "allowTargetBlank" : true,
-              "label" : "Footer Link",
-              "select" : null
+          "link": {
+            "type": "Link",
+            "config": {
+              "allowTargetBlank": true,
+              "label": "Footer Link",
+              "select": null
             }
           },
-          "link_name" : {
-            "type" : "StructuredText",
-            "config" : {
-              "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-              "allowTargetBlank" : true,
-              "label" : "Footer Link Label"
+          "link_name": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "allowTargetBlank": true,
+              "label": "Footer Link Label"
             }
           }
         },
-        "label" : "Company"
+        "label": "Company"
       }
     },
-    "footer_copyright" : {
-      "type" : "StructuredText",
-      "config" : {
-        "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-        "allowTargetBlank" : true,
-        "label" : "Copyright"
+    "footer_copyright": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "allowTargetBlank": true,
+        "label": "Copyright"
       }
     }
   }

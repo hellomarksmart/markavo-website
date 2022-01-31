@@ -72,7 +72,7 @@ const Footer = () => {
                   {footerData.prismicFooter.data.applications.map((item, i) => {
                     return (
                       <li key={i}>
-                        {item.link.url ?
+                        {item.link.url ? (
                           <a
                             href={item.link.url}
                             className="text-sm font-medium text-emerald-400 hover:text-emerald-600"
@@ -80,13 +80,11 @@ const Footer = () => {
                           >
                             {item.link_name.text}
                           </a>
-                          :
-                          <p
-                            className="text-sm font-medium text-emerald-400 hover:text-emerald-600"
-                          >
+                        ) : (
+                          <p className="text-sm font-medium text-emerald-400 hover:text-emerald-600">
                             {item.link_name.text}
                           </p>
-                        }
+                        )}
                       </li>
                     )
                   })}
@@ -97,25 +95,25 @@ const Footer = () => {
                   Registrations
                 </h3>
                 <ul className="mt-4 space-y-4 ml-0">
-                  {footerData.prismicFooter.data.registrations.map((item, i) => (
-                    <li key={i}>
-                      {item.link.url ?
-                        <a
-                          href={item.link.url}
-                          className="text-sm font-medium text-emerald-400 hover:text-emerald-600"
-                          title={item.link_title.text}
-                        >
-                          {item.link_name.text}
-                        </a>
-                        :
-                        <p
-                          className="text-sm font-medium text-emerald-400 hover:text-emerald-600"
-                        >
-                          {item.link_name.text}
-                        </p>
-                      }
-                    </li>
-                  ))}
+                  {footerData.prismicFooter.data.registrations.map(
+                    (item, i) => (
+                      <li key={i}>
+                        {item.link.url ? (
+                          <a
+                            href={item.link.url}
+                            className="text-sm font-medium text-emerald-400 hover:text-emerald-600"
+                            title={item.link_title.text}
+                          >
+                            {item.link_name.text}
+                          </a>
+                        ) : (
+                          <p className="text-sm font-medium text-emerald-400 hover:text-emerald-600">
+                            {item.link_name.text}
+                          </p>
+                        )}
+                      </li>
+                    )
+                  )}
                 </ul>
               </div>
             </div>
@@ -127,7 +125,7 @@ const Footer = () => {
                 <ul className="mt-4 space-y-4 ml-0">
                   {footerData.prismicFooter.data.disputes.map((item, i) => (
                     <li key={i}>
-                      {item.link.url ?
+                      {item.link.url ? (
                         <a
                           href={item.link.url}
                           className="text-sm font-medium text-emerald-400 hover:text-emerald-600"
@@ -135,13 +133,11 @@ const Footer = () => {
                         >
                           {item.link_name.text}
                         </a>
-                        :
-                        <p
-                          className="text-sm font-medium text-emerald-400 hover:text-emerald-600"
-                        >
+                      ) : (
+                        <p className="text-sm font-medium text-emerald-400 hover:text-emerald-600">
                           {item.link_name.text}
                         </p>
-                      }
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -153,7 +149,7 @@ const Footer = () => {
                 <ul className="mt-4 space-y-4 ml-0">
                   {footerData.prismicFooter.data.company.map((item, i) => (
                     <li key={i}>
-                      {item.link.url ?
+                      {item.link.url ? (
                         <a
                           href={item.link.url}
                           className="text-sm font-medium text-emerald-400 hover:text-emerald-600"
@@ -161,13 +157,11 @@ const Footer = () => {
                         >
                           {item.link_name.text}
                         </a>
-                        :
-                        <p
-                          className="text-sm font-medium text-emerald-400 hover:text-emerald-600"
-                        >
+                      ) : (
+                        <p className="text-sm font-medium text-emerald-400 hover:text-emerald-600">
                           {item.link_name.text}
                         </p>
-                      }
+                      )}
                     </li>
                   ))}
                 </ul>

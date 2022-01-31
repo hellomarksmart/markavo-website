@@ -17,7 +17,9 @@ const Statistics = ({
           <h2 className="text-3xl sm:text-[36px] font-bold text-gray-900 md:max-w-3xl sm:max-w-md sm:mx-auto">
             {heading}
           </h2>
-          <p className="mt-3 text-base sm:text-[20px] font-normal text-gray-500 sm:mt-4 sm:max-w-md sm:mx-auto md:max-w-3xl">{description}</p>
+          <p className="mt-3 text-base sm:text-[20px] font-normal text-gray-500 sm:mt-4 sm:max-w-md sm:mx-auto md:max-w-3xl">
+            {description}
+          </p>
         </div>
       </div>
       <div className="mt-10 pb-12 bg-white sm:pb-12">

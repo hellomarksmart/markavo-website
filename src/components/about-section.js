@@ -9,9 +9,7 @@ const AboutSection = ({ heading, description, about_items }) => {
             <h2 className="text-3xl font-extrabold tracking-tight sm:text-[36px]">
               {heading}
             </h2>
-            <p className="  text-[20px] text-gray-500">
-              {description}
-            </p>
+            <p className="  text-[20px] text-gray-500">{description}</p>
           </div>
           <div className="lg:col-span-2">
             <ul className="space-y-12 sm:divide-y sm:divide-gray-200 sm:space-y-0 sm:-mt-8 lg:gap-x-8 lg:space-y-0 ml-0">
