@@ -25,10 +25,8 @@ const Service = ({ data }) => {
     alternateLanguages,
   }
 
-  console.log(singleService)
-
   return (
-    <Layout activeDoc={activeDoc}>
+    <Layout activeDoc={activeDoc} headerBody={data.prismicHeader}>
       <Seo title="Service" />
       <Banner
         heading={singleServiceData.banner_heading.text}
@@ -97,6 +95,18 @@ export const ServiceSingleQuery = graphql`
               }
               description {
                 richText
+                text
+              }
+              discounted_pill_text {
+                text
+              }
+              discount_description {
+                richText
+              }
+              discount_cta_link {
+                url
+              }
+              discount_cta_label {
                 text
               }
             }
@@ -227,6 +237,52 @@ export const ServiceSingleQuery = graphql`
         }
         cta_button {
           url
+        }
+      }
+    }
+    prismicHeader(lang: { eq: $lang }) {
+      data {
+        phone_number {
+          text
+        }
+        header_logo {
+          url
+        }
+        services {
+          name {
+            text
+          }
+          link {
+            uid
+          }
+          icon {
+            url
+          }
+          description {
+            text
+          }
+        }
+        all_services {
+          name {
+            text
+          }
+          link {
+            uid
+          }
+          icon {
+            url
+          }
+        }
+        branding_tools {
+          name {
+            text
+          }
+          link {
+            uid
+          }
+          description {
+            text
+          }
         }
       }
     }

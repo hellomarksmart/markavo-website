@@ -21,7 +21,7 @@ const AllServices = ({ data }) => {
   }
 
   return (
-    <Layout activeDoc={activeDoc}>
+    <Layout activeDoc={activeDoc} headerBody={data.prismicHeader}>
       <Seo title="Services" />
       <ServicesSection
         title={servcicesData.service_section_title.text}
@@ -68,6 +68,52 @@ export const ServicesQuery = graphql`
           }
           link {
             url
+          }
+        }
+      }
+    }
+    prismicHeader(lang: { eq: $lang }) {
+      data {
+        phone_number {
+          text
+        }
+        header_logo {
+          url
+        }
+        services {
+          name {
+            text
+          }
+          link {
+            uid
+          }
+          icon {
+            url
+          }
+          description {
+            text
+          }
+        }
+        all_services {
+          name {
+            text
+          }
+          link {
+            uid
+          }
+          icon {
+            url
+          }
+        }
+        branding_tools {
+          name {
+            text
+          }
+          link {
+            uid
+          }
+          description {
+            text
           }
         }
       }

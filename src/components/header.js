@@ -16,63 +16,14 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 
-const Header = ({ activeDoc }) => {
-  const headerData = useStaticQuery(graphql`
-    query MyQuery {
-      prismicHeader {
-        data {
-          phone_number {
-            text
-          }
-          header_logo {
-            url
-          }
-          services {
-            name {
-              text
-            }
-            link {
-              uid
-            }
-            icon {
-              url
-            }
-            description {
-              text
-            }
-          }
-          all_services {
-            name {
-              text
-            }
-            link {
-              uid
-            }
-            icon {
-              url
-            }
-          }
-          branding_tools {
-            name {
-              text
-            }
-            link {
-              uid
-            }
-            description {
-              text
-            }
-          }
-        }
-      }
-    }
-  `)
+const Header = ({ topHeader, activeDoc }) => {
+  const headerData = topHeader || []
 
-  const headerLogo = headerData.prismicHeader.data.header_logo.url
-  const phoneNumber = headerData.prismicHeader.data.phone_number.text
-  const services = headerData.prismicHeader.data.services
-  const allServices = headerData.prismicHeader.data.all_services
-  const brandingTools = headerData.prismicHeader.data.branding_tools
+  const headerLogo = headerData.data.header_logo.url
+  const phoneNumber = headerData.data.phone_number.text
+  const services = headerData.data.services
+  const allServices = headerData.data.all_services
+  const brandingTools = headerData.data.branding_tools
 
   return (
     <Popover className="relative bg-white">
