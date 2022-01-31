@@ -112,6 +112,13 @@
         "label": "Grid Cards"
       }
     },
+    "stats_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Stats Section Title"
+      }
+    },
     "stats_heading": {
       "type": "StructuredText",
       "config": {
@@ -172,11 +179,26 @@
         "label": "Stats Name"
       }
     },
+    "faq_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "FAQ Section Title"
+      }
+    },
     "faq_heading": {
       "type": "StructuredText",
       "config": {
         "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
         "label": "FAQs Section Heading"
+      }
+    },
+    "faq_description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "allowTargetBlank": true,
+        "label": "FAQ Section description"
       }
     },
     "faq_contents": {
@@ -281,7 +303,7 @@
               "headline": {
                 "type": "StructuredText",
                 "config": {
-                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
                   "label": "headline"
                 }
               },
@@ -296,14 +318,14 @@
               "bottomline": {
                 "type": "StructuredText",
                 "config": {
-                  "single": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                  "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
                   "label": "Bottomline"
                 }
               },
               "plan_description": {
                 "type": "StructuredText",
                 "config": {
-                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
                   "label": "Plan Description"
                 }
               },
@@ -359,7 +381,7 @@
               "cta_bottom_text": {
                 "type": "StructuredText",
                 "config": {
-                  "single": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                  "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
                   "label": "CTA Bottom Text"
                 }
               }

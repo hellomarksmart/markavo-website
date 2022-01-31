@@ -334,6 +334,13 @@
         "select": null
       }
     },
+    "stats_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Stats Section Title"
+      }
+    },
     "stats_heading": {
       "type": "StructuredText",
       "config": {
@@ -498,7 +505,7 @@
                 "type": "StructuredText",
                 "config": {
                   "single": "paragraph",
-                  "label": "Subscription"
+                  "label": "Frequency"
                 }
               },
               "features": {
