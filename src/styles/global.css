@@ -10,7 +10,7 @@
 #PricingCards #PricingCard:nth-child(2) {
   width: 588px;
   --tw-border-opacity: 1;
-  border-color: rgb(5 150 105/var(--tw-border-opacity));
+  border-color: rgb(5 150 105 / var(--tw-border-opacity));
   margin-left: -5px;
   margin-right: -5px;
   z-index: 10;
@@ -18,7 +18,7 @@
 
 #PricingCards #PricingCard:nth-child(2) .cta a {
   --tw-bg-opacity: 1;
-  background-color: rgb(5 150 105/var(--tw-bg-opacity));
+  background-color: rgb(5 150 105 / var(--tw-bg-opacity));
   color: white;
 }
 
@@ -35,7 +35,7 @@
 }
 
 #PricingCards #PricingCard:nth-child(2)::before {
-  content: 'MOST POPULAR';
+  content: "MOST POPULAR";
   position: absolute;
   top: -12px;
   left: 35%;
@@ -44,11 +44,15 @@
   padding-right: 1rem;
   padding-bottom: 0.25rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(5 150 105/var(--tw-bg-opacity));
+  background-color: rgb(5 150 105 / var(--tw-bg-opacity));
   text-align: center;
   --tw-text-opacity: 1;
-  color: rgb(255 255 255/var(--tw-text-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
   border-radius: 40px;
+}
+
+.list-items ul {
+  list-style: disc;
 }
 
 @media (max-width: 1024px) {
@@ -73,8 +77,12 @@
     min-width: 280px;
   }
 
-  #PricingCards #PricingCard:nth-child(2) .card-body
-  #PricingCards #PricingCard .card-body {
+  #PricingCards
+    #PricingCard:nth-child(2)
+    .card-body
+    #PricingCards
+    #PricingCard
+    .card-body {
     min-height: unset;
   }
 
@@ -84,11 +92,10 @@
 }
 
 @media (max-width: 575px) {
-  #PricingCards #PricingCard:nth-child(2)
-  #PricingCards #PricingCard {
+  #PricingCards #PricingCard:nth-child(2) #PricingCards #PricingCard {
     width: 100%;
   }
-  
+
   #PricingCards #PricingCard:nth-child(2)::before {
     left: 29%;
   }
