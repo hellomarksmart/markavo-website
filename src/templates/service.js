@@ -45,6 +45,7 @@ const Service = ({ data }) => {
       />
       <PricingSection pricingBody={singleServiceData.body} />
       <Statistics
+        title={singleServiceData.stats_title.text}
         heading={singleServiceData.stats_heading.text}
         description={singleServiceData.stats_description.text}
         nameLeft={singleServiceData.name_left.text}
@@ -55,7 +56,9 @@ const Service = ({ data }) => {
         statsRight={singleServiceData.stats_right.text}
       />
       <FAQs
+        title={singleServiceData.faq_title.text}
         heading={singleServiceData.faq_heading.text}
+        description={singleServiceData.faq_description.text}
         faq_contents={singleServiceData.faq_contents}
       />
       <Cta
@@ -180,6 +183,7 @@ export const ServiceSingleQuery = graphql`
         grid_cards {
           content {
             richText
+            text
           }
           icon {
             url
@@ -187,6 +191,9 @@ export const ServiceSingleQuery = graphql`
           title {
             text
           }
+        }
+        stats_title {
+          text
         }
         stats_heading {
           text
@@ -212,15 +219,21 @@ export const ServiceSingleQuery = graphql`
         name_center {
           text
         }
+        faq_title {
+          text
+        }
         faq_heading {
           text
         }
+        faq_description {
+          text
+        }
         faq_contents {
-          faq_answer {
+          faq_question {
             text
           }
-          faq_question {
-            richText
+          faq_answer {
+            text
           }
         }
         cta_heading_2 {
