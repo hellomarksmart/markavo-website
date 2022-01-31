@@ -24,7 +24,11 @@ const HomepageTemplate = ({ data }) => {
   }
 
   return (
-    <Layout activeDoc={activeDoc} headerBody={data.prismicHeader}>
+    <Layout 
+      activeDoc={activeDoc} 
+      headerBody={data.prismicHeader}
+      footerBody={data.prismicFooter}
+    >
       <Seo title="Home" />
       <Banner
         heading={homeData.banner_heading.text}
@@ -330,6 +334,57 @@ export const query = graphql`
           description {
             text
           }
+        }
+      }
+    }
+    prismicFooter(lang: { eq: $lang }) {
+      data {
+        applications {
+          link {
+            url
+          }
+          link_name {
+            text
+          }
+          link_title {
+            text
+          }
+        }
+        company {
+          link {
+            url
+          }
+          link_name {
+            text
+          }
+          link_title {
+            text
+          }
+        }
+        disputes {
+          link {
+            url
+          }
+          link_name {
+            text
+          }
+          link_title {
+            text
+          }
+        }
+        registrations {
+          link {
+            url
+          }
+          link_name {
+            text
+          }
+          link_title {
+            text
+          }
+        }
+        footer_copyright {
+          text
         }
       }
     }
