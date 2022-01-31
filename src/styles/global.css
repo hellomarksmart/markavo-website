@@ -14,7 +14,7 @@
 }
 
 #PricingCards .one-features ul li::before {
-  content: url('../images/check-service-list.svg');
+  content: url("../images/check-service-list.svg");
   position: absolute;
   top: 0;
   left: -30px;
@@ -35,7 +35,7 @@
 }
 
 #PricingCards .two-price ul li::before {
-  content: url('../images/check-icon.svg');
+  content: url("../images/check-icon.svg");
   position: absolute;
   top: 0;
   left: -30px;
@@ -50,23 +50,14 @@
 #PricingCards #PricingCard:nth-child(2) {
   width: 588px;
   --tw-border-opacity: 1;
-<<<<<<< HEAD
-  border-color: rgb(5 150 105 / var(--tw-border-opacity));
-=======
   border-color: rgba(6, 95, 70, 1);
->>>>>>> e577c6c (fix: polish pricing section [desktop to mobile] + Add discounted section on pricing)
   margin-left: -5px;
   margin-right: -5px;
   z-index: 10;
 }
 
 #PricingCards #PricingCard:nth-child(2) .cta a {
-<<<<<<< HEAD
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 150 105 / var(--tw-bg-opacity));
-=======
   background: #111827;
->>>>>>> e577c6c (fix: polish pricing section [desktop to mobile] + Add discounted section on pricing)
   color: white;
 }
 
@@ -78,36 +69,18 @@
   text-align: left;
 }
 
-<<<<<<< HEAD
-#PricingCards #PricingCard:nth-child(2) .card-body {
-  min-height: 630px;
-}
-
-#PricingCards #PricingCard:nth-child(2)::before {
-  content: "MOST POPULAR";
-=======
 #PricingCards .most-popular::before {
-  content: 'MOST POPULAR';
->>>>>>> e577c6c (fix: polish pricing section [desktop to mobile] + Add discounted section on pricing)
+  content: "MOST POPULAR";
   position: absolute;
   padding-top: 2px;
   padding-left: 1rem;
   padding-right: 1rem;
-<<<<<<< HEAD
-  padding-bottom: 0.25rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 150 105 / var(--tw-bg-opacity));
+  padding-bottom: 2px;
+  background-color: rgba(6, 95, 70, 1);
   text-align: center;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-=======
-  padding-bottom: 2px;
-  background-color:rgba(6, 95, 70, 1);
-  text-align: center;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255/var(--tw-text-opacity));
   font-size: 14px;
->>>>>>> e577c6c (fix: polish pricing section [desktop to mobile] + Add discounted section on pricing)
   border-radius: 40px;
 }
 
@@ -136,32 +109,6 @@
     width: 85%;
     min-width: 280px;
   }
-<<<<<<< HEAD
-
-  #PricingCards
-    #PricingCard:nth-child(2)
-    .card-body
-    #PricingCards
-    #PricingCard
-    .card-body {
-    min-height: unset;
-  }
-
-  #PricingCards #PricingCard:nth-child(2)::before {
-    left: 37%;
-  }
-}
-
-@media (max-width: 575px) {
-  #PricingCards #PricingCard:nth-child(2) #PricingCards #PricingCard {
-    width: 100%;
-  }
-
-  #PricingCards #PricingCard:nth-child(2)::before {
-    left: 29%;
-  }
-}
-=======
 }
 
 @media (max-width: 575px) {
@@ -170,4 +117,3 @@
     width: 100%;
   }
 }
->>>>>>> e577c6c (fix: polish pricing section [desktop to mobile] + Add discounted section on pricing)

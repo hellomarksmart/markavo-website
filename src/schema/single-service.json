@@ -112,7 +112,6 @@
         "label": "Grid Cards"
       }
     },
-
     "stats_title": {
       "type": "StructuredText",
       "config": {
@@ -120,7 +119,6 @@
         "label": "Stats Section Title"
       }
     },
-
     "stats_heading": {
       "type": "StructuredText",
       "config": {
@@ -181,7 +179,6 @@
         "label": "Stats Name"
       }
     },
-
     "faq_title": {
       "type": "StructuredText",
       "config": {
@@ -189,7 +186,6 @@
         "label": "FAQ Section Title"
       }
     },
-
     "faq_heading": {
       "type": "StructuredText",
       "config": {
@@ -197,7 +193,6 @@
         "label": "FAQs Section Heading"
       }
     },
-
     "faq_description": {
       "type": "StructuredText",
       "config": {
@@ -206,7 +201,6 @@
         "label": "FAQ Section description"
       }
     },
-
     "faq_contents": {
       "type": "Group",
       "config": {

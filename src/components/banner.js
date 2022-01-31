@@ -97,7 +97,7 @@ const Banner = ({
               {description}
             </p>
           </div>
-          <div className="mt-5 max-w-[16rem] sm:max-w-sm mx-auto sm:flex sm:justify-center md:mt-8">
+          <div className="mt-5 sm:max-w-sm mx-auto sm:flex sm:justify-center md:mt-8">
             <div className="rounded-md">
               {buttonColoredLink ? (
                 <Link
