@@ -25,8 +25,6 @@ const Service = ({ data }) => {
     alternateLanguages,
   }
 
-  console.log(singleService)
-
   return (
     <Layout activeDoc={activeDoc}>
       <Seo title="Service" />

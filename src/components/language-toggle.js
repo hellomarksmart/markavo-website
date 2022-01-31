@@ -21,8 +21,6 @@ export const LanguageToggle = ({ activeDocMeta }) => {
     navigate(event.target.value)
   }
 
-  console.log(activeDocMeta.alternateLanguages)
-
   return (
     <div className="language-switcher">
       <select

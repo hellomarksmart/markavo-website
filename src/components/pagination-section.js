@@ -63,7 +63,6 @@ const Pagination = ({ currentPage, pages, setCurrentPage }) => {
 
             {/* show page numbers */}
             {getPaginationGroup().map((item, index) => {
-              console.log(item)
               return (
                 <button
                   key={index}

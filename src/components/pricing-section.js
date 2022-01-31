@@ -3,8 +3,6 @@ import { Link } from "gatsby"
 import { RichText } from "prismic-reactjs"
 
 const PricingSection = ({ pricingBody }) => {
-  console.log("data on pricing section:", pricingBody)
-
   return (
     <div className={`bg-emerald-400 px-5 pb-12`}>
       <div className="max-w-default mx-auto pt-12 px-4 sm:px-6 lg:px-8 lg:pt-20">
