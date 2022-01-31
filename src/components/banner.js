@@ -103,12 +103,12 @@ const Banner = ({
                 <Link
                   key={buttonColored}
                   to={buttonColoredLink}
-                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-400 hover:bg-emerald-500 md:py-[16px] md:text-[18px] md:px-[40px]"
+                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-emerald-400 hover:bg-emerald-500 md:py-[16px] md:text-[18px] md:px-[40px]"
                 >
                   {buttonColored}
                 </Link>
               ) : (
-                <div className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-400 hover:bg-emerald-500 md:py-[16px] md:text-[18px] md:px-[40px]">
+                <div className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-emerald-400 hover:bg-emerald-500 md:py-[16px] md:text-[18px] md:px-[40px]">
                   {buttonColored}
                 </div>
               )}
@@ -118,12 +118,12 @@ const Banner = ({
                 <Link
                   key={buttonPlain}
                   to={buttonPlainLink}
-                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-emerald-400 bg-white hover:bg-gray-50 md:py-[16px] md:text-[18px] md:px-[40px]"
+                  className="w-full flex items-center justify-center px-8 py-3 border border-gray-900 text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50 md:py-[16px] md:text-[18px] md:px-[40px]"
                 >
                   {buttonPlain}
                 </Link>
               ) : (
-                <div className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-emerald-400 bg-white hover:bg-gray-50 md:py-[16px] md:text-[18px] md:px-[40px]">
+                <div className="w-full flex items-center justify-center px-8 py-3 border border-gray-900 text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50 md:py-[16px] md:text-[18px] md:px-[40px]">
                   {buttonPlain}
                 </div>
               )}

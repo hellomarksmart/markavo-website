@@ -76,36 +76,36 @@ const Header = ({ activeDoc }) => {
 
   return (
     <Popover className="relative bg-white">
-      <div className="flex justify-between items-center px-4 py-4 border-b-emerald-200 border border-t-0 border-r-0 border-l-0 sm:px-6 md:justify-end md:space-x-10 md:flex sm:hidden hidden">
+      <div className="flex justify-between items-center px-4 py-4 border-b-gray-200 border border-t-0 border-r-0 border-l-0 sm:px-6 md:justify-end md:space-x-10 md:flex sm:hidden hidden">
         <div className="flex space-x-4 items-center md:ml-12">
           <div className="flex px-3">
             <PhoneIcon
-              className="h-6 w-6 md:h-5 md:w-5 md:mt-[2px] text-transparent fill-emerald-400"
+              className="h-6 w-6 md:h-5 md:w-5 md:mt-[2px] text-transparent fill-gray-900"
               aria-hidden="true"
             />
             <Link
               href={`tel:+${phoneNumber}`}
-              className="text-md lg:text-base md:text-sm font-semibold text-emerald-400 pl-1 hover:text-emerald-500"
+              className="text-md lg:text-base md:text-sm font-semibold text-gray-900 pl-1 hover:text-gray-800"
             >
               {phoneNumber}
             </Link>
           </div>
           <Link
             to="/contact-us"
-            className="ml-8 inline-flex items-center justify-center px-3 py-[0.32rem] border border-emerald-400 rounded-md shadow-sm lg:text-sm md:text-[15px] font-medium text-emerald-400 bg-white hover:text-white hover:bg-emerald-400"
+            className="ml-8 inline-flex items-center justify-center px-3 py-[0.32rem] border border-gray-400 rounded-md shadow-sm lg:text-sm md:text-[15px] font-medium text-gray-900 bg-white hover:bg-gray-50"
           >
             Contact Us
           </Link>
           <Link
             to="/markavo-reviews"
-            className="text-md lg:text-base md:text-sm font-medium text-emerald-400 px-3 hover:text-emerald-500"
+            className="text-md lg:text-base md:text-sm font-medium text-gray-900 px-3 hover:text-gray-800"
           >
             Client Reviews
           </Link>
           {activeDoc ? <LanguageToggle activeDocMeta={activeDoc} /> : ""}
         </div>
       </div>
-      <div className="flex justify-between items-center px-4 py-4 border-b-emerald-200 border border-t-0 border-r-0 border-l-0 sm:px-6 md:justify-start lg:space-x-10">
+      <div className="flex justify-between items-center px-4 py-4 border-b-gray-200 border border-t-0 border-r-0 border-l-0 sm:px-6 md:justify-start lg:space-x-10">
         <div className="lg:w-auto sm:w-2/12 w-4/12">
           <Link to="/" className="flex">
             <span className="sr-only">Markvao</span>
@@ -120,7 +120,7 @@ const Header = ({ activeDoc }) => {
           </Link>
         </div>
         <div className="-mr-2 -my-2 md:hidden">
-          <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+          <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
             <span className="sr-only">Open menu</span>
             <MenuIcon className="h-6 w-6" aria-hidden="true" />
           </Popover.Button>
@@ -136,15 +136,15 @@ const Header = ({ activeDoc }) => {
                   <>
                     <Popover.Button
                       className={classNames(
-                        open ? "text-emerald-400" : "text-emerald-400",
-                        "group inline-flex items-center lg:mr-6 md:mr-2 text-md lg:text-base md:text-sm font-medium text-emerald-400 hover:text-emerald-500"
+                        open ? "text-gray-900" : "text-gray-900",
+                        "group inline-flex items-center lg:mr-6 md:mr-2 text-md lg:text-base md:text-sm font-medium text-gray-900 hover:text-gray-800"
                       )}
                     >
                       <span>Our Services</span>
                       <ChevronDownIcon
                         className={classNames(
-                          open ? "text-emerald-400" : "text-emerald-400",
-                          "lg:ml-1 md:ml-0 mt-1 md:mt-0 lg:h-5 lg:w-5 md:h-4 md:w-4 group-hover:text-emerald-500"
+                          open ? "text-gray-900" : "text-gray-900",
+                          "lg:ml-1 md:ml-0 mt-1 md:mt-0 lg:h-5 lg:w-5 md:h-4 md:w-4 group-hover:text-gray-500"
                         )}
                         aria-hidden="true"
                       />
@@ -168,7 +168,7 @@ const Header = ({ activeDoc }) => {
                                 to={item.link.uid ? item.link.uid : "#"}
                                 className="-m-3 p-3  flex items-start rounded-lg hover:bg-gray-50"
                               >
-                                <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-emerald-400 text-white sm:h-12 sm:w-12">
+                                <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gray-900 text-white sm:h-12 sm:w-12">
                                   {item.icon.url ? (
                                     <img
                                       src={item.icon.url}
@@ -183,7 +183,7 @@ const Header = ({ activeDoc }) => {
                                   )}
                                 </div>
                                 <div className="ml-4">
-                                  <p className="text-sm font-medium text-emerald-400 mb-0">
+                                  <p className="text-sm font-medium text-gray-900 mb-0">
                                     {item.name.text ? item.name.text : ""}
                                   </p>
                                   <p className="mt-1 text-sm text-gray-700 mb-0">
@@ -203,17 +203,17 @@ const Header = ({ activeDoc }) => {
                                     onTouchEnd={
                                       item.link.uid ? item.link.uid : "#"
                                     }
-                                    className="-m-3 p-3 flex items-center rounded-md text-sm font-medium text-emerald-400 hover:bg-gray-400 transition ease-in-out duration-150"
+                                    className="-m-3 p-3 flex items-center rounded-md text-sm font-medium text-gray-900 hover:bg-gray-400 transition ease-in-out duration-150"
                                   >
                                     {item.icon.url ? (
                                       <img
                                         src={item.icon.url}
-                                        className="flex-shrink-0 h-6 w-6 text-emerald-400"
+                                        className="flex-shrink-0 h-6 w-6 text-gray-900"
                                         alt=""
                                       />
                                     ) : (
                                       <PlayIcon
-                                        className="flex-shrink-0 h-6 w-6 text-emerald-400"
+                                        className="flex-shrink-0 h-6 w-6 text-gray-900"
                                         aria-hidden="true"
                                       />
                                     )}
@@ -236,15 +236,15 @@ const Header = ({ activeDoc }) => {
                   <>
                     <Popover.Button
                       className={classNames(
-                        open ? "text-emerald-400" : "text-emerald-400",
-                        "group inline-flex items-center lg:mr-6 md:mr-2 text-md lg:text-base md:text-sm font-medium text-emerald-400 hover:text-emerald-500"
+                        open ? "text-gray-900" : "text-gray-900",
+                        "group inline-flex items-center lg:mr-6 md:mr-2 text-md lg:text-base md:text-sm font-medium text-gray-900 hover:text-gray-800"
                       )}
                     >
                       <span>Branding Tools</span>
                       <ChevronDownIcon
                         className={classNames(
-                          open ? "text-gray-600" : "text-emerald-400",
-                          "lg:ml-1 md:ml-0 mt-1 md:mt-0 lg:h-5 lg:w-5 md:h-4 md:w-4 group-hover:text-emerald-500"
+                          open ? "text-gray-600" : "text-gray-900",
+                          "lg:ml-1 md:ml-0 mt-1 md:mt-0 lg:h-5 lg:w-5 md:h-4 md:w-4 group-hover:text-gray-500"
                         )}
                         aria-hidden="true"
                       />
@@ -268,7 +268,7 @@ const Header = ({ activeDoc }) => {
                                 to={item.link.uid ? item.link.uid : "#"}
                                 className="-m-3 mb-0 p-3  block rounded-md hover:bg-gray-50"
                               >
-                                <p className="text-sm font-medium text-emerald-400 mb-0">
+                                <p className="text-sm font-medium text-gray-900 mb-0">
                                   {item.name.text ? item.name.text : ""}
                                 </p>
                                 <p className="mt-1 text-sm text-gray-700 mb-0">
@@ -288,7 +288,7 @@ const Header = ({ activeDoc }) => {
 
               <Link
                 to="/about-us"
-                className="lg:mr-3 mr-0 text-md lg:text-base md:text-sm font-medium text-emerald-400 hover:text-emerald-500 lg:pt-0 md:pt-[3px]"
+                className="lg:mr-3 mr-0 text-md lg:text-base md:text-sm font-medium text-gray-900 hover:text-gray-800 lg:pt-0 md:pt-[3px]"
               >
                 About Us
               </Link>
@@ -297,7 +297,7 @@ const Header = ({ activeDoc }) => {
               <div className="relative">
                 <Link
                   to="/free-trademark-search"
-                  className="inline-flex items-center justify-center px-3 py-[0.32rem] border border-emerald-400 rounded-md shadow-sm text-sm lg:text-sm md:text-xs font-medium text-emerald-400 bg-white hover:text-white hover:bg-emerald-400"
+                  className="inline-flex items-center justify-center px-3 py-[0.32rem] border border-gray-400 rounded-md shadow-sm text-sm lg:text-sm md:text-xs font-medium text-gray-900 bg-white hover:bg-gray-50"
                 >
                   <span>Free Trademark Search</span>
                   <SearchIcon
@@ -343,7 +343,7 @@ const Header = ({ activeDoc }) => {
                   />
                 </div>
                 <div className="-mr-2">
-                  <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                  <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                     <span className="sr-only">Close menu</span>
                     <XIcon className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>
@@ -357,7 +357,7 @@ const Header = ({ activeDoc }) => {
                       to={item.link.uid ? item.link.uid : "#"}
                       className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
                     >
-                      <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-emerald-400 text-white">
+                      <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gray-900 text-white">
                         {item.icon.url ? (
                           <img src={item.icon.url} className="h-6 w-6" alt="" />
                         ) : (
@@ -367,7 +367,7 @@ const Header = ({ activeDoc }) => {
                           />
                         )}
                       </div>
-                      <div className="ml-4 text-sm  font-medium text-emerald-400">
+                      <div className="ml-4 text-sm  font-medium text-gray-900">
                         {item.name.text ? item.name.text : ""}
                       </div>
                     </Link>
@@ -379,19 +379,19 @@ const Header = ({ activeDoc }) => {
               <div className="grid grid-cols-2 gap-4">
                 <Link
                   to="/markavo-reviews"
-                  className="text-sm  font-medium text-emerald-400 hover:text-emerald-500"
+                  className="text-sm  font-medium text-gray-900 hover:text-gray-800"
                 >
                   Client Reviews
                 </Link>
                 <Link
                   to="/about-us"
-                  className="text-sm  font-medium text-emerald-400 hover:text-emerald-500"
+                  className="text-sm  font-medium text-gray-900 hover:text-gray-800"
                 >
                   About Us
                 </Link>
                 <Link
                   to="/free-trademark-search"
-                  className="text-sm  font-medium text-emerald-400 hover:text-emerald-500"
+                  className="text-sm  font-medium text-gray-900 hover:text-gray-800"
                 >
                   Free Trademark Search
                 </Link>
@@ -400,7 +400,7 @@ const Header = ({ activeDoc }) => {
                   <Link
                     key={i}
                     onTouchEnd={item.link.uid ? item.link.uid : "#"}
-                    className="text-sm  font-medium text-emerald-400 hover:text-emerald-500"
+                    className="text-sm  font-medium text-gray-900 hover:text-gray-800"
                   >
                     {item.name.text ? item.name.text : ""}
                   </Link>
@@ -409,7 +409,7 @@ const Header = ({ activeDoc }) => {
                   <Link
                     key={i}
                     to={item.link.uid ? item.link.uid : "#"}
-                    className="text-sm  font-medium text-emerald-400 hover:text-emerald-500"
+                    className="text-sm  font-medium text-gray-900 hover:text-gray-800"
                   >
                     {item.name.text ? item.name.text : ""}
                   </Link>
@@ -417,7 +417,7 @@ const Header = ({ activeDoc }) => {
               </div>
               <div className="mt-12">
                 {activeDoc ? (
-                  <div className="pb-6 text-center text-sm font-medium text-emerald-400">
+                  <div className="pb-6 text-center text-sm font-medium text-gray-900">
                     <LanguageToggle activeDocMeta={activeDoc} />
                   </div>
                 ) : (
@@ -425,18 +425,18 @@ const Header = ({ activeDoc }) => {
                 )}
                 <Link
                   to="/contact-us"
-                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm  font-medium text-white bg-emerald-400 hover:bg-emerald-500"
+                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm  font-medium text-white bg-gray-900 hover:bg-gray-50 hover:text-gray-900 hover:border-gray-400"
                 >
                   Contact Us
                 </Link>
                 <div className="flex justify-center px-3 mt-6">
                   <PhoneIcon
-                    className="h-6 w-6 text-transparent fill-emerald-400"
+                    className="h-6 w-6 text-transparent fill-gray-900"
                     aria-hidden="true"
                   />
                   <Link
                     href={`tel:+${phoneNumber}`}
-                    className="text-md text-center  font-semibold text-emerald-400 pl-1 hover:text-emerald-500"
+                    className="text-md text-center  font-semibold text-gray-900 pl-1 hover:text-gray-800"
                   >
                     {phoneNumber}
                   </Link>
