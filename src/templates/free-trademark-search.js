@@ -31,7 +31,9 @@ const Search = ({ data }) => {
         description={saerchData.banner_description.text}
       />
       <FAQs
+        title={saerchData.faq_title.text}
         heading={saerchData.faq_heading.text}
+        description={saerchData.faq_description.text}
         faq_contents={saerchData.faq_contents}
       />
       <Cta
@@ -68,7 +70,13 @@ export const SearchQuery = graphql`
         banner_description {
           text
         }
+        faq_title {
+          text
+        }
         faq_heading {
+          text
+        }
+        faq_description {
           text
         }
         faq_contents {

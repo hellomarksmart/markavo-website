@@ -48,34 +48,8 @@ const HomepageTemplate = ({ data }) => {
       ) : (
         ""
       )}
-      {/* <ThreePriceServiceSection
-        title={homeData.pricing_section_title.text}
-        heading={homeData.pricing_section_heading.text}
-        description={homeData.pricing_section_description.text}
-        left_card_title={homeData.left_card_title.text}
-        left_card_currency={homeData.left_card_currency.text}
-        left_card_price={homeData.left_card_price.text}
-        left_card_period={homeData.left_card_period.text}
-        left_card_features={homeData.left_card_features}
-        left_card_button={homeData.left_card_button.text}
-        left_card_buttonLink={homeData.left_card_buttonLink.url}
-        center_card_subheading={homeData.center_card_subheading.text}
-        center_card_title={homeData.center_card_title.text}
-        center_card_currency={homeData.center_card_currency.text}
-        center_card_price={homeData.center_card_price.text}
-        center_card_period={homeData.center_card_period.text}
-        center_card_features={homeData.center_card_features}
-        center_card_button={homeData.center_card_button.text}
-        center_card_buttonLink={homeData.center_card_buttonLink.url}
-        right_card_title={homeData.right_card_title.text}
-        right_card_currency={homeData.right_card_currency.text}
-        right_card_price={homeData.right_card_price.text}
-        right_card_period={homeData.right_card_period.text}
-        right_card_features={homeData.right_card_features}
-        right_card_button={homeData.right_card_button.text}
-        right_card_buttonLink={homeData.right_card_buttonLink.url}
-      /> */}
       <Statistics
+        title={homeData.stats_title.text}
         heading={homeData.stats_heading.text}
         description={homeData.stats_description.text}
         nameLeft={homeData.name_left.text}
@@ -270,6 +244,9 @@ export const query = graphql`
         }
         right_card_buttonLink {
           url
+        }
+        stats_title {
+          text
         }
         stats_heading {
           text
