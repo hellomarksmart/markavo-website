@@ -1,6 +1,7 @@
 import * as React from "react"
 
 const Statistics = ({
+  title,
   heading,
   description,
   nameLeft,
@@ -15,7 +16,7 @@ const Statistics = ({
       <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-[16px] font-bold tracking-wider text-emerald-500 uppercase mb-2">
-            milestones
+            {title}
           </h2>
           <h2 className="text-3xl sm:text-[36px] font-bold text-gray-900 md:max-w-3xl sm:max-w-md sm:mx-auto">
             {heading}

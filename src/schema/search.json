@@ -27,11 +27,26 @@
         "label": "Banner Section Description"
       }
     },
+    "faq_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "FAQs Section Title"
+      }
+    },
     "faq_heading": {
       "type": "StructuredText",
       "config": {
         "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
         "label": "FAQs Section Heading"
+      }
+    },
+    "faq_description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "allowTargetBlank": true,
+        "label": "FAQs Section description"
       }
     },
     "faq_contents": {
