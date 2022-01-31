@@ -82,34 +82,8 @@ export const TextTemplateQuery = graphql`
           paragraph {
             text
           }
-          list_one {
-            text
-          }
-          list_two {
-            text
-          }
-          list_three {
-            text
-          }
-          list_four {
-            text
-          }
-          list_five {
-            text
-          }
-          list_six {
-            text
-          }
-          list_seven {
-            text
-          }
-          list_eight {
-            text
-          }
-          list_nine {
-            text
-          }
-          list_ten {
+          list {
+            richText
             text
           }
           blockquote {
