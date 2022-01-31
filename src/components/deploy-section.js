@@ -3,15 +3,15 @@ import * as React from "react"
 const Deploy = ({ title, heading, description, cards }) => {
   return (
     <div className="relative bg-white pt-16 pb-4 sm:pt-18 lg:pt-18">
-      <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
-        <div className="max-w-[90%] mx-auto">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="text-holder">
           <h2 className="text-[16px] font-bold tracking-wider text-emerald-500 uppercase mb-2">
             {title}
           </h2>
           <p className="mt-0 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-[36px] md:max-w-full sm:max-w-md sm:mx-auto">
             {heading}
           </p>
-          <p className="mt-5 max-w-prose mx-auto text-base sm:text-[20px] text-gray-500 md:max-w-[47rem] sm:max-w-md">
+          <p className="mt-3 max-w-sm mx-auto text-base text-gray-500 sm:max-w-md sm:text-lg md:mt-5 md:text-[20px] md:max-w-[47rem]">
             {description}
           </p>
         </div>
