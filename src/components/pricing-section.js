@@ -5,7 +5,7 @@ import { RichText } from "prismic-reactjs"
 const PricingSection = ({ pricingBody }) => {
   return (
     <div className={`bg-emerald-400 px-5 pb-12`}>
-      <div className="max-w-default mx-auto pt-12 px-4 sm:px-6 lg:px-8 lg:pt-20">
+      <div className="max-w-[1440px] mx-auto pt-12 px-4 sm:px-6 lg:px-8 lg:pt-20">
         <div className="text-center">
           <h2 className="mb-2 text-[18px] leading-6 font-semibold text-emerald-800 uppercase tracking-wider">
             {pricingBody[0].primary.eyebrow_headline.text}
@@ -24,7 +24,9 @@ const PricingSection = ({ pricingBody }) => {
           </p>
         </div>
       </div>
-      <div className={`max-w-default mx-auto mt-16 pb-12 lg:mt-20 lg:pb-20`}>
+      <div
+        className={`max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 mt-16 pb-12 lg:mt-20 lg:pb-20`}
+      >
         <div
           id="PricingCards"
           className="flex flex-column flex-wrap lg:flex-nowrap lg:flex-row items-center justify-center z-0"
@@ -225,27 +227,27 @@ const PricingSection = ({ pricingBody }) => {
         </div>
       </div>
       {pricingBody[0].items.length === 2 && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           {pricingBody[0].primary.discounted_pill_text.text && (
             <div className="flex items-center flex-col md:flex-row bg-emerald-300/50 px-3 md:px-6 py-7 rounded-md">
               <div className="w-full lg:w-8/12 text-gray-900 text-[20px]">
-                <p className="text-[15.7px] rounded-full px-3 py-1 w-fit bg-emerald-800 text-emerald-300 font-bold">{pricingBody[0].primary.discounted_pill_text.text}</p>
+                <p className="text-[15.7px] rounded-full px-3 py-1 w-fit bg-emerald-800 text-emerald-300 font-bold">
+                  {pricingBody[0].primary.discounted_pill_text.text}
+                </p>
                 <RichText
                   render={pricingBody[0].primary.discount_description.richText}
                 />
               </div>
               <div className="w-full lg:w-4/12 text-center mt-4 lg:mt-0">
                 {pricingBody[0].primary.discount_cta_link.url ? (
-                  <Link 
+                  <Link
                     className="p-1.5 md:py-2 md:px-4 border-2 border-gray-900 rounded-sm text-gray-900 font-bold"
                     to={pricingBody[0].primary.discount_cta_link.url}
                   >
                     {pricingBody[0].primary.discount_cta_label.text}
                   </Link>
                 ) : (
-                  <div
-                    className="p-1.5 md:py-2 md:px-4 border-2 border-gray-900 rounded-sm text-gray-900 font-bold"
-                  >
+                  <div className="p-1.5 md:py-2 md:px-4 border-2 border-gray-900 rounded-sm text-gray-900 font-bold">
                     {pricingBody[0].primary.discount_cta_label.text}
                   </div>
                 )}

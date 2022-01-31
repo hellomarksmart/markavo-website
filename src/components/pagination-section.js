@@ -22,7 +22,7 @@ const Pagination = ({ currentPage, pages, setCurrentPage }) => {
 
   return (
     <div className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
-      <div className="flex-1 flex justify-between sm:hidden">
+      <div className="flex-1 flex justify-between sm:hidden max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <button
           onClick={goToPreviousPage}
           className="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
