@@ -13,7 +13,7 @@ const Statistics = ({
 }) => {
   return (
     <div className="bg-gray-50 pt-10 sm:pt-14">
-      <div className="max-w-[1440px] mx-auto">
+      <div className="max-w-default mx-auto">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-[16px] font-bold tracking-wider text-emerald-500 uppercase mb-2">
             {title}
@@ -29,7 +29,7 @@ const Statistics = ({
       <div className="mt-10 pb-12 bg-white sm:pb-12">
         <div className="relative">
           <div className="absolute inset-0 h-1/2 bg-gray-50" />
-          <div className="relative max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative max-w-default mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <dl className="rounded-lg bg-white shadow-lg sm:grid sm:grid-cols-3">
                 <div className="flex flex-col border-b border-gray-100 p-7 text-center sm:border-0 sm:border-r">

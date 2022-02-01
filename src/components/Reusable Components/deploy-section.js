@@ -3,7 +3,7 @@ import * as React from "react"
 const Deploy = ({ title, heading, description, cards }) => {
   return (
     <div className="relative bg-white pt-16 pb-4 sm:pt-18 lg:pt-18">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-default mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="text-holder">
           <h2 className="text-[16px] font-bold tracking-wider text-emerald-500 uppercase mb-2">
             {title}

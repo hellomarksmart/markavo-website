@@ -3,7 +3,7 @@ import * as React from "react"
 const AboutSection = ({ heading, description, about_items }) => {
   return (
     <div className="bg-white">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-0 px-4 lg:pt-16">
+      <div className="max-w-default mx-auto px-4 sm:px-6 lg:px-8 py-0 px-4 lg:pt-16">
         <div className="space-y-12 xl:grid xl:grid-cols-3 xl:gap-8 xl:space-y-0">
           <div className="space-y-5 sm:space-y-4">
             <h2 className="text-3xl font-extrabold tracking-tight sm:text-[36px]">

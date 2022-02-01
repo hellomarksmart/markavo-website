@@ -113,7 +113,7 @@ const TextTemplateSection = ({
         </div>
       </div>
       <div className="relative px-4 sm:px-6 lg:px-8">
-        <div className="text-lg max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-lg max-w-default mx-auto px-4 sm:px-6 lg:px-8">
           <h1>
             <span className="block text-[16px] text-center text-emerald-600 font-semibold tracking-wide uppercase">
               {sub_heading}
@@ -127,7 +127,7 @@ const TextTemplateSection = ({
           </p>
         </div>
 
-        <div className="mt-6 text-lg max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-gray-500">
+        <div className="mt-6 text-lg max-w-default mx-auto px-4 sm:px-6 lg:px-8 text-gray-500">
           {page_content?.map((item, i) => {
             return (
               <div key={i}>

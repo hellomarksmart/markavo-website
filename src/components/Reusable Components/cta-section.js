@@ -10,7 +10,7 @@ const Cta = ({
 }) => {
   return (
     <div className="bg-emerald-400">
-      <div className="max-w-[1440px] mx-auto text-center py-16 px-4 sm:py-16 sm:px-6 lg:px-8">
+      <div className="max-w-default mx-auto text-center py-16 px-4 sm:py-16 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-gray-900 sm:text-[36px] pb-0">
           <span className="block">{heading}</span>
           <span className="block">{headingSecond}</span>
@@ -27,7 +27,7 @@ const Cta = ({
             {buttonPlain}
           </Link>
         ) : (
-          <div className="w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 sm:w-auto">
+          <div className="mt-2 sm:w-11/12 mb-4 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-[16px] font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 sm:w-auto">
             {buttonPlain}
           </div>
         )}

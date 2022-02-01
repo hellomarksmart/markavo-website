@@ -23,7 +23,7 @@ const ClientReviewsSection = ({ reviews }) => {
   return (
     <div className="bg-white">
       <div className="ml-0 pb-0 px-4 sm:pb-0">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 mt-0 pb-10 border-b border-gray-200 divide-y divide-gray-200">
+        <div className="max-w-default mx-auto px-4 sm:px-6 lg:px-8 mt-0 pb-10 border-b border-gray-200 divide-y divide-gray-200">
           {dataReviews?.slice(startIndex, endIndex).map((item, i) => {
             return (
               <div key={i} className="sm:py-6 py-5">
