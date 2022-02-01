@@ -54,12 +54,7 @@ const HomepageTemplate = ({ data }) => {
         title={homeData.stats_title.text}
         heading={homeData.stats_heading.text}
         description={homeData.stats_description.text}
-        nameLeft={homeData.name_left.text}
-        statsLeft={homeData.stats_left.text}
-        nameCenter={homeData.name_center.text}
-        statsCenter={homeData.stats_center.text}
-        nameRight={homeData.name_right.text}
-        statsRight={homeData.stats_right.text}
+        stats_card={homeData.stats_content}
       />
       <Cta
         heading={homeData.cta_heading.text}
@@ -175,23 +170,13 @@ export const query = graphql`
         stats_description {
           text
         }
-        stats_left {
-          text
-        }
-        name_left {
-          text
-        }
-        stats_center {
-          text
-        }
-        name_center {
-          text
-        }
-        stats_right {
-          text
-        }
-        name_right {
-          text
+        stats_content {
+          statistics {
+            text
+          }
+          name {
+            text
+          }
         }
         cta_heading {
           text

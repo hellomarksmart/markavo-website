@@ -1,16 +1,6 @@
 import * as React from "react"
 
-const Statistics = ({
-  title,
-  heading,
-  description,
-  nameLeft,
-  statsLeft,
-  nameCenter,
-  statsCenter,
-  nameRight,
-  statsRight,
-}) => {
+const Statistics = ({ title, heading, description, stats_card }) => {
   return (
     <div className="bg-gray-50 pt-10 sm:pt-14">
       <div className="max-w-default mx-auto">
@@ -32,30 +22,21 @@ const Statistics = ({
           <div className="relative max-w-default mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <dl className="rounded-lg bg-white shadow-lg sm:grid sm:grid-cols-3">
-                <div className="flex flex-col border-b border-gray-100 p-7 text-center sm:border-0 sm:border-r">
-                  <dt className="order-2 mt-1 text-base sm:text-[18px] leading-6 font-medium text-gray-500">
-                    {nameLeft}
-                  </dt>
-                  <dd className="order-1 mb-0 sm:mb-3 text-4xl sm:text-[48px] font-bold text-emerald-400">
-                    {statsLeft}
-                  </dd>
-                </div>
-                <div className="flex flex-col border-t border-b border-gray-100 p-7 text-center sm:border-0 sm:border-l sm:border-r">
-                  <dt className="order-2 mt-1 text-base sm:text-[18px] leading-6 font-medium text-gray-500">
-                    {nameCenter}
-                  </dt>
-                  <dd className="order-1 mb-0 sm:mb-3 text-4xl sm:text-[48px]text-[48px] font-bold text-emerald-400">
-                    {statsCenter}
-                  </dd>
-                </div>
-                <div className="flex flex-col border-t border-gray-100 p-7 text-center sm:border-0 sm:border-l">
-                  <dt className="order-2 mt-1 text-base sm:text-[18px] leading-6 font-medium text-gray-500">
-                    {nameRight}
-                  </dt>
-                  <dd className="order-1 mb-0 sm:mb-3 text-4xl sm:text-[48px]-[48px] font-bold text-emerald-400">
-                    {statsRight}
-                  </dd>
-                </div>
+                {stats_card?.map((item, i) => {
+                  return (
+                    <div
+                      key={i}
+                      className="flex flex-col border-b border-gray-100 p-7 text-center sm:border-0 sm:border-r"
+                    >
+                      <dt className="order-2 mt-1 text-base sm:text-[18px] leading-6 font-medium text-gray-500">
+                        {item?.name.text}
+                      </dt>
+                      <dd className="order-1 mb-0 sm:mb-3 text-4xl sm:text-[48px] font-bold text-emerald-400">
+                        {item?.statistics.text}
+                      </dd>
+                    </div>
+                  )
+                })}
               </dl>
             </div>
           </div>

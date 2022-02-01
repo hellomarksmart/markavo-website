@@ -134,49 +134,27 @@
         "label": "Statistics Section description"
       }
     },
-    "stats_left": {
-      "type": "StructuredText",
+    "stats_content": {
+      "type": "Group",
       "config": {
-        "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
-        "label": "Statistic"
-      }
-    },
-    "name_left": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-        "allowTargetBlank": true,
-        "label": "Stats Name"
-      }
-    },
-    "stats_center": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
-        "label": "Statistic"
-      }
-    },
-    "name_center": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-        "allowTargetBlank": true,
-        "label": "Stats Name"
-      }
-    },
-    "stats_right": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
-        "label": "Statistic"
-      }
-    },
-    "name_right": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-        "allowTargetBlank": true,
-        "label": "Stats Name"
+        "fields": {
+          "statistics": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
+              "label": "Statistic"
+            }
+          },
+          "name": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "allowTargetBlank": true,
+              "label": "Stats Name"
+            }
+          }
+        },
+        "label": "Stats Card"
       }
     },
     "faq_title": {
