@@ -138,14 +138,9 @@ const TextTemplateSection = ({
                 ) : (
                   ""
                 )}
-                {item?.paragraph.text ? (
-                  <p className="text-[18px]">{item?.paragraph.text}</p>
-                ) : (
-                  ""
-                )}
-                <div className="list-items">
-                  {item?.list.richText ? (
-                    <RichText render={item?.list.richText} />
+                <div className="rich-text">
+                  {item?.rich_text.richText ? (
+                    <RichText render={item?.rich_text.richText} />
                   ) : (
                     ""
                   )}
