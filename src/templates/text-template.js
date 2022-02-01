@@ -115,7 +115,7 @@ export const TextTemplateQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           icon {
             url
@@ -129,7 +129,7 @@ export const TextTemplateQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           icon {
             url
@@ -140,7 +140,7 @@ export const TextTemplateQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           description {
             text

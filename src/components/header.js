@@ -103,7 +103,7 @@ const Header = ({ topHeader, activeDoc }) => {
                             {services.map((item, i) => (
                               <Link
                                 key={i}
-                                to={item.link.uid ? item.link.uid : "#"}
+                                to={item.link.url ? item.link.url : "#"}
                                 className="-m-3 p-3  flex items-start rounded-lg hover:bg-gray-50"
                               >
                                 <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gray-900 text-white sm:h-12 sm:w-12">
@@ -135,9 +135,7 @@ const Header = ({ topHeader, activeDoc }) => {
                               {allServices.map((item, i) => (
                                 <div key={i} className="flow-root">
                                   <Link
-                                    onTouchEnd={
-                                      item.link.uid ? item.link.uid : "#"
-                                    }
+                                    to={item.link.url ? item.link.url : "#"}
                                     className="-m-3 p-3 flex items-center rounded-md text-sm font-medium text-gray-900 hover:bg-gray-400 transition ease-in-out duration-150"
                                   >
                                     {item.icon.url ? (
@@ -200,7 +198,7 @@ const Header = ({ topHeader, activeDoc }) => {
                             {brandingTools.map((item, i) => (
                               <Link
                                 key={i}
-                                to={item.link.uid ? item.link.uid : "#"}
+                                to={item.link.url ? item.link.url : "#"}
                                 className="-m-3 mb-0 p-3  block rounded-md hover:bg-gray-50"
                               >
                                 <p className="text-sm font-medium text-gray-900 mb-0">
@@ -282,7 +280,7 @@ const Header = ({ topHeader, activeDoc }) => {
                   {services.map((item, i) => (
                     <Link
                       key={i}
-                      to={item.link.uid ? item.link.uid : "#"}
+                      to={item.link.url ? item.link.url : "#"}
                       className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
                     >
                       <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gray-900 text-white">
@@ -328,7 +326,7 @@ const Header = ({ topHeader, activeDoc }) => {
                 {allServices.map((item, i) => (
                   <Link
                     key={i}
-                    onTouchEnd={item.link.uid ? item.link.uid : "#"}
+                    to={item.link.url ? item.link.url : "#"}
                     className="text-sm  font-medium text-gray-900 hover:text-gray-800"
                   >
                     {item.name.text ? item.name.text : ""}
@@ -337,7 +335,7 @@ const Header = ({ topHeader, activeDoc }) => {
                 {brandingTools.map((item, i) => (
                   <Link
                     key={i}
-                    to={item.link.uid ? item.link.uid : "#"}
+                    to={item.link.url ? item.link.url : "#"}
                     className="text-sm  font-medium text-gray-900 hover:text-gray-800"
                   >
                     {item.name.text ? item.name.text : ""}

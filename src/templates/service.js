@@ -270,7 +270,7 @@ export const ServiceSingleQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           icon {
             url
@@ -284,7 +284,7 @@ export const ServiceSingleQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           icon {
             url
@@ -295,7 +295,7 @@ export const ServiceSingleQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           description {
             text

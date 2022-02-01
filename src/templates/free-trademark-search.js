@@ -121,7 +121,7 @@ export const SearchQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           icon {
             url
@@ -135,7 +135,7 @@ export const SearchQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           icon {
             url
@@ -146,7 +146,7 @@ export const SearchQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           description {
             text

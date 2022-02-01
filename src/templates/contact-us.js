@@ -105,7 +105,7 @@ export const ContactUsPageQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           icon {
             url
@@ -119,7 +119,7 @@ export const ContactUsPageQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           icon {
             url
@@ -130,7 +130,7 @@ export const ContactUsPageQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           description {
             text

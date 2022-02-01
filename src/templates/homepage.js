@@ -24,8 +24,8 @@ const HomepageTemplate = ({ data }) => {
   }
 
   return (
-    <Layout 
-      activeDoc={activeDoc} 
+    <Layout
+      activeDoc={activeDoc}
       headerBody={data.prismicHeader}
       footerBody={data.prismicFooter}
     >
@@ -166,87 +166,6 @@ export const query = graphql`
             text
           }
         }
-        pricing_section_title {
-          text
-        }
-        pricing_section_heading {
-          text
-        }
-        pricing_section_description {
-          text
-        }
-        left_card_title {
-          text
-        }
-        left_card_currency {
-          text
-        }
-        left_card_price {
-          text
-        }
-        left_card_period {
-          text
-        }
-        left_card_features {
-          feature {
-            text
-          }
-        }
-        left_card_button {
-          text
-        }
-        left_card_buttonLink {
-          url
-        }
-        center_card_subheading {
-          text
-        }
-        center_card_title {
-          text
-        }
-        center_card_currency {
-          text
-        }
-        center_card_price {
-          text
-        }
-        center_card_period {
-          text
-        }
-        center_card_features {
-          feature {
-            text
-          }
-        }
-        center_card_button {
-          text
-        }
-        center_card_buttonLink {
-          url
-        }
-        right_card_title {
-          text
-        }
-        right_card_currency {
-          text
-        }
-        right_card_price {
-          text
-        }
-        right_card_period {
-          text
-        }
-        right_card_features {
-          feature {
-            text
-          }
-        }
-        right_card_button {
-          text
-        }
-        right_card_buttonLink {
-          url
-        }
         stats_title {
           text
         }
@@ -304,7 +223,7 @@ export const query = graphql`
             text
           }
           link {
-            uid
+            url
           }
           icon {
             url
@@ -318,7 +237,7 @@ export const query = graphql`
             text
           }
           link {
-            uid
+            url
           }
           icon {
             url
@@ -329,7 +248,7 @@ export const query = graphql`
             text
           }
           link {
-            uid
+            url
           }
           description {
             text
