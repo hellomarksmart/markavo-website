@@ -3,8 +3,8 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import ContactSection from "../components/contact-us-section"
-import Cta from "../components/cta-section"
+import ContactSection from "../components/Contact Us/contact-us-section"
+import Cta from "../components/Reusable Components/cta-section"
 
 const Contact = ({ data }) => {
   if (!data) return null

@@ -5,7 +5,7 @@ import { RichText } from "prismic-reactjs"
 const PricingSection = ({ pricingBody }) => {
   return (
     <div className={`bg-emerald-400 px-5 pb-12`}>
-      <div className="max-w-[1440px] mx-auto pt-12 px-4 sm:px-6 lg:px-8 lg:pt-20">
+      <div className="max-w-default mx-auto pt-12 px-4 sm:px-6 lg:px-8 lg:pt-20">
         <div className="text-center">
           <h2 className="mb-2 text-[18px] leading-6 font-semibold text-emerald-800 uppercase tracking-wider">
             {pricingBody[0].primary.eyebrow_headline.text}
@@ -25,7 +25,7 @@ const PricingSection = ({ pricingBody }) => {
         </div>
       </div>
       <div
-        className={`max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 mt-16 pb-12 lg:mt-20 lg:pb-20`}
+        className={`max-w-default mx-auto px-4 sm:px-6 lg:px-8 mt-16 pb-12 lg:mt-20 lg:pb-20`}
       >
         <div
           id="PricingCards"
@@ -73,6 +73,20 @@ const PricingSection = ({ pricingBody }) => {
                                 {item.frequency.text}
                               </span>
                             </div>
+                            <p className="pt-6 mb-0 text-sm">
+                              {item.policy_link.url ? (
+                                <Link
+                                  to={item.policy_link.url}
+                                  className="font-medium text-emerald-500 underline"
+                                >
+                                  {item.policy_text.text}
+                                </Link>
+                              ) : (
+                                <div className="font-medium text-emerald-500 underline">
+                                  {item.policy_text.text}
+                                </div>
+                              )}
+                            </p>
                             <div className="mt-6">
                               <div>
                                 {item.call_to_action.url ? (
@@ -227,7 +241,7 @@ const PricingSection = ({ pricingBody }) => {
         </div>
       </div>
       {pricingBody[0].items.length === 2 && (
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-default mx-auto px-4 sm:px-6 lg:px-8">
           {pricingBody[0].primary.discounted_pill_text.text && (
             <div className="flex items-center flex-col md:flex-row bg-emerald-300/50 px-3 md:px-6 py-7 rounded-md">
               <div className="w-full lg:w-8/12 text-gray-900 text-[20px]">

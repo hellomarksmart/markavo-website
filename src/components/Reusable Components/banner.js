@@ -84,7 +84,7 @@ const Banner = ({
         </div>
       </div>
 
-      <div className="relative pt-16 pb-16 sm:pb-16 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative pt-16 pb-16 sm:pb-16 max-w-default mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-3xl sm:text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-[60px]">
             <span className="block xl:inline">{heading}</span>{" "}

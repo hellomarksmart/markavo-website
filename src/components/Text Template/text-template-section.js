@@ -113,7 +113,7 @@ const TextTemplateSection = ({
         </div>
       </div>
       <div className="relative px-4 sm:px-6 lg:px-8">
-        <div className="text-lg max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-lg max-w-default mx-auto px-4 sm:px-6 lg:px-8">
           <h1>
             <span className="block text-[16px] text-center text-emerald-600 font-semibold tracking-wide uppercase">
               {sub_heading}
@@ -127,7 +127,7 @@ const TextTemplateSection = ({
           </p>
         </div>
 
-        <div className="mt-6 text-lg max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-gray-500">
+        <div className="mt-6 text-lg max-w-default mx-auto px-4 sm:px-6 lg:px-8 text-gray-500">
           {page_content?.map((item, i) => {
             return (
               <div key={i}>
@@ -167,7 +167,7 @@ const TextTemplateSection = ({
                 {item?.video_link.url ? (
                   <div className="video relative pt-[60%]">
                     <iframe
-                      className="w-full rounded-lg border-0 absolute top-0 left-0 h-[100%] w-[100%]"
+                      className="w-full rounded-lg border-0 absolute top-0 left-0 h-[100%] w-full"
                       src={item?.video_link.url}
                       title={item?.video_title.text}
                       allow="accelerometer; gyroscope; autoplay; encrypted-media;

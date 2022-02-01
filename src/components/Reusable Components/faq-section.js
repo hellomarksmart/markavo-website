@@ -3,7 +3,7 @@ import * as React from "react"
 const FAQs = ({ title, heading, description, faq_contents }) => {
   return (
     <div className="bg-gray-50">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-2">
+      <div className="max-w-default mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-2">
         <h2 className="text-[16px] text-center font-bold tracking-wider text-emerald-500 uppercase mb-2">
           {title}
         </h2>

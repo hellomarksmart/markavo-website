@@ -4,7 +4,7 @@ import { RichText } from "prismic-reactjs"
 const ContactSection = ({ heading, description, contact_items }) => {
   return (
     <div className="bg-white">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-24 px-4 sm:py-32">
+      <div className="max-w-default mx-auto px-4 sm:px-6 lg:px-8 py-24 px-4 sm:py-32">
         <h2 className="text-3xl font-extrabold text-gray-900">{heading}</h2>
         <p className="mt-6 text-lg text-gray-500 max-w-3xl">{description}</p>
         <div className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">

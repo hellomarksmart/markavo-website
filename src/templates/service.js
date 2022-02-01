@@ -3,12 +3,12 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Banner from "../components/banner"
-import Deploy from "../components/deploy-section"
-import Statistics from "../components/statistics-section"
-import FAQs from "../components/faq-section"
-import Cta from "../components/cta-section"
-import PricingSection from "../components/pricing-section"
+import Banner from "../components/Reusable Components/banner"
+import Deploy from "../components/Reusable Components/deploy-section"
+import Statistics from "../components/Reusable Components/statistics-section"
+import FAQs from "../components/Reusable Components/faq-section"
+import Cta from "../components/Reusable Components/cta-section"
+import PricingSection from "../components/Services & Price Services/pricing-section"
 
 const Service = ({ data }) => {
   if (!data) return null
@@ -52,12 +52,7 @@ const Service = ({ data }) => {
         title={singleServiceData.stats_title.text}
         heading={singleServiceData.stats_heading.text}
         description={singleServiceData.stats_description.text}
-        nameLeft={singleServiceData.name_left.text}
-        statsLeft={singleServiceData.stats_left.text}
-        nameCenter={singleServiceData.name_center.text}
-        statsCenter={singleServiceData.stats_center.text}
-        nameRight={singleServiceData.name_right.text}
-        statsRight={singleServiceData.stats_right.text}
+        stats_card={singleServiceData.stats_content}
       />
       <FAQs
         title={singleServiceData.faq_title.text}
@@ -151,6 +146,12 @@ export const ServiceSingleQuery = graphql`
               call_to_action {
                 url
               }
+              policy_text {
+                text
+              }
+              policy_link {
+                url
+              }
             }
           }
         }
@@ -205,23 +206,13 @@ export const ServiceSingleQuery = graphql`
         stats_description {
           richText
         }
-        stats_left {
-          text
-        }
-        stats_right {
-          text
-        }
-        stats_center {
-          text
-        }
-        name_right {
-          text
-        }
-        name_left {
-          text
-        }
-        name_center {
-          text
+        stats_content {
+          statistics {
+            text
+          }
+          name {
+            text
+          }
         }
         faq_title {
           text

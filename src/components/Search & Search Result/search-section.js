@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import api from "../../api/api"
-import Pagination from "../components/pagination-section"
+import api from "../../../api/api"
+import Pagination from "../Reusable Components/pagination-section"
 
 const SearchSection = ({ heading, headingColored, description }) => {
   const [keyword, setKeyword] = useState("")
@@ -105,7 +105,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
 
       <div className="relative pt-16 pb-16 sm:pb-16">
         <div className="text-center">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-default mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl sm:text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-[60px]">
               <span className="block xl:inline">{heading}</span>{" "}
               <span className="block text-emerald-400 xl:inline">
@@ -155,7 +155,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
             </div>
           </div>
           {responseData.items && (
-            <div className="text-left px-12 my-12 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-left px-12 my-12 max-w-default mx-auto px-4 sm:px-6 lg:px-8">
               <p className="text-2xl font-bold mb-2">
                 Trademark Search Results
               </p>

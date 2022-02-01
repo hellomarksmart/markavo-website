@@ -3,8 +3,8 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Breadcrumb from "../components/breadcrumbs"
-import TextTemplateSection from "../components/text-template-section"
+import Breadcrumb from "../components/Text Template/breadcrumbs"
+import TextTemplateSection from "../components/Text Template/text-template-section"
 
 const TextTemplate = ({ data }) => {
   if (!data) return null
