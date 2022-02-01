@@ -89,7 +89,7 @@ export const ServicesQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           icon {
             url
@@ -103,7 +103,7 @@ export const ServicesQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           icon {
             url
@@ -114,7 +114,7 @@ export const ServicesQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           description {
             text
