@@ -287,7 +287,11 @@ const Header = ({ topHeader, activeDoc }) => {
                     >
                       <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gray-900 text-white">
                         {item.icon.url ? (
-                          <img src={item.icon.url} className="h-6 w-6" alt="" />
+                          <img
+                            src={item.icon.url}
+                            className="h-6 w-6 mb-0 invert"
+                            alt=""
+                          />
                         ) : (
                           ""
                         )}
