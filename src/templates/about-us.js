@@ -3,9 +3,9 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Banner from "../components/banner"
-import AboutSection from "../components/about-section"
-import Cta from "../components/cta-section"
+import Banner from "../components/Reusable Components/banner"
+import AboutSection from "../components/About Us/about-section"
+import Cta from "../components/Reusable Components/cta-section"
 
 const About = ({ data }) => {
   if (!data) return null

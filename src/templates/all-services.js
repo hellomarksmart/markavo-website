@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import ServicesSection from "../components/services-section"
+import ServicesSection from "../components/Services & Price Services/services-section"
 
 const AllServices = ({ data }) => {
   if (!data) return null

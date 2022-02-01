@@ -4,7 +4,7 @@ import { Popover, Transition } from "@headlessui/react"
 import { ChevronDownIcon } from "@heroicons/react/solid"
 import { PlayIcon, PhoneIcon, MenuIcon, XIcon } from "@heroicons/react/outline"
 import { SearchIcon } from "@heroicons/react/solid"
-import { LanguageToggle } from "../components/language-toggle"
+import { LanguageToggle } from "../components/Reusable Components/language-toggle"
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
@@ -97,7 +97,7 @@ const Header = ({ topHeader, activeDoc }) => {
                       leaveFrom="opacity-100 translate-y-0"
                       leaveTo="opacity-0 translate-y-1"
                     >
-                      <Popover.Panel className="absolute z-10  mt-3 transform w-[100%] left-[0]">
+                      <Popover.Panel className="absolute z-10  mt-3 transform w-full left-[0]">
                         <div className="rounded-b-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                           <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-2 xl:grid-cols-4 ">
                             {services.map((item, i) => (

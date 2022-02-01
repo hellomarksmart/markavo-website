@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import api from "../../api/api"
-import Pagination from "../components/pagination-section"
+import api from "../../../api/api"
+import Pagination from "../Reusable Components/pagination-section"
 
 const SearchSection = ({ heading, headingColored, description }) => {
   const [keyword, setKeyword] = useState("")
@@ -8,16 +8,19 @@ const SearchSection = ({ heading, headingColored, description }) => {
   let [responseLength, setResponseLength] = useState("")
 
   const fetchData = e => {
-    e.preventDefault()
-    api
-      .getData(keyword)
-      .then(response => {
-        setResponseData(response.data)
-        setResponseLength(response.data.items.length)
-      })
-      .catch(error => {
-        console.log(error)
-      })
+    if (e.key === "Enter") {
+      e.preventDefault()
+      api
+        .getData(keyword)
+        .then(response => {
+          console.log("search", response.data)
+          setResponseData(response.data)
+          setResponseLength(response.data.items.length)
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }
   }
 
   const pages = Math.round(responseLength / 10)
@@ -102,7 +105,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
 
       <div className="relative pt-16 pb-16 sm:pb-16">
         <div className="text-center">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-default mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl sm:text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-[60px]">
               <span className="block xl:inline">{heading}</span>{" "}
               <span className="block text-emerald-400 xl:inline">
@@ -138,6 +141,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                 placeholder="Search millions of trademarks"
                 value={keyword}
                 onChange={e => setKeyword(e.target.value)}
+                onKeyPress={fetchData}
               />
               <div className="absolute top-2 right-2">
                 {" "}
@@ -151,7 +155,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
             </div>
           </div>
           {responseData.items && (
-            <div className="text-left px-12 my-12 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-left px-12 my-12 max-w-default mx-auto px-4 sm:px-6 lg:px-8">
               <p className="text-2xl font-bold mb-2">
                 Trademark Search Results
               </p>
@@ -172,9 +176,6 @@ const SearchSection = ({ heading, headingColored, description }) => {
                   year: "numeric",
                 })
                 const newDate = formatter.format(new Date(item.filing_date))
-                // const fileMonth = newDate.getMonth().toString()
-                // const fileDay = newDate.getDate().toString()
-                // const fileYear = newDate.getFullYear().toString()
 
                 return (
                   <div
@@ -184,7 +185,6 @@ const SearchSection = ({ heading, headingColored, description }) => {
                     <p className="text-emerald-500 font-bold">{item.keyword}</p>
                     <div className="flex items-center">
                       <p className="mr-2 mb-0 text-slate-400">Filed:</p>
-                      {/* <p className="mb-0 text-slate-400">{fileMonth} {fileDay}, {fileYear}</p> */}
                       <p className="mb-0 text-slate-400">{newDate}</p>
                     </div>
                     <p className="truncate my-1">{item.description}</p>

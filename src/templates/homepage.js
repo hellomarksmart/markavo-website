@@ -2,11 +2,11 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Banner from "../components/banner"
-import Deploy from "../components/deploy-section"
-import Statistics from "../components/statistics-section"
-import Cta from "../components/cta-section"
-import PricingSection from "../components/pricing-section"
+import Banner from "../components/Reusable Components/banner"
+import Deploy from "../components/Reusable Components/deploy-section"
+import Statistics from "../components/Reusable Components/statistics-section"
+import Cta from "../components/Reusable Components/cta-section"
+import PricingSection from "../components/Services & Price Services/pricing-section"
 
 const HomepageTemplate = ({ data }) => {
   if (!data) return null
@@ -54,12 +54,7 @@ const HomepageTemplate = ({ data }) => {
         title={homeData.stats_title.text}
         heading={homeData.stats_heading.text}
         description={homeData.stats_description.text}
-        nameLeft={homeData.name_left.text}
-        statsLeft={homeData.stats_left.text}
-        nameCenter={homeData.name_center.text}
-        statsCenter={homeData.stats_center.text}
-        nameRight={homeData.name_right.text}
-        statsRight={homeData.stats_right.text}
+        stats_card={homeData.stats_content}
       />
       <Cta
         heading={homeData.cta_heading.text}
@@ -175,23 +170,13 @@ export const query = graphql`
         stats_description {
           text
         }
-        stats_left {
-          text
-        }
-        name_left {
-          text
-        }
-        stats_center {
-          text
-        }
-        name_center {
-          text
-        }
-        stats_right {
-          text
-        }
-        name_right {
-          text
+        stats_content {
+          statistics {
+            text
+          }
+          name {
+            text
+          }
         }
         cta_heading {
           text
