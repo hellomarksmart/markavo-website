@@ -8,16 +8,19 @@ const SearchSection = ({ heading, headingColored, description }) => {
   let [responseLength, setResponseLength] = useState("")
 
   const fetchData = e => {
-    e.preventDefault()
-    api
-      .getData(keyword)
-      .then(response => {
-        setResponseData(response.data)
-        setResponseLength(response.data.items.length)
-      })
-      .catch(error => {
-        console.log(error)
-      })
+    if (e.key === "Enter") {
+      e.preventDefault()
+      api
+        .getData(keyword)
+        .then(response => {
+          console.log("search", response.data)
+          setResponseData(response.data)
+          setResponseLength(response.data.items.length)
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }
   }
 
   const pages = Math.round(responseLength / 10)
@@ -138,6 +141,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                 placeholder="Search millions of trademarks"
                 value={keyword}
                 onChange={e => setKeyword(e.target.value)}
+                onKeyPress={fetchData}
               />
               <div className="absolute top-2 right-2">
                 {" "}
@@ -172,9 +176,6 @@ const SearchSection = ({ heading, headingColored, description }) => {
                   year: "numeric",
                 })
                 const newDate = formatter.format(new Date(item.filing_date))
-                // const fileMonth = newDate.getMonth().toString()
-                // const fileDay = newDate.getDate().toString()
-                // const fileYear = newDate.getFullYear().toString()
 
                 return (
                   <div
@@ -184,7 +185,6 @@ const SearchSection = ({ heading, headingColored, description }) => {
                     <p className="text-emerald-500 font-bold">{item.keyword}</p>
                     <div className="flex items-center">
                       <p className="mr-2 mb-0 text-slate-400">Filed:</p>
-                      {/* <p className="mb-0 text-slate-400">{fileMonth} {fileDay}, {fileYear}</p> */}
                       <p className="mb-0 text-slate-400">{newDate}</p>
                     </div>
                     <p className="truncate my-1">{item.description}</p>
