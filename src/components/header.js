@@ -75,7 +75,7 @@ const Header = ({ topHeader, activeDoc }) => {
                     <Popover.Button
                       className={classNames(
                         open ? "text-gray-900" : "text-gray-900",
-                        "group inline-flex items-center lg:mr-6 md:mr-2 text-md lg:text-base md:text-sm font-medium text-gray-900 hover:text-gray-800"
+                        "group inline-flex items-center lg:mr-6 md:mr-2 text-md lg:text-base md:text-sm font-medium text-gray-900 hover:text-gray-800 focus:outline-none"
                       )}
                     >
                       <span>Our Services</span>
@@ -170,7 +170,7 @@ const Header = ({ topHeader, activeDoc }) => {
                     <Popover.Button
                       className={classNames(
                         open ? "text-gray-900" : "text-gray-900",
-                        "group inline-flex items-center lg:mr-6 md:mr-2 text-md lg:text-base md:text-sm font-medium text-gray-900 hover:text-gray-800"
+                        "group inline-flex items-center lg:mr-6 md:mr-2 text-md lg:text-base md:text-sm font-medium text-gray-900 hover:text-gray-800 focus:outline-none"
                       )}
                     >
                       <span>Branding Tools</span>

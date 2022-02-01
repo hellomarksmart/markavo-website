@@ -72,6 +72,7 @@ export const ContactUsPageQuery = graphql`
             text
           }
           contact_details {
+            richText
             text
           }
         }

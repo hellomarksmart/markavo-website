@@ -88,6 +88,14 @@
   list-style: disc;
 }
 
+.contact-details ul {
+  margin: 0;
+}
+
+.contact-details ul li {
+  margin: 0;
+}
+
 @media (max-width: 1024px) {
   #PricingCards #PricingCard,
   #PricingCards #PricingCard:nth-child(2) {
