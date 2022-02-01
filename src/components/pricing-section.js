@@ -128,7 +128,7 @@ const PricingSection = ({ pricingBody }) => {
                           {item.currency.text}
                           {item.price_option.text}
                           <span className="ml-1 text-2xl font-medium text-gray-500">
-                            /{item.frequency.text}
+                            {item.frequency.text}
                           </span>
                         </div>
                         <p className="mt-5 text-lg text-gray-500">
@@ -191,7 +191,7 @@ const PricingSection = ({ pricingBody }) => {
                               </span>
                             </span>
                             <span className="text-xl font-normal text-gray-500">
-                              /{item.frequency.text}
+                              {item.frequency.text}
                             </span>
                           </div>
                         </div>

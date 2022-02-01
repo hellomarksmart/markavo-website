@@ -114,7 +114,7 @@ export const NotFoundQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           icon {
             url
@@ -128,7 +128,7 @@ export const NotFoundQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           icon {
             url
@@ -139,7 +139,7 @@ export const NotFoundQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           description {
             text

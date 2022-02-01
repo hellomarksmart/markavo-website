@@ -124,7 +124,7 @@ export const ClientReviewsQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           icon {
             url
@@ -138,7 +138,7 @@ export const ClientReviewsQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           icon {
             url
@@ -149,7 +149,7 @@ export const ClientReviewsQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           description {
             text

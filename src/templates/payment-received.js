@@ -83,7 +83,7 @@ export const PaymentReceivedQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           icon {
             url
@@ -97,7 +97,7 @@ export const PaymentReceivedQuery = graphql`
             text
           }
           link {
-            uid
+            url
           }
           icon {
             url
