@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import api from "../../api/api"
-import Pagination from "../components/pagination-section"
+import api from "../../../api/api"
+import Pagination from "../Reusable Components/pagination-section"
 
 const SearchSection = ({ heading, headingColored, description }) => {
   const [keyword, setKeyword] = useState("")

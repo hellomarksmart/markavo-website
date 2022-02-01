@@ -308,7 +308,7 @@
               "discount_description": {
                 "type": "StructuredText",
                 "config": {
-                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
                   "label": "Discount description"
                 }
               },
@@ -323,7 +323,8 @@
                 "type": "Link",
                 "config": {
                   "allowTargetBlank": true,
-                  "label": "Discount CTA Link"
+                  "label": "Discount CTA Link",
+                  "select": null
                 }
               }
             },
@@ -404,6 +405,21 @@
                   "multi": "paragraph",
                   "label": "Call To Action Text",
                   "placeholder": "Start your free trial"
+                }
+              },
+              "policy_link": {
+                "type": "Link",
+                "config": {
+                  "allowTargetBlank": true,
+                  "label": "Policy Link",
+                  "select": null
+                }
+              },
+              "policy_text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph",
+                  "label": "Policy Text"
                 }
               },
               "cta_bottom_text": {

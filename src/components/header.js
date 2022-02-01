@@ -4,7 +4,7 @@ import { Popover, Transition } from "@headlessui/react"
 import { ChevronDownIcon } from "@heroicons/react/solid"
 import { PlayIcon, PhoneIcon, MenuIcon, XIcon } from "@heroicons/react/outline"
 import { SearchIcon } from "@heroicons/react/solid"
-import { LanguageToggle } from "../components/language-toggle"
+import { LanguageToggle } from "../components/Reusable Components/language-toggle"
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")

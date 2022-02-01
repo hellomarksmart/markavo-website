@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { StarIcon } from "@heroicons/react/solid"
-import Pagination from "../components/pagination-section"
+import Pagination from "../Reusable Components/pagination-section"
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")

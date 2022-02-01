@@ -2,11 +2,11 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Banner from "../components/banner"
-import Deploy from "../components/deploy-section"
-import Statistics from "../components/statistics-section"
-import Cta from "../components/cta-section"
-import PricingSection from "../components/pricing-section"
+import Banner from "../components/Reusable Components/banner"
+import Deploy from "../components/Reusable Components/deploy-section"
+import Statistics from "../components/Reusable Components/statistics-section"
+import Cta from "../components/Reusable Components/cta-section"
+import PricingSection from "../components/Services & Price Services/pricing-section"
 
 const HomepageTemplate = ({ data }) => {
   if (!data) return null

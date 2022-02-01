@@ -14,7 +14,7 @@
 }
 
 #PricingCards .one-features ul li::before {
-  content: url("../images/check-service-list.svg");
+  content: url("../images/Icons/check-service-list.svg");
   position: absolute;
   top: 0;
   left: -30px;
@@ -35,7 +35,7 @@
 }
 
 #PricingCards .two-price ul li::before {
-  content: url("../images/check-icon.svg");
+  content: url("../images/Icons/check-icon.svg");
   position: absolute;
   top: 0;
   left: -30px;

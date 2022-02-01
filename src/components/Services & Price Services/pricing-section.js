@@ -73,6 +73,20 @@ const PricingSection = ({ pricingBody }) => {
                                 {item.frequency.text}
                               </span>
                             </div>
+                            <p className="pt-6 mb-0 text-sm">
+                              {item.policy_link.url ? (
+                                <Link
+                                  to={item.policy_link.url}
+                                  className="font-medium text-emerald-500 underline"
+                                >
+                                  {item.policy_text.text}
+                                </Link>
+                              ) : (
+                                <div className="font-medium text-emerald-500 underline">
+                                  {item.policy_text.text}
+                                </div>
+                              )}
+                            </p>
                             <div className="mt-6">
                               <div>
                                 {item.call_to_action.url ? (

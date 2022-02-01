@@ -3,9 +3,9 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import SearchSection from "../components/search-section"
-import Cta from "../components/cta-section"
-import FAQs from "../components/faq-section"
+import SearchSection from "../components/Search & Search Result/search-section"
+import Cta from "../components/Reusable Components/cta-section"
+import FAQs from "../components/Reusable Components/faq-section"
 
 const Search = ({ data }) => {
   if (!data) return null
