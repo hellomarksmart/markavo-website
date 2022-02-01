@@ -2,13 +2,7 @@ import React, { Fragment } from "react"
 import { Link } from "gatsby"
 import { Popover, Transition } from "@headlessui/react"
 import { ChevronDownIcon } from "@heroicons/react/solid"
-import {
-  ChartBarIcon,
-  PlayIcon,
-  PhoneIcon,
-  MenuIcon,
-  XIcon,
-} from "@heroicons/react/outline"
+import { PlayIcon, PhoneIcon, MenuIcon, XIcon } from "@heroicons/react/outline"
 import { SearchIcon } from "@heroicons/react/solid"
 import { LanguageToggle } from "../components/language-toggle"
 
@@ -60,13 +54,6 @@ const Header = ({ topHeader, activeDoc }) => {
         <div className="lg:w-auto sm:w-2/12 w-4/12">
           <Link to="/" className="flex">
             <span className="sr-only">Markvao</span>
-            {/* <StaticImage
-              src={headerLogo}
-              width={202}
-              quality={95}
-              formats={["auto", "webp", "avif"]}
-              alt="Markavo"
-            /> */}
             <img className="mb-0" src={headerLogo} width={202} alt="Markavo" />
           </Link>
         </div>
@@ -123,14 +110,11 @@ const Header = ({ topHeader, activeDoc }) => {
                                   {item.icon.url ? (
                                     <img
                                       src={item.icon.url}
-                                      className="h-6 w-6"
+                                      className="h-6 w-6 mb-0 invert"
                                       alt=""
                                     />
                                   ) : (
-                                    <ChartBarIcon
-                                      className="h-6 w-6"
-                                      aria-hidden="true"
-                                    />
+                                    ""
                                   )}
                                 </div>
                                 <div className="ml-4">
@@ -210,7 +194,7 @@ const Header = ({ topHeader, activeDoc }) => {
                       leaveFrom="opacity-100 translate-y-0"
                       leaveTo="opacity-0 translate-y-1"
                     >
-                      <Popover.Panel className="absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-xs sm:px-0">
+                      <Popover.Panel className="absolute z-10 left-0 transform -translate-x-0 mt-3 px-2 w-[20vw] max-w-xs sm:px-0">
                         <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                           <div className="relative grid gap-4 bg-white px-5 py-6 sm:gap-4 sm:p-8">
                             {brandingTools.map((item, i) => (
@@ -279,13 +263,6 @@ const Header = ({ topHeader, activeDoc }) => {
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
                 <div>
-                  {/* <StaticImage
-                    src="../images/markavo-logo.png"
-                    width={202}
-                    quality={95}
-                    formats={["auto", "webp", "avif"]}
-                    alt="Markavo"
-                  /> */}
                   <img
                     className="mb-0"
                     src={headerLogo}
@@ -310,12 +287,13 @@ const Header = ({ topHeader, activeDoc }) => {
                     >
                       <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gray-900 text-white">
                         {item.icon.url ? (
-                          <img src={item.icon.url} className="h-6 w-6" alt="" />
-                        ) : (
-                          <ChartBarIcon
-                            className="h-6 w-6"
-                            aria-hidden="true"
+                          <img
+                            src={item.icon.url}
+                            className="h-6 w-6 mb-0 invert"
+                            alt=""
                           />
+                        ) : (
+                          ""
                         )}
                       </div>
                       <div className="ml-4 text-sm  font-medium text-gray-900">
