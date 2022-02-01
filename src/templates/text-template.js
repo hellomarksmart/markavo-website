@@ -44,8 +44,8 @@ const TextTemplate = ({ data }) => {
 export default TextTemplate
 
 export const TextTemplateQuery = graphql`
-  query TextTemplateQuery($lang: String) {
-    prismicTextTemplate(lang: { eq: $lang }) {
+  query TextTemplateQuery($lang: String, $id: String) {
+    prismicTextTemplate(id: { eq: $id }, lang: { eq: $lang }) {
       alternate_languages {
         uid
         type
