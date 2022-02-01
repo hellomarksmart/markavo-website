@@ -9,22 +9,22 @@ const AboutSection = ({ heading, description, about_items }) => {
             <h2 className="text-3xl font-extrabold tracking-tight sm:text-[36px]">
               {heading}
             </h2>
-            <p className="  text-[20px] text-gray-500">{description}</p>
+            <p className="text-[20px] text-gray-500">{description}</p>
           </div>
           <div className="lg:col-span-2">
             <ul className="space-y-12 sm:divide-y sm:divide-gray-200 sm:space-y-0 sm:-mt-8 lg:gap-x-8 lg:space-y-0 ml-0">
               {about_items?.map((item, i) => {
                 return (
                   <li key={i} className="sm:py-[32px] mb-0">
-                    <div className="w-[100%] space-y-4 sm:space-y-0 sm:flex md:flex-row sm:flex-col">
+                    <div className="w-full space-y-4 sm:space-y-0 sm:flex md:flex-row sm:flex-col">
                       <div className="xl:w-[16rem] md:w-[15rem] sm:pb-6">
                         <img
-                          className="sm:h-[332px] sm:w-[250px] w-[100%] h-[22rem] object-cover shadow-lg rounded-lg"
+                          className="sm:h-[332px] sm:w-[250px] w-full h-[22rem] object-cover shadow-lg rounded-lg"
                           src={item?.image.url}
                           alt=""
                         />
                       </div>
-                      <div className="sm:w-[66%] w-[100%] sm:col-span-2">
+                      <div className="sm:w-[66%] w-full sm:col-span-2">
                         <div className="space-y-4 mt-0">
                           <div className="leading-6 font-medium space-y-1">
                             <h3 className="mb-1 text-[18px]">

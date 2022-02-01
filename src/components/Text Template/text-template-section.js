@@ -167,7 +167,7 @@ const TextTemplateSection = ({
                 {item?.video_link.url ? (
                   <div className="video relative pt-[60%]">
                     <iframe
-                      className="w-full rounded-lg border-0 absolute top-0 left-0 h-[100%] w-[100%]"
+                      className="w-full rounded-lg border-0 absolute top-0 left-0 h-[100%] w-full"
                       src={item?.video_link.url}
                       title={item?.video_title.text}
                       allow="accelerometer; gyroscope; autoplay; encrypted-media;
