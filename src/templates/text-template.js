@@ -83,10 +83,7 @@ export const TextTemplateQuery = graphql`
           heading1 {
             text
           }
-          paragraph {
-            text
-          }
-          list {
+          rich_text {
             richText
             text
           }
