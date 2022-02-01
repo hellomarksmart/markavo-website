@@ -1,4 +1,5 @@
 import * as React from "react"
+import { RichText } from "prismic-reactjs"
 
 const ContactSection = ({ heading, description, contact_items }) => {
   return (
@@ -10,16 +11,16 @@ const ContactSection = ({ heading, description, contact_items }) => {
           {contact_items?.map((item, i) => {
             return (
               <div key={i}>
-                <h3 className="text-lg font-medium text-gray-900">
+                <h3 className="text-lg font-medium text-gray-900 mb-0">
                   {item?.contact_title.text}
                 </h3>
-                {item?.contact_details.text ? (
-                  <p className="mt-2 text-base text-gray-500">
-                    {item?.contact_details.text}
-                  </p>
-                ) : (
-                  ""
-                )}
+                <div className="contact-details mt-2 text-base text-gray-500">
+                  {item?.contact_details.richText ? (
+                    <RichText render={item?.contact_details.richText} />
+                  ) : (
+                    ""
+                  )}
+                </div>
                 {item?.qr_code.url ? (
                   <img
                     className="object-cover shadow-lg rounded-lg"
