@@ -21,8 +21,6 @@ const TextTemplate = ({ data }) => {
     alternateLanguages,
   }
 
-  console.log("lang text template", alternateLanguages)
-
   return (
     <Layout
       activeDoc={activeDoc}
