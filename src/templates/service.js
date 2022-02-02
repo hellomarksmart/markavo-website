@@ -139,6 +139,7 @@ export const ServiceSingleQuery = graphql`
                 text
               }
               cta_bottom_text {
+                richText
                 text
               }
               call_to_action_text {
