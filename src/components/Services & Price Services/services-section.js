@@ -8,13 +8,13 @@ const ServicesSection = ({ title, heading, description, service_items }) => {
     <div className="bg-white">
       <div className="max-w-default mx-auto px-4 sm:px-6 lg:px-8 pt-10 lg:pt-16 md:pt-10 lg:grid lg:grid-cols-3 lg:gap-x-8">
         <div>
-          <h2 className="pt-1 text-[16px] font-semibold text-emerald-400 uppercase tracking-wide">
+          <h2 className="pt-1 text-sm font-semibold text-emerald-400 uppercase tracking-wide">
             {title}
           </h2>
-          <p className="mt-2 text-[30px] font-extrabold text-gray-900">
+          <p className="mt-2 text-2.5xl font-extrabold text-gray-900">
             {heading}
           </p>
-          <p className="mt-4 text-[18px] text-gray-500">{description}</p>
+          <p className="mt-4 text-base text-gray-500">{description}</p>
         </div>
         <div className="mt-12 lg:mt-0 lg:col-span-2">
           <dl className="space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:grid-rows-4 sm:grid-flow-col sm:gap-x-6 sm:gap-y-10 lg:gap-x-8">
@@ -26,14 +26,14 @@ const ServicesSection = ({ title, heading, description, service_items }) => {
                       className="absolute h-6 w-6 text-emerald-400"
                       aria-hidden="true"
                     />
-                    <p className="ml-9 mb-2 text-[18px] leading-6 text-gray-900">
+                    <p className="ml-9 mb-2 text-base leading-6 text-gray-900">
                       {item?.title.text}
                     </p>
                   </dt>
-                  <dd className="mt-2 ml-9 mb-2 text-[16px] text-gray-500">
+                  <dd className="mt-2 ml-9 mb-2 text-sm text-gray-500">
                     {item?.content.text}
                   </dd>
-                  <dd className="ml-9 text-[16px] mb-0">
+                  <dd className="ml-9 text-sm mb-0">
                     {item?.link.url ? (
                       <Link
                         key={item?.link.url}
