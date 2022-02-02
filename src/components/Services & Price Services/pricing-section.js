@@ -197,7 +197,7 @@ const PricingSection = ({ pricingBody }) => {
                     )}
                     <div className="card-body">
                       <div>
-                        <div className="bg-white py-10">
+                        <div className="bg-white rounded-md py-10">
                           <h3 className="mb-1.5 text-center text-2xl font-bold text-emerald-800">
                             {item.plan_title.text}
                           </h3>
@@ -262,13 +262,13 @@ const PricingSection = ({ pricingBody }) => {
                 <div className="w-full lg:w-4/12 text-center mt-4 lg:mt-0">
                   {pricingBody[0].primary.discount_cta_link.url ? (
                     <Link
-                      className="p-1.5 md:py-2 md:px-4 border-2 border-gray-900 rounded-sm text-gray-900 font-bold"
+                      className="p-1.5 md:py-2 md:px-4 border-2 border-gray-900 rounded-lg text-gray-900 font-bold"
                       to={pricingBody[0].primary.discount_cta_link.url}
                     >
                       {pricingBody[0].primary.discount_cta_label.text}
                     </Link>
                   ) : (
-                    <div className="p-1.5 md:py-2 md:px-4 border-2 border-gray-900 rounded-sm text-gray-900 font-bold">
+                    <div className="p-1.5 md:py-2 md:px-4 border-2 border-gray-900 rounded-lg text-gray-900 font-bold">
                       {pricingBody[0].primary.discount_cta_label.text}
                     </div>
                   )}
