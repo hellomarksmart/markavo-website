@@ -1697,34 +1697,35 @@
   "resolved" "https://registry.npmjs.org/@prismicio/custom-types-client/-/custom-types-client-0.0.6.tgz"
   "version" "0.0.6"
 
-"@prismicio/helpers@^2.0.0", "@prismicio/helpers@^2.0.0-beta.0":
-  "integrity" "sha512-8xnK2pj+us935wAvJvPdk4o6Zhn/z99aUWwaGYJBbNqQy8x0pahgXY1L3l6s6+9xcEdJy6kKL8IfvFS6U0tpXg=="
-  "resolved" "https://registry.npmjs.org/@prismicio/helpers/-/helpers-2.0.0.tgz"
-  "version" "2.0.0"
+"@prismicio/helpers@^2.0.0", "@prismicio/helpers@^2.0.0-beta.0", "@prismicio/helpers@^2.0.1":
+  "integrity" "sha512-bUkicVrkx0UTdSMKgTvf+rvPMamWTperh8CUVZEfgivBaZaN1Pn/dCHVHUJUL8SDK6hXkKNpaEsv2xX1tCXBOw=="
+  "resolved" "https://registry.npmjs.org/@prismicio/helpers/-/helpers-2.1.0.tgz"
+  "version" "2.1.0"
   dependencies:
-    "@prismicio/richtext" "^2.0.0-beta.3"
-    "@prismicio/types" "^0.1.20"
+    "@prismicio/richtext" "^2.0.1"
+    "@prismicio/types" "^0.1.22"
     "escape-html" "^1.0.3"
+    "imgix-url-builder" "^0.0.2"
 
-"@prismicio/react@^2.0.3":
-  "integrity" "sha512-dXN+DrcZx7dGjhRqxWdrzinT9khFxCIP53tpt7rmUSLAwtaVZe8WCUPL/qDXmGllcVeDryfwYu1O0REXdBBj1Q=="
-  "resolved" "https://registry.npmjs.org/@prismicio/react/-/react-2.0.3.tgz"
-  "version" "2.0.3"
+"@prismicio/react@^2.0.5":
+  "integrity" "sha512-PRA2a9QROd6E4L74VKZjQFawYd8ZZLBXbFS+cpqASCDkFdJMi0BaO9w2UyPNsLtW79te3CsnlDgjSo8BeAuzuQ=="
+  "resolved" "https://registry.npmjs.org/@prismicio/react/-/react-2.0.5.tgz"
+  "version" "2.0.5"
   dependencies:
-    "@prismicio/helpers" "^2.0.0"
-    "@prismicio/richtext" "^2.0.0"
+    "@prismicio/helpers" "^2.0.1"
+    "@prismicio/richtext" "^2.0.1"
 
-"@prismicio/richtext@^2.0.0", "@prismicio/richtext@^2.0.0-beta.3":
-  "integrity" "sha512-XH2DJZUz0LEHO45UmZsabUKuHB+kHGqORLp5fYJ+RlpmRBcKowjI9hcQZqS/rvWMTY/l948yJvy0/MlCIiLz6w=="
-  "resolved" "https://registry.npmjs.org/@prismicio/richtext/-/richtext-2.0.0.tgz"
-  "version" "2.0.0"
+"@prismicio/richtext@^2.0.1":
+  "integrity" "sha512-sM+eusvE4PsKnwefDRd0ai3Ny59XJ54dn6xfwq0Fyqj0LAcuyB2gRjSufbIqYOZ1r4JKMQArDKrypNEcrbBFkA=="
+  "resolved" "https://registry.npmjs.org/@prismicio/richtext/-/richtext-2.0.1.tgz"
+  "version" "2.0.1"
   dependencies:
-    "@prismicio/types" "^0.1.19"
+    "@prismicio/types" "^0.1.22"
 
-"@prismicio/types@^0.1.13", "@prismicio/types@^0.1.19", "@prismicio/types@^0.1.20", "@prismicio/types@^0.1.21":
-  "integrity" "sha512-TMO4zpHlBFdvULDU5KQxeHOkI72lCkEKT3YwKhqiaiQWRVp7s3w27mXHjOWVBOlH/2qrzck219O84zBE6HzaMg=="
-  "resolved" "https://registry.npmjs.org/@prismicio/types/-/types-0.1.21.tgz"
-  "version" "0.1.21"
+"@prismicio/types@^0.1.13", "@prismicio/types@^0.1.21", "@prismicio/types@^0.1.22":
+  "integrity" "sha512-lA2tDAN/4rSou/D1ZNMJEytqyl8MGdO1jX3e+u37t2MpQgPUXj30j7qVdhfTcimIlDgKCAB3oyVmJw/RA8n6Kg=="
+  "resolved" "https://registry.npmjs.org/@prismicio/types/-/types-0.1.22.tgz"
+  "version" "0.1.22"
 
 "@sideway/address@^4.1.3":
   "integrity" "sha512-8ncEUtmnTsMmL7z1YPB47kPUq7LpKWJNFPsRzHiIajGC5uXlWGn+AmkYPcHNl8S4tcEGx+cnORnNYaw2wvL+LQ=="
@@ -6505,6 +6506,11 @@
   "integrity" "sha1-/IQJlmRGC5DKhi2TALa/u7+/gFY="
   "resolved" "https://registry.npmjs.org/image-q/-/image-q-1.1.1.tgz"
   "version" "1.1.1"
+
+"imgix-url-builder@^0.0.2":
+  "integrity" "sha512-PHT9aXvD+I6x5UAdvsAKNALvxHI1AWGGpxLUQDQAXzUt54ScFHxxODJ/4/XWDM55cqvRCvT3MMxbOWjgWhLe9Q=="
+  "resolved" "https://registry.npmjs.org/imgix-url-builder/-/imgix-url-builder-0.0.2.tgz"
+  "version" "0.0.2"
 
 "imgix-url-params@^11.11.2":
   "integrity" "sha512-Q/P1vlxu3tKw2FatBTuVPuMvJaAYuso6yFO0UXX7QWWUsguhG2sSuBFnCpywefKPEM8Lw9dbhpSney374lD0Sg=="

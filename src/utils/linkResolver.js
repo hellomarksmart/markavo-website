@@ -61,13 +61,13 @@ exports.linkResolver = doc => {
         : `/${doc.uid}/${doc.lang}`
     }
 
-    case "text_template": {
+    case "search_page": {
       return doc.lang === defaultLanguage
         ? `/${doc.uid}`
         : `/${doc.uid}/${doc.lang}`
     }
 
-    case "search_page": {
+    case "text_template": {
       return doc.lang === defaultLanguage
         ? `/${doc.uid}`
         : `/${doc.uid}/${doc.lang}`
