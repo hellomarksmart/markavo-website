@@ -35,7 +35,7 @@ const PricingSection = ({ pricingBody }) => {
             <>
               {pricingBody[0].items.map((item, i) => {
                 return (
-                  <div className="pb-5 lg:pb-2">
+                  <div key={i} className="pb-5 lg:pb-2">
                     <div className="relative">
                       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="max-w-lg mx-auto rounded-lg shadow-lg overflow-hidden lg:max-w-none lg:flex">
@@ -43,11 +43,11 @@ const PricingSection = ({ pricingBody }) => {
                             <h3 className="text-[24px] font-extrabold text-gray-900 sm:text-[30px]">
                               {item.plan_title.text}
                             </h3>
-                            <p className="mt-6 text-base text-gray-500 text-[16px]">
+                            <div className="mt-6 text-base text-gray-500 text-[16px]">
                               <RichText
                                 render={item.plan_description.richText}
                               />
-                            </p>
+                            </div>
                             <div className="mt-8">
                               <div className="flex items-center">
                                 <h4 className="flex-shrink-0 pr-4 bg-white text-[14px] tracking-wider font-bold uppercase text-emerald-500 mb-0">
@@ -73,7 +73,7 @@ const PricingSection = ({ pricingBody }) => {
                                 {item.frequency.text}
                               </span>
                             </div>
-                            <p className="pt-6 mb-0 text-sm">
+                            <div className="pt-6 text-sm">
                               {item.policy_link.url ? (
                                 <Link
                                   to={item.policy_link.url}
@@ -86,7 +86,7 @@ const PricingSection = ({ pricingBody }) => {
                                   {item.policy_text.text}
                                 </div>
                               )}
-                            </p>
+                            </div>
                             <div className="mt-6">
                               <div>
                                 {item.call_to_action.url ? (
@@ -128,7 +128,10 @@ const PricingSection = ({ pricingBody }) => {
               <div className="max-w-md mx-auto space-y-4 lg:max-w-5xl lg:grid lg:grid-cols-2 lg:gap-5 lg:space-y-0">
                 {pricingBody[0].items.map((item, i) => {
                   return (
-                    <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+                    <div
+                      key={i}
+                      className="flex flex-col rounded-lg shadow-lg overflow-hidden"
+                    >
                       <div className="px-6 py-8 bg-white sm:p-10 sm:pb-6">
                         <div>
                           <h3
@@ -145,9 +148,9 @@ const PricingSection = ({ pricingBody }) => {
                             {item.frequency.text}
                           </span>
                         </div>
-                        <p className="mt-5 text-lg text-gray-500">
+                        <div className="mt-5 text-lg text-gray-500">
                           <RichText render={item.plan_description.richText} />
-                        </p>
+                        </div>
                       </div>
                       <div className="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-gray-50 space-y-6 sm:p-10 sm:pt-6">
                         <div className="two-price">
@@ -183,6 +186,7 @@ const PricingSection = ({ pricingBody }) => {
               {pricingBody[0].items.map((item, i) => {
                 return (
                   <div
+                    key={i}
                     id="PricingCard"
                     className="relative border-2 rounded-md bg-gray-50  text-center"
                   >
