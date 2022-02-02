@@ -105,17 +105,17 @@ const SearchSection = ({ heading, headingColored, description }) => {
       <div className="relative pt-16 pb-16 sm:pb-16">
         <div className="text-center">
           <div className="max-w-default mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl sm:text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-[60px]">
+            <h1 className="text-3xl sm:text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-5.5xl">
               <span className="block xl:inline">{heading}</span>{" "}
               <span className="block text-emerald-400 xl:inline">
                 {headingColored}
               </span>
             </h1>
-            <p className="mt-3 max-w-sm mx-auto text-base text-gray-500 sm:max-w-md sm:text-lg md:mt-5 md:text-[20px] md:max-w-[47rem]">
+            <p className="mt-3 max-w-sm mx-auto text-base text-gray-500 sm:max-w-md sm:text-lg md:mt-5 md:text-lg md:max-w-xl">
               {description}
             </p>
           </div>
-          <div className="mt-5 max-w-[16rem] sm:max-w-sm mx-auto sm:flex sm:justify-center md:mt-8">
+          <div className="mt-5 max-w-medium sm:max-w-sm mx-auto sm:flex sm:justify-center md:mt-8">
             <div className="relative">
               <div className="absolute top-4 left-3">
                 {" "}
