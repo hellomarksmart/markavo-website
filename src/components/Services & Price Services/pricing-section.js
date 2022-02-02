@@ -7,25 +7,25 @@ const PricingSection = ({ pricingBody }) => {
     <div className={`bg-emerald-400 px-5 pb-12`}>
       <div className="max-w-default mx-auto pt-12 px-4 sm:px-6 lg:px-8 lg:pt-20">
         <div className="text-center">
-          <h2 className="mb-2 text-[18px] leading-6 font-semibold text-emerald-800 uppercase tracking-wider">
+          <h2 className="mb-2 text-base leading-6 font-semibold text-emerald-800 uppercase tracking-wider">
             {pricingBody[0].primary.eyebrow_headline.text}
           </h2>
           <p
             className={
-              "text-3xl font-bold text-gray-900 sm:text-4xl sm:max-w-md md:max-w-3xl lg:max-w-4xl lg:text-[48px] mx-auto"
+              "text-3xl font-bold text-gray-900 sm:text-4xl sm:max-w-md md:max-w-3xl lg:max-w-4xl lg:text-4.5xl mx-auto"
             }
           >
             {pricingBody[0].primary.title.text}
           </p>
           <p
-            className={`mt-3 max-w-4xl mx-auto text-base text-emerald-800 sm:mt-5 sm:text-[20px] md:text-[24px] md:max-w-[46rem] sm:max-w-md`}
+            className={`mt-3 max-w-4xl mx-auto text-base text-emerald-800 sm:mt-5 sm:text-lg md:text-2xl md:max-w-xl sm:max-w-md`}
           >
             {pricingBody[0].primary.description.text}
           </p>
         </div>
       </div>
       <div
-        className={`max-w-default mx-auto px-4 sm:px-6 lg:px-8 mt-16 pb-12 lg:mt-20 lg:pb-20`}
+        className="max-w-default mx-auto px-4 sm:px-6 lg:px-8 mt-16 pb-12 lg:mt-20 lg:pb-20"
       >
         <div
           id="PricingCards"
@@ -37,20 +37,20 @@ const PricingSection = ({ pricingBody }) => {
                 return (
                   <div key={i} className="pb-5 lg:pb-2">
                     <div className="relative">
-                      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                      <div className="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="max-w-lg mx-auto rounded-lg shadow-lg overflow-hidden lg:max-w-none lg:flex">
-                          <div className="w-full md:w-9/12 bg-white px-6 py-8 lg:p-12">
-                            <h3 className="text-[24px] font-extrabold text-gray-900 sm:text-[30px]">
+                          <div className="w-full lg:w-9/12 bg-white px-6 py-8 lg:p-12">
+                            <h3 className="text-2xl font-extrabold text-gray-900 sm:text-2.5xl">
                               {item.plan_title.text}
                             </h3>
-                            <div className="mt-6 text-base text-gray-500 text-[16px]">
+                            <div className="mt-6 text-base text-gray-500 text-sm">
                               <RichText
                                 render={item.plan_description.richText}
                               />
                             </div>
                             <div className="mt-8">
                               <div className="flex items-center">
-                                <h4 className="flex-shrink-0 pr-4 bg-white text-[14px] tracking-wider font-bold uppercase text-emerald-500 mb-0">
+                                <h4 className="flex-shrink-0 pr-4 bg-white text-xs tracking-wider font-bold uppercase text-emerald-500 mb-0">
                                   WHAT'S INCLUDED?
                                 </h4>
                                 <div className="flex-1 border-t-2 border-gray-200" />
@@ -60,16 +60,16 @@ const PricingSection = ({ pricingBody }) => {
                               </div>
                             </div>
                           </div>
-                          <div className="w-full md:w-4/12 py-8 px-6 text-center bg-gray-50 lg:flex-shrink-0 lg:flex lg:flex-col lg:justify-center lg:p-12">
-                            <p className="text-[18px] leading-6 font-medium text-gray-900 mb-0">
+                          <div className="w-full lg:w-4/12 py-8 px-6 text-center bg-gray-50 lg:flex-shrink-0 lg:flex lg:flex-col lg:justify-center lg:p-12">
+                            <p className="text-base leading-6 font-medium text-gray-900 mb-0">
                               {item.headline.text}
                             </p>
-                            <div className="mt-4 flex items-center justify-center text-[48px] font-extrabold text-gray-900">
+                            <div className="mt-4 flex items-center justify-center text-4.5xl font-extrabold text-gray-900">
                               <span>
                                 {item.currency.text}
                                 {item.price_option.text}
                               </span>
-                              <span className="ml-3 text-[20px] font-medium text-gray-500">
+                              <span className="ml-3 text-lg font-medium text-gray-500">
                                 {item.frequency.text}
                               </span>
                             </div>
@@ -92,18 +92,18 @@ const PricingSection = ({ pricingBody }) => {
                                 {item.call_to_action.url ? (
                                   <Link
                                     to={item.call_to_action.url}
-                                    className="flex items-center justify-center px-5 py-3 border border-transparent text-[16px] font-medium rounded-md text-white bg-gray-900 hover:bg-emerald-900"
+                                    className="flex items-center justify-center px-5 py-3 border border-transparent text-sm font-medium rounded-md text-white bg-gray-900 hover:bg-emerald-900"
                                   >
                                     {item.call_to_action_text.text}
                                   </Link>
                                 ) : (
-                                  <div className="flex items-center justify-center px-5 py-3 border border-transparent text-[16px] font-medium rounded-md text-white bg-gray-900 hover:bg-emerald-900">
+                                  <div className="flex items-center justify-center px-5 py-3 border border-transparent text-sm font-medium rounded-md text-white bg-gray-900 hover:bg-emerald-900">
                                     {item.call_to_action_text.text}
                                   </div>
                                 )}
                               </div>
                             </div>
-                            <div className="mt-4 text-[14px]">
+                            <div className="mt-4 text-xs">
                               <div>
                                 {item.cta_bottom_text.text ? (
                                   <div className="font-normal text-gray-900">
@@ -198,15 +198,15 @@ const PricingSection = ({ pricingBody }) => {
                     <div className="card-body">
                       <div>
                         <div className="bg-white rounded-md py-10">
-                          <h3 className="mb-1.5 text-center text-[24px] font-bold text-emerald-800">
+                          <h3 className="mb-1.5 text-center text-2xl font-bold text-emerald-800">
                             {item.plan_title.text}
                           </h3>
                           <div className="flex items-center justify-center ">
                             <span className="px-3 flex items-start text-6xl tracking-tight text-gray-900">
-                              <span className="mt-2 mr-2 text-[36px] font-normal">
+                              <span className="mt-2 mr-2 text-3.5xl font-normal">
                                 {item.currency.text}
                               </span>
-                              <span className="font-bold text-[60px]">
+                              <span className="font-bold text-5.5xl">
                                 {item.price_option.text}
                               </span>
                             </span>
@@ -224,7 +224,7 @@ const PricingSection = ({ pricingBody }) => {
                               {item.call_to_action.url ? (
                                 <Link
                                   to={item.call_to_action.url}
-                                  className="block w-full text-center rounded-lg border-2 border-gray-900 bg-white px-6 py-3 text-[16px] font-medium text-gray-900 hover:bg-gray-50"
+                                  className="block w-full text-center rounded-lg border-2 border-gray-900 bg-white px-6 py-3 text-sm font-medium text-gray-900 hover:bg-gray-50"
                                   aria-describedby="tier-hobby"
                                 >
                                   {item.call_to_action_text.text}
@@ -246,37 +246,39 @@ const PricingSection = ({ pricingBody }) => {
           )}
         </div>
       </div>
-      {pricingBody[0].items.length === 2 && (
-        <div className="max-w-default mx-auto px-4 sm:px-6 lg:px-8">
-          {pricingBody[0].primary.discounted_pill_text.text && (
-            <div className="flex items-center flex-col md:flex-row bg-emerald-300/50 px-3 md:px-6 py-7 rounded-md">
-              <div className="w-full lg:w-8/12 text-gray-900 text-[20px]">
-                <p className="text-[15.7px] rounded-full px-3 py-1 w-fit bg-emerald-800 text-emerald-300 font-bold">
-                  {pricingBody[0].primary.discounted_pill_text.text}
-                </p>
-                <RichText
-                  render={pricingBody[0].primary.discount_description.richText}
-                />
+      {
+        pricingBody[0].items.length === 2 && (
+          <div className="max-w-default mx-auto px-4 sm:px-6 lg:px-8">
+            {pricingBody[0].primary.discounted_pill_text.text && (
+              <div className="flex items-center flex-col md:flex-row bg-emerald-300/50 px-3 md:px-6 py-7 rounded-md">
+                <div className="w-full lg:w-8/12 text-gray-900 text-lg">
+                  <p className="text-sm rounded-full px-3 py-1 w-fit bg-emerald-800 text-emerald-300 font-bold">
+                    {pricingBody[0].primary.discounted_pill_text.text}
+                  </p>
+                  <RichText
+                    render={pricingBody[0].primary.discount_description.richText}
+                  />
+                </div>
+                <div className="w-full lg:w-4/12 text-center mt-4 lg:mt-0">
+                  {pricingBody[0].primary.discount_cta_link.url ? (
+                    <Link
+                      className="p-1.5 md:py-2 md:px-4 border-2 border-gray-900 rounded-lg text-gray-900 font-bold"
+                      to={pricingBody[0].primary.discount_cta_link.url}
+                    >
+                      {pricingBody[0].primary.discount_cta_label.text}
+                    </Link>
+                  ) : (
+                    <div className="p-1.5 md:py-2 md:px-4 border-2 border-gray-900 rounded-lg text-gray-900 font-bold">
+                      {pricingBody[0].primary.discount_cta_label.text}
+                    </div>
+                  )}
+                </div>
               </div>
-              <div className="w-full lg:w-4/12 text-center mt-4 lg:mt-0">
-                {pricingBody[0].primary.discount_cta_link.url ? (
-                  <Link
-                    className="p-1.5 md:py-2 md:px-4 border-2 border-gray-900 rounded-lg text-gray-900 font-bold"
-                    to={pricingBody[0].primary.discount_cta_link.url}
-                  >
-                    {pricingBody[0].primary.discount_cta_label.text}
-                  </Link>
-                ) : (
-                  <div className="p-1.5 md:py-2 md:px-4 border-2 border-gray-900 rounded-lg text-gray-900 font-bold">
-                    {pricingBody[0].primary.discount_cta_label.text}
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-        </div>
-      )}
-    </div>
+            )}
+          </div>
+        )
+      }
+    </div >
   )
 }
 
