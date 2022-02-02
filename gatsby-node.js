@@ -54,15 +54,16 @@ exports.createPages = async ({ graphql, actions }) => {
           url
         }
       }
-      text_template: allPrismicTextTemplate {
+      search_page: allPrismicSearchPage {
         nodes {
           id
           lang
           url
         }
       }
-      search_page: allPrismicSearchPage {
+      text_template: allPrismicTextTemplate {
         nodes {
+          uid
           id
           lang
           url
@@ -90,8 +91,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const servicesPage = result.data.services_page.nodes
   const paymentReceived = result.data.payment_received.nodes
   const contactUsPage = result.data.contact_us_page.nodes
-  const textTemplate = result.data.text_template.nodes
   const searchPage = result.data.search_page.nodes
+  const textTemplate = result.data.text_template.nodes
   const singleService = result.data.service_single.nodes
 
   homePage.forEach(page => {
@@ -171,17 +172,6 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  textTemplate.forEach(page => {
-    createPage({
-      path: page.url,
-      component: path.resolve(__dirname, "src/templates/text-template.js"),
-      context: {
-        id: page.id,
-        lang: page.lang,
-      },
-    })
-  })
-
   searchPage.forEach(page => {
     createPage({
       path: page.url,
@@ -189,6 +179,17 @@ exports.createPages = async ({ graphql, actions }) => {
         __dirname,
         "src/templates/free-trademark-search.js"
       ),
+      context: {
+        id: page.id,
+        lang: page.lang,
+      },
+    })
+  })
+
+  textTemplate.forEach(page => {
+    createPage({
+      path: page.url,
+      component: path.resolve(__dirname, "src/templates/text-template.js"),
       context: {
         id: page.id,
         lang: page.lang,

@@ -24,6 +24,7 @@ const Service = ({ data }) => {
     url,
     alternateLanguages,
   }
+  console.log("Single Service", activeDoc)
 
   return (
     <Layout
