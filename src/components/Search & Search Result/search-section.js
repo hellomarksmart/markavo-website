@@ -13,7 +13,6 @@ const SearchSection = ({ heading, headingColored, description }) => {
       api
         .getData(keyword)
         .then(response => {
-          console.log("search", response.data)
           setResponseData(response.data)
           setResponseLength(response.data.items.length)
         })
@@ -169,44 +168,50 @@ const SearchSection = ({ heading, headingColored, description }) => {
                   for as little as $185.
                 </b>
               </p>
-              {responseData.items.slice(startIndex, endIndex).map((item, i) => {
-                const formatter = new Intl.DateTimeFormat("eng", {
-                  month: "long",
-                  day: "2-digit",
-                  year: "numeric",
-                })
-                const newDate = formatter.format(new Date(item.filing_date))
+              <div className="w-3/6">
+                {responseData.items
+                  .slice(startIndex, endIndex)
+                  .map((item, i) => {
+                    const formatter = new Intl.DateTimeFormat("eng", {
+                      month: "long",
+                      day: "2-digit",
+                      year: "numeric",
+                    })
+                    const newDate = formatter.format(new Date(item.filing_date))
 
-                return (
-                  <div
-                    key={i}
-                    className="my-3 p-8 bg-white border border-slate-200"
-                  >
-                    <p className="text-emerald-500 font-bold">{item.keyword}</p>
-                    <div className="flex items-center">
-                      <p className="mr-2 mb-0 text-slate-400">Filed:</p>
-                      <p className="mb-0 text-slate-400">{newDate}</p>
-                    </div>
-                    <p className="truncate my-1">{item.description}</p>
-                    <div className="flex items-center">
-                      <p className="mr-2 mb-0 font-bold">Owned by:</p>
-                      {item.owners.map((owner, i) => {
-                        return (
-                          <p key={i} className="mb-0 text-emerald-500">
-                            {owner.name}
+                    return (
+                      <div
+                        key={i}
+                        className="my-3 p-8 bg-white border border-slate-200"
+                      >
+                        <p className="text-emerald-500 font-bold">
+                          {item.keyword}
+                        </p>
+                        <div className="flex items-center">
+                          <p className="mr-2 mb-0 text-slate-400">Filed:</p>
+                          <p className="mb-0 text-slate-400">{newDate}</p>
+                        </div>
+                        <p className="truncate my-1">{item.status_label}</p>
+                        <div className="flex items-center">
+                          <p className="mr-2 mb-0 font-bold">Owned by:</p>
+                          {item.owners.map((owner, i) => {
+                            return (
+                              <p key={i} className="mb-0 text-emerald-500">
+                                {owner.name}
+                              </p>
+                            )
+                          })}
+                        </div>
+                        <div className="flex items-center">
+                          <p className="mr-2 mb-0 font-bold">Serial Number:</p>
+                          <p className="mb-0 text-emerald-500">
+                            {item.serial_number}
                           </p>
-                        )
-                      })}
-                    </div>
-                    <div className="flex items-center">
-                      <p className="mr-2 mb-0 font-bold">Serial Number:</p>
-                      <p className="mb-0 text-emerald-500">
-                        {item.serial_number}
-                      </p>
-                    </div>
-                  </div>
-                )
-              })}
+                        </div>
+                      </div>
+                    )
+                  })}
+              </div>
             </div>
           )}
         </div>
