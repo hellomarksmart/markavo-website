@@ -172,7 +172,7 @@ const TextTemplateSection = ({
                       title={item?.video_title.text}
                       allow="accelerometer; gyroscope; autoplay; encrypted-media;
                   picture-in-picture;"
-                      allowfullscreen
+                      allowFullScreen
                     />
                   </div>
                 ) : (
