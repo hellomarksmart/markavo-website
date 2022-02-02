@@ -1,10 +1,6 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    maxWidth: {
-      default: "1440px",
-      tablet: "768px",
-    },
     fontSize: {
       '6xl': '3.75rem',
       '5.5xl': '3.35rem',
@@ -21,6 +17,8 @@ module.exports = {
       'xs': '.7778rem',
     },
     maxWidth: {
+      default: "1440px",
+      tablet: "768px",
       'medium': '16rem',
       'xl': '47rem',
       '2xl': '75rem',
