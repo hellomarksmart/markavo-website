@@ -188,14 +188,14 @@ const PricingSection = ({ pricingBody }) => {
                   <div
                     key={i}
                     id="PricingCard"
-                    className="relative border-2 rounded-md bg-gray-50  text-center"
+                    className="relative border-2 rounded-md bg-gray-50 text-center"
                   >
                     {i === 1 && (
                       <div className="most-popular relative flex items-center justify-center w-full" />
                     )}
                     <div className="card-body">
                       <div>
-                        <div className="bg-white py-10">
+                        <div className="bg-white rounded-md py-10">
                           <h3 className="mb-1.5 text-center text-[24px] font-bold text-emerald-800">
                             {item.plan_title.text}
                           </h3>

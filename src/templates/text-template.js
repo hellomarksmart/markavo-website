@@ -20,6 +20,7 @@ const TextTemplate = ({ data }) => {
     url,
     alternateLanguages,
   }
+  console.log("Text Template", activeDoc)
 
   return (
     <Layout
