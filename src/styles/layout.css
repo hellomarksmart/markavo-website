@@ -4,6 +4,7 @@ html {
   font: 112.5%/1.45em "Inter", georgia, serif, sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
+  line-height: 1.5 !important;
 }
 body {
   margin: 0;

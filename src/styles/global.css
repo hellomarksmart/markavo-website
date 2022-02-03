@@ -94,6 +94,10 @@
   color: white;
 }
 
+#PricingCard:not(:nth-child(2)) {
+  max-width: 445px;
+}
+
 .rich-text ul {
   list-style: disc;
 }
@@ -115,11 +119,25 @@ html {
   background-color: #fff !important;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   #PricingCards #PricingCard,
   #PricingCards #PricingCard:nth-child(2) {
     width: unset;
     min-width: 280px;
+  }
+
+  #PricingCards {
+    flex-flow: column;
+  }
+}
+
+@media (min-width: 1024px) {
+  #PricingCard:not(:nth-child(2)) {
+    min-width: 300px;
+  }
+
+  #PricingCard:nth-child(2) {
+    min-width: 320px;
   }
 }
 
