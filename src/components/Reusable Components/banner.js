@@ -86,13 +86,13 @@ const Banner = ({
 
       <div className="relative pt-16 pb-16 sm:pb-16 max-w-default mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h1 className="text-header1 sm:text-header1sm tracking-tight font-bold text-gray-900">
+          <h1 className="text-3xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-5.5xl">
             <span className="block xl:inline">{heading}</span>{" "}
             <span className="block text-emerald-400 xl:inline">
               {headingColored}
             </span>
           </h1>
-          <p className="mt-3 max-w-sm mx-auto text-normalmd2 sm:text-normalmd text-gray-500 sm:max-w-md md:mt-5 md:max-w-xl">
+          <p className="mt-3 max-w-sm mx-auto text-base sm:text-lg text-gray-500 sm:max-w-md md:mt-5 md:max-w-xl">
             {description}
           </p>
           <div className="mt-5 sm:max-w-sm mx-auto sm:flex sm:justify-center md:mt-8">
@@ -101,12 +101,12 @@ const Banner = ({
                 <Link
                   key={buttonColored}
                   to={buttonColoredLink}
-                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-normalsm2 sm:text-normalsm font-medium rounded-md text-gray-900 bg-emerald-400 hover:bg-emerald-500 md:py-buttonY md:px-buttonY"
+                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-emerald-400 hover:bg-emerald-500 md:py-buttonY md:px-buttonY"
                 >
                   {buttonColored}
                 </Link>
               ) : (
-                <div className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-normalsm2 sm:text-normalsm font-medium rounded-md text-gray-900 bg-emerald-400 hover:bg-emerald-500 md:py-buttonY md:px-buttonY">
+                <div className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-emerald-400 hover:bg-emerald-500 md:py-buttonY md:px-buttonY">
                   {buttonColored}
                 </div>
               )}
@@ -116,12 +116,12 @@ const Banner = ({
                 <Link
                   key={buttonPlain}
                   to={buttonPlainLink}
-                  className="w-full flex items-center justify-center px-8 py-3 border border-gray-900 text-normalsm2 sm:text-normalsm font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50 md:py-buttonY md:px-buttonY"
+                  className="w-full flex items-center justify-center px-8 py-3 border border-gray-900 text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50 md:py-buttonY md:px-buttonY"
                 >
                   {buttonPlain}
                 </Link>
               ) : (
-                <div className="w-full flex items-center justify-center px-8 py-3 border border-gray-900 text-normalsm2 sm:text-normalsm font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50 md:py-buttonY md:px-buttonY">
+                <div className="w-full flex items-center justify-center px-8 py-3 border border-gray-900 text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50 md:py-buttonY md:px-buttonY">
                   {buttonPlain}
                 </div>
               )}
