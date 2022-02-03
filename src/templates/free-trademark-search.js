@@ -85,9 +85,11 @@ export const SearchQuery = graphql`
         }
         faq_contents {
           faq_question {
+            richText
             text
           }
           faq_answer {
+            richText
             text
           }
         }
@@ -124,6 +126,7 @@ export const SearchQuery = graphql`
             url
           }
           icon {
+            alt
             url
           }
           description {
@@ -138,6 +141,7 @@ export const SearchQuery = graphql`
             url
           }
           icon {
+            alt
             url
           }
         }

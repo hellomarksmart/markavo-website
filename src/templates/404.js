@@ -117,6 +117,7 @@ export const NotFoundQuery = graphql`
             url
           }
           icon {
+            alt
             url
           }
           description {
@@ -131,6 +132,7 @@ export const NotFoundQuery = graphql`
             url
           }
           icon {
+            alt
             url
           }
         }

@@ -86,6 +86,7 @@ export const PaymentReceivedQuery = graphql`
             url
           }
           icon {
+            alt
             url
           }
           description {
@@ -100,6 +101,7 @@ export const PaymentReceivedQuery = graphql`
             url
           }
           icon {
+            alt
             url
           }
         }

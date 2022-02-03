@@ -74,6 +74,7 @@ export const TextTemplateQuery = graphql`
         }
         page_contents {
           image {
+            alt
             url
           }
           image_caption {
@@ -115,6 +116,7 @@ export const TextTemplateQuery = graphql`
           }
           icon {
             url
+            alt
           }
           description {
             text
@@ -129,6 +131,7 @@ export const TextTemplateQuery = graphql`
           }
           icon {
             url
+            alt
           }
         }
         branding_tools {
