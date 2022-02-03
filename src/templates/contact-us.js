@@ -66,6 +66,7 @@ export const ContactUsPageQuery = graphql`
         }
         contact_items {
           qr_code {
+            alt
             url
           }
           contact_title {
@@ -109,6 +110,7 @@ export const ContactUsPageQuery = graphql`
             url
           }
           icon {
+            alt
             url
           }
           description {
@@ -123,6 +125,7 @@ export const ContactUsPageQuery = graphql`
             url
           }
           icon {
+            alt
             url
           }
         }

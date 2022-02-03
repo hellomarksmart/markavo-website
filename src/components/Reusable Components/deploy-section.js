@@ -32,7 +32,7 @@ const Deploy = ({ title, heading, description, cards }) => {
                             <img
                               src={item?.icon.url}
                               className="h-5 w-5 text-gray-900 mb-0"
-                              alt="icon"
+                              alt={item?.icon.alt}
                             />
                           </span>
                         </div>

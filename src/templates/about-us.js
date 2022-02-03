@@ -97,6 +97,7 @@ export const AboutUsPageQuery = graphql`
         }
         about_items {
           image {
+            alt
             url
           }
           name {
@@ -142,6 +143,7 @@ export const AboutUsPageQuery = graphql`
             url
           }
           icon {
+            alt
             url
           }
           description {
@@ -156,6 +158,7 @@ export const AboutUsPageQuery = graphql`
             url
           }
           icon {
+            alt
             url
           }
         }

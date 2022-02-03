@@ -152,6 +152,7 @@ export const query = graphql`
         }
         grid_cards {
           icon {
+            alt
             url
           }
           content {
@@ -211,6 +212,7 @@ export const query = graphql`
             url
           }
           icon {
+            alt
             url
           }
           description {
@@ -225,6 +227,7 @@ export const query = graphql`
             url
           }
           icon {
+            alt
             url
           }
         }

@@ -111,7 +111,7 @@ const Header = ({ topHeader, activeDoc }) => {
                                     <img
                                       src={item.icon.url}
                                       className="h-6 w-6 mb-0 invert"
-                                      alt=""
+                                      alt={item.icon.alt}
                                     />
                                   ) : (
                                     ""
@@ -142,7 +142,7 @@ const Header = ({ topHeader, activeDoc }) => {
                                       <img
                                         src={item.icon.url}
                                         className="flex-shrink-0 h-6 w-6 text-gray-900"
-                                        alt=""
+                                        alt={item.icon.alt}
                                       />
                                     ) : (
                                       <PlayIcon
@@ -288,7 +288,7 @@ const Header = ({ topHeader, activeDoc }) => {
                           <img
                             src={item.icon.url}
                             className="h-6 w-6 mb-0 invert"
-                            alt=""
+                            alt={item.icon.alt}
                           />
                         ) : (
                           ""
