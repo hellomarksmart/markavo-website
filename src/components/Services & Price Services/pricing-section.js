@@ -25,7 +25,7 @@ const PricingSection = ({ pricingBody }) => {
         </div>
       </div>
       <div
-        className="max-w-default mx-auto px-4 sm:px-6 lg:px-8 mt-16 pb-12 lg:mt-20 lg:pb-20"
+        className="max-w-default mx-auto mt-16 pb-12 lg:mt-20 lg:pb-20"
       >
         <div
           id="PricingCards"
