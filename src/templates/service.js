@@ -193,6 +193,7 @@ export const ServiceSingleQuery = graphql`
             text
           }
           icon {
+            alt
             url
           }
           title {
@@ -227,9 +228,11 @@ export const ServiceSingleQuery = graphql`
         }
         faq_contents {
           faq_question {
+            richText
             text
           }
           faq_answer {
+            richText
             text
           }
         }
@@ -266,6 +269,7 @@ export const ServiceSingleQuery = graphql`
             url
           }
           icon {
+            alt
             url
           }
           description {
@@ -280,6 +284,7 @@ export const ServiceSingleQuery = graphql`
             url
           }
           icon {
+            alt
             url
           }
         }

@@ -25,7 +25,7 @@ const ContactSection = ({ heading, description, contact_items }) => {
                   <img
                     className="object-cover shadow-lg rounded-lg"
                     src={item?.qr_code.url}
-                    alt=""
+                    alt={item?.qr_code.alt}
                   />
                 ) : (
                   ""

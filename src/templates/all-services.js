@@ -92,6 +92,7 @@ export const ServicesQuery = graphql`
             url
           }
           icon {
+            alt
             url
           }
           description {
@@ -106,6 +107,7 @@ export const ServicesQuery = graphql`
             url
           }
           icon {
+            alt
             url
           }
         }

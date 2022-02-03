@@ -1,4 +1,5 @@
 import * as React from "react"
+import { RichText } from "prismic-reactjs"
 
 const FAQs = ({ title, heading, description, faq_contents }) => {
   return (
@@ -22,11 +23,13 @@ const FAQs = ({ title, heading, description, faq_contents }) => {
                   className="pt-6 pb-2 md:grid md:grid-cols-12 md:gap-8"
                 >
                   <dt className="text-sm font-medium text-gray-900 md:col-span-5">
-                    {item?.faq_question.text}
+                    
+                    <RichText render={item?.faq_question.richText} />
                   </dt>
                   <dd className="mt-2 md:mt-0 md:col-span-7 mb-0 ">
                     <p className="text-sm text-gray-500">
-                      {item?.faq_answer.text}
+                     
+                      <RichText render={item?.faq_answer.richText} />
                     </p>
                   </dd>
                 </div>

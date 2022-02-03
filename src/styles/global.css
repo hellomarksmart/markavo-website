@@ -106,6 +106,15 @@
   margin: 0;
 }
 
+p a {
+  color: #34d399;
+  text-decoration: underline;
+}
+
+html {
+  background-color: #fff !important;
+}
+
 @media (max-width: 1024px) {
   #PricingCards #PricingCard,
   #PricingCards #PricingCard:nth-child(2) {

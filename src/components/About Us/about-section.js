@@ -21,7 +21,7 @@ const AboutSection = ({ heading, description, about_items }) => {
                         <img
                           className="sm:h-imageH sm:w-imageW w-full h-imageH_sm object-cover shadow-lg rounded-lg"
                           src={item?.image.url}
-                          alt=""
+                          alt={item?.image.alt}
                         />
                       </div>
                       <div className="w-full md:w-twoThirds w-full sm:col-span-2">

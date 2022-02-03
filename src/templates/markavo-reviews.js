@@ -127,6 +127,7 @@ export const ClientReviewsQuery = graphql`
             url
           }
           icon {
+            alt
             url
           }
           description {
@@ -141,6 +142,7 @@ export const ClientReviewsQuery = graphql`
             url
           }
           icon {
+            alt
             url
           }
         }
