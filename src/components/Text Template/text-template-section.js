@@ -157,7 +157,7 @@ const TextTemplateSection = ({
                     <img
                       className="w-full rounded-lg"
                       src={item?.image.url}
-                      alt={item?.image.alt}
+                      alt={item?.image.alt ? item?.image.alt : ""}
                     />
                     <figcaption>{item?.image_caption.text}</figcaption>
                   </figure>
@@ -165,16 +165,14 @@ const TextTemplateSection = ({
                   ""
                 )}
                 {item?.video_link.url ? (
-                  <div className="video relative pt-[60%]">
+                  <div className="iframe-holder">
                     <iframe
-                      id="textTemplateIframe"
-                      className="w-full rounded-lg border-0 absolute top-0 left-0 h-[100%] w-full"
+                      id="iframeID"
                       src={item?.video_link.url}
                       title={item?.video_title.text}
-                      allow="accelerometer; gyroscope; autoplay; encrypted-media;
-                  picture-in-picture;"
-                      allowFullScreen
-                    />
+                      allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                      allowfullscreen="true"
+                    ></iframe>
                   </div>
                 ) : (
                   ""
