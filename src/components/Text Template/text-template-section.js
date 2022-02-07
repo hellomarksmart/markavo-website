@@ -1,5 +1,6 @@
 import * as React from "react"
 import { RichText } from "prismic-reactjs"
+import { linkResolver } from "../../utils/linkResolver"
 
 const TextTemplateSection = ({
   sub_heading,
@@ -140,7 +141,10 @@ const TextTemplateSection = ({
                 )}
                 <div className="rich-text">
                   {item?.rich_text.richText ? (
-                    <RichText render={item?.rich_text.richText} />
+                    <RichText
+                      render={item?.rich_text.richText}
+                      linkResolver={linkResolver}
+                    />
                   ) : (
                     ""
                   )}
