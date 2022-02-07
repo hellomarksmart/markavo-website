@@ -37,7 +37,7 @@ const PricingSection = ({ pricingBody }) => {
                 return (
                   <div key={i} className="pb-5 lg:pb-2">
                     <div className="relative">
-                      <div className="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+                      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="max-w-lg mx-auto rounded-lg shadow-lg overflow-hidden lg:max-w-none lg:flex">
                           <div className="w-full lg:w-9/12 bg-white px-6 py-8 lg:p-12">
                             <h3 className="text-2xl font-extrabold text-gray-900 sm:text-2.5xl">

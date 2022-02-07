@@ -15,7 +15,7 @@ const AboutSection = ({ heading, description, about_items }) => {
             <ul className="space-y-12 sm:divide-y sm:divide-gray-200 sm:space-y-0 sm:-mt-8 lg:gap-x-8 lg:space-y-0 ml-0">
               {about_items?.map((item, i) => {
                 return (
-                  <li key={i} className="sm:py-[32px] mb-0">
+                  <li key={i} className="sm:py-7 mb-0">
                     <div className="w-full space-y-4 sm:space-y-0 sm:flex md:flex-row sm:flex-col">
                       <div className="xl:max-w-medium md:w-medium sm:pb-6">
                         <img
@@ -35,7 +35,7 @@ const AboutSection = ({ heading, description, about_items }) => {
                             </p>
                           </div>
                           <div className="text-lg">
-                            <p className="text-gray-500 text-base sm:-mt-[1rem]">
+                            <p className="text-gray-500 text-base -mt-4">
                               {item?.description.text}
                             </p>
                           </div>
