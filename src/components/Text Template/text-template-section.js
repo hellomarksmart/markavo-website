@@ -116,14 +116,14 @@ const TextTemplateSection = ({
       <div className="relative px-4 sm:px-6 lg:px-8">
         <div className="text-lg max-w-default mx-auto px-4 sm:px-6 lg:px-8">
           <h1>
-            <span className="block text-[16px] text-center text-emerald-600 font-semibold tracking-wide uppercase">
+            <span className="block text-sm text-center text-emerald-600 font-semibold tracking-wide uppercase">
               {sub_heading}
             </span>
-            <span className="mt-2 block text-[30px] text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-[36px]">
+            <span className="mt-2 block text-2.5xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-3.5xl">
               {heading}
             </span>
           </h1>
-          <p className="mt-8 text-[20px] text-gray-500 leading-8">
+          <p className="mt-8 text-lg text-gray-500 leading-8">
             {description}
           </p>
         </div>
@@ -133,7 +133,7 @@ const TextTemplateSection = ({
             return (
               <div key={i}>
                 {item?.heading1.text ? (
-                  <h2 className="text-[30px] text-gray-900">
+                  <h2 className="text-2.5xl text-gray-900">
                     {item?.heading1.text}
                   </h2>
                 ) : (
@@ -151,7 +151,7 @@ const TextTemplateSection = ({
                 </div>
                 {item?.blockquote.text ? (
                   <blockquote>
-                    <p className="text-[18px]">{item?.blockquote.text}</p>
+                    <p className="text-base">{item?.blockquote.text}</p>
                   </blockquote>
                 ) : (
                   ""

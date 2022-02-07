@@ -25,7 +25,7 @@ const Header = ({ topHeader, activeDoc }) => {
         <div className="flex space-x-4 items-center md:ml-12">
           <div className="flex px-3">
             <PhoneIcon
-              className="h-6 w-6 md:h-5 md:w-5 md:mt-[2px] text-transparent fill-gray-900"
+              className="h-6 w-6 md:h-5 md:w-5 md:mt-xs text-transparent fill-gray-900"
               aria-hidden="true"
             />
             <Link
@@ -37,7 +37,7 @@ const Header = ({ topHeader, activeDoc }) => {
           </div>
           <Link
             to="/contact-us"
-            className="ml-8 inline-flex items-center justify-center px-3 py-[0.32rem] border border-gray-400 rounded-md shadow-sm lg:text-sm md:text-[15px] font-medium text-gray-900 bg-white hover:bg-gray-50"
+            className="ml-8 inline-flex items-center justify-center px-3 py-1.2 border border-gray-400 rounded-md shadow-sm lg:text-sm md:text-sm font-medium text-gray-900 bg-white hover:bg-gray-50"
           >
             Contact Us
           </Link>
@@ -97,7 +97,7 @@ const Header = ({ topHeader, activeDoc }) => {
                       leaveFrom="opacity-100 translate-y-0"
                       leaveTo="opacity-0 translate-y-1"
                     >
-                      <Popover.Panel className="absolute z-10  mt-3 transform w-full left-[0]">
+                      <Popover.Panel className="absolute z-10  mt-3 transform w-full left-0">
                         <div className="rounded-b-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                           <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-2 xl:grid-cols-4 ">
                             {services.map((item, i) => (
@@ -192,7 +192,7 @@ const Header = ({ topHeader, activeDoc }) => {
                       leaveFrom="opacity-100 translate-y-0"
                       leaveTo="opacity-0 translate-y-1"
                     >
-                      <Popover.Panel className="absolute z-10 left-0 transform -translate-x-0 mt-3 px-2 w-[20vw] max-w-xs sm:px-0">
+                      <Popover.Panel className="absolute z-10 left-0 transform -translate-x-0 mt-3 px-2 md:w-large lg:w-Xlarge max-w-xs sm:px-0">
                         <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                           <div className="relative grid gap-4 bg-white px-5 py-6 sm:gap-4 sm:p-8">
                             {brandingTools.map((item, i) => (
@@ -221,7 +221,7 @@ const Header = ({ topHeader, activeDoc }) => {
 
               <Link
                 to="/about-us"
-                className="lg:mr-3 mr-0 text-md lg:text-base md:text-sm font-medium text-gray-900 hover:text-gray-800 lg:pt-0 md:pt-[3px]"
+                className="lg:mr-3 mr-0 text-md lg:text-base md:text-sm font-medium text-gray-900 hover:text-gray-800 lg:pt-0 md:pt-xs"
               >
                 About Us
               </Link>
@@ -230,7 +230,7 @@ const Header = ({ topHeader, activeDoc }) => {
               <div className="relative">
                 <Link
                   to="/free-trademark-search"
-                  className="inline-flex items-center justify-center px-3 py-[0.32rem] border border-gray-400 rounded-md shadow-sm text-sm lg:text-sm md:text-xs font-medium text-gray-900 bg-white hover:bg-gray-50"
+                  className="inline-flex items-center justify-center px-3 py-1.2 border border-gray-400 rounded-md shadow-sm text-sm lg:text-sm md:text-xs font-medium text-gray-900 bg-white hover:bg-gray-50"
                 >
                   <span>Free Trademark Search</span>
                   <SearchIcon

@@ -21,20 +21,30 @@ module.exports = {
       tablet: "768px",
       'medium': '16rem',
       'xl': '47rem',
+      '1.8xl': '56rem',
       '2xl': '75rem',
     },
     extend: {
       spacing: {
         'buttonY': '16px',
         'buttonX': '40px',
+        '3': '.75rem',
+        '3.5': '.88rem',
+        '4': '1rem',
+        '7': '1.77rem',
         '5.5': '1.45rem',
+        '2.9': '13px',
         '2.8': '12px',
         '2.5': '.65rem',
+        '2': '.5rem',
         '1.2': '.32rem',
+        'xs': '2px',
       },
       width: {
         'imageW': '250px',
         'medium': '15rem',
+        'large': '20rem',
+        'Xlarge': '30rem',
         'twoThirds': '66%'
       },
       height: {

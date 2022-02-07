@@ -21,7 +21,7 @@ const Statistics = ({ title, heading, description, stats_card }) => {
           <div className="absolute inset-0 h-1/2 bg-gray-50" />
           <div className="relative max-w-default mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
-              <div className="max-w-[1009px] mx-auto">
+              <div className="max-w-1.8xl mx-auto">
                 <dl className="rounded-lg bg-white shadow-lg sm:grid sm:grid-cols-3">
                   {stats_card?.map((item, i) => {
                     return (
@@ -29,10 +29,10 @@ const Statistics = ({ title, heading, description, stats_card }) => {
                         key={i}
                         className="flex flex-col border-b border-gray-100 p-7 text-center sm:border-0 sm:border-r"
                       >
-                        <dt className="order-2 mt-1 text-base sm:text-[18px] leading-6 font-medium text-gray-500">
+                        <dt className="order-2 mt-1 text-base sm:text-base leading-6 font-medium text-gray-500">
                           {item?.name.text}
                         </dt>
-                        <dd className="order-1 mb-0 sm:mb-3 text-4xl sm:text-[48px] font-bold text-emerald-400">
+                        <dd className="order-1 mb-0 sm:mb-3 text-4xl sm:text-4.5xl font-bold text-emerald-400">
                           {item?.statistics.text}
                         </dd>
                       </div>
