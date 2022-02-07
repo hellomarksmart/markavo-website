@@ -40,8 +40,8 @@ const AllServices = ({ data }) => {
 export default AllServices
 
 export const ServicesQuery = graphql`
-  query ServicesQuery($lang: String) {
-    prismicServicesPage(lang: { eq: $lang }) {
+  query ServicesQuery($lang: String, $id: String) {
+    prismicServicesPage(id: { eq: $id }, lang: { eq: $lang }) {
       alternate_languages {
         uid
         type
