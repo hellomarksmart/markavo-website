@@ -8,10 +8,10 @@ const SearchSection = ({ heading, headingColored, description }) => {
   let [responseLength, setResponseLength] = useState("")
 
   const fetchData = e => {
-    if (e.key === "Enter") {
+    if (!isNaN(keyword)) {
       e.preventDefault()
       api
-        .getData(keyword)
+        .getSearchSerial(keyword)
         .then(response => {
           setResponseData(response.data)
           setResponseLength(response.data.items.length)
@@ -19,6 +19,47 @@ const SearchSection = ({ heading, headingColored, description }) => {
         .catch(error => {
           console.log(error)
         })
+    } else {
+      e.preventDefault()
+      api
+        .getSearchName(keyword)
+        .then(response => {
+          setResponseData(response.data)
+          setResponseLength(response.data.items.length)
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }
+  }
+
+  const onKeyPress = e => {
+    if (e.key === "Enter") {
+      if (!isNaN(e.target.value)) {
+        console.log(e.target.value, "is a number")
+        e.preventDefault()
+        api
+          .getSearchSerial(keyword)
+          .then(response => {
+            setResponseData(response.data)
+            setResponseLength(response.data.items.length)
+          })
+          .catch(error => {
+            console.log(error)
+          })
+      } else {
+        console.log(e.target.value, "is a string")
+        e.preventDefault()
+        api
+          .getSearchName(keyword)
+          .then(response => {
+            setResponseData(response.data)
+            setResponseLength(response.data.items.length)
+          })
+          .catch(error => {
+            console.log(error)
+          })
+      }
     }
   }
 
@@ -140,7 +181,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                 placeholder="Search millions of trademarks"
                 value={keyword}
                 onChange={e => setKeyword(e.target.value)}
-                onKeyPress={fetchData}
+                onKeyPress={onKeyPress}
               />
               <div className="absolute top-2 right-2">
                 {" "}
@@ -154,65 +195,78 @@ const SearchSection = ({ heading, headingColored, description }) => {
             </div>
           </div>
           {responseData.items && (
-            <div className="text-left px-12 my-12 max-w-default mx-auto px-4 sm:px-6 lg:px-8">
-              <p className="text-2xl font-bold mb-2">
-                Trademark Search Results
-              </p>
-              <p>
-                <b className="text-emerald-500">{keyword}</b> may be available
-                if it is not generic, descriptive, too confusingly similar to
-                another unregistered trademark that is being used in commerce,
-                or too confunsingly similar a live registered trademark.
-                <b className="text-emerald-500">
-                  Work with Markavo to navigate this complicated legal process
-                  for as little as $185.
-                </b>
-              </p>
-              <div className="w-3/6">
-                {responseData.items
-                  .slice(startIndex, endIndex)
-                  .map((item, i) => {
-                    const formatter = new Intl.DateTimeFormat("eng", {
-                      month: "long",
-                      day: "2-digit",
-                      year: "numeric",
-                    })
-                    const newDate = formatter.format(new Date(item.filing_date))
+            <>
+              {responseData.items.length !== 0 ? (
+                <div className="text-left px-12 my-12 max-w-default mx-auto px-4 sm:px-6 lg:px-8">
+                  <p className="text-2xl font-bold mb-2">
+                    Trademark Search Results
+                  </p>
+                  <p>
+                    <b className="text-emerald-500">{keyword}</b> may be
+                    available if it is not generic, descriptive, too confusingly
+                    similar to another unregistered trademark that is being used
+                    in commerce, or too confunsingly similar a live registered
+                    trademark.
+                    <b className="text-emerald-500">
+                      Work with Markavo to navigate this complicated legal
+                      process for as little as $185.
+                    </b>
+                  </p>
+                  <div className="w-3/6">
+                    {responseData.items
+                      .slice(startIndex, endIndex)
+                      .map((item, i) => {
+                        const formatter = new Intl.DateTimeFormat("eng", {
+                          month: "long",
+                          day: "2-digit",
+                          year: "numeric",
+                        })
+                        const newDate = formatter.format(
+                          new Date(item.filing_date)
+                        )
 
-                    return (
-                      <div
-                        key={i}
-                        className="my-3 p-8 bg-white border border-slate-200"
-                      >
-                        <p className="text-emerald-500 font-bold">
-                          {item.keyword}
-                        </p>
-                        <div className="flex items-center">
-                          <p className="mr-2 mb-0 text-slate-400">Filed:</p>
-                          <p className="mb-0 text-slate-400">{newDate}</p>
-                        </div>
-                        <p className="truncate my-1">{item.status_label}</p>
-                        <div className="flex items-center">
-                          <p className="mr-2 mb-0 font-bold">Owned by:</p>
-                          {item.owners.map((owner, i) => {
-                            return (
-                              <p key={i} className="mb-0 text-emerald-500">
-                                {owner.name}
+                        return (
+                          <div
+                            key={i}
+                            className="my-3 p-8 bg-white border border-slate-200"
+                          >
+                            <p className="text-emerald-500 font-bold">
+                              {item.keyword}
+                            </p>
+                            <div className="flex items-center">
+                              <p className="mr-2 mb-0 text-slate-400">Filed:</p>
+                              <p className="mb-0 text-slate-400">{newDate}</p>
+                            </div>
+                            <p className="truncate my-1">{item.status_label}</p>
+                            <div className="flex items-center">
+                              <p className="mr-2 mb-0 font-bold">Owned by:</p>
+                              {item.owners.map((owner, i) => {
+                                return (
+                                  <p key={i} className="mb-0 text-emerald-500">
+                                    {owner.name}
+                                  </p>
+                                )
+                              })}
+                            </div>
+                            <div className="flex items-center">
+                              <p className="mr-2 mb-0 font-bold">
+                                Serial Number:
                               </p>
-                            )
-                          })}
-                        </div>
-                        <div className="flex items-center">
-                          <p className="mr-2 mb-0 font-bold">Serial Number:</p>
-                          <p className="mb-0 text-emerald-500">
-                            {item.serial_number}
-                          </p>
-                        </div>
-                      </div>
-                    )
-                  })}
-              </div>
-            </div>
+                              <p className="mb-0 text-emerald-500">
+                                {item.serial_number}
+                              </p>
+                            </div>
+                          </div>
+                        )
+                      })}
+                  </div>
+                </div>
+              ) : (
+                <div>
+                  <p>No results, please try another keyword/serial number.</p>
+                </div>
+              )}
+            </>
           )}
         </div>
       </div>
