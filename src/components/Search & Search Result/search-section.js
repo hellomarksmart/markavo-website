@@ -9,16 +9,31 @@ const SearchSection = ({ heading, headingColored, description }) => {
 
   const fetchData = e => {
     if (e.key === "Enter") {
-      e.preventDefault()
-      api
-        .getData(keyword)
-        .then(response => {
-          setResponseData(response.data)
-          setResponseLength(response.data.items.length)
-        })
-        .catch(error => {
-          console.log(error)
-        })
+      if (!isNaN(e.target.value)) {
+        console.log(e.target.value, "is a number")
+        e.preventDefault()
+        api
+          .getSearchSerial(keyword)
+          .then(response => {
+            setResponseData(response.data)
+            setResponseLength(response.data.items.length)
+          })
+          .catch(error => {
+            console.log(error)
+          })
+      } else {
+        console.log(e.target.value, "is a string")
+        e.preventDefault()
+        api
+          .getSearchName(keyword)
+          .then(response => {
+            setResponseData(response.data)
+            setResponseLength(response.data.items.length)
+          })
+          .catch(error => {
+            console.log(error)
+          })
+      }
     }
   }
 

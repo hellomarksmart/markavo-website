@@ -10,7 +10,7 @@ const instance = axios.create({
 })
 
 export default {
-  getData: keyword =>
+  getSearchName: keyword =>
     instance({
       method: "GET",
       url: `/trademarkSearch/${keyword}/active`,
@@ -18,4 +18,13 @@ export default {
         per_page: 15,
       },
     }),
+
+  getSearchSerial: keyword => 
+    instance({
+      method: "GET",
+      url: `/serialSearch/${keyword}/active`,
+      params: {
+        per_page: 15,
+      },
+    })
 }
