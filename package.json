@@ -8,6 +8,7 @@
     "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
     "@prismicio/react": "^2.0.5",
+    "@sendgrid/mail": "^7.6.0",
     "axios": "^0.25.0",
     "gatsby": "^4.4.0",
     "gatsby-plugin-gatsby-cloud": "^4.4.0",

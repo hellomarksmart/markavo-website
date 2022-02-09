@@ -1,7 +1,42 @@
-import React from "react"
+import React, { useState } from "react"
 
 const Footer = ({ footerBody }) => {
   const footerData = footerBody
+
+  const [mailerState, setMailerState] = useState({
+    email: "",
+  })
+
+  function handleStateChange(e) {
+    setMailerState(prevState => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }))
+  }
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    console.log({ mailerState });
+
+    const response = await window
+      .fetch(`/api/newsletter`, {
+        method: `POST`,
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ mailerState }),
+      })
+      .then((res) => res.json())
+      .then(async (res) => {
+        const resData = await res;
+        console.log(resData);
+      })
+      .then(() => {
+        setMailerState({
+          email: "",
+        });
+      });
+  };
 
   return (
     <footer className="bg-white" aria-labelledby="footer-heading">
@@ -124,15 +159,20 @@ const Footer = ({ footerBody }) => {
               weekly.
             </p>
           </div>
-          <form className="mt-4 sm:flex sm:max-w-md lg:mt-0">
+          <form
+            onSubmit={onSubmit}
+            method="POST"
+            action="/api/newsletter"
+            className="mt-4 sm:flex sm:max-w-md lg:mt-0">
             <input
+              onChange={handleStateChange}
+              name="email"
+              value={mailerState.email}
               type="email"
-              name="email-address"
-              id="email-address"
               autoComplete="email"
-              required
               className="appearance-none min-w-0 w-full bg-white border border-gray-500 rounded-md py-2 px-4 text-sm text-gray-400 placeholder-gray-400 focus:outline-none sm:max-w-xs"
               placeholder="Enter your email"
+              required
             />
             <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
               <button
