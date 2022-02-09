@@ -1,7 +1,47 @@
-import React from "react"
+import React, { useState } from "react"
 
 const Footer = ({ footerBody }) => {
   const footerData = footerBody
+
+  const [mailerState, setMailerState] = useState({
+    email: "",
+  })
+  function handleStateChange(e) {
+    setMailerState(prevState => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }))
+  }
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    console.log({ mailerState });
+
+    const response = await window
+
+      .fetch(`/api/newsletter`, {
+        method: `PUT`,
+        headers: {
+          "content-type": "application/json",
+          "accept": 'application/json'
+        },
+        body: JSON.stringify({ mailerState }),
+      })
+      .then((res) => res.json())
+      .then(async (res) => {
+        const resData = await res;
+        console.log(resData);
+        if (resData.status === "success") {
+        } else if (resData.status === "fail") {
+          alert("Message failed to send");
+        }
+      })
+      .then(() => {
+        setMailerState({
+          email: "",
+        });
+      });
+  };
 
   return (
     <footer className="bg-white" aria-labelledby="footer-heading">
@@ -124,19 +164,25 @@ const Footer = ({ footerBody }) => {
               weekly.
             </p>
           </div>
-          <form className="mt-4 sm:flex sm:max-w-md lg:mt-0">
+          <form
+            onSubmit={onSubmit}
+            method="PUT"
+
+            className="mt-4 sm:flex sm:max-w-md lg:mt-0">
             <input
+              onChange={handleStateChange}
+              name="email"
+              value={mailerState.email}
               type="email"
-              name="email-address"
-              id="email-address"
               autoComplete="email"
-              required
-              className="appearance-none min-w-0 w-full bg-white border border-gray-500 rounded-md py-2 px-4 text-sm text-gray-400 placeholder-gray-400 focus:outline-none sm:max-w-xs"
+              className="appearance-none min-w-0 w-full bg-white border border-gray-500 rounded-md py-2 px-4 text-sm text-gray-600 placeholder-gray-400 focus:outline-none sm:max-w-xs"
               placeholder="Enter your email"
+              required
             />
             <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
               <button
                 type="submit"
+                value="Send"
                 className="w-full bg-gray-900 border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-sm font-bold text-white hover:bg-white hover:border-gray-900 hover:text-gray-900 focus:outline-none"
               >
                 Subscribe
