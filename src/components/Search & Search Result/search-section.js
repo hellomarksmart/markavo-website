@@ -194,92 +194,371 @@ const SearchSection = ({ heading, headingColored, description }) => {
               </div>
             </div>
           </div>
-          {responseData.items && (
+          {!isNaN(keyword) ? (
             <>
-              {responseData.items.length !== 0 ? (
-                <div className="text-left px-12 my-12 max-w-default mx-auto px-4 sm:px-6 lg:px-8">
-                  <p className="text-2xl font-bold mb-2">
-                    Trademark Search Results
-                  </p>
-                  <p>
-                    <b className="text-emerald-500">{keyword}</b> may be
-                    available if it is not generic, descriptive, too confusingly
-                    similar to another unregistered trademark that is being used
-                    in commerce, or too confunsingly similar a live registered
-                    trademark.
-                    <b className="text-emerald-500">
-                      Work with Markavo to navigate this complicated legal
-                      process for as little as $185.
-                    </b>
-                  </p>
-                  <div className="w-3/6">
-                    {responseData.items
-                      .slice(startIndex, endIndex)
-                      .map((item, i) => {
-                        const formatter = new Intl.DateTimeFormat("eng", {
-                          month: "long",
-                          day: "2-digit",
-                          year: "numeric",
-                        })
-                        const newDate = formatter.format(
-                          new Date(item.filing_date)
-                        )
+              {responseData.items && (
+                <>
+                  {responseData.items.length !== 0 ? (
+                    <div className="text-left px-12 my-12 max-w-default mx-auto px-4 sm:px-6 lg:px-8">
+                      <p className="text-2xl font-bold mb-2">
+                        Trademark Search Results
+                      </p>
+                      <p>
+                        <b className="text-emerald-500">{keyword}</b> may be
+                        available if it is not generic, descriptive, too
+                        confusingly similar to another unregistered trademark
+                        that is being used in commerce, or too confunsingly
+                        similar a live registered trademark.
+                        <b className="text-emerald-500">
+                          Work with Markavo to navigate this complicated legal
+                          process for as little as $185.
+                        </b>
+                      </p>
+                      <div className="w-5/6">
+                        {responseData.items
+                          .slice(startIndex, endIndex)
+                          .map((item, i) => {
+                            const formatter = new Intl.DateTimeFormat("eng", {
+                              month: "long",
+                              day: "2-digit",
+                              year: "numeric",
+                            })
+                            const newDate = formatter.format(
+                              new Date(item.filing_date)
+                            )
 
-                        return (
-                          <div
-                            key={i}
-                            className="my-3 p-8 bg-white border border-slate-200"
-                          >
-                            <p className="text-emerald-500 font-bold">
-                              {item.keyword}
-                            </p>
-                            <div className="flex items-center">
-                              <p className="mr-2 mb-0 text-slate-400">Filed:</p>
-                              <p className="mb-0 text-slate-400">{newDate}</p>
-                            </div>
-                            <p className="truncate my-1">{item.status_label}</p>
-                            <div className="flex items-center">
-                              <p className="mr-2 mb-0 font-bold">Owned by:</p>
-                              {item.owners.map((owner, i) => {
-                                return (
-                                  <p key={i} className="mb-0 text-emerald-500">
-                                    {owner.name}
+                            return (
+                              <div key={i} className="my-3 pt-10 bg-white">
+                                <div className="mb-0 border border-gray-300 w-24 rounded-lg w-28 h-28">
+                                  <img
+                                    className="my-9 rounded-lg"
+                                    src={
+                                      "https://tsdr.uspto.gov/img/" +
+                                      item.serial_number +
+                                      "/large"
+                                    }
+                                    width="100%"
+                                    height="100%"
+                                    alt="Markavo"
+                                  />
+                                </div>
+                                <p className="text-emerald-500 font-bold text-4.5xl">
+                                  {item.keyword}
+                                </p>
+                                <div className="flex items-start border-b border-gray-300 pb-8">
+                                  <div className="space-y-4 w-2/4">
+                                    <div>
+                                      <p className="mr-2 mb-0 font-bold">
+                                        Filing Date
+                                      </p>
+                                      <p className="mb-0 text-emerald-500">
+                                        {newDate}
+                                      </p>
+                                    </div>
+                                    <div>
+                                      <p className="mr-2 mb-0 font-bold">
+                                        Serial Number
+                                      </p>
+                                      <p className="mb-0 text-emerald-500">
+                                        {item.serial_number}
+                                      </p>
+                                    </div>
+                                    <div>
+                                      <p className="mr-2 mb-0 font-bold">
+                                        Goods and Services
+                                      </p>
+                                      <p className="mb-0 text-emerald-500">
+                                        {item.description}
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div className="space-y-4 w-2/5 pl-20">
+                                    <div>
+                                      <p className="mr-2 mb-0 font-bold">
+                                        Registration Date
+                                      </p>
+                                      <p className="mb-0 text-emerald-500">
+                                        {item.registration_date}
+                                      </p>
+                                    </div>
+                                    <div>
+                                      <p className="mr-2 mb-0 font-bold">
+                                        Registration Number
+                                      </p>
+                                      <p className="mb-0 text-emerald-500">
+                                        {item.registration_number}
+                                      </p>
+                                    </div>
+                                    <div>
+                                      <p className="mr-2 mb-0 font-bold">
+                                        Status Code
+                                      </p>
+                                      <p className="mb-0 text-emerald-500">
+                                        {item.status_code}
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div className="pt-8">
+                                  <p className="mr-2 mb-0 font-bold text-2.5xl">
+                                    Owner
                                   </p>
-                                )
-                              })}
-                            </div>
-                            <div className="flex items-center">
-                              <p className="mr-2 mb-0 font-bold">
-                                Serial Number:
-                              </p>
-                              <p className="mb-0 text-emerald-500">
-                                {item.serial_number}
-                              </p>
-                            </div>
-                          </div>
-                        )
-                      })}
-                  </div>
-                </div>
+                                  <div className="space-y-4 w-2/5">
+                                    <div className="pt-3 flex items-center">
+                                      <p className="mr-2 mb-0 font-bold w-2/4">
+                                        Name
+                                      </p>
+                                      {item.owners.map((owner, i) => {
+                                        return (
+                                          <p
+                                            key={i}
+                                            className="mb-0 text-emerald-500"
+                                          >
+                                            {owner.name}
+                                          </p>
+                                        )
+                                      })}
+                                    </div>
+                                    <div className="flex items-center">
+                                      <p className="mr-2 mb-0 font-bold w-2/4">
+                                        Address 1
+                                      </p>
+                                      {item.owners.map((owner, i) => {
+                                        return (
+                                          <p
+                                            key={i}
+                                            className="mb-0 text-emerald-500"
+                                          >
+                                            {owner.address1
+                                              ? owner.address1
+                                              : "-"}
+                                          </p>
+                                        )
+                                      })}
+                                    </div>
+                                    <div className="flex items-center">
+                                      <p className="mr-2 mb-0 font-bold w-2/4">
+                                        Address 2
+                                      </p>
+                                      {item.owners.map((owner, i) => {
+                                        return (
+                                          <p
+                                            key={i}
+                                            className="mb-0 text-emerald-500"
+                                          >
+                                            {owner.address2
+                                              ? owner.address2
+                                              : "-"}
+                                          </p>
+                                        )
+                                      })}
+                                    </div>
+                                    <div className="flex items-center">
+                                      <p className="mr-2 mb-0 font-bold w-2/4">
+                                        City
+                                      </p>
+                                      {item.owners.map((owner, i) => {
+                                        return (
+                                          <p
+                                            key={i}
+                                            className="mb-0 text-emerald-500"
+                                          >
+                                            {owner.city}
+                                          </p>
+                                        )
+                                      })}
+                                    </div>
+                                    <div className="flex items-center">
+                                      <p className="mr-2 mb-0 font-bold w-2/4">
+                                        State
+                                      </p>
+                                      {item.owners.map((owner, i) => {
+                                        return (
+                                          <p
+                                            key={i}
+                                            className="mb-0 text-emerald-500"
+                                          >
+                                            {owner.state}
+                                          </p>
+                                        )
+                                      })}
+                                    </div>
+                                    <div className="flex items-center">
+                                      <p className="mr-2 mb-0 font-bold w-2/4">
+                                        Country
+                                      </p>
+                                      {item.owners.map((owner, i) => {
+                                        return (
+                                          <p
+                                            key={i}
+                                            className="mb-0 text-emerald-500"
+                                          >
+                                            {owner.country}
+                                          </p>
+                                        )
+                                      })}
+                                    </div>
+                                    <div className="flex items-center">
+                                      <p className="mr-2 mb-0 font-bold w-2/4">
+                                        Postcode
+                                      </p>
+                                      {item.owners.map((owner, i) => {
+                                        return (
+                                          <p
+                                            key={i}
+                                            className="mb-0 text-emerald-500"
+                                          >
+                                            {owner.postcode}
+                                          </p>
+                                        )
+                                      })}
+                                    </div>
+                                    <div className="flex items-center">
+                                      <p className="mr-2 mb-0 font-bold w-2/4">
+                                        Legal Entity Type
+                                      </p>
+                                      {item.owners.map((owner, i) => {
+                                        return (
+                                          <p
+                                            key={i}
+                                            className="mb-0 text-emerald-500"
+                                          >
+                                            {owner.legal_entity_type_label}
+                                          </p>
+                                        )
+                                      })}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            )
+                          })}
+                      </div>
+                    </div>
+                  ) : (
+                    <div>
+                      <p>
+                        No results, please try another keyword/serial number.
+                      </p>
+                    </div>
+                  )}
+                </>
+              )}
+              {responseLength > 9 ? (
+                <Pagination
+                  currentPage={currentPage}
+                  pages={pages}
+                  totalItems={responseLength}
+                  setCurrentPage={setCurrentPage}
+                />
               ) : (
-                <div>
-                  <p>No results, please try another keyword/serial number.</p>
-                </div>
+                ""
+              )}
+            </>
+          ) : (
+            <>
+              {responseData.items && (
+                <>
+                  {responseData.items.length !== 0 ? (
+                    <div className="text-left px-12 my-12 max-w-default mx-auto px-4 sm:px-6 lg:px-8">
+                      <p className="text-2xl font-bold mb-2">
+                        Trademark Search Results
+                      </p>
+                      <p>
+                        <b className="text-emerald-500">{keyword}</b> may be
+                        available if it is not generic, descriptive, too
+                        confusingly similar to another unregistered trademark
+                        that is being used in commerce, or too confunsingly
+                        similar a live registered trademark.
+                        <b className="text-emerald-500">
+                          Work with Markavo to navigate this complicated legal
+                          process for as little as $185.
+                        </b>
+                      </p>
+                      <div className="w-3/6">
+                        {responseData.items
+                          .slice(startIndex, endIndex)
+                          .map((item, i) => {
+                            const formatter = new Intl.DateTimeFormat("eng", {
+                              month: "long",
+                              day: "2-digit",
+                              year: "numeric",
+                            })
+                            const newDate = formatter.format(
+                              new Date(item.filing_date)
+                            )
+
+                            return (
+                              <div
+                                key={i}
+                                className="my-3 p-8 bg-white border border-slate-200"
+                              >
+                                <p className="text-emerald-500 font-bold">
+                                  {item.keyword}
+                                </p>
+                                <div className="flex items-center">
+                                  <p className="mr-2 mb-0 text-slate-400">
+                                    Filed:
+                                  </p>
+                                  <p className="mb-0 text-slate-400">
+                                    {newDate}
+                                  </p>
+                                </div>
+                                <p className="truncate my-1">
+                                  {item.status_label}
+                                </p>
+                                <div className="flex items-center">
+                                  <p className="mr-2 mb-0 font-bold">
+                                    Owned by:
+                                  </p>
+                                  {item.owners.map((owner, i) => {
+                                    return (
+                                      <p
+                                        key={i}
+                                        className="mb-0 text-emerald-500"
+                                      >
+                                        {owner.name}
+                                      </p>
+                                    )
+                                  })}
+                                </div>
+                                <div className="flex items-center">
+                                  <p className="mr-2 mb-0 font-bold">
+                                    Serial Number:
+                                  </p>
+                                  <p className="mb-0 text-emerald-500">
+                                    {item.serial_number}
+                                  </p>
+                                </div>
+                              </div>
+                            )
+                          })}
+                      </div>
+                    </div>
+                  ) : (
+                    <div>
+                      <p>
+                        No results, please try another keyword/serial number.
+                      </p>
+                    </div>
+                  )}
+                </>
+              )}
+              {responseLength > 9 ? (
+                <Pagination
+                  currentPage={currentPage}
+                  pages={pages}
+                  totalItems={responseLength}
+                  setCurrentPage={setCurrentPage}
+                />
+              ) : (
+                ""
               )}
             </>
           )}
         </div>
       </div>
-      {responseLength > 9 ? (
-        <Pagination
-          currentPage={currentPage}
-          pages={pages}
-          totalItems={responseLength}
-          setCurrentPage={setCurrentPage}
-        />
-      ) : (
-        ""
-      )}
     </div>
   )
 }
