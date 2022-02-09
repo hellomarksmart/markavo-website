@@ -175,7 +175,7 @@ const Footer = ({ footerBody }) => {
               value={mailerState.email}
               type="email"
               autoComplete="email"
-              className="appearance-none min-w-0 w-full bg-white border border-gray-500 rounded-md py-2 px-4 text-sm text-gray-400 placeholder-gray-400 focus:outline-none sm:max-w-xs"
+              className="appearance-none min-w-0 w-full bg-white border border-gray-500 rounded-md py-2 px-4 text-sm text-gray-600 placeholder-gray-400 focus:outline-none sm:max-w-xs"
               placeholder="Enter your email"
               required
             />
