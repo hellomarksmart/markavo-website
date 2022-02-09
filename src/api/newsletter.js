@@ -1,29 +1,31 @@
 const client = require('@sendgrid/client');
 client.setApiKey(process.env.SENDGRID_API_KEY);
 
-// export default (req, res) => {
-//   res.status(200).json({ name: 'John Doe' })
-// }
+export default function formHandler(req, res) {
+  console.log("are ya working now?");
 
-const data = {
-  "contacts": [
-    {
-      "email": `${req.body.mailerState.email}`,
-    }
-  ]
+  const data = {
+    "contacts": [
+      {
+        "email": `${req.body.mailerState.email}`,
+      }
+    ]
+  };
+
+  const request = {
+    url: `/v3/marketing/contacts`,
+    method: 'PUT',
+    body: data
+  }
+
+  client.request(request)
+    .then(([response, body]) => {
+      console.log(response.statusCode);
+      console.log(response.body);
+      console.log("are ya working now? 3");
+    })
+    .catch(error => {
+      console.error(error);
+      console.log("are ya working now? 4");
+    });
 };
-
-const request = {
-  url: `marketing/contacts/newsletter`,
-  method: 'POST',
-  body: data
-}
-
-client.request(request)
-  .then(([response, body]) => {
-    console.log(response.statusCode);
-    console.log(response.body);
-  })
-  .catch(error => {
-    console.error(error);
-  });

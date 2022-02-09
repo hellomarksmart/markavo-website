@@ -6,7 +6,6 @@ const Footer = ({ footerBody }) => {
   const [mailerState, setMailerState] = useState({
     email: "",
   })
-
   function handleStateChange(e) {
     setMailerState(prevState => ({
       ...prevState,
@@ -19,10 +18,12 @@ const Footer = ({ footerBody }) => {
     console.log({ mailerState });
 
     const response = await window
+
       .fetch(`/api/newsletter`, {
-        method: `POST`,
+        method: `PUT`,
         headers: {
           "content-type": "application/json",
+          "accept": 'application/json'
         },
         body: JSON.stringify({ mailerState }),
       })
@@ -30,6 +31,10 @@ const Footer = ({ footerBody }) => {
       .then(async (res) => {
         const resData = await res;
         console.log(resData);
+        if (resData.status === "success") {
+        } else if (resData.status === "fail") {
+          alert("Message failed to send");
+        }
       })
       .then(() => {
         setMailerState({
@@ -161,8 +166,8 @@ const Footer = ({ footerBody }) => {
           </div>
           <form
             onSubmit={onSubmit}
-            method="POST"
-            action="/api/newsletter"
+            method="PUT"
+
             className="mt-4 sm:flex sm:max-w-md lg:mt-0">
             <input
               onChange={handleStateChange}
@@ -177,6 +182,7 @@ const Footer = ({ footerBody }) => {
             <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
               <button
                 type="submit"
+                value="Send"
                 className="w-full bg-gray-900 border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-sm font-bold text-white hover:bg-white hover:border-gray-900 hover:text-gray-900 focus:outline-none"
               >
                 Subscribe
