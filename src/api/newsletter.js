@@ -1,8 +1,6 @@
 const client = require('@sendgrid/client');
 
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+require('dotenv').config({ path: __dirname + '/./../../.env.production' })
 
 client.setApiKey(process.env.SENDGRID_API_KEY);
 
