@@ -18,7 +18,6 @@ const Footer = ({ footerBody }) => {
     e.preventDefault();
     console.log({ mailerState });
     const response = await window
-
       .fetch(`/api/newsletter`, {
         method: `PUT`,
         headers: {
