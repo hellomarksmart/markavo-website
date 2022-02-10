@@ -157,7 +157,6 @@ const Footer = ({ footerBody }) => {
           <form
             onSubmit={onSubmit}
             method="PUT"
-
             className="mt-4 sm:flex sm:max-w-md lg:mt-0">
             <input
               onChange={handleStateChange}
