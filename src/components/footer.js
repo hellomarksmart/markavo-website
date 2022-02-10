@@ -3,8 +3,6 @@ import React, { useState } from "react"
 const Footer = ({ footerBody }) => {
   const footerData = footerBody
 
-  const [success, setSuccess] = useState(false)
-
   const [mailerState, setMailerState] = useState({
     email: "",
   })
@@ -20,7 +18,7 @@ const Footer = ({ footerBody }) => {
     e.preventDefault();
     console.log({ mailerState });
     const response = await window
-    setSuccess(true)
+
       .fetch(`/api/newsletter`, {
         method: `PUT`,
         headers: {
@@ -184,11 +182,7 @@ const Footer = ({ footerBody }) => {
           </form>
         </div>
         <div>
-          {success ?
-            <p className="md:w-[18.8rem] sm:w-[25rem] w-[70vw] ml-auto mr-0 bg-emerald-400 text-center sm:text-left px-4 py-2 rounded-md text-sm font-bold tracking-tight text-gray-900 font-sans sm:text-base">
-              Success, we'll keep you updated!
-            </p>
-            : ""}
+
         </div>
         <div className="mt-8 border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between">
           <p className="mt-8 text-sm font-light text-gray-500 md:mt-0 md:order-1">
