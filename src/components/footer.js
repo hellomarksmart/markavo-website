@@ -8,6 +8,7 @@ const Footer = ({ footerBody }) => {
   const [mailerState, setMailerState] = useState({
     email: "",
   })
+
   function handleStateChange(e) {
     setMailerState(prevState => ({
       ...prevState,
@@ -18,9 +19,8 @@ const Footer = ({ footerBody }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
     console.log({ mailerState });
-    setSuccess(true)
     const response = await window
-
+    setSuccess(true)
       .fetch(`/api/newsletter`, {
         method: `PUT`,
         headers: {

@@ -4,7 +4,6 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-
 client.setApiKey(process.env.SENDGRID_API_KEY);
 
 export default function formHandler(req, res) {

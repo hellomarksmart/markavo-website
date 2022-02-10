@@ -242,11 +242,11 @@ const SearchSection = ({ heading, headingColored, description }) => {
                                     alt="Markavo"
                                   />
                                 </div>
-                                <p className="text-emerald-500 font-bold text-2.5xl sm:text-3.5xl lg:text-4.5xl">
+                                <p className="text-emerald-500 font-bold mt-3 text-2.5xl sm:text-3.5xl lg:text-4.5xl">
                                   {item.keyword}
                                 </p>
-                                <div className="flex flex-col sm:flex-row items-start border-b border-gray-300 pb-8">
-                                  <div className="space-y-4 w-full sm:w-2/5">
+                                <div className="flex flex-col md:flex-row items-start border-b border-gray-300 pb-8">
+                                  <div className="space-y-4 w-full md:w-2/5">
                                     <div>
                                       <p className="mr-2 mb-0 font-bold">
                                         Filing Date
@@ -272,7 +272,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                                       </p>
                                     </div>
                                   </div>
-                                  <div className="space-y-4 w-full sm:w-2/5 pt-4 sm:pt-0 pl-0 sm:pl-20">
+                                  <div className="space-y-4 w-full md:w-2/5 pt-4 md:pt-0 pl-0 md:pl-20">
                                     <div>
                                       <p className="mr-2 mb-0 font-bold">
                                         Registration Date
