@@ -4,7 +4,7 @@ client.setApiKey(process.env.SENDGRID_API_KEY);
 export default function formHandler(req, res) {
 
   const request = {
-    url: `https://api.sendgrid.com/v3/marketing/contacts`,
+    url: `/v3/marketing/contacts`,
     method: 'PUT',
     body: {
       list_ids: [
