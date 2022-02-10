@@ -214,7 +214,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                           process for as little as $185.
                         </b>
                       </p>
-                      <div className="w-5/6">
+                      <div className="sm:w-full md:w-5/6">
                         {responseData.items
                           .slice(startIndex, endIndex)
                           .map((item, i) => {
@@ -242,11 +242,11 @@ const SearchSection = ({ heading, headingColored, description }) => {
                                     alt="Markavo"
                                   />
                                 </div>
-                                <p className="text-emerald-500 font-bold text-4.5xl">
+                                <p className="text-emerald-500 font-bold mt-3 text-2.5xl sm:text-3.5xl lg:text-4.5xl">
                                   {item.keyword}
                                 </p>
-                                <div className="flex items-start border-b border-gray-300 pb-8">
-                                  <div className="space-y-4 w-2/4">
+                                <div className="flex flex-col md:flex-row items-start border-b border-gray-300 pb-8">
+                                  <div className="space-y-4 w-full md:w-2/5">
                                     <div>
                                       <p className="mr-2 mb-0 font-bold">
                                         Filing Date
@@ -272,7 +272,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                                       </p>
                                     </div>
                                   </div>
-                                  <div className="space-y-4 w-2/5 pl-20">
+                                  <div className="space-y-4 w-full md:w-2/5 pt-4 md:pt-0 pl-0 md:pl-20">
                                     <div>
                                       <p className="mr-2 mb-0 font-bold">
                                         Registration Date
@@ -304,8 +304,8 @@ const SearchSection = ({ heading, headingColored, description }) => {
                                   <p className="mr-2 mb-0 font-bold text-2.5xl">
                                     Owner
                                   </p>
-                                  <div className="space-y-4 w-2/5">
-                                    <div className="pt-3 flex items-center">
+                                  <div className="space-y-4 w-full sm:w-4/5 lg:w-3/5 2xl:w-2/5">
+                                    <div className="pt-3 flex items-left sm:items-center flex-col sm:flex-row">
                                       <p className="mr-2 mb-0 font-bold w-2/4">
                                         Name
                                       </p>
@@ -320,7 +320,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                                         )
                                       })}
                                     </div>
-                                    <div className="flex items-center">
+                                    <div className="flex items-left sm:items-center flex-col sm:flex-row">
                                       <p className="mr-2 mb-0 font-bold w-2/4">
                                         Address 1
                                       </p>
@@ -337,7 +337,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                                         )
                                       })}
                                     </div>
-                                    <div className="flex items-center">
+                                    <div className="flex items-left sm:items-center flex-col sm:flex-row">
                                       <p className="mr-2 mb-0 font-bold w-2/4">
                                         Address 2
                                       </p>
@@ -354,7 +354,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                                         )
                                       })}
                                     </div>
-                                    <div className="flex items-center">
+                                    <div className="flex items-left sm:items-center flex-col sm:flex-row">
                                       <p className="mr-2 mb-0 font-bold w-2/4">
                                         City
                                       </p>
@@ -369,7 +369,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                                         )
                                       })}
                                     </div>
-                                    <div className="flex items-center">
+                                    <div className="flex items-left sm:items-center flex-col sm:flex-row">
                                       <p className="mr-2 mb-0 font-bold w-2/4">
                                         State
                                       </p>
@@ -384,7 +384,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                                         )
                                       })}
                                     </div>
-                                    <div className="flex items-center">
+                                    <div className="flex items-left sm:items-center flex-col sm:flex-row">
                                       <p className="mr-2 mb-0 font-bold w-2/4">
                                         Country
                                       </p>
@@ -399,7 +399,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                                         )
                                       })}
                                     </div>
-                                    <div className="flex items-center">
+                                    <div className="flex items-left sm:items-center flex-col sm:flex-row">
                                       <p className="mr-2 mb-0 font-bold w-2/4">
                                         Postcode
                                       </p>
@@ -414,7 +414,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                                         )
                                       })}
                                     </div>
-                                    <div className="flex items-center">
+                                    <div className="flex items-left sm:items-center flex-col sm:flex-row">
                                       <p className="mr-2 mb-0 font-bold w-2/4">
                                         Legal Entity Type
                                       </p>
