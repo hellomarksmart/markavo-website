@@ -1,8 +1,5 @@
+require('dotenv').config({ path: __dirname + '/./../../.env.production' })
 const client = require('@sendgrid/client');
-
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
 
 client.setApiKey(process.env.SENDGRID_API_KEY);
 
@@ -26,10 +23,14 @@ export default function formHandler(req, res) {
     .then(([response, body]) => {
       console.log(response.statusCode);
       console.log(response.body);
-      console.log("yes");
     })
     .catch(error => {
       console.error(error);
-      console.log("no");
     });
+
+  if (response.statusCode === `202`) {
+    console.log("yes");
+  } else {
+    console.log("no");
+  }
 };
