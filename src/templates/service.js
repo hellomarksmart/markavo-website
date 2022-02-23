@@ -207,7 +207,7 @@ export const ServiceSingleQuery = graphql`
           text
         }
         stats_description {
-          richText
+          text
         }
         stats_content {
           statistics {
@@ -243,7 +243,7 @@ export const ServiceSingleQuery = graphql`
           text
         }
         cta_description {
-          richText
+          text
         }
         cta_button_label {
           text
