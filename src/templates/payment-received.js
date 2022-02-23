@@ -34,7 +34,7 @@ const PaymentReceived = ({ data }) => {
             </p>
             <div className="iframe-holder">
               <iframe
-                id="videoID"
+                id="iframeID"
                 src={paymentReceivedData.video_link.url}
                 title={paymentReceivedData.message_2.text}
                 allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"

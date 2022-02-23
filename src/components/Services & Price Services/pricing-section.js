@@ -4,7 +4,7 @@ import { RichText } from "prismic-reactjs"
 
 const PricingSection = ({ pricingBody }) => {
   return (
-    <div className={`bg-emerald-400 px-5 pb-12`}>
+    <div id="PricingContainer" className={`bg-emerald-400 px-5 pb-12`}>
       <div className="max-w-default mx-auto pt-12 px-4 sm:px-6 lg:px-8 lg:pt-20">
         <div className="text-center">
           <h2 className="mb-2 text-base leading-6 font-semibold text-emerald-800 uppercase tracking-wider">

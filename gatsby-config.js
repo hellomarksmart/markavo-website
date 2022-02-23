@@ -13,6 +13,12 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://markavo.com`,
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-postcss`,
     "gatsby-plugin-sitemap",
