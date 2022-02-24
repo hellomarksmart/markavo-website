@@ -1,15 +1,19 @@
 import React, { useState } from "react"
 import api from "../../../api/api"
 import Pagination from "../Reusable Components/pagination-section"
+import loadingGIF from "../../images/Icons/Spinner-1s-200px.gif"
 
 const SearchSection = ({ heading, headingColored, description }) => {
   const [keyword, setKeyword] = useState("")
   let [responseData, setResponseData] = useState("")
   let [responseLength, setResponseLength] = useState("")
 
+  const [loading, setLoading] = useState(false)
+
   const fetchData = e => {
     if (!isNaN(keyword)) {
       e.preventDefault()
+      setLoading(true)
       api
         .getSearchSerial(keyword)
         .then(response => {
@@ -19,8 +23,12 @@ const SearchSection = ({ heading, headingColored, description }) => {
         .catch(error => {
           console.log(error)
         })
+        .finally(response => {
+          setLoading(false)
+        })
     } else {
       e.preventDefault()
+      setLoading(true)
       api
         .getSearchName(keyword)
         .then(response => {
@@ -30,6 +38,9 @@ const SearchSection = ({ heading, headingColored, description }) => {
         .catch(error => {
           console.log(error)
         })
+        .finally(response => {
+          setLoading(false)
+        })
     }
   }
 
@@ -38,6 +49,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
       if (!isNaN(e.target.value)) {
         console.log(e.target.value, "is a number")
         e.preventDefault()
+        setLoading(true)
         api
           .getSearchSerial(keyword)
           .then(response => {
@@ -47,17 +59,25 @@ const SearchSection = ({ heading, headingColored, description }) => {
           .catch(error => {
             console.log(error)
           })
+          .finally(response => {
+            setLoading(false)
+          })
       } else {
         console.log(e.target.value, "is a string")
         e.preventDefault()
+        setLoading(true)
         api
           .getSearchName(keyword)
           .then(response => {
             setResponseData(response.data)
             setResponseLength(response.data.items.length)
+
           })
           .catch(error => {
             console.log(error)
+          })
+          .finally(response => {
+            setLoading(false)
           })
       }
     }
@@ -70,7 +90,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
   const endIndex = startIndex + 10
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden z-30">
       <div
         className="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full"
         aria-hidden="true"
@@ -184,13 +204,22 @@ const SearchSection = ({ heading, headingColored, description }) => {
                 onKeyPress={onKeyPress}
               />
               <div className="absolute top-2 right-2">
-                {" "}
-                <button
-                  onClick={fetchData}
-                  className="mt-0 h-8 sm:h-10 w-16 sm:w-20 text-white text-xs sm:text-base rounded-lg bg-emerald-400 hover:bg-emerald-500"
-                >
-                  Search
-                </button>{" "}
+                {loading ?
+                  <button
+                    onClick={fetchData}
+                    className="mt-0 h-8 pl-2 sm:h-10 w-24 sm:w-28 text-white text-xs sm:text-base rounded-lg bg-emerald-400 hover:bg-emerald-500 flex justify-center items-center"
+                  >
+                    Search
+                    <img src={loadingGIF} className="w-7 sm:w-9 m-0" />
+                  </button>
+                  :
+                  <button
+                    onClick={fetchData}
+                    className="mt-0 h-8 sm:h-10 w-16 sm:w-24 text-white text-xs sm:text-base rounded-lg bg-emerald-400 hover:bg-emerald-500"
+                  >
+                    Search
+                  </button>
+                }
               </div>
             </div>
           </div>
@@ -201,7 +230,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                   {responseData.items.length !== 0 ? (
                     <div className="text-left px-12 my-12 max-w-default mx-auto px-4 sm:px-6 lg:px-8">
                       <p className="text-2xl font-bold mb-2">
-                        Trademark Search Results
+                        Trademark  Results
                       </p>
                       <p>
                         <b className="text-emerald-500">{keyword}</b> may be
@@ -476,7 +505,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                           process for as little as $185.
                         </b>
                       </p>
-                      <div className="w-3/6">
+                      <div className="w-6/6 md:w-3/6">
                         {responseData.items
                           .slice(startIndex, endIndex)
                           .map((item, i) => {
@@ -497,7 +526,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                                 <p className="text-emerald-500 font-bold">
                                   {item.keyword}
                                 </p>
-                                <div className="flex items-center">
+                                <div className="flex flex-col sm:flex-row items-start sm:items-center sm:mb-0 mb-3">
                                   <p className="mr-2 mb-0 text-slate-400">
                                     Filed:
                                   </p>
@@ -508,7 +537,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                                 <p className="truncate my-1">
                                   {item.status_label}
                                 </p>
-                                <div className="flex items-center">
+                                <div className="flex flex-col sm:flex-row items-start sm:items-center sm:mb-0 mb-3">
                                   <p className="mr-2 mb-0 font-bold">
                                     Owned by:
                                   </p>
@@ -523,7 +552,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                                     )
                                   })}
                                 </div>
-                                <div className="flex items-center">
+                                <div className="flex flex-col sm:flex-row items-start sm:items-center sm:mb-0 mb-3">
                                   <p className="mr-2 mb-0 font-bold">
                                     Serial Number:
                                   </p>
