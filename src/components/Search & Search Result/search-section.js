@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Link } from "gatsby"
 import api from "../../../api/api"
 import Pagination from "../Reusable Components/pagination-section"
 import loadingGIF from "../../images/Icons/Spinner-1s-200px.gif"
@@ -7,13 +8,14 @@ const SearchSection = ({ heading, headingColored, description }) => {
   const [keyword, setKeyword] = useState("")
   let [responseData, setResponseData] = useState("")
   let [responseLength, setResponseLength] = useState("")
-
   const [loading, setLoading] = useState(false)
+  const [serial, setSerial] = useState(true)
 
   const fetchData = e => {
     if (!isNaN(keyword)) {
       e.preventDefault()
       setLoading(true)
+
       api
         .getSearchSerial(keyword)
         .then(response => {
@@ -45,11 +47,16 @@ const SearchSection = ({ heading, headingColored, description }) => {
   }
 
   const onKeyPress = e => {
+    if ((e.keyCode >= 0)) {
+      setSerial(false)
+    }
+
     if (e.key === "Enter") {
       if (!isNaN(e.target.value)) {
         console.log(e.target.value, "is a number")
         e.preventDefault()
         setLoading(true)
+
         api
           .getSearchSerial(keyword)
           .then(response => {
@@ -177,7 +184,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
             </p>
           </div>
           <div className="mt-5 max-w-medium sm:max-w-sm mx-auto sm:flex sm:justify-center md:mt-8">
-            <div className="relative">
+            <div className="relative hidden md:block">
               <div className="absolute top-4 left-3">
                 {" "}
                 <svg
@@ -195,11 +202,14 @@ const SearchSection = ({ heading, headingColored, description }) => {
                   />
                 </svg>{" "}
               </div>{" "}
+
               <input
+                id="searchInput"
                 type="text"
                 className="shadow h-12 sm:h-14 sm:h-14 w-64 sm:w-96 pl-10 pr-20 rounded-lg z-0 text-sm sm:text-base focus:shadow focus:outline-none"
-                placeholder="Search millions of trademarks"
                 value={keyword}
+                name="input"
+                placeholder="Search millions of trademarks."
                 onChange={e => setKeyword(e.target.value)}
                 onKeyPress={onKeyPress}
               />
@@ -210,7 +220,56 @@ const SearchSection = ({ heading, headingColored, description }) => {
                     className="mt-0 h-8 pl-2 sm:h-10 w-24 sm:w-28 text-white text-xs sm:text-base rounded-lg bg-emerald-400 hover:bg-emerald-500 flex justify-center items-center"
                   >
                     Search
-                    <img src={loadingGIF} className="w-7 sm:w-9 m-0" />
+                    <img src={loadingGIF} alt="Search Spinner" className="w-7 sm:w-9 m-0" />
+                  </button>
+                  :
+                  <button
+                    onClick={fetchData}
+                    className="mt-0 h-8 sm:h-10 w-16 sm:w-24 text-white text-xs sm:text-base rounded-lg bg-emerald-400 hover:bg-emerald-500"
+                  >
+                    Search
+                  </button>
+                }
+              </div>
+            </div>
+
+            <div className="relative block md:hidden">
+              <div className="absolute top-4 left-3">
+                {" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4 mt-0 sm:h-6 sm:w-6 text-emerald-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>{" "}
+              </div>{" "}
+
+              <input
+                id="searchInput"
+                type="text"
+                className="shadow h-12 sm:h-14 sm:h-14 w-64 sm:w-96 pl-10 pr-20 rounded-lg z-0 text-sm sm:text-base focus:shadow focus:outline-none"
+                value={keyword}
+                name="input"
+                placeholder="Search trademarks."
+                onChange={e => setKeyword(e.target.value)}
+                onKeyPress={onKeyPress}
+              />
+              <div className="absolute top-2 right-2">
+                {loading ?
+                  <button
+                    onClick={fetchData}
+                    className="mt-0 h-8 pl-2 sm:h-10 w-24 sm:w-28 text-white text-xs sm:text-base rounded-lg bg-emerald-400 hover:bg-emerald-500 flex justify-center items-center"
+                  >
+                    Search
+                    <img src={loadingGIF} alt="Search Spinner" className="w-7 sm:w-9 m-0" />
                   </button>
                   :
                   <button
@@ -232,17 +291,29 @@ const SearchSection = ({ heading, headingColored, description }) => {
                       <p className="text-2xl font-bold mb-2">
                         Trademark  Results
                       </p>
-                      <p>
-                        <b className="text-emerald-500">{keyword}</b> may be
-                        available if it is not generic, descriptive, too
-                        confusingly similar to another unregistered trademark
-                        that is being used in commerce, or too confunsingly
-                        similar a live registered trademark.
-                        <b className="text-emerald-500">
-                          Work with Markavo to navigate this complicated legal
-                          process for as little as $185.
-                        </b>
-                      </p>
+                      {serial ?
+                        <p>
+                          <b className="text-emerald-500">{keyword}</b> may be
+                          available if it is not generic, descriptive, too
+                          confusingly similar to another unregistered trademark
+                          that is being used in commerce, or too confunsingly
+                          similar a live registered trademark.
+                          <b className="text-emerald-500">
+                            Work with Markavo to navigate this complicated legal
+                            process for as little as $185.
+                          </b>
+
+                          <Link
+                            to="/services/trademark-application"
+                            className="text-sm font-medium text-emerald-500 hover:text-emerald-800"
+                          >
+                            Work with Markavo to navigate this complicated legal
+                            process for as little as $185.
+                          </Link>
+                        </p>
+                        :
+                        ""
+                      }
                       <div className="sm:w-full md:w-5/6">
                         {responseData.items
                           .slice(startIndex, endIndex)
@@ -333,7 +404,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                                   <p className="mr-2 mb-0 font-bold text-2.5xl">
                                     Owner
                                   </p>
-                                  <div className="space-y-4 w-full sm:w-4/5 lg:w-3/5 2xl:w-2/5">
+                                  <div className="space-y-4 w-full sm:w-4/5 lg:w-3/5 2xl:w-3/5">
                                     <div className="pt-3 flex items-left sm:items-center flex-col sm:flex-row">
                                       <p className="mr-2 mb-0 font-bold w-2/4">
                                         Name
@@ -467,7 +538,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                     </div>
                   ) : (
                     <div>
-                      <p>
+                      <p className="pt-8">
                         No results, please try another keyword/serial number.
                       </p>
                     </div>
@@ -500,10 +571,13 @@ const SearchSection = ({ heading, headingColored, description }) => {
                         confusingly similar to another unregistered trademark
                         that is being used in commerce, or too confunsingly
                         similar a live registered trademark.
-                        <b className="text-emerald-500">
+                        <Link
+                          to="/services/trademark-application"
+                          className="text-sm font-medium text-emerald-500 hover:text-emerald-800 no-underline"
+                        >
                           Work with Markavo to navigate this complicated legal
                           process for as little as $185.
-                        </b>
+                        </Link>
                       </p>
                       <div className="w-6/6 md:w-3/6">
                         {responseData.items
@@ -564,10 +638,11 @@ const SearchSection = ({ heading, headingColored, description }) => {
                             )
                           })}
                       </div>
+
                     </div>
                   ) : (
                     <div>
-                      <p>
+                      <p className="pt-8">
                         No results, please try another keyword/serial number.
                       </p>
                     </div>
@@ -586,6 +661,9 @@ const SearchSection = ({ heading, headingColored, description }) => {
               )}
             </>
           )}
+
+
+
         </div>
       </div>
     </div>
