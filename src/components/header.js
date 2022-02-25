@@ -20,7 +20,7 @@ const Header = ({ topHeader, activeDoc }) => {
   const brandingTools = headerData.data.branding_tools
 
   return (
-    <Popover className="relative bg-white">
+    <Popover className="relative bg-white z-40">
       <div className="flex justify-between items-center px-4 py-4 border-b-gray-200 border border-t-0 border-r-0 border-l-0 sm:px-6 md:justify-end md:space-x-10 md:flex sm:hidden hidden">
         <div className="flex space-x-4 items-center md:ml-12">
           <div className="flex px-3">
@@ -303,7 +303,7 @@ const Header = ({ topHeader, activeDoc }) => {
               </div>
             </div>
             <div className="py-6 px-5">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4">
                 <Link
                   to="/markavo-reviews"
                   className="text-sm  font-medium text-gray-900 hover:text-gray-800"
@@ -322,25 +322,6 @@ const Header = ({ topHeader, activeDoc }) => {
                 >
                   Free Trademark Search
                 </Link>
-
-                {allServices.map((item, i) => (
-                  <Link
-                    key={i}
-                    to={item.link.url ? item.link.url : "#"}
-                    className="text-sm  font-medium text-gray-900 hover:text-gray-800"
-                  >
-                    {item.name.text ? item.name.text : ""}
-                  </Link>
-                ))}
-                {brandingTools.map((item, i) => (
-                  <Link
-                    key={i}
-                    to={item.link.url ? item.link.url : "#"}
-                    className="text-sm  font-medium text-gray-900 hover:text-gray-800"
-                  >
-                    {item.name.text ? item.name.text : ""}
-                  </Link>
-                ))}
               </div>
               <div className="mt-12">
                 {activeDoc ? (
