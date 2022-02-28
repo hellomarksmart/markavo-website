@@ -10,10 +10,22 @@ const SearchSection = ({ heading, headingColored, description }) => {
   let [responseLength, setResponseLength] = useState("")
   const [loading, setLoading] = useState(false)
   const [serial, setSerial] = useState(true)
+  const [serialSearch, setSerialSearch] = useState(false)
+
+  function getID(e) {
+    let resultID = e.target.dataset.pg
+    setSerialSearch(true)
+    console.log(resultID)
+  }
 
   const fetchData = e => {
+    if ((e.keyCode >= 0)) {
+      setSerial(false)
+    }
+
     if (!isNaN(keyword)) {
       e.preventDefault()
+      setSerialSearch(false)
       setLoading(true)
 
       api
@@ -30,6 +42,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
         })
     } else {
       e.preventDefault()
+      setSerialSearch(false)
       setLoading(true)
       api
         .getSearchName(keyword)
@@ -55,6 +68,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
       if (!isNaN(e.target.value)) {
         console.log(e.target.value, "is a number")
         e.preventDefault()
+        setSerialSearch(false)
         setLoading(true)
 
         api
@@ -72,6 +86,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
       } else {
         console.log(e.target.value, "is a string")
         e.preventDefault()
+        setSerialSearch(false)
         setLoading(true)
         api
           .getSearchName(keyword)
@@ -399,7 +414,6 @@ const SearchSection = ({ heading, headingColored, description }) => {
                                     </div>
                                   </div>
                                 </div>
-
                                 <div className="pt-8">
                                   <p className="mr-2 mb-0 font-bold text-2.5xl">
                                     Owner
@@ -593,47 +607,263 @@ const SearchSection = ({ heading, headingColored, description }) => {
                             )
 
                             return (
-                              <div
-                                key={i}
-                                className="my-3 p-8 bg-white border border-slate-200"
-                              >
-                                <p className="text-emerald-500 font-bold">
-                                  {item.keyword}
-                                </p>
-                                <div className="flex flex-col sm:flex-row items-start sm:items-center sm:mb-0 mb-3">
-                                  <p className="mr-2 mb-0 text-slate-400">
-                                    Filed:
-                                  </p>
-                                  <p className="mb-0 text-slate-400">
-                                    {newDate}
-                                  </p>
-                                </div>
-                                <p className="truncate my-1">
-                                  {item.status_label}
-                                </p>
-                                <div className="flex flex-col sm:flex-row items-start sm:items-center sm:mb-0 mb-3">
-                                  <p className="mr-2 mb-0 font-bold">
-                                    Owned by:
-                                  </p>
-                                  {item.owners.map((owner, i) => {
-                                    return (
-                                      <p
-                                        key={i}
-                                        className="mb-0 text-emerald-500"
-                                      >
-                                        {owner.name}
+                              <div>
+                                {serialSearch ?
+                                  <div>
+                                    {/* SERIAL NUMBER RESULT*/}
+                                    <div className="mb-0 border border-gray-300 w-24 rounded-lg w-28 h-28">
+                                      <img
+                                        className="my-9 rounded-lg"
+                                        src={
+                                          "https://tsdr.uspto.gov/img/" +
+                                          item.serial_number +
+                                          "/large"
+                                        }
+                                        width="100%"
+                                        height="100%"
+                                        alt="Markavo"
+                                      />
+                                    </div>
+                                    <p className="text-emerald-500 font-bold mt-3 text-2.5xl sm:text-3.5xl lg:text-4.5xl">
+                                      {item.keyword}
+                                    </p>
+                                    <div className="flex flex-col md:flex-row items-start border-b border-gray-300 pb-8">
+                                      <div className="space-y-4 w-full md:w-2/5">
+                                        <div>
+                                          <p className="mr-2 mb-0 font-bold">
+                                            Filing Date
+                                          </p>
+                                          <p className="mb-0 text-emerald-500">
+                                            {newDate}
+                                          </p>
+                                        </div>
+                                        <div>
+                                          <p className="mr-2 mb-0 font-bold">
+                                            Serial Number
+                                          </p>
+                                          <p className="mb-0 text-emerald-500">
+                                            {item.serial_number}
+                                          </p>
+                                        </div>
+                                        <div>
+                                          <p className="mr-2 mb-0 font-bold">
+                                            Goods and Services
+                                          </p>
+                                          <p className="mb-0 text-emerald-500">
+                                            {item.description}
+                                          </p>
+                                        </div>
+                                      </div>
+                                      <div className="space-y-4 w-full md:w-2/5 pt-4 md:pt-0 pl-0 md:pl-20">
+                                        <div>
+                                          <p className="mr-2 mb-0 font-bold">
+                                            Registration Date
+                                          </p>
+                                          <p className="mb-0 text-emerald-500">
+                                            {item.registration_date}
+                                          </p>
+                                        </div>
+                                        <div>
+                                          <p className="mr-2 mb-0 font-bold">
+                                            Registration Number
+                                          </p>
+                                          <p className="mb-0 text-emerald-500">
+                                            {item.registration_number}
+                                          </p>
+                                        </div>
+                                        <div>
+                                          <p className="mr-2 mb-0 font-bold">
+                                            Status Code
+                                          </p>
+                                          <p className="mb-0 text-emerald-500">
+                                            {item.status_code}
+                                          </p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div className="pt-8">
+                                      <p className="mr-2 mb-0 font-bold text-2.5xl">
+                                        Owner
                                       </p>
-                                    )
-                                  })}
-                                </div>
-                                <div className="flex flex-col sm:flex-row items-start sm:items-center sm:mb-0 mb-3">
-                                  <p className="mr-2 mb-0 font-bold">
-                                    Serial Number:
-                                  </p>
-                                  <p className="mb-0 text-emerald-500">
-                                    {item.serial_number}
-                                  </p>
-                                </div>
+                                      <div className="space-y-4 w-full sm:w-4/5 lg:w-3/5 2xl:w-3/5">
+                                        <div className="pt-3 flex items-left sm:items-center flex-col sm:flex-row">
+                                          <p className="mr-2 mb-0 font-bold w-2/4">
+                                            Name
+                                          </p>
+                                          {item.owners.map((owner, i) => {
+                                            return (
+                                              <p
+                                                key={i}
+                                                className="mb-0 text-emerald-500"
+                                              >
+                                                {owner.name}
+                                              </p>
+                                            )
+                                          })}
+                                        </div>
+                                        <div className="flex items-left sm:items-center flex-col sm:flex-row">
+                                          <p className="mr-2 mb-0 font-bold w-2/4">
+                                            Address 1
+                                          </p>
+                                          {item.owners.map((owner, i) => {
+                                            return (
+                                              <p
+                                                key={i}
+                                                className="mb-0 text-emerald-500"
+                                              >
+                                                {owner.address1
+                                                  ? owner.address1
+                                                  : "-"}
+                                              </p>
+                                            )
+                                          })}
+                                        </div>
+                                        <div className="flex items-left sm:items-center flex-col sm:flex-row">
+                                          <p className="mr-2 mb-0 font-bold w-2/4">
+                                            Address 2
+                                          </p>
+                                          {item.owners.map((owner, i) => {
+                                            return (
+                                              <p
+                                                key={i}
+                                                className="mb-0 text-emerald-500"
+                                              >
+                                                {owner.address2
+                                                  ? owner.address2
+                                                  : "-"}
+                                              </p>
+                                            )
+                                          })}
+                                        </div>
+                                        <div className="flex items-left sm:items-center flex-col sm:flex-row">
+                                          <p className="mr-2 mb-0 font-bold w-2/4">
+                                            City
+                                          </p>
+                                          {item.owners.map((owner, i) => {
+                                            return (
+                                              <p
+                                                key={i}
+                                                className="mb-0 text-emerald-500"
+                                              >
+                                                {owner.city}
+                                              </p>
+                                            )
+                                          })}
+                                        </div>
+                                        <div className="flex items-left sm:items-center flex-col sm:flex-row">
+                                          <p className="mr-2 mb-0 font-bold w-2/4">
+                                            State
+                                          </p>
+                                          {item.owners.map((owner, i) => {
+                                            return (
+                                              <p
+                                                key={i}
+                                                className="mb-0 text-emerald-500"
+                                              >
+                                                {owner.state}
+                                              </p>
+                                            )
+                                          })}
+                                        </div>
+                                        <div className="flex items-left sm:items-center flex-col sm:flex-row">
+                                          <p className="mr-2 mb-0 font-bold w-2/4">
+                                            Country
+                                          </p>
+                                          {item.owners.map((owner, i) => {
+                                            return (
+                                              <p
+                                                key={i}
+                                                className="mb-0 text-emerald-500"
+                                              >
+                                                {owner.country}
+                                              </p>
+                                            )
+                                          })}
+                                        </div>
+                                        <div className="flex items-left sm:items-center flex-col sm:flex-row">
+                                          <p className="mr-2 mb-0 font-bold w-2/4">
+                                            Postcode
+                                          </p>
+                                          {item.owners.map((owner, i) => {
+                                            return (
+                                              <p
+                                                key={i}
+                                                className="mb-0 text-emerald-500"
+                                              >
+                                                {owner.postcode}
+                                              </p>
+                                            )
+                                          })}
+                                        </div>
+                                        <div className="flex items-left sm:items-center flex-col sm:flex-row">
+                                          <p className="mr-2 mb-0 font-bold w-2/4">
+                                            Legal Entity Type
+                                          </p>
+                                          {item.owners.map((owner, i) => {
+                                            return (
+                                              <p
+                                                key={i}
+                                                className="mb-0 text-emerald-500"
+                                              >
+                                                {owner.legal_entity_type_label}
+                                              </p>
+                                            )
+                                          })}
+                                        </div>
+                                      </div>
+                                    </div>
+                                    {/* SERIAL NUMBER RESULT*/}
+                                  </div>
+                                  :
+                                  <div
+                                    key={i}
+                                    className="my-3 p-8 bg-white border border-slate-200"
+                                  >
+                                    {/* KEYWORD RESULT */}
+                                    <button
+                                      onClick={getID}
+                                      data-pg={item.serial_number}
+                                      className="text-emerald-500 font-bold mt-3 text-2.5xl sm:text-3.5xl lg:text-4.5xl">
+                                      {item.keyword}
+
+                                    </button>
+                                    <div className="flex flex-col sm:flex-row items-start sm:items-center sm:mb-0 mb-3">
+                                      <p className="mr-2 mb-0 text-slate-400">
+                                        Filed:
+                                      </p>
+                                      <p className="mb-0 text-slate-400">
+                                        {newDate}
+                                      </p>
+                                    </div>
+                                    <p className="truncate my-1">
+                                      {item.status_label}
+                                    </p>
+                                    <div className="flex flex-col sm:flex-row items-start sm:items-center sm:mb-0 mb-3">
+                                      <p className="mr-2 mb-0 font-bold">
+                                        Owned by:
+                                      </p>
+                                      {item.owners.map((owner, i) => {
+                                        return (
+                                          <p
+                                            key={i}
+                                            className="mb-0 text-emerald-500"
+                                          >
+                                            {owner.name}
+                                          </p>
+                                        )
+                                      })}
+                                    </div>
+                                    <div className="flex flex-col sm:flex-row items-start sm:items-center sm:mb-0 mb-3">
+                                      <p className="mr-2 mb-0 font-bold">
+                                        Serial Number:
+                                      </p>
+                                      <p
+                                        className="mb-0 text-emerald-500">
+                                        {item.serial_number}
+                                      </p>
+                                    </div>
+                                    {/* KEYWORD RESULT */}
+                                  </div>}
                               </div>
                             )
                           })}
@@ -661,9 +891,6 @@ const SearchSection = ({ heading, headingColored, description }) => {
               )}
             </>
           )}
-
-
-
         </div>
       </div>
     </div>
