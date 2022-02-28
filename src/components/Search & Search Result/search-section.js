@@ -13,15 +13,10 @@ const SearchSection = ({ heading, headingColored, description }) => {
   const [serialSearch, setSerialSearch] = useState(false)
   const [activeItem, setActiveItem] = useState("")
 
-  function getID(e) {
-    let resultID = e.target.dataset.pg
-    setSerialSearch(true)
-    console.log(resultID)
-  }
-
-  const getActiveItem = name => {
-    setActiveItem(name)
+  const getActiveItem = serial_number => {
+    setActiveItem(serial_number)
     setSerialSearch(!serialSearch)
+    console.log(activeItem)
   }
 
   const fetchData = e => {
@@ -33,7 +28,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
       e.preventDefault()
       setSerialSearch(false)
       setLoading(true)
-
+      setActiveItem("")
       api
         .getSearchSerial(keyword)
         .then(response => {
@@ -45,6 +40,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
         })
         .finally(response => {
           setLoading(false)
+          console.log(activeItem)
         })
     } else {
       e.preventDefault()
@@ -620,7 +616,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                               <div
                                 className={
                                   serialSearch
-                                    ? activeItem == item.keyword
+                                    ? activeItem == item.serial_number
                                       ? "block"
                                       : "hidden"
                                     : "block"
@@ -629,13 +625,12 @@ const SearchSection = ({ heading, headingColored, description }) => {
                                 <div
                                   key={i}
                                   className={
-                                    activeItem === item.keyword
+                                    activeItem === item.serial_number
                                       ? ""
                                       : "my-3 p-8 bg-white border border-slate-200"
                                   }
                                 >
-                                  {/* KEYWORD RESULT */}
-                                  {activeItem == item.keyword ? (
+                                  {activeItem == item.serial_number ? (
                                     <div className="mb-0 border border-gray-300 w-24 rounded-lg w-28 h-28">
                                       <img
                                         className="my-9 rounded-lg"
@@ -653,13 +648,13 @@ const SearchSection = ({ heading, headingColored, description }) => {
                                     ""
                                   )}
                                   <button
-                                    onClick={() => getActiveItem(item.keyword)}
+                                    onClick={() => getActiveItem(item.serial_number)}
                                     data-pg={item.serial_number}
                                     className="text-emerald-500 font-bold mt-3 text-2.5xl sm:text-3.5xl lg:text-4.5xl"
                                   >
                                     {item.keyword}
                                   </button>
-                                  {activeItem === item.keyword ? (
+                                  {activeItem === item.serial_number ? (
                                     <>
                                       <div className="flex flex-col md:flex-row items-start border-b border-gray-300 pb-8">
                                         <div className="space-y-4 w-full md:w-2/5">
