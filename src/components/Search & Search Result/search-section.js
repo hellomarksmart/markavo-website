@@ -13,10 +13,11 @@ const SearchSection = ({ heading, headingColored, description }) => {
   const [serialSearch, setSerialSearch] = useState(false)
   const [activeItem, setActiveItem] = useState("")
 
+  const [showSerialSearch, setShowSerialSearch] = useState(true)
+
   const getActiveItem = serial_number => {
     setActiveItem(serial_number)
     setSerialSearch(!serialSearch)
-    console.log(activeItem)
   }
 
   const fetchData = e => {
@@ -28,7 +29,6 @@ const SearchSection = ({ heading, headingColored, description }) => {
       e.preventDefault()
       setSerialSearch(false)
       setLoading(true)
-      setActiveItem("")
       api
         .getSearchSerial(keyword)
         .then(response => {
@@ -40,7 +40,6 @@ const SearchSection = ({ heading, headingColored, description }) => {
         })
         .finally(response => {
           setLoading(false)
-          console.log(activeItem)
         })
     } else {
       e.preventDefault()
@@ -90,6 +89,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
         e.preventDefault()
         setSerialSearch(false)
         setLoading(true)
+
         api
           .getSearchName(keyword)
           .then(response => {
@@ -615,9 +615,9 @@ const SearchSection = ({ heading, headingColored, description }) => {
                             return (
                               <div
                                 className={
-                                  serialSearch
-                                    ? activeItem == item.serial_number
-                                      ? "block"
+                                  serialSearch ?
+                                    activeItem === item.serial_number ?
+                                      "block"
                                       : "hidden"
                                     : "block"
                                 }
@@ -630,7 +630,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                                       : "my-3 p-8 bg-white border border-slate-200"
                                   }
                                 >
-                                  {activeItem == item.serial_number ? (
+                                  {activeItem === item.serial_number ? (
                                     <div className="mb-0 border border-gray-300 w-24 rounded-lg w-28 h-28">
                                       <img
                                         className="my-9 rounded-lg"
@@ -876,9 +876,13 @@ const SearchSection = ({ heading, headingColored, description }) => {
                                         <p className="mr-2 mb-0 font-bold">
                                           Serial Number:
                                         </p>
-                                        <p className="mb-0 text-emerald-500">
+                                        <button
+                                          onClick={() => getActiveItem(item.serial_number)}
+                                          data-pg={item.serial_number}
+                                          className="mb-0 text-emerald-500"
+                                        >
                                           {item.serial_number}
-                                        </p>
+                                        </button>
                                       </div>
                                     </>
                                   )}
@@ -898,7 +902,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
                   )}
                 </>
               )}
-              {serialSearch == false ? (
+              {serialSearch === false ? (
                 responseLength > 9 ? (
                   <Pagination
                     currentPage={currentPage}
