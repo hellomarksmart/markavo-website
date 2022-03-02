@@ -24,7 +24,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
     if (e.keyCode >= 0) {
       setSerial(false)
     }
-
+    setActiveItem("")
     if (!isNaN(keyword)) {
       e.preventDefault()
       setSerialSearch(false)
@@ -64,14 +64,13 @@ const SearchSection = ({ heading, headingColored, description }) => {
     if (e.keyCode >= 0) {
       setSerial(false)
     }
-
+    setActiveItem("")
     if (e.key === "Enter") {
       if (!isNaN(e.target.value)) {
         console.log(e.target.value, "is a number")
         e.preventDefault()
         setSerialSearch(false)
         setLoading(true)
-
         api
           .getSearchSerial(keyword)
           .then(response => {
@@ -599,7 +598,11 @@ const SearchSection = ({ heading, headingColored, description }) => {
                           process for as little as $185.
                         </Link>
                       </p>
-                      <div className="w-6/6 md:w-3/6">
+                      <div className={
+                        serialSearch ? "w-6/6 md:w-5/6"
+                          : "w-6/6 md:w-3/6"
+                      }
+                      >
                         {responseData.items
                           .slice(startIndex, endIndex)
                           .map((item, i) => {
@@ -920,7 +923,7 @@ const SearchSection = ({ heading, headingColored, description }) => {
           )}
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 
