@@ -21,7 +21,12 @@ module.exports = {
     },
     `gatsby-plugin-image`,
     `gatsby-plugin-postcss`,
-    "gatsby-plugin-sitemap",
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        output: '/'
+      }
+    },
     {
       resolve: `gatsby-source-prismic`,
       options: {
