@@ -1,6 +1,14 @@
 import * as React from "react"
 import { RichText } from "prismic-reactjs"
 
+const linkResolver = (doc) => {
+  // Pretty URLs for known types
+  if (doc.type === 'blog') return `/post/${doc.uid}`
+  if (doc.type === 'page') return `/${doc.uid}`
+  // Fallback for other types, in case new custom types get created
+  return `/doc/${doc.id}`
+}
+
 const FAQs = ({ title, heading, description, faq_contents }) => {
   return (
     <div className="bg-gray-50">
@@ -27,7 +35,7 @@ const FAQs = ({ title, heading, description, faq_contents }) => {
                   </dt>
                   <dd className="mt-2 md:mt-0 md:col-span-7 mb-0 ">
                     <p className="text-sm text-gray-500">
-                      <RichText render={item?.faq_answer.richText} />
+                      <RichText render={item?.faq_answer.richText} linkResolver={linkResolver} />
                     </p>
                   </dd>
                 </div>

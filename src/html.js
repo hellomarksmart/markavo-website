@@ -12,23 +12,6 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {props.headComponents}
-        <script
-          defer
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.Trengo = window.Trengo || {};
-              window.Trengo.key = 'dPxY5RAnZodvssX';
-              (function(d, script, t) {
-                script = d.createElement('script');
-                script.type = 'text/javascript';
-                script.async = true;
-                script.src = 'https://static.widget.trengo.eu/embed.js';
-                d.getElementsByTagName('head')[0].appendChild(script);
-              }(document));
-        `,
-          }}
-        />
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
