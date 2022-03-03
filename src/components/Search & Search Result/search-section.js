@@ -13,8 +13,6 @@ const SearchSection = ({ heading, headingColored, description }) => {
   const [serialSearch, setSerialSearch] = useState(false)
   const [activeItem, setActiveItem] = useState("")
 
-  const [showSerialSearch, setShowSerialSearch] = useState(true)
-
   const getActiveItem = serial_number => {
     setActiveItem(serial_number)
     setSerialSearch(!serialSearch)

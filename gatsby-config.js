@@ -28,6 +28,12 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
+    {
       resolve: `gatsby-source-prismic`,
       options: {
         repositoryName: prismicConfig.prismicRepo,
