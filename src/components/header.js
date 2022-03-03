@@ -1,4 +1,5 @@
-import React, { Fragment, useState, useEffect } from "react"
+// import React, { Fragment, useState, useEffect } from "react"
+import React, { Fragment } from "react"
 import { Link } from "gatsby"
 import { Popover, Transition } from "@headlessui/react"
 import { ChevronDownIcon } from "@heroicons/react/solid"
@@ -11,18 +12,18 @@ function classNames(...classes) {
 }
 
 const Header = ({ topHeader, activeDoc }) => {
-  const [containsES, setContainsES] = useState(false)
+  // const [containsES, setContainsES] = useState(false)
 
-  useEffect(() => {
-    const browserLanguages = navigator.languages
-    const filterLanguage = array => {
-      return array.filter(element => {
-        if (element === "es-MX") return setContainsES(true)
-      })
-    }
+  // useEffect(() => {
+  //   const browserLanguages = navigator.languages
+  //   const filterLanguage = array => {
+  //     return array.filter(element => {
+  //       if (element === "es-MX") return setContainsES(true)
+  //     })
+  //   }
 
-    filterLanguage(browserLanguages)
-  }, [])
+  //   filterLanguage(browserLanguages)
+  // }, [])
 
   const headerData = topHeader || []
 
@@ -60,11 +61,11 @@ const Header = ({ topHeader, activeDoc }) => {
           >
             Client Reviews
           </Link>
-          {containsES &&
-            <>
-              {activeDoc ? <LanguageToggle activeDocMeta={activeDoc} /> : ""}
-            </>
-          }
+          {/* {containsES &&
+            <> */}
+          {activeDoc ? <LanguageToggle activeDocMeta={activeDoc} /> : ""}
+          {/* </>
+          } */}
         </div>
       </div>
       <div className="flex justify-between items-center px-4 py-4 border-b-gray-200 border border-t-0 border-r-0 border-l-0 sm:px-6 md:justify-start lg:space-x-10">
@@ -341,17 +342,17 @@ const Header = ({ topHeader, activeDoc }) => {
                 </Link>
               </div>
               <div className="mt-12">
-                {containsES && (
-                  <>
-                    {activeDoc ? (
-                      <div className="pb-6 text-center text-sm font-medium text-gray-900">
-                        <LanguageToggle activeDocMeta={activeDoc} />
-                      </div>
-                    ) : (
-                      ""
-                    )}
-                  </>
+                {/* {containsES && (
+                  <> */}
+                {activeDoc ? (
+                  <div className="pb-6 text-center text-sm font-medium text-gray-900">
+                    <LanguageToggle activeDocMeta={activeDoc} />
+                  </div>
+                ) : (
+                  ""
                 )}
+                {/* </>
+                )} */}
                 <Link
                   to="/contact-us"
                   className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm  font-medium text-white bg-gray-900 hover:bg-gray-50 hover:text-gray-900 hover:border-gray-400"
