@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { navigate } from "gatsby"
 
 export default function HTML(props) {
   return (
@@ -12,6 +13,14 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {props.headComponents}
+        <script
+          defer
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+        `,
+          }}
+        />
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
