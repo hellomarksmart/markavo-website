@@ -887,7 +887,6 @@ const SearchSection = ({ heading, headingColored, description }) => {
                                       </div>
                                     </>
                                   )}
-                                  {/* KEYWORD RESULT */}
                                 </div>
                               </div>
                             )
