@@ -6,6 +6,13 @@
         "label": "Footer"
       }
     },
+    "application_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Applications Title"
+      }
+    },
     "applications": {
       "type": "Group",
       "config": {
@@ -36,6 +43,13 @@
           }
         },
         "label": "Applications"
+      }
+    },
+    "registration_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Registration Title"
       }
     },
     "registrations": {
@@ -70,6 +84,13 @@
         "label": "Registrations"
       }
     },
+    "disputes_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Disputes Title"
+      }
+    },
     "disputes": {
       "type": "Group",
       "config": {
@@ -102,6 +123,13 @@
         "label": "Disputes"
       }
     },
+    "company_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Company Title"
+      }
+    },
     "company": {
       "type": "Group",
       "config": {
@@ -132,6 +160,34 @@
           }
         },
         "label": "Company"
+      }
+    },
+    "newsletter_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Newsletter Title"
+      }
+    },
+    "newsletter_desc" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Newsletter Description"
+      }
+    },
+    "newsletter_placeholder" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Newsletter Placeholder"
+      }
+    },
+    "newsletter_button_label" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Newsletter Button Label"
       }
     },
     "footer_copyright": {

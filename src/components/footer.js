@@ -3,6 +3,15 @@ import React, { useState } from "react"
 const Footer = ({ footerBody }) => {
   const footerData = footerBody
 
+  const applications = footerData.data.application_title.text
+  const registrations = footerData.data.registration_title.text
+  const disputes = footerData.data.disputes_title.text
+  const company = footerData.data.company_title.text
+  const title = footerData.data.newsletter_title.text
+  const desc = footerData.data.newsletter_desc.text
+  const placeholder = footerData.data.newsletter_placeholder.text
+  const label = footerData.data.newsletter_button_label.text
+
   const [mailerState, setMailerState] = useState({
     email: "",
   })
@@ -41,7 +50,7 @@ const Footer = ({ footerBody }) => {
             <div className="md:grid md:grid-cols-2 md:gap-4">
               <div>
                 <h3 className="text-sm font-bold text-gray-900 tracking-wider uppercase">
-                  Applications
+                  {applications}
                 </h3>
                 <ul className="mt-4 space-y-4 ml-0">
                   {footerData.data.applications.map((item, i) => {
@@ -67,7 +76,7 @@ const Footer = ({ footerBody }) => {
               </div>
               <div className="mt-12 md:mt-0">
                 <h3 className="text-sm font-bold text-gray-900 tracking-wider uppercase">
-                  Registrations
+                  {registrations}
                 </h3>
                 <ul className="mt-4 space-y-4 ml-0">
                   {footerData.data.registrations.map(
@@ -95,7 +104,7 @@ const Footer = ({ footerBody }) => {
             <div className="md:grid md:grid-cols-2 md:gap-4">
               <div>
                 <h3 className="text-sm font-bold text-gray-900 tracking-wider uppercase">
-                  Disputes
+                  {disputes}
                 </h3>
                 <ul className="mt-4 space-y-4 ml-0">
                   {footerData.data.disputes.map((item, i) => (
@@ -119,7 +128,7 @@ const Footer = ({ footerBody }) => {
               </div>
               <div className="mt-12 md:mt-0">
                 <h3 className="text-sm font-bold text-gray-900 tracking-wider uppercase">
-                  Company
+                  {company}
                 </h3>
                 <ul className="mt-4 space-y-4 ml-0">
                   {footerData.data.company.map((item, i) => (
@@ -145,13 +154,13 @@ const Footer = ({ footerBody }) => {
           </div>
         </div>
         <div className="border-t border-gray-200 pt-8 lg:flex lg:items-center lg:justify-between xl:mt-0">
+
           <div>
             <h3 className="text-sm font-bold text-gray-900 tracking-wider uppercase">
-              Newsletter
+              {title}
             </h3>
             <p className="mt-2 text-sm font text-gray-500">
-              The latest news, articles, and resources, sent to your inbox
-              weekly.
+              {desc}
             </p>
           </div>
           <form
@@ -165,7 +174,7 @@ const Footer = ({ footerBody }) => {
               type="email"
               autoComplete="email"
               className="appearance-none min-w-0 w-full bg-white border border-gray-500 rounded-md py-2 px-4 text-sm text-gray-600 placeholder-gray-400 focus:outline-none sm:max-w-xs"
-              placeholder="Enter your email"
+              placeholder={placeholder}
               required
             />
             <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
@@ -174,7 +183,7 @@ const Footer = ({ footerBody }) => {
                 value="Send"
                 className="w-full bg-gray-900 border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-sm font-bold text-white hover:bg-white hover:border-gray-900 hover:text-gray-900 focus:outline-none"
               >
-                Subscribe
+                {label}
               </button>
             </div>
           </form>
