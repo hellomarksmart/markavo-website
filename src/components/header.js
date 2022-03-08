@@ -15,9 +15,15 @@ const Header = ({ topHeader, activeDoc }) => {
 
   const headerLogo = headerData.data.header_logo.url
   const phoneNumber = headerData.data.phone_number.text
+  const contactUs = headerData.data.contact_us.text
+  const clientReviews = headerData.data.client_reviews.text
+  const freeTrademark = headerData.data.free_trademark_search.text
+  const serviceTitle = headerData.data.service_title.text
+  const brandingTitle = headerData.data.branding_tools_title.text
   const services = headerData.data.services
   const allServices = headerData.data.all_services
   const brandingTools = headerData.data.branding_tools
+  const aboutUs = headerData.data.about_us.text
 
   return (
     <Popover className="relative bg-white z-40">
@@ -39,13 +45,13 @@ const Header = ({ topHeader, activeDoc }) => {
             to="/contact-us"
             className="ml-8 inline-flex items-center justify-center px-3 py-1.2 border border-gray-400 rounded-md shadow-sm lg:text-sm md:text-sm font-medium text-gray-900 bg-white hover:bg-gray-50"
           >
-            Contact Us
+            {contactUs}
           </Link>
           <Link
             to="/markavo-reviews"
             className="text-md lg:text-base md:text-sm font-medium text-gray-900 px-3 hover:text-gray-800"
           >
-            Client Reviews
+            {clientReviews}
           </Link>
           {activeDoc ? <LanguageToggle activeDocMeta={activeDoc} /> : ""}
         </div>
@@ -78,7 +84,7 @@ const Header = ({ topHeader, activeDoc }) => {
                         "group inline-flex items-center lg:mr-6 md:mr-2 text-md lg:text-base md:text-sm font-medium text-gray-900 hover:text-gray-800 focus:outline-none"
                       )}
                     >
-                      <span>Our Services</span>
+                      <span>{serviceTitle}</span>
                       <ChevronDownIcon
                         className={classNames(
                           open ? "text-gray-900" : "text-gray-900",
@@ -173,7 +179,7 @@ const Header = ({ topHeader, activeDoc }) => {
                         "group inline-flex items-center lg:mr-6 md:mr-2 text-md lg:text-base md:text-sm font-medium text-gray-900 hover:text-gray-800 focus:outline-none"
                       )}
                     >
-                      <span>Branding Tools</span>
+                      <span>{brandingTitle}</span>
                       <ChevronDownIcon
                         className={classNames(
                           open ? "text-gray-600" : "text-gray-900",
@@ -223,7 +229,7 @@ const Header = ({ topHeader, activeDoc }) => {
                 to="/about-us"
                 className="lg:mr-3 mr-0 text-md lg:text-base md:text-sm font-medium text-gray-900 hover:text-gray-800 lg:pt-0 md:pt-xs"
               >
-                About Us
+                {aboutUs}
               </Link>
             </div>
             <div className="max-w-none w-auto lg:max-w-xs">
@@ -232,7 +238,7 @@ const Header = ({ topHeader, activeDoc }) => {
                   to="/free-trademark-search"
                   className="inline-flex items-center justify-center px-3 py-1.2 border border-gray-400 rounded-md shadow-sm text-sm lg:text-sm md:text-xs font-medium text-gray-900 bg-white hover:bg-gray-50"
                 >
-                  <span>Free Trademark Search</span>
+                  <span>{freeTrademark}</span>
                   <SearchIcon
                     className="ml-2 lg:h-4 lg:w-4 md:h-3 md:w-3"
                     aria-hidden="true"

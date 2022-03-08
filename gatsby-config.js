@@ -9,7 +9,7 @@ module.exports = {
     title: `Markavo`,
     description: `We help Chinese companies register their trademarks in the United States.`,
     author: `@gatsbyjs`,
-    siteUrl: `https://markavowebsitestaging.gatsbyjs.io/`,
+    siteUrl: `https://markavo.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -76,6 +76,11 @@ module.exports = {
         // theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/Icons/markavo-favicon.png`, // This path is relative to the root of the site.
+      },
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-59XBP6W",
+        selfHostedOrigin: "https://insight.markavo.com",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

@@ -258,6 +258,21 @@ export const ServiceSingleQuery = graphql`
         phone_number {
           text
         }
+        contact_us {
+          text
+        }
+        client_reviews {
+          text
+        }
+        free_trademark_search {
+          text
+        }
+        service_title {
+          text
+        }
+        branding_tools_title {
+          text
+        }
         header_logo {
           url
         }
@@ -299,10 +314,16 @@ export const ServiceSingleQuery = graphql`
             text
           }
         }
+        about_us {
+          text
+        }
       }
     }
     prismicFooter(lang: { eq: $lang }) {
       data {
+        application_title {
+          text
+        }
         applications {
           link {
             url
@@ -313,6 +334,9 @@ export const ServiceSingleQuery = graphql`
           link_title {
             text
           }
+        }
+        company_title {
+          text
         }
         company {
           link {
@@ -325,6 +349,9 @@ export const ServiceSingleQuery = graphql`
             text
           }
         }
+        disputes_title {
+          text
+        }
         disputes {
           link {
             url
@@ -336,6 +363,9 @@ export const ServiceSingleQuery = graphql`
             text
           }
         }
+        registration_title {
+          text
+        }
         registrations {
           link {
             url
@@ -346,6 +376,18 @@ export const ServiceSingleQuery = graphql`
           link_title {
             text
           }
+        }
+        newsletter_title {
+          text
+        }
+        newsletter_desc {
+          text
+        }
+        newsletter_placeholder {
+          text
+        }
+        newsletter_button_label {
+          text
         }
         footer_copyright {
           text
