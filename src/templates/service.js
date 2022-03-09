@@ -32,13 +32,15 @@ const Service = ({ data }) => {
       headerBody={data.prismicHeader}
       footerBody={data.prismicFooter}
     >
+      <link rel="alternate" hreflang="en" href="https://markavowebsite.gatsbyjs.io" />
+      <link rel="alternate" hreflang="es" href="https://markavowebsite.gatsbyjs.io" />
       <Seo title="Service" />
       <Banner
         heading={singleServiceData.banner_heading.text}
         headingColored={singleServiceData.banner_heading_colored.text}
         description={singleServiceData.banner_description.text}
         buttonColored={singleServiceData.button_1_label.text}
-        buttonColoredLink={singleServiceData.button_1.url}
+        // buttonColoredLink={singleServiceData.button_1.url}
         buttonPlain={singleServiceData.button_2_label.text}
         buttonPlainLink={singleServiceData.button_2.url}
       />

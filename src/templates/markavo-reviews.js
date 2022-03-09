@@ -28,6 +28,8 @@ const ClientReviews = ({ data }) => {
       headerBody={data.prismicHeader}
       footerBody={data.prismicFooter}
     >
+      <link rel="alternate" hreflang="en" href="https://markavowebsite.gatsbyjs.io" />
+      <link rel="alternate" hreflang="es" href="https://markavowebsite.gatsbyjs.io" />
       <Seo title="Reviews" />
       <Banner
         heading={clientReviewsData.banner_heading.text}
