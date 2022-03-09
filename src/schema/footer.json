@@ -1,0 +1,202 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "Footer"
+      }
+    },
+    "application_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Applications Title"
+      }
+    },
+    "applications": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "link_title": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "allowTargetBlank": true,
+              "label": "Footer Link Title"
+            }
+          },
+          "link": {
+            "type": "Link",
+            "config": {
+              "allowTargetBlank": true,
+              "label": "Footer Link",
+              "select": null
+            }
+          },
+          "link_name": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "allowTargetBlank": true,
+              "label": "Footer Link Label"
+            }
+          }
+        },
+        "label": "Applications"
+      }
+    },
+    "registration_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Registration Title"
+      }
+    },
+    "registrations": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "link_title": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "allowTargetBlank": true,
+              "label": "Footer Link Title"
+            }
+          },
+          "link": {
+            "type": "Link",
+            "config": {
+              "label": "Footer Link",
+              "allowTargetBlank": true,
+              "select": null
+            }
+          },
+          "link_name": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "allowTargetBlank": true,
+              "label": "Footer Link Label"
+            }
+          }
+        },
+        "label": "Registrations"
+      }
+    },
+    "disputes_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Disputes Title"
+      }
+    },
+    "disputes": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "link_title": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "allowTargetBlank": true,
+              "label": "Footer Link Title"
+            }
+          },
+          "link": {
+            "type": "Link",
+            "config": {
+              "allowTargetBlank": true,
+              "label": "Footer Link",
+              "select": null
+            }
+          },
+          "link_name": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "allowTargetBlank": true,
+              "label": "Footer Link Label"
+            }
+          }
+        },
+        "label": "Disputes"
+      }
+    },
+    "company_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Company Title"
+      }
+    },
+    "company": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "link_title": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "allowTargetBlank": true,
+              "label": "Footer Link Title"
+            }
+          },
+          "link": {
+            "type": "Link",
+            "config": {
+              "allowTargetBlank": true,
+              "label": "Footer Link",
+              "select": null
+            }
+          },
+          "link_name": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "allowTargetBlank": true,
+              "label": "Footer Link Label"
+            }
+          }
+        },
+        "label": "Company"
+      }
+    },
+    "newsletter_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Newsletter Title"
+      }
+    },
+    "newsletter_desc" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Newsletter Description"
+      }
+    },
+    "newsletter_placeholder" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Newsletter Placeholder"
+      }
+    },
+    "newsletter_button_label" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "paragraph",
+        "label" : "Newsletter Button Label"
+      }
+    },
+    "footer_copyright": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "allowTargetBlank": true,
+        "label": "Copyright"
+      }
+    }
+  }
+}

@@ -1,0 +1,416 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "Page handle"
+      }
+    },
+    "banner_heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "Banner Heading"
+      }
+    },
+    "banner_heading_colored": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "Banner Heading Colored"
+      }
+    },
+    "banner_description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "label": "Banner Section Description"
+      }
+    },
+    "button_1_label": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "allowTargetBlank": true,
+        "label": "Button 1 Label"
+      }
+    },
+    "button_1": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "Button 1",
+        "select": null
+      }
+    },
+    "button_2_label": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "allowTargetBlank": true,
+        "label": "Button 2 Label"
+      }
+    },
+    "button_2": {
+      "type": "Link",
+      "config": {
+        "label": "Button 2",
+        "select": null
+      }
+    },
+    "grid_section_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Grid Section Title"
+      }
+    },
+    "grid_section_heading": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
+        "label": "Grid Section Heading"
+      }
+    },
+    "grid_section_description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "allowTargetBlank": true,
+        "label": "Grid Section Description"
+      }
+    },
+    "grid_cards": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "icon": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [],
+              "label": "Icon"
+            }
+          },
+          "title": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
+              "allowTargetBlank": true,
+              "label": "Title"
+            }
+          },
+          "content": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "allowTargetBlank": true,
+              "label": "Content"
+            }
+          }
+        },
+        "label": "Grid Cards"
+      }
+    },
+    "stats_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Stats Section Title"
+      }
+    },
+    "stats_heading": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
+        "label": "Statistics Section Heading"
+      }
+    },
+    "stats_description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "allowTargetBlank": true,
+        "label": "Statistics Section description"
+      }
+    },
+    "stats_content": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "statistics": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
+              "label": "Statistic"
+            }
+          },
+          "name": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "allowTargetBlank": true,
+              "label": "Stats Name"
+            }
+          }
+        },
+        "label": "Stats Card"
+      }
+    },
+    "faq_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "FAQ Section Title"
+      }
+    },
+    "faq_heading": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em",
+        "label": "FAQs Section Heading"
+      }
+    },
+    "faq_description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "allowTargetBlank": true,
+        "label": "FAQ Section description"
+      }
+    },
+    "faq_contents": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "faq_question": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "label": "FAQ Question"
+            }
+          },
+          "faq_answer": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+              "label": "FAQ Answer"
+            }
+          }
+        },
+        "label": "FAQ Contents"
+      }
+    },
+    "cta_heading": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "CTA Heading"
+      }
+    },
+    "cta_heading_2": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "CTA Heading 2"
+      }
+    },
+    "cta_description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "label": "CTA Section Description"
+      }
+    },
+    "cta_button_label": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "allowTargetBlank": true,
+        "label": "Button Label"
+      }
+    },
+    "cta_button": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "Button",
+        "select": null
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {},
+        "choices": {
+          "pricing_table": {
+            "type": "Slice",
+            "fieldset": "Pricing Table",
+            "description": "Display a list of pricing plans",
+            "icon": "attach_money",
+            "display": "grid",
+            "non-repeat": {
+              "eyebrow_headline": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph",
+                  "label": "Eyebrow Headline",
+                  "placeholder": "Pricing plans"
+                }
+              },
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2",
+                  "label": "Title",
+                  "placeholder": "Choose the plan"
+                }
+              },
+              "description": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,strong,em,hyperlink",
+                  "allowTargetBlank": true,
+                  "label": "Description",
+                  "placeholder": "Choose the version that works for you ..."
+                }
+              },
+              "discounted_pill_text": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph",
+                  "label": "Discounted Pill Text"
+                }
+              },
+              "discount_description": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "label": "Discount description"
+                }
+              },
+              "discount_cta_label": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph",
+                  "label": "Discount CTA Label"
+                }
+              },
+              "discount_cta_link": {
+                "type": "Link",
+                "config": {
+                  "allowTargetBlank": true,
+                  "label": "Discount CTA Link",
+                  "select": null
+                }
+              }
+            },
+            "repeat": {
+              "headline": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "label": "headline"
+                }
+              },
+              "plan_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading3",
+                  "label": "Plan title",
+                  "placeholder": "Simple, Gold, Premium..."
+                }
+              },
+              "bottomline": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "label": "Bottomline"
+                }
+              },
+              "plan_description": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "label": "Plan Description"
+                }
+              },
+              "currency": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph",
+                  "label": "Currency",
+                  "placeholder": "$"
+                }
+              },
+              "price_option": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "heading4",
+                  "label": "Price Option",
+                  "placeholder": "Free, $19, Contact us..."
+                }
+              },
+              "frequency": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph",
+                  "label": "Frequency",
+                  "placeholder": "month"
+                }
+              },
+              "features": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "list-item",
+                  "label": "Features",
+                  "placeholder": "A list of features using bullet list"
+                }
+              },
+              "call_to_action": {
+                "type": "Link",
+                "config": {
+                  "allowTargetBlank": true,
+                  "label": "Call To Action",
+                  "placeholder": "Link to Signup / More info...",
+                  "select": null
+                }
+              },
+              "call_to_action_text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph",
+                  "label": "Call To Action Text",
+                  "placeholder": "Start your free trial"
+                }
+              },
+              "policy_link": {
+                "type": "Link",
+                "config": {
+                  "allowTargetBlank": true,
+                  "label": "Policy Link",
+                  "select": null
+                }
+              },
+              "policy_text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph",
+                  "label": "Policy Text"
+                }
+              },
+              "cta_bottom_text": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "label": "CTA Bottom Text"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
