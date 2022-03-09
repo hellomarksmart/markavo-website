@@ -38,7 +38,7 @@ const Service = ({ data }) => {
         headingColored={singleServiceData.banner_heading_colored.text}
         description={singleServiceData.banner_description.text}
         buttonColored={singleServiceData.button_1_label.text}
-        buttonColoredLink={singleServiceData.button_1.url}
+        // buttonColoredLink={singleServiceData.button_1.url}
         buttonPlain={singleServiceData.button_2_label.text}
         buttonPlainLink={singleServiceData.button_2.url}
       />

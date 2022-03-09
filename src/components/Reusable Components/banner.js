@@ -100,7 +100,7 @@ const Banner = ({
               {buttonColoredLink ? (
                 <Link
                   key={buttonColored}
-                  to="#PricingContainer"
+                  to={buttonColoredLink}
                   className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-emerald-400 hover:bg-emerald-500 md:py-buttonY md:px-buttonY"
                 >
                   {buttonColored}
@@ -114,7 +114,6 @@ const Banner = ({
                   {buttonColored}
                 </Link>
               )}
-
             </div>
             <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
               {buttonPlainLink ? (

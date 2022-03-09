@@ -35,7 +35,7 @@ const HomepageTemplate = ({ data }) => {
         headingColored={homeData.banner_heading_colored.text}
         description={homeData.banner_description.text}
         buttonColored={homeData.button_1_label.text}
-        buttonColoredLink={homeData.button_1.url}
+        // buttonColoredLink={homeData.button_1.url}
         buttonPlain={homeData.button_2_label.text}
         buttonPlainLink={homeData.button_2.url}
       />
