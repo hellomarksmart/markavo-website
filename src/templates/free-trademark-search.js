@@ -28,6 +28,8 @@ const Search = ({ data }) => {
       headerBody={data.prismicHeader}
       footerBody={data.prismicFooter}
     >
+      <link rel="alternate" hreflang="en" href="https://markavowebsite.gatsbyjs.io" />
+      <link rel="alternate" hreflang="es" href="https://markavowebsite.gatsbyjs.io" />
       <Seo title="Free Trademark Search" />
       <SearchSection
         heading={saerchData.banner_heading.text}
