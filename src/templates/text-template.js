@@ -28,8 +28,6 @@ const TextTemplate = ({ data }) => {
       headerBody={data.prismicHeader}
       footerBody={data.prismicFooter}
     >
-      <link rel="alternate" hreflang="en" href="https://markavowebsite.gatsbyjs.io" />
-      <link rel="alternate" hreflang="es" href="https://markavowebsite.gatsbyjs.io" />
       <Seo title="Text Template" />
       <Breadcrumb breadcrumbs_item={textTemplateData.breadcrumbs} />
       <TextTemplateSection
