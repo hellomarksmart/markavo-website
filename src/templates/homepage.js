@@ -30,8 +30,6 @@ const HomepageTemplate = ({ data }) => {
       headerBody={data.prismicHeader}
       footerBody={data.prismicFooter}
     >
-      <link rel="alternate" hreflang="en" href="https://markavowebsite.gatsbyjs.io" />
-      <link rel="alternate" hreflang="es" href="https://markavowebsite.gatsbyjs.io" />
       <Seo title="Home" />
       <Banner
         heading={homeData.banner_heading.text}
