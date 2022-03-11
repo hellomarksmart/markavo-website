@@ -16,13 +16,17 @@ const Header = ({ topHeader, activeDoc }) => {
   const headerLogo = headerData.data.header_logo.url
   const phoneNumber = headerData.data.phone_number.text
   const contactUs = headerData.data.contact_us.text
+  const contactUsLink = headerData.data.contact_us_link.url
   const clientReviews = headerData.data.client_reviews.text
+  const clientReviewsLink = headerData.data.client_reviews_link.url
   const freeTrademark = headerData.data.free_trademark_search.text
+  const freeTrademarkLink = headerData.data.free_trademark_search_link.url
   const serviceTitle = headerData.data.service_title.text
   const brandingTitle = headerData.data.branding_tools_title.text
   const services = headerData.data.services
   const allServices = headerData.data.all_services
   const brandingTools = headerData.data.branding_tools
+  const aboutLink = headerData.data.about_link.url
   const aboutUs = headerData.data.about_us.text
 
   return (
@@ -42,13 +46,13 @@ const Header = ({ topHeader, activeDoc }) => {
             </Link>
           </div>
           <Link
-            to="/contact-us"
+            to={contactUsLink}
             className="ml-8 inline-flex items-center justify-center px-3 py-1.2 border border-gray-400 rounded-md shadow-sm lg:text-sm md:text-sm font-medium text-gray-900 bg-white hover:bg-gray-50"
           >
             {contactUs}
           </Link>
           <Link
-            to="/markavo-reviews"
+            to={clientReviewsLink}
             className="text-md lg:text-base md:text-sm font-medium text-gray-900 px-3 hover:text-gray-800"
           >
             {clientReviews}
@@ -226,7 +230,7 @@ const Header = ({ topHeader, activeDoc }) => {
               </Popover>
 
               <Link
-                to="/about-us"
+                to={aboutLink}
                 className="lg:mr-3 mr-0 text-md lg:text-base md:text-sm font-medium text-gray-900 hover:text-gray-800 lg:pt-0 md:pt-xs"
               >
                 {aboutUs}
@@ -235,7 +239,7 @@ const Header = ({ topHeader, activeDoc }) => {
             <div className="max-w-none w-auto lg:max-w-xs">
               <div className="relative">
                 <Link
-                  to="/free-trademark-search"
+                  to={freeTrademarkLink}
                   className="inline-flex items-center justify-center px-3 py-1.2 border border-gray-400 rounded-md shadow-sm text-sm lg:text-sm md:text-xs font-medium text-gray-900 bg-white hover:bg-gray-50"
                 >
                   <span>{freeTrademark}</span>

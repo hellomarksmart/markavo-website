@@ -27,7 +27,7 @@ const Contact = ({ data }) => {
       headerBody={data.prismicHeader}
       footerBody={data.prismicFooter}
     >
-      <Seo title="Contact" />
+      <Seo title={contactData.seo_title.text} />
       <ContactSection
         heading={contactData.heading.text}
         description={contactData.description.text}
@@ -58,6 +58,9 @@ export const ContactUsPageQuery = graphql`
       url
       type
       data {
+        seo_title {
+          text
+        }
         heading {
           text
         }
@@ -102,11 +105,20 @@ export const ContactUsPageQuery = graphql`
         contact_us {
           text
         }
+        contact_us_link {
+          url
+        }
         client_reviews {
           text
         }
+        client_reviews_link {
+          url
+        }
         free_trademark_search {
           text
+        }
+        free_trademark_search_link {
+          url
         }
         service_title {
           text
@@ -157,6 +169,9 @@ export const ContactUsPageQuery = graphql`
         }
         about_us {
           text
+        }
+        about_link {
+          url
         }
       }
     }

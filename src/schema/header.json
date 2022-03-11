@@ -28,6 +28,14 @@
         "label" : "Contact Us"
       }
     },
+    "contact_us_link" : {
+      "type" : "Link",
+      "config" : {
+        "allowTargetBlank" : true,
+        "label" : "Contact Us Link",
+        "select" : null
+      }
+    },
     "client_reviews" : {
       "type" : "StructuredText",
       "config" : {
@@ -35,11 +43,27 @@
         "label" : "Client Reviews"
       }
     },
+    "client_reviews_link" : {
+      "type" : "Link",
+      "config" : {
+        "allowTargetBlank" : true,
+        "label" : "Client Reviews Link",
+        "select" : null
+      }
+    },
     "free_trademark_search" : {
       "type" : "StructuredText",
       "config" : {
         "single" : "paragraph",
         "label" : "Free Trademark Search"
+      }
+    },
+    "free_trademark_search_link" : {
+      "type" : "Link",
+      "config" : {
+        "allowTargetBlank" : true,
+        "label" : "Free Trademark Search Link",
+        "select" : null
       }
     },
     "service_title" : {
@@ -163,6 +187,14 @@
       "config" : {
         "single" : "paragraph",
         "label" : "About Us"
+      }
+    },
+    "about_link" : {
+      "type" : "Link",
+      "config" : {
+        "allowTargetBlank" : true,
+        "label" : "About Link",
+        "select" : null
       }
     }
   }
