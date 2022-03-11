@@ -26,7 +26,7 @@ const AllServices = ({ data }) => {
       headerBody={data.prismicHeader}
       footerBody={data.prismicFooter}
     >
-      <Seo title="Services" />
+      <Seo title={servcicesData.seo_title.text} />
       <ServicesSection
         title={servcicesData.service_section_title.text}
         heading={servcicesData.service_section_heading.text}
@@ -51,6 +51,9 @@ export const ServicesQuery = graphql`
       url
       type
       data {
+        seo_title {
+          text
+        }
         service_section_title {
           text
         }
@@ -84,11 +87,20 @@ export const ServicesQuery = graphql`
         contact_us {
           text
         }
+        contact_us_link {
+          url
+        }
         client_reviews {
           text
         }
+        client_reviews_link {
+          url
+        }
         free_trademark_search {
           text
+        }
+        free_trademark_search_link {
+          url
         }
         service_title {
           text
@@ -139,6 +151,9 @@ export const ServicesQuery = graphql`
         }
         about_us {
           text
+        }
+        about_link {
+          url
         }
       }
     }
