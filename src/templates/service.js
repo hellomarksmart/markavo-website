@@ -32,7 +32,7 @@ const Service = ({ data }) => {
       headerBody={data.prismicHeader}
       footerBody={data.prismicFooter}
     >
-      <Seo title="Service" />
+      <Seo title={singleServiceData.seo_title.text} />
       <Banner
         heading={singleServiceData.banner_heading.text}
         headingColored={singleServiceData.banner_heading_colored.text}
@@ -157,6 +157,9 @@ export const ServiceSingleQuery = graphql`
             }
           }
         }
+        seo_title {
+          text
+        }
         banner_heading {
           text
         }
@@ -261,11 +264,20 @@ export const ServiceSingleQuery = graphql`
         contact_us {
           text
         }
+        contact_us_link {
+          url
+        }
         client_reviews {
           text
         }
+        client_reviews_link {
+          url
+        }
         free_trademark_search {
           text
+        }
+        free_trademark_search_link {
+          url
         }
         service_title {
           text
@@ -316,6 +328,9 @@ export const ServiceSingleQuery = graphql`
         }
         about_us {
           text
+        }
+        about_link {
+          url
         }
       }
     }

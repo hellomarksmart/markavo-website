@@ -25,7 +25,7 @@ const PaymentReceived = ({ data }) => {
       headerBody={data.prismicHeader}
       footerBody={data.prismicFooter}
     >
-      <Seo title="Home" />
+      <Seo title={paymentReceivedData.seo_title.text} />
       <div className="max-w-default mx-auto relative py-16 bg-white overflow-hidden">
         <div className="relative px-4 sm:px-6 lg:px-8">
           <div className="text-lg max-w-4xl mx-auto">
@@ -65,6 +65,9 @@ export const PaymentReceivedQuery = graphql`
       url
       type
       data {
+        seo_title {
+          text
+        }
         message_1 {
           text
         }
@@ -87,11 +90,20 @@ export const PaymentReceivedQuery = graphql`
         contact_us {
           text
         }
+        contact_us_link {
+          url
+        }
         client_reviews {
           text
         }
+        client_reviews_link {
+          url
+        }
         free_trademark_search {
           text
+        }
+        free_trademark_search_link {
+          url
         }
         service_title {
           text
@@ -142,6 +154,9 @@ export const PaymentReceivedQuery = graphql`
         }
         about_us {
           text
+        }
+        about_link {
+          url
         }
       }
     }

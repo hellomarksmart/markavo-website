@@ -28,7 +28,7 @@ const ClientReviews = ({ data }) => {
       headerBody={data.prismicHeader}
       footerBody={data.prismicFooter}
     >
-      <Seo title="Reviews" />
+      <Seo title={clientReviewsData.seo_title.text} />
       <Banner
         heading={clientReviewsData.banner_heading.text}
         headingColored={clientReviewsData.banner_heading_colored.text}
@@ -64,6 +64,9 @@ export const ClientReviewsQuery = graphql`
       url
       type
       data {
+        seo_title {
+          text
+        }
         banner_heading {
           text
         }
@@ -119,11 +122,20 @@ export const ClientReviewsQuery = graphql`
         contact_us {
           text
         }
+        contact_us_link {
+          url
+        }
         client_reviews {
           text
         }
+        client_reviews_link {
+          url
+        }
         free_trademark_search {
           text
+        }
+        free_trademark_search_link {
+          url
         }
         service_title {
           text
@@ -174,6 +186,9 @@ export const ClientReviewsQuery = graphql`
         }
         about_us {
           text
+        }
+        about_link {
+          url
         }
       }
     }

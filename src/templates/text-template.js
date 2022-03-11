@@ -28,7 +28,7 @@ const TextTemplate = ({ data }) => {
       headerBody={data.prismicHeader}
       footerBody={data.prismicFooter}
     >
-      <Seo title="Text Template" />
+      <Seo title={textTemplateData.seo_title.text} />
       <Breadcrumb breadcrumbs_item={textTemplateData.breadcrumbs} />
       <TextTemplateSection
         sub_heading={textTemplateData.sub_heading.text}
@@ -62,6 +62,9 @@ export const TextTemplateQuery = graphql`
           page_current_link {
             url
           }
+        }
+        seo_title {
+          text
         }
         sub_heading {
           text
@@ -107,11 +110,20 @@ export const TextTemplateQuery = graphql`
         contact_us {
           text
         }
+        contact_us_link {
+          url
+        }
         client_reviews {
           text
         }
+        client_reviews_link {
+          url
+        }
         free_trademark_search {
           text
+        }
+        free_trademark_search_link {
+          url
         }
         service_title {
           text
@@ -162,6 +174,9 @@ export const TextTemplateQuery = graphql`
         }
         about_us {
           text
+        }
+        about_link {
+          url
         }
       }
     }
