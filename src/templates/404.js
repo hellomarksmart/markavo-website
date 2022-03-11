@@ -25,7 +25,7 @@ const NotFoundPage = ({ data }) => {
       headerBody={data.prismicHeader}
       footerBody={data.prismicFooter}
     >
-      <Seo title="404: Not found" />
+      <Seo title={notFoundData.seo_title.text} />
       <div class="bg-white min-h-full px-4 py-16 sm:px-6 sm:py-52 md:grid md:place-items-center lg:px-8">
         <div class="max-w-max mx-auto">
           <div class="sm:flex">
@@ -78,6 +78,9 @@ export const NotFoundQuery = graphql`
       url
       type
       data {
+        seo_title {
+          text
+        }
         heading_1 {
           text
         }
@@ -109,11 +112,20 @@ export const NotFoundQuery = graphql`
         contact_us {
           text
         }
+        contact_us_link {
+          url
+        }
         client_reviews {
           text
         }
+        client_reviews_link {
+          url
+        }
         free_trademark_search {
           text
+        }
+        free_trademark_search_link {
+          url
         }
         service_title {
           text
@@ -164,6 +176,9 @@ export const NotFoundQuery = graphql`
         }
         about_us {
           text
+        }
+        about_link {
+          url
         }
       }
     }

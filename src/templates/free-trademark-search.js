@@ -28,7 +28,7 @@ const Search = ({ data }) => {
       headerBody={data.prismicHeader}
       footerBody={data.prismicFooter}
     >
-      <Seo title="Free Trademark Search" />
+      <Seo title={saerchData.seo_title.text} />
       <SearchSection
         heading={saerchData.banner_heading.text}
         headingColored={saerchData.banner_heading_colored.text}
@@ -65,6 +65,9 @@ export const SearchQuery = graphql`
       url
       type
       data {
+        seo_title {
+          text
+        }
         banner_heading {
           text
         }
@@ -118,11 +121,20 @@ export const SearchQuery = graphql`
         contact_us {
           text
         }
+        contact_us_link {
+          url
+        }
         client_reviews {
           text
         }
+        client_reviews_link {
+          url
+        }
         free_trademark_search {
           text
+        }
+        free_trademark_search_link {
+          url
         }
         service_title {
           text
@@ -173,6 +185,9 @@ export const SearchQuery = graphql`
         }
         about_us {
           text
+        }
+        about_link {
+          url
         }
       }
     }
