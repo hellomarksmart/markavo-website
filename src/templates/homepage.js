@@ -23,8 +23,8 @@ const HomepageTemplate = ({ data }) => {
     alternateLanguages,
   }
 
-  return (
 
+  return (
     <Layout
       activeDoc={activeDoc}
       headerBody={data.prismicHeader}
