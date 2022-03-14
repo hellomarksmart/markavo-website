@@ -63,29 +63,27 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    // `gatsby-transformer-sharp`,
+    // `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Markavo`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: `#663399`,
+        // theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/markavo-favicon.png`, // This path is relative to the root of the site.
+      },
+    },
+    `gatsby-plugin-offline`,
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-59XBP6W",
         selfHostedOrigin: "https://insight.markavo.com",
-      }
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Markavo`,
-        short_name: `Markavo`,
-        start_url: `/`,
-        background_color: `#663399`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        theme_color: `#663399`,
-        display: `standalone`,
-        icon: `src/images/Icons/markavo-favicon.png`, // This path is relative to the root of the site.
       },
-    },
-    `gatsby-plugin-offline`,
+    }
   ],
 }
