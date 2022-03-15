@@ -24,7 +24,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
-        output: '/'
+        output: '/',
       }
     },
     {
@@ -78,14 +78,16 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/Icons/markavo-favicon.png`, // This path is relative to the root of the site.
       },
+    },
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    `gatsby-plugin-offline`,
+    {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-59XBP6W",
         selfHostedOrigin: "https://insight.markavo.com",
       },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    }
   ],
 }
