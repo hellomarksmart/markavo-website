@@ -24,7 +24,6 @@ const HomepageTemplate = ({ data }) => {
   }
 
   return (
-
     <Layout
       activeDoc={activeDoc}
       headerBody={data.prismicHeader}
