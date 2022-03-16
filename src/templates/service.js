@@ -1,8 +1,9 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+// import Seo from "../components/seo"
 import Banner from "../components/Reusable Components/banner"
 import Deploy from "../components/Reusable Components/deploy-section"
 import Statistics from "../components/Reusable Components/statistics-section"
@@ -27,48 +28,60 @@ const Service = ({ data }) => {
   console.log("Single Service", activeDoc)
 
   return (
-    <Layout
-      activeDoc={activeDoc}
-      headerBody={data.prismicHeader}
-      footerBody={data.prismicFooter}
-    >
-      <Seo title={singleServiceData.seo_title.text} />
-      <Banner
-        heading={singleServiceData.banner_heading.text}
-        headingColored={singleServiceData.banner_heading_colored.text}
-        description={singleServiceData.banner_description.text}
-        buttonColored={singleServiceData.button_1_label.text}
-        // buttonColoredLink={singleServiceData.button_1.url}
-        buttonPlain={singleServiceData.button_2_label.text}
-        buttonPlainLink={singleServiceData.button_2.url}
-      />
-      <Deploy
-        title={singleServiceData.grid_section_title.text}
-        heading={singleServiceData.grid_section_heading.text}
-        description={singleServiceData.grid_section_description.text}
-        cards={singleServiceData.grid_cards}
-      />
-      <PricingSection pricingBody={singleServiceData.body} />
-      <Statistics
-        title={singleServiceData.stats_title.text}
-        heading={singleServiceData.stats_heading.text}
-        description={singleServiceData.stats_description.text}
-        stats_card={singleServiceData.stats_content}
-      />
-      <FAQs
-        title={singleServiceData.faq_title.text}
-        heading={singleServiceData.faq_heading.text}
-        description={singleServiceData.faq_description.text}
-        faq_contents={singleServiceData.faq_contents}
-      />
-      <Cta
-        heading={singleServiceData.cta_heading.text}
-        headingSecond={singleServiceData.cta_heading_2.text}
-        description={singleServiceData.cta_description.text}
-        buttonPlain={singleServiceData.cta_button_label.text}
-        buttonPlainLink={singleServiceData.cta_button.url}
-      />
-    </Layout>
+    <>
+      <GatsbySeo
+        title={singleServiceData.seo_title.text}
+        languageAlternates={[
+          {
+            hrefLang: 'en',
+            href: 'https://markavo.com/' + singleServiceData.en_link.text,
+          },
+          {
+            hrefLang: 'es',
+            href: 'https://markavo.com/es/' + singleServiceData.es_link.text,
+          },
+          {
+            hrefLang: 'x-default',
+            href: 'https://markavo.com/' + singleServiceData.en_link.text,
+          }
+        ]} />
+      <Layout
+        activeDoc={activeDoc}
+        headerBody={data.prismicHeader}
+        footerBody={data.prismicFooter}
+      >
+        {/* <Seo title={singleServiceData.seo_title.text} /> */}
+        <Banner
+          heading={singleServiceData.banner_heading.text}
+          headingColored={singleServiceData.banner_heading_colored.text}
+          description={singleServiceData.banner_description.text}
+          buttonColored={singleServiceData.button_1_label.text}
+          // buttonColoredLink={singleServiceData.button_1.url}
+          buttonPlain={singleServiceData.button_2_label.text}
+          buttonPlainLink={singleServiceData.button_2.url} />
+        <Deploy
+          title={singleServiceData.grid_section_title.text}
+          heading={singleServiceData.grid_section_heading.text}
+          description={singleServiceData.grid_section_description.text}
+          cards={singleServiceData.grid_cards} />
+        <PricingSection pricingBody={singleServiceData.body} />
+        <Statistics
+          title={singleServiceData.stats_title.text}
+          heading={singleServiceData.stats_heading.text}
+          description={singleServiceData.stats_description.text}
+          stats_card={singleServiceData.stats_content} />
+        <FAQs
+          title={singleServiceData.faq_title.text}
+          heading={singleServiceData.faq_heading.text}
+          description={singleServiceData.faq_description.text}
+          faq_contents={singleServiceData.faq_contents} />
+        <Cta
+          heading={singleServiceData.cta_heading.text}
+          headingSecond={singleServiceData.cta_heading_2.text}
+          description={singleServiceData.cta_description.text}
+          buttonPlain={singleServiceData.cta_button_label.text}
+          buttonPlainLink={singleServiceData.cta_button.url} />
+      </Layout></>
   )
 }
 
@@ -158,6 +171,12 @@ export const ServiceSingleQuery = graphql`
           }
         }
         seo_title {
+          text
+        }
+        en_link {
+          text
+        }
+        es_link {
           text
         }
         banner_heading {
