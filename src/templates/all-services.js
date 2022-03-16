@@ -1,8 +1,9 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+// import Seo from "../components/seo"
 import ServicesSection from "../components/Services & Price Services/services-section"
 
 const AllServices = ({ data }) => {
@@ -21,19 +22,35 @@ const AllServices = ({ data }) => {
   }
 
   return (
-    <Layout
-      activeDoc={activeDoc}
-      headerBody={data.prismicHeader}
-      footerBody={data.prismicFooter}
-    >
-      <Seo title={servcicesData.seo_title.text} />
-      <ServicesSection
-        title={servcicesData.service_section_title.text}
-        heading={servcicesData.service_section_heading.text}
-        description={servcicesData.service_section_description.text}
-        service_items={servcicesData.service_items}
-      />
-    </Layout>
+    <>
+      <GatsbySeo
+        title={servcicesData.seo_title.text}
+        languageAlternates={[
+          {
+            hrefLang: 'en',
+            href: 'https://markavo.com/' + servcicesData.en_link.text,
+          },
+          {
+            hrefLang: 'es',
+            href: 'https://markavo.com/es/' + servcicesData.es_link.text,
+          },
+          {
+            hrefLang: 'x-default',
+            href: 'https://markavo.com/' + servcicesData.en_link.text,
+          }
+        ]} />
+      <Layout
+        activeDoc={activeDoc}
+        headerBody={data.prismicHeader}
+        footerBody={data.prismicFooter}
+      >
+        {/* <Seo title={servcicesData.seo_title.text} /> */}
+        <ServicesSection
+          title={servcicesData.service_section_title.text}
+          heading={servcicesData.service_section_heading.text}
+          description={servcicesData.service_section_description.text}
+          service_items={servcicesData.service_items} />
+      </Layout></>
   )
 }
 
@@ -52,6 +69,12 @@ export const ServicesQuery = graphql`
       type
       data {
         seo_title {
+          text
+        }
+        en_link {
+          text
+        }
+        es_link {
           text
         }
         service_section_title {

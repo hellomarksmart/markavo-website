@@ -35,7 +35,7 @@ const Search = ({ data }) => {
           },
           {
             hrefLang: 'es',
-            href: 'https://markavo.com/es/free-trademark-search',
+            href: 'https://markavo.com/es/gratis-busqueda-de-marcas',
           },
           {
             hrefLang: 'x-default',
