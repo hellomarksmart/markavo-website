@@ -1,8 +1,9 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+// import Seo from "../components/seo"
 import Breadcrumb from "../components/Text Template/breadcrumbs"
 import TextTemplateSection from "../components/Text Template/text-template-section"
 
@@ -23,20 +24,36 @@ const TextTemplate = ({ data }) => {
   console.log("Text Template", activeDoc)
 
   return (
-    <Layout
-      activeDoc={activeDoc}
-      headerBody={data.prismicHeader}
-      footerBody={data.prismicFooter}
-    >
-      <Seo title={textTemplateData.seo_title.text} />
-      <Breadcrumb breadcrumbs_item={textTemplateData.breadcrumbs} />
-      <TextTemplateSection
-        sub_heading={textTemplateData.sub_heading.text}
-        heading={textTemplateData.heading.text}
-        description={textTemplateData.description.text}
-        page_content={textTemplateData.page_contents}
-      />
-    </Layout>
+    <>
+      <GatsbySeo
+        title={textTemplateData.seo_title.text}
+        languageAlternates={[
+          {
+            hrefLang: 'en',
+            href: 'https://markavo.com/' + textTemplateData.en_link.text,
+          },
+          {
+            hrefLang: 'es',
+            href: 'https://markavo.com/es/' + textTemplateData.es_link.text,
+          },
+          {
+            hrefLang: 'x-default',
+            href: 'https://markavo.com/' + textTemplateData.en_link.text,
+          }
+        ]} />
+      <Layout
+        activeDoc={activeDoc}
+        headerBody={data.prismicHeader}
+        footerBody={data.prismicFooter}
+      >
+        {/* <Seo title={textTemplateData.seo_title.text} /> */}
+        <Breadcrumb breadcrumbs_item={textTemplateData.breadcrumbs} />
+        <TextTemplateSection
+          sub_heading={textTemplateData.sub_heading.text}
+          heading={textTemplateData.heading.text}
+          description={textTemplateData.description.text}
+          page_content={textTemplateData.page_contents} />
+      </Layout></>
   )
 }
 
@@ -64,6 +81,12 @@ export const TextTemplateQuery = graphql`
           }
         }
         seo_title {
+          text
+        }
+        en_link {
+          text
+        }
+        es_link {
           text
         }
         sub_heading {
