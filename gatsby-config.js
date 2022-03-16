@@ -21,6 +21,7 @@ module.exports = {
     },
     `gatsby-plugin-image`,
     `gatsby-plugin-postcss`,
+    'gatsby-plugin-next-seo',
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {

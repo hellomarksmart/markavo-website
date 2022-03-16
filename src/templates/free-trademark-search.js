@@ -2,10 +2,12 @@ import * as React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+// import Seo from "../components/seo"
 import SearchSection from "../components/Search & Search Result/search-section"
 import Cta from "../components/Reusable Components/cta-section"
 import FAQs from "../components/Reusable Components/faq-section"
+
+import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
 const Search = ({ data }) => {
   if (!data) return null
@@ -23,31 +25,45 @@ const Search = ({ data }) => {
   }
 
   return (
-    <Layout
-      activeDoc={activeDoc}
-      headerBody={data.prismicHeader}
-      footerBody={data.prismicFooter}
-    >
-      <Seo title={saerchData.seo_title.text} />
-      <SearchSection
-        heading={saerchData.banner_heading.text}
-        headingColored={saerchData.banner_heading_colored.text}
-        description={saerchData.banner_description.text}
-      />
-      <FAQs
-        title={saerchData.faq_title.text}
-        heading={saerchData.faq_heading.text}
-        description={saerchData.faq_description.text}
-        faq_contents={saerchData.faq_contents}
-      />
-      <Cta
-        heading={saerchData.cta_heading.text}
-        headingSecond={saerchData.cta_heading_2.text}
-        description={saerchData.cta_description.text}
-        buttonPlain={saerchData.cta_button_label.text}
-        buttonPlainLink={saerchData.cta_button.url}
-      />
-    </Layout>
+    <>
+      <GatsbySeo
+        title={saerchData.seo_title.text}
+        languageAlternates={[
+          {
+            hrefLang: 'en',
+            href: 'https://markavo.com/free-trademark-search',
+          },
+          {
+            hrefLang: 'es',
+            href: 'https://markavo.com/es/free-trademark-search',
+          },
+          {
+            hrefLang: 'x-default',
+            href: 'https://markavo.com/free-trademark-search',
+          }
+        ]} />
+      <Layout
+        activeDoc={activeDoc}
+        headerBody={data.prismicHeader}
+        footerBody={data.prismicFooter}
+      >
+        {/* <Seo title={saerchData.seo_title.text} /> */}
+        <SearchSection
+          heading={saerchData.banner_heading.text}
+          headingColored={saerchData.banner_heading_colored.text}
+          description={saerchData.banner_description.text} />
+        <FAQs
+          title={saerchData.faq_title.text}
+          heading={saerchData.faq_heading.text}
+          description={saerchData.faq_description.text}
+          faq_contents={saerchData.faq_contents} />
+        <Cta
+          heading={saerchData.cta_heading.text}
+          headingSecond={saerchData.cta_heading_2.text}
+          description={saerchData.cta_description.text}
+          buttonPlain={saerchData.cta_button_label.text}
+          buttonPlainLink={saerchData.cta_button.url} />
+      </Layout></>
   )
 }
 
