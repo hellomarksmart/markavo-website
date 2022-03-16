@@ -31,15 +31,15 @@ const About = ({ data }) => {
         languageAlternates={[
           {
             hrefLang: 'en',
-            href: 'https://markavo.com/contact-us',
+            href: 'https://markavo.com/about-us',
           },
           {
             hrefLang: 'es',
-            href: 'https://markavo.com/es/contacta-con-nosotros',
+            href: 'https://markavo.com/es/sobre-nosotros',
           },
           {
             hrefLang: 'x-default',
-            href: 'https://markavo.com/contact-us',
+            href: 'https://markavo.com/about-us',
           }
         ]} />
       <Layout
