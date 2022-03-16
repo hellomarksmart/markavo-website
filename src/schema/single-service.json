@@ -13,6 +13,20 @@
         "label": "SEO Title"
       }
     },
+    "en_link": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "EN Link"
+      }
+    },
+    "es_link": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "ES Link"
+      }
+    },
     "banner_heading": {
       "type": "StructuredText",
       "config": {
