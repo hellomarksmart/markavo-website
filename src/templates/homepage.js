@@ -1,12 +1,14 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+// import Seo from "../components/seo"
 import Banner from "../components/Reusable Components/banner"
 import Deploy from "../components/Reusable Components/deploy-section"
 import Statistics from "../components/Reusable Components/statistics-section"
 import Cta from "../components/Reusable Components/cta-section"
 import PricingSection from "../components/Services & Price Services/pricing-section"
+
+import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
 const HomepageTemplate = ({ data }) => {
   if (!data) return null
@@ -24,46 +26,59 @@ const HomepageTemplate = ({ data }) => {
   }
 
   return (
-    <Layout
-      activeDoc={activeDoc}
-      headerBody={data.prismicHeader}
-      footerBody={data.prismicFooter}
-    >
-      <Seo title={homeData.seo_title.text} />
-      <Banner
-        heading={homeData.banner_heading.text}
-        headingColored={homeData.banner_heading_colored.text}
-        description={homeData.banner_description.text}
-        buttonColored={homeData.button_1_label.text}
-        // buttonColoredLink={homeData.button_1.url}
-        buttonPlain={homeData.button_2_label.text}
-        buttonPlainLink={homeData.button_2.url}
-      />
-      <Deploy
-        title={homeData.grid_section_title.text}
-        heading={homeData.grid_section_heading.text}
-        description={homeData.grid_section_description.text}
-        cards={homeData.grid_cards}
-      />
-      {homeData.body.length !== 0 ? (
-        <PricingSection pricingBody={homeData.body} />
-      ) : (
-        ""
-      )}
-      <Statistics
-        title={homeData.stats_title.text}
-        heading={homeData.stats_heading.text}
-        description={homeData.stats_description.text}
-        stats_card={homeData.stats_content}
-      />
-      <Cta
-        heading={homeData.cta_heading.text}
-        headingSecond={homeData.cta_heading_2.text}
-        description={homeData.cta_description.text}
-        buttonPlain={homeData.cta_button_label.text}
-        buttonPlainLink={homeData.cta_button.url}
-      />
-    </Layout>
+    <>
+      <GatsbySeo
+        title={homeData.seo_title.text}
+        languageAlternates={[
+          {
+            hrefLang: 'en',
+            href: 'https://markavo.com',
+          },
+          {
+            hrefLang: 'es',
+            href: 'https://markavo.com/es',
+          },
+          {
+            hrefLang: 'x-default',
+            href: 'https://markavo.com',
+          }
+        ]} />
+      <Layout
+        activeDoc={activeDoc}
+        headerBody={data.prismicHeader}
+        footerBody={data.prismicFooter}
+      >
+        {/* <Seo title={homeData.seo_title.text} /> */}
+        <Banner
+          heading={homeData.banner_heading.text}
+          headingColored={homeData.banner_heading_colored.text}
+          description={homeData.banner_description.text}
+          buttonColored={homeData.button_1_label.text}
+          // buttonColoredLink={homeData.button_1.url}
+          buttonPlain={homeData.button_2_label.text}
+          buttonPlainLink={homeData.button_2.url} />
+        <Deploy
+          title={homeData.grid_section_title.text}
+          heading={homeData.grid_section_heading.text}
+          description={homeData.grid_section_description.text}
+          cards={homeData.grid_cards} />
+        {homeData.body.length !== 0 ? (
+          <PricingSection pricingBody={homeData.body} />
+        ) : (
+          ""
+        )}
+        <Statistics
+          title={homeData.stats_title.text}
+          heading={homeData.stats_heading.text}
+          description={homeData.stats_description.text}
+          stats_card={homeData.stats_content} />
+        <Cta
+          heading={homeData.cta_heading.text}
+          headingSecond={homeData.cta_heading_2.text}
+          description={homeData.cta_description.text}
+          buttonPlain={homeData.cta_button_label.text}
+          buttonPlainLink={homeData.cta_button.url} />
+      </Layout></>
   )
 }
 
