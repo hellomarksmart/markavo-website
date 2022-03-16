@@ -2,10 +2,12 @@ import * as React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+// import Seo from "../components/seo"
 import Banner from "../components/Reusable Components/banner"
 import ClientReviewsSection from "../components/Reviews/client-reviews-section"
 import Cta from "../components/Reusable Components/cta-section"
+
+import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
 const ClientReviews = ({ data }) => {
   if (!data) return null
@@ -23,30 +25,45 @@ const ClientReviews = ({ data }) => {
   }
 
   return (
-    <Layout
-      activeDoc={activeDoc}
-      headerBody={data.prismicHeader}
-      footerBody={data.prismicFooter}
-    >
-      <Seo title={clientReviewsData.seo_title.text} />
-      <Banner
-        heading={clientReviewsData.banner_heading.text}
-        headingColored={clientReviewsData.banner_heading_colored.text}
-        description={clientReviewsData.banner_description.text}
-        buttonColored={clientReviewsData.button_1_label.text}
-        buttonColoredLink={clientReviewsData.button_1.url}
-        buttonPlain={clientReviewsData.button_2_label.text}
-        buttonPlainLink={clientReviewsData.button_2.url}
-      />
-      <ClientReviewsSection reviews={clientReviewsData.reviews} />
-      <Cta
-        heading={clientReviewsData.cta_heading.text}
-        headingSecond={clientReviewsData.cta_heading_2.text}
-        description={clientReviewsData.cta_description.text}
-        buttonPlain={clientReviewsData.cta_button_label.text}
-        buttonPlainLink={clientReviewsData.cta_button.url}
-      />
-    </Layout>
+    <>
+      <GatsbySeo
+        title={clientReviewsData.seo_title.text}
+        languageAlternates={[
+          {
+            hrefLang: 'en',
+            href: 'https://markavo.com/markavo-reviews',
+          },
+          {
+            hrefLang: 'es',
+            href: 'https://markavo.com/es/markavo-resenas',
+          },
+          {
+            hrefLang: 'x-default',
+            href: 'https://markavo.com/markavo-reviews',
+          }
+        ]} />
+      <Layout
+        activeDoc={activeDoc}
+        headerBody={data.prismicHeader}
+        footerBody={data.prismicFooter}
+      >
+        {/* <Seo title={clientReviewsData.seo_title.text} /> */}
+        <Banner
+          heading={clientReviewsData.banner_heading.text}
+          headingColored={clientReviewsData.banner_heading_colored.text}
+          description={clientReviewsData.banner_description.text}
+          buttonColored={clientReviewsData.button_1_label.text}
+          buttonColoredLink={clientReviewsData.button_1.url}
+          buttonPlain={clientReviewsData.button_2_label.text}
+          buttonPlainLink={clientReviewsData.button_2.url} />
+        <ClientReviewsSection reviews={clientReviewsData.reviews} />
+        <Cta
+          heading={clientReviewsData.cta_heading.text}
+          headingSecond={clientReviewsData.cta_heading_2.text}
+          description={clientReviewsData.cta_description.text}
+          buttonPlain={clientReviewsData.cta_button_label.text}
+          buttonPlainLink={clientReviewsData.cta_button.url} />
+      </Layout></>
   )
 }
 

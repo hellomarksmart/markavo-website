@@ -13,7 +13,6 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {props.headComponents}
-        <link rel="alternate" href="http://example.com" hrefLang="en-us" ></link>
         <script
           defer
           type="text/javascript"

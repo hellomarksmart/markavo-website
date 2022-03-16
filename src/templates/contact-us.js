@@ -1,10 +1,11 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+// import Seo from "../components/seo"
 import ContactSection from "../components/Contact Us/contact-us-section"
 import Cta from "../components/Reusable Components/cta-section"
+
+import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
 const Contact = ({ data }) => {
   if (!data) return null
@@ -22,25 +23,41 @@ const Contact = ({ data }) => {
   }
 
   return (
-    <Layout
-      activeDoc={activeDoc}
-      headerBody={data.prismicHeader}
-      footerBody={data.prismicFooter}
-    >
-      <Seo title={contactData.seo_title.text} />
-      <ContactSection
-        heading={contactData.heading.text}
-        description={contactData.description.text}
-        contact_items={contactData.contact_items}
-      />
-      <Cta
-        heading={contactData.cta_heading.text}
-        headingSecond={contactData.cta_heading_2.text}
-        description={contactData.cta_description.text}
-        buttonPlain={contactData.cta_button_label.text}
-        buttonPlainLink={contactData.cta_button.url}
-      />
-    </Layout>
+    <>
+      <GatsbySeo
+        title={contactData.seo_title.text}
+        languageAlternates={[
+          {
+            hrefLang: 'en',
+            href: 'https://markavo.com/contact-us',
+          },
+          {
+            hrefLang: 'es',
+            href: 'https://markavo.com/es/contacta-con-nosotros',
+          },
+          {
+            hrefLang: 'x-default',
+            href: 'https://markavo.com/contact-us',
+          }
+        ]} />
+
+      <Layout
+        activeDoc={activeDoc}
+        headerBody={data.prismicHeader}
+        footerBody={data.prismicFooter}
+      >
+        {/* <Seo title={contactData.seo_title.text} /> */}
+        <ContactSection
+          heading={contactData.heading.text}
+          description={contactData.description.text}
+          contact_items={contactData.contact_items} />
+        <Cta
+          heading={contactData.cta_heading.text}
+          headingSecond={contactData.cta_heading_2.text}
+          description={contactData.cta_description.text}
+          buttonPlain={contactData.cta_button_label.text}
+          buttonPlainLink={contactData.cta_button.url} />
+      </Layout></>
   )
 }
 
