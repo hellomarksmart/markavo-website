@@ -29,6 +29,7 @@ const HomepageTemplate = ({ data }) => {
     <>
       <GatsbySeo
         title={homeData.seo_title.text}
+        description={homeData.seo_desc.text}
         languageAlternates={[
           {
             hrefLang: 'en',
@@ -136,6 +137,9 @@ export const query = graphql`
           }
         }
         seo_title {
+          text
+        }
+        seo_desc {
           text
         }
         banner_heading {

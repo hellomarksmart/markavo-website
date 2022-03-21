@@ -27,6 +27,7 @@ const TextTemplate = ({ data }) => {
     <>
       <GatsbySeo
         title={textTemplateData.seo_title.text}
+        description={textTemplateData.seo_desc.text}
         languageAlternates={[
           {
             hrefLang: 'en',
@@ -81,6 +82,9 @@ export const TextTemplateQuery = graphql`
           }
         }
         seo_title {
+          text
+        }
+        seo_desc {
           text
         }
         en_link {
