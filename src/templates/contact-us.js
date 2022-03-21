@@ -26,6 +26,7 @@ const Contact = ({ data }) => {
     <>
       <GatsbySeo
         title={contactData.seo_title.text}
+        description={contactData.seo_desc.text}
         languageAlternates={[
           {
             hrefLang: 'en',
@@ -76,6 +77,9 @@ export const ContactUsPageQuery = graphql`
       type
       data {
         seo_title {
+          text
+        }
+        seo_desc {
           text
         }
         heading {
