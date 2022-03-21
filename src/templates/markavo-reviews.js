@@ -28,6 +28,7 @@ const ClientReviews = ({ data }) => {
     <>
       <GatsbySeo
         title={clientReviewsData.seo_title.text}
+        description={clientReviewsData.seo_desc.text}
         languageAlternates={[
           {
             hrefLang: 'en',
@@ -82,6 +83,9 @@ export const ClientReviewsQuery = graphql`
       type
       data {
         seo_title {
+          text
+        }
+        seo_desc {
           text
         }
         banner_heading {

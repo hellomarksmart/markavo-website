@@ -60,7 +60,7 @@ const Header = ({ topHeader, activeDoc }) => {
           {activeDoc ? <LanguageToggle activeDocMeta={activeDoc} /> : ""}
         </div>
       </div>
-      <div className="flex justify-between items-center px-4 py-4 border-b-gray-200 border border-t-0 border-r-0 border-l-0 sm:px-6 md:justify-start lg:space-x-10">
+      <div className="flex justify-between items-center px-4 py-4 border-b-gray-200 border border-t-0 border-r-0 border-l-0 sm:px-6 xl:justify-start 2xl:justify-between lg:space-x-10 xl:flex-col 2xl:flex-row xl:items-start 2xl:items-center">
         <div className="lg:w-auto sm:w-2/12 w-4/12">
           <Link to="/" className="flex">
             <span className="sr-only">Markvao</span>
@@ -73,7 +73,7 @@ const Header = ({ topHeader, activeDoc }) => {
             <MenuIcon className="h-6 w-6" aria-hidden="true" />
           </Popover.Button>
         </div>
-        <div className="hidden md:flex-1 md:flex md:items-center md:justify-between">
+        <div className="hidden md:flex-1 md:flex md:items-center md:justify-between xl:-left-4 2xl:left-0">
           <Popover.Group
             as="nav"
             className="flex space-x-4 items-center lg:justify-between md:justify-end w-full"
