@@ -69,8 +69,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Markavo.com`,
+        short_name: `Markavo.com`,
         start_url: `/`,
         background_color: `#663399`,
         // This will impact how browsers show your PWA/website
