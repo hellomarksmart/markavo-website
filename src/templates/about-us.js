@@ -28,6 +28,7 @@ const About = ({ data }) => {
     <>
       <GatsbySeo
         title={aboutData.seo_title.text}
+        description={aboutData.seo_desc.text}
         languageAlternates={[
           {
             hrefLang: 'en',
@@ -85,6 +86,9 @@ export const AboutUsPageQuery = graphql`
       type
       data {
         seo_title {
+          text
+        }
+        seo_desc {
           text
         }
         banner_heading {

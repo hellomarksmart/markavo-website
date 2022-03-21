@@ -25,6 +25,7 @@ const AllServices = ({ data }) => {
     <>
       <GatsbySeo
         title={servcicesData.seo_title.text}
+        description={servcicesData.seo_desc.text}
         languageAlternates={[
           {
             hrefLang: 'en',
@@ -69,6 +70,9 @@ export const ServicesQuery = graphql`
       type
       data {
         seo_title {
+          text
+        }
+        seo_desc {
           text
         }
         en_link {
