@@ -9,6 +9,7 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { StructuredData } from "../components/structured-data"
 
 function Seo({ desc, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -40,7 +41,24 @@ function Seo({ desc, lang, meta, title }) {
           content: title,
         },
       ].concat(meta)}
-    />
+    >
+      <StructuredData>
+        {{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://markavowebsitestaging.gatsbyjs.io/markavo-reviews",
+          name: "Markavo",
+          url: "https://markavowebsitestaging.gatsbyjs.io",
+          aggregateRating: {
+            "@type": "aggregateRating",
+            bestRating: "5",
+            ratingValue: "4.93",
+            worstRating: "1",
+            reviewCount: "",
+          },
+        }}
+      </StructuredData>
+    </Helmet>
   )
 }
 
