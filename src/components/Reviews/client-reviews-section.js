@@ -41,8 +41,7 @@ const ClientReviewsSection = ({ reviews }) => {
                       className="font-bold text-gray-900 text-xs sm:mb-5.5 mb-0 pl-1"
                       itemprop="name"
                     >
-                      {/* {item?.reviewer_name.text} */}
-                      Anonymous
+                      {item?.reviewer_name.text}
                     </span>
                   </p>
                   <div
@@ -75,8 +74,7 @@ const ClientReviewsSection = ({ reviews }) => {
                       className="font-medium text-xs text-gray-900 mb-0"
                       itemprop="reviewBody"
                     >
-                      {/* {item?.reviewer_message.text} */}
-                      Very Helpful, answers all my Questions.
+                      {item?.reviewer_message.text}
                     </h3>
                   </div>
                 </div>
