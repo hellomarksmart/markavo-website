@@ -49,13 +49,29 @@ function Seo({ desc, lang, meta, title }) {
           "@id": "https://markavowebsitestaging.gatsbyjs.io/markavo-reviews",
           name: "Markavo",
           url: "https://markavowebsitestaging.gatsbyjs.io",
-          aggregateRating: {
-            "@type": "aggregateRating",
-            bestRating: "5",
-            ratingValue: "4.93",
-            worstRating: "1",
-            reviewCount: "",
-          },
+          review: [
+            {
+              "@type": "Review",
+              itemReviewed: {
+                "@type": "Organization",
+                name: "Markavo",
+              },
+              author: { "@type": "Person", name: "Anonymous" },
+              publisher: {
+                "@type": "Organization",
+                name: "markavowebsitestaging.gatsbyjs.io",
+                sameAs: "https://markavowebsitestaging.gatsbyjs.io/",
+              },
+              datePublished: "2022-03-22 14:08:00",
+              reviewBody: "Very Helpful, answers all my Questions.",
+              reviewRating: {
+                "@type": "Rating",
+                bestRating: "5",
+                worstRating: "1",
+                ratingValue: "5",
+              },
+            },
+          ],
         }}
       </StructuredData>
     </Helmet>
