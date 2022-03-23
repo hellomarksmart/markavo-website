@@ -8,7 +8,7 @@ import ClientReviewsSection from "../components/Reviews/client-reviews-section"
 import Cta from "../components/Reusable Components/cta-section"
 import { StructuredData } from "../components/structured-data"
 
-import { GatsbySeo, ArticleJsonLd } from 'gatsby-plugin-next-seo';
+import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
 const ClientReviews = ({ data }) => {
   if (!data) return null
@@ -27,24 +27,6 @@ const ClientReviews = ({ data }) => {
 
   return (
     <>
-      <ArticleJsonLd
-        url='https://example.com/article'
-        headline='Article headline'
-        images={[
-          'https://example.com/photos/1x1/photo.jpg',
-          'https://example.com/photos/4x3/photo.jpg',
-          'https://example.com/photos/16x9/photo.jpg',
-        ]}
-        datePublished='2015-02-05T08:00:00+08:00'
-        dateModified='2015-02-05T09:00:00+08:00'
-        authorName='Jane Blogs'
-        publisherName='Ifiok Jr.'
-        publisherLogo='https://www.example.com/photos/logo.jpg'
-        description='This is a mighty good description of this article.'
-        overrides={{
-          '@type': 'BlogPosting',
-        }}
-      />
       <GatsbySeo
         title={clientReviewsData.seo_title.text}
         description={clientReviewsData.seo_desc.text}
