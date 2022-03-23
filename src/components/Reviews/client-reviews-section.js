@@ -24,21 +24,31 @@ const ClientReviewsSection = ({ reviews }) => {
   return (
     <>
       <ArticleJsonLd
-        url='https://example.com/article'
-        headline='Article headline'
-        images={[
-          'https://example.com/photos/1x1/photo.jpg',
-          'https://example.com/photos/4x3/photo.jpg',
-          'https://example.com/photos/16x9/photo.jpg',
-        ]}
-        datePublished='2015-02-05T08:00:00+08:00'
-        dateModified='2015-02-05T09:00:00+08:00'
-        authorName='Jane Blogs'
-        publisherName='Ifiok Jr.'
-        publisherLogo='https://www.example.com/photos/logo.jpg'
-        description='This is a mighty good description of this article.'
+        url='https://markavowebsitestaging.gatsbyjs.io/markavo-reviews'
+        title="Review"
         overrides={{
-          '@type': 'BlogPosting',
+          itemReviewed: {
+            "@type": "Organization",
+            name: "Markavo",
+            images: "https://markavowebsitestaging.gatsbyjs.io/markavo-reviews"
+          },
+          author: {
+            "@type": "Person",
+            name: "Anonymous"
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "markavowebsitestaging.gatsbyjs.io",
+            sameAs: "https://markavowebsitestaging.gatsbyjs.io/",
+          },
+          datePublished: "2022-03-22 14:08:00",
+          reviewBody: "Very Helpful, answers all my Questions.",
+          reviewRating: {
+            "@type": "Rating",
+            bestRating: "5",
+            worstRating: "1",
+            ratingValue: "5",
+          }
         }}
       />
       <div className="bg-white">
