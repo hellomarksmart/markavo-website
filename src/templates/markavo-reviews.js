@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import Banner from "../components/Reusable Components/banner"
 import ClientReviewsSection from "../components/Reviews/client-reviews-section"
 import Cta from "../components/Reusable Components/cta-section"
-import { StructuredData } from "../components/structured-data"
+// import { StructuredData } from "../components/structured-data"
 
 import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
@@ -43,7 +43,8 @@ const ClientReviews = ({ data }) => {
             hrefLang: 'x-default',
             href: 'https://markavo.com/markavo-reviews',
           }
-        ]} />
+        ]}
+      />
       <Layout
         activeDoc={activeDoc}
         headerBody={data.prismicHeader}
@@ -58,7 +59,9 @@ const ClientReviews = ({ data }) => {
           buttonColoredLink={clientReviewsData.button_1.url}
           buttonPlain={clientReviewsData.button_2_label.text}
           buttonPlainLink={clientReviewsData.button_2.url} />
-        <ClientReviewsSection reviews={clientReviewsData.reviews} />
+        <ClientReviewsSection
+          reviews={clientReviewsData.reviews}
+        />
         <Cta
           heading={clientReviewsData.cta_heading.text}
           headingSecond={clientReviewsData.cta_heading_2.text}
