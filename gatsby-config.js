@@ -22,7 +22,7 @@ module.exports = {
           anonymize_ip: false,
         },
         pluginConfig: {
-          origin: "https://insight.markavo.com",
+          origin: 
         },
       },
     },
@@ -101,7 +101,7 @@ module.exports = {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-PSZSDRV",
-        selfHostedOrigin: "https://insight.markavo.com",
+        selfHostedOrigin: 
       },
     },
   ],
