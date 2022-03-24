@@ -21,9 +21,6 @@ module.exports = {
         gtagConfig: {
           anonymize_ip: false,
         },
-        pluginConfig: {
-          origin: 
-        },
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -101,7 +98,6 @@ module.exports = {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-PSZSDRV",
-        selfHostedOrigin: 
       },
     },
   ],
