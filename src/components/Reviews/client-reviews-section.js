@@ -23,6 +23,35 @@ const ClientReviewsSection = ({ reviews }) => {
 
   return (
     <>
+      <ArticleJsonLd
+        url='https://markavowebsitestaging.gatsbyjs.io/markavo-reviews'
+        title="Review"
+        overrides={{
+          itemReviewed: {
+            "@type": "Organization",
+            name: "Markavo",
+            images: "https://markavowebsitestaging.gatsbyjs.io/markavo-reviews"
+          },
+          author: {
+            "@type": "Person",
+            name: "person reviewing",
+            url: 'https://markavowebsitestaging.gatsbyjs.io/markavo-reviews'
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "markavowebsitestaging.gatsbyjs.io",
+            sameAs: "https://markavowebsitestaging.gatsbyjs.io/",
+          },
+          datePublished: "2022-03-22 14:08:00",
+          reviewBody: "Very Helpful, answers all my Questions.",
+          reviewRating: {
+            "@type": "Rating",
+            bestRating: "5",
+            worstRating: "1",
+            ratingValue: "5",
+          }
+        }}
+      />
       <div className="bg-white">
         <div className="ml-0 pb-0 px-4 sm:pb-0">
           <div
