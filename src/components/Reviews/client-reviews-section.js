@@ -23,6 +23,113 @@ const ClientReviewsSection = ({ reviews }) => {
 
   return (
     <>
+      <ArticleJsonLd
+        url='https://markavo.com/markavo-reviews'
+        title="Review"
+        overrides={{
+          review: [{
+            itemReviewed: {
+              "@type": "Organization",
+              name: "Markavo",
+              images: "https://markavo.com/markavo-reviews/markavo-reviews"
+            },
+            author: {
+              "@type": "Person",
+              name: "Anonymous",
+              url: 'https://markavo.com/markavo-reviews/markavo-reviews'
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "markavowebsitestaging.gatsbyjs.io",
+              sameAs: "https://markavo.com/markavo-reviews",
+            },
+            datePublished: "2022-03-22 14:08:00",
+            reviewBody: "Very Helpful, answers all my Questions.",
+            reviewRating: {
+              "@type": "Rating",
+              bestRating: "5",
+              worstRating: "1",
+              ratingValue: "5",
+            }
+          },
+          {
+            itemReviewed: {
+              "@type": "Organization",
+              name: "Markavo",
+              images: "https://markavo.com/markavo-reviews/markavo-reviews"
+            },
+            author: {
+              "@type": "Person",
+              name: "Tom",
+              url: 'https://markavo.com/markavo-reviews/markavo-reviews'
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "markavowebsitestaging.gatsbyjs.io",
+              sameAs: "https://markavo.com/markavo-reviews",
+            },
+            datePublished: "2022-03-22 14:08:00",
+            reviewBody: "Very professional and easy to work with.",
+            reviewRating: {
+              "@type": "Rating",
+              bestRating: "5",
+              worstRating: "1",
+              ratingValue: "5",
+            }
+          },
+          {
+            itemReviewed: {
+              "@type": "Organization",
+              name: "Markavo",
+              images: "https://markavo.com/markavo-reviews/markavo-reviews"
+            },
+            author: {
+              "@type": "Person",
+              name: "J Alexander Hayes",
+              url: 'https://markavo.com/markavo-reviews/markavo-reviews'
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "markavowebsitestaging.gatsbyjs.io",
+              sameAs: "https://markavo.com/markavo-reviews",
+            },
+            datePublished: "2022-03-22 14:08:00",
+            reviewBody: "I really like the constant communication about pending actions. They have been very helpful throughout this entire process. I highly recommend!",
+            reviewRating: {
+              "@type": "Rating",
+              bestRating: "5",
+              worstRating: "1",
+              ratingValue: "5",
+            }
+          },
+          {
+            itemReviewed: {
+              "@type": "Organization",
+              name: "Markavo",
+              images: "https://markavo.com/markavo-reviews/markavo-reviews"
+            },
+            author: {
+              "@type": "Person",
+              name: "Amy Ouzoonian",
+              url: 'https://markavo.com/markavo-reviews/markavo-reviews'
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "markavowebsitestaging.gatsbyjs.io",
+              sameAs: "https://markavo.com/markavo-reviews",
+            },
+            datePublished: "2022-03-22 14:08:00",
+            reviewBody: "I have had a great experience with them and the attorney who is handling my trademark. They are so helpful, professional, and go the extra mile to make sure that you get your trademark registered correctly. I am so grateful that I decided to work with this company to get my trademark registered.",
+            reviewRating: {
+              "@type": "Rating",
+              bestRating: "5",
+              worstRating: "1",
+              ratingValue: "5",
+            }
+          },
+          ]
+        }}
+      />
       <div className="bg-white">
         <div className="ml-0 pb-0 px-4 sm:pb-0">
           <div
