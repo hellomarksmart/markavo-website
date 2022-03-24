@@ -40,7 +40,8 @@ function Seo({ desc, lang, meta, title }) {
           content: title,
         },
       ].concat(meta)}
-    />
+    >
+    </Helmet>
   )
 }
 
