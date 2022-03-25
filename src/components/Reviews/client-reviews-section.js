@@ -25,61 +25,32 @@ const ClientReviewsSection = ({ reviews }) => {
     <>
       <ArticleJsonLd
         overrides={{
-          "@context": "https://schema.org",
-          review: [
-            {
-              "@type": "Review",
-              itemReviewed: {
-                "@type": "Organization",
-                name: "Markavo",
-                images: "https://markavo.com/markavo-reviews/markavo-reviews"
-              },
-              author: {
-                "@type": "Person",
-                name: "Anonymous",
-                url: 'https://markavo.com/markavo-reviews/markavo-reviews'
-              },
-              publisher: {
-                "@type": "Organization",
-                name: "markavowebsitestaging.gatsbyjs.io",
-                sameAs: "https://markavo.com/markavo-reviews",
-              },
-              datePublished: "2022-03-22 14:08:00",
-              reviewBody: "Very Helpful, answers all my Questions.",
-              reviewRating: {
-                "@type": "Rating",
-                bestRating: "5",
-                worstRating: "1",
-                ratingValue: "5",
-              }
+          "@context": "https://schema.org/",
+          "review": [{
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5",
+              "worstRating": "1"
             },
-            {
-              "@type": "Review",
-              itemReviewed: {
-                "@type": "Organization",
-                name: "Markavo",
-                images: "https://markavo.com/markavo-reviews/markavo-reviews"
-              },
-              author: {
-                "@type": "Person",
-                name: "Anonymous",
-                url: 'https://markavo.com/markavo-reviews/markavo-reviews'
-              },
-              publisher: {
-                "@type": "Organization",
-                name: "markavowebsitestaging.gatsbyjs.io",
-                sameAs: "https://markavo.com/markavo-reviews",
-              },
-              datePublished: "2022-03-22 14:08:00",
-              reviewBody: "Very Helpful, answers all my Questions.",
-              reviewRating: {
-                "@type": "Rating",
-                bestRating: "5",
-                worstRating: "1",
-                ratingValue: "5",
-              }
+            "itemReviewed": {
+              "@type": "Organization",
+              "name": "Markavo",
+              "images": "https://markavo.com/markavo-reviews/markavo-reviews"
             },
-          ]
+            "publisher": {
+              "@type": "Organization",
+              "name": "markavowebsitestaging.gatsbyjs.io",
+              "sameAs": "https://markavo.com/markavo-reviews"
+            },
+            "datePublished": "2022-03-22 14:08:00",
+            "author": {
+              "@type": "Person",
+              "name": "John Doe"
+            },
+            "reviewBody": "I really enjoyed this book. It captures the essential challenge people face as they try make sense of their lives and grow to adulthood."
+          }]
         }}
       />
       <div className="bg-white">
