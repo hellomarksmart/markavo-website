@@ -32,38 +32,38 @@ const ClientReviewsSection = ({ reviews }) => {
             className="max-w-default mx-auto px-4 sm:px-6 lg:px-8 mt-0 pb-10 border-b border-gray-200 divide-y divide-gray-200"
           >
             {dataReviews?.slice(startIndex, endIndex).map((item, i) => {
-              <ArticleJsonLd
-                overrides={{
-                  "@context": "https://schema.org/",
-                  "review": [{
-                    "@type": "Review",
-                    "reviewRating": {
-                      "@type": "Rating",
-                      "ratingValue": "5",
-                      "bestRating": "5",
-                      "worstRating": "1"
-                    },
-                    "itemReviewed": {
-                      "@type": "Organization",
-                      "name": "Markavo",
-                      "images": "https://markavo.com/markavo-reviews/markavo-reviews"
-                    },
-                    "publisher": {
-                      "@type": "Organization",
-                      "name": "markavowebsitestaging.gatsbyjs.io",
-                      "sameAs": "https://markavo.com/markavo-reviews"
-                    },
-                    "datePublished": "2022-03-22 14:08:00",
-                    "author": {
-                      "@type": "Person",
-                      "name": "John Doe"
-                    },
-                    "reviewBody": "I really enjoyed this book. It captures the essential challenge people face as they try make sense of their lives and grow to adulthood. This is not insed of a loo[p"
-                  }]
-                }}
-              />
               return (
                 <div key={i} className="sm:py-6 py-5">
+                  <ArticleJsonLd
+                    overrides={{
+                      "@context": "https://schema.org/",
+                      "review": [{
+                        "@type": "Review",
+                        "reviewRating": {
+                          "@type": "Rating",
+                          "ratingValue": "5",
+                          "bestRating": "5",
+                          "worstRating": "1"
+                        },
+                        "itemReviewed": {
+                          "@type": "Organization",
+                          "name": "Markavo",
+                          "images": "https://markavo.com/markavo-reviews/markavo-reviews"
+                        },
+                        "publisher": {
+                          "@type": "Organization",
+                          "name": "markavowebsitestaging.gatsbyjs.io",
+                          "sameAs": "https://markavo.com/markavo-reviews"
+                        },
+                        "datePublished": "2022-03-22 14:08:00",
+                        "author": {
+                          "@type": "Person",
+                          "name": `${item.reviewer_name.text}`
+                        },
+                        "reviewBody": "I really enjoyed this book. It captures the essential challenge people face as they try make sense of their lives and grow to adulthood. This is not insed of a loo[p"
+                      }]
+                    }}
+                  />
                   <div className="mt-6 flex items-start text-sm lg:mt-0 lg:col-start-1 lg:col-span-4 lg:row-start-1 sm-flex-col sm:items-start xl:col-span-3">
                     <p
                     >
