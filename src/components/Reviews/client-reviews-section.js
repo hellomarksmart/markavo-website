@@ -25,7 +25,7 @@ const ClientReviewsSection = ({ reviews }) => {
 
   return (
     <>
-      <ArticleJsonLd
+      {/* <ArticleJsonLd
         overrides={{
           "@context": "https://schema.org/",
           "review": [{
@@ -54,8 +54,42 @@ const ClientReviewsSection = ({ reviews }) => {
             "reviewBody": "I really enjoyed this book. It captures the essential challenge people face as they try make sense of their lives and grow to adulthood."
           }]
         }}
-      />
+      /> */}
 
+      {dataReviews?.slice(startIndex, endIndex).map((item, i) => {
+        <Helmet>
+          <StructuredData>
+            {{
+              "@context": "https://schema.org/",
+              "review": [{
+                "@type": "Review",
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5",
+                  "worstRating": "1"
+                },
+                "itemReviewed": {
+                  "@type": "Organization",
+                  "name": "Markavo",
+                  "images": "https://markavo.com/markavo-reviews/markavo-reviews"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "markavowebsitestaging.gatsbyjs.io",
+                  "sameAs": "https://markavo.com/markavo-reviews"
+                },
+                "datePublished": "2022-03-22 14:08:00",
+                "author": {
+                  "@type": "Person",
+                  "name": `${item.reviewer_name.text}`
+                },
+                "reviewBody": "This is inside of a loop I really enjoyed this book. It captures the essential challenge people face as they try make sense of their lives and grow to adulthood."
+              }]
+            }}
+          </StructuredData>
+        </Helmet>
+      })}
       <Helmet>
         <StructuredData>
           {{
@@ -81,9 +115,9 @@ const ClientReviewsSection = ({ reviews }) => {
               "datePublished": "2022-03-22 14:08:00",
               "author": {
                 "@type": "Person",
-                "name": "John Doe"
+                "name": "Name"
               },
-              "reviewBody": "I really enjoyed this book. It captures the essential challenge people face as they try make sense of their lives and grow to adulthood."
+              "reviewBody": "This is not inside a loop."
             }]
           }}
         </StructuredData>
