@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react"
 import { StarIcon } from "@heroicons/react/solid"
 import Pagination from "../Reusable Components/pagination-section"
 import { ArticleJsonLd } from 'gatsby-plugin-next-seo';
+import { Helmet } from "react-helmet";
+import { StructuredData } from "../components/structured-data"
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
@@ -23,9 +25,67 @@ const ClientReviewsSection = ({ reviews }) => {
 
   return (
     <>
-      {dataReviews?.slice(startIndex, endIndex).map((item, i) => {
-        <ArticleJsonLd key={i}
-          overrides={{
+      <ArticleJsonLd
+        overrides={{
+          "@context": "https://schema.org/",
+          "review": [{
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "itemReviewed": {
+              "@type": "Organization",
+              "name": "Markavo",
+              "images": "https://markavo.com/markavo-reviews/markavo-reviews"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "markavowebsitestaging.gatsbyjs.io",
+              "sameAs": "https://markavo.com/markavo-reviews"
+            },
+            "datePublished": "2022-03-22 14:08:00",
+            "author": {
+              "@type": "Person",
+              "name": `{item.reviewer_name.text}`
+            },
+            "reviewBody": "I really enjoyed this book. It captures the essential challenge people face as they try make sense of their lives and grow to adulthood."
+          }]
+        }}
+      />
+      <Helmet>
+        {{
+          "@context": "https://schema.org/",
+          "review": [{
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "itemReviewed": {
+              "@type": "Organization",
+              "name": "Markavo",
+              "images": "https://markavo.com/markavo-reviews/markavo-reviews"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "markavowebsitestaging.gatsbyjs.io",
+              "sameAs": "https://markavo.com/markavo-reviews"
+            },
+            "datePublished": "2022-03-22 14:08:00",
+            "author": {
+              "@type": "Person",
+              "name": `{item.reviewer_name.text}`
+            },
+            "reviewBody": "I really enjoyed this book. It captures the essential challenge people face as they try make sense of their lives and grow to adulthood."
+          }]
+        }}
+        <StructuredData>
+          {{
             "@context": "https://schema.org/",
             "review": [{
               "@type": "Review",
@@ -53,8 +113,8 @@ const ClientReviewsSection = ({ reviews }) => {
               "reviewBody": "I really enjoyed this book. It captures the essential challenge people face as they try make sense of their lives and grow to adulthood."
             }]
           }}
-        />
-      })}
+        </StructuredData>
+      </Helmet>
       <div className="bg-white">
         <div className="ml-0 pb-0 px-4 sm:pb-0">
           <div
