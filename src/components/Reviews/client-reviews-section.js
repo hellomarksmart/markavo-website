@@ -25,38 +25,36 @@ const ClientReviewsSection = ({ reviews }) => {
 
   return (
     <>
-      <Helmet>
-        <StructuredData>
-          {{
-            "@context": "https://schema.org/",
-            "review": [{
-              "@type": "Review",
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-              },
-              "itemReviewed": {
-                "@type": "Organization",
-                "name": "Markavo",
-                "images": "https://markavo.com/markavo-reviews/markavo-reviews"
-              },
-              "publisher": {
-                "@type": "Organization",
-                "name": "markavowebsitestaging.gatsbyjs.io",
-                "sameAs": "https://markavo.com/markavo-reviews"
-              },
-              "datePublished": "2022-03-22 14:08:00",
-              "author": {
-                "@type": "Person",
-                "name": "Name"
-              },
-              "reviewBody": "This is not inside a loop."
-            }]
-          }}
-        </StructuredData>
-      </Helmet>
+      <ArticleJsonLd
+        overrides={{
+          "@context": "https://schema.org/",
+          "review": [{
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "itemReviewed": {
+              "@type": "Organization",
+              "name": "Markavo",
+              "images": "https://markavo.com/markavo-reviews/markavo-reviews"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "markavowebsitestaging.gatsbyjs.io",
+              "sameAs": "https://markavo.com/markavo-reviews"
+            },
+            "datePublished": "2022-03-22 14:08:00",
+            "author": {
+              "@type": "Person",
+              "name": "John Doe"
+            },
+            "reviewBody": "I really enjoyed this book. It captures the essential challenge people face as they try make sense of their lives and grow to adulthood. This is not insed of a loo[p"
+          }]
+        }}
+      />
 
       <div className="bg-white">
         <div className="ml-0 pb-0 px-4 sm:pb-0">
