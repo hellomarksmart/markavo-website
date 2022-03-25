@@ -41,7 +41,7 @@ const ClientReviewsSection = ({ reviews }) => {
                         "@type": "Review",
                         "reviewRating": {
                           "@type": "Rating",
-                          "ratingValue": "5",
+                          "ratingValue": `${item.reviewer_rate.text}`,
                           "bestRating": "5",
                           "worstRating": "1"
                         },
@@ -60,7 +60,7 @@ const ClientReviewsSection = ({ reviews }) => {
                           "@type": "Person",
                           "name": `${item.reviewer_name.text}`
                         },
-                        "reviewBody": "I really enjoyed this book. It captures the essential challenge people face as they try make sense of their lives and grow to adulthood. This is not insed of a loo[p"
+                        "reviewBody": `${item.reviewer_message.text}`
                       }]
                     }}
                   />
