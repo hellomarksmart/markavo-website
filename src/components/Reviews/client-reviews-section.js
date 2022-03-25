@@ -23,6 +23,65 @@ const ClientReviewsSection = ({ reviews }) => {
 
   return (
     <>
+      <ArticleJsonLd
+        overrides={{
+          "@context": "https://schema.org",
+          review: [
+            {
+              "@type": "Review",
+              itemReviewed: {
+                "@type": "Organization",
+                name: "Markavo",
+                images: "https://markavo.com/markavo-reviews/markavo-reviews"
+              },
+              author: {
+                "@type": "Person",
+                name: "Anonymous",
+                url: 'https://markavo.com/markavo-reviews/markavo-reviews'
+              },
+              publisher: {
+                "@type": "Organization",
+                name: "markavowebsitestaging.gatsbyjs.io",
+                sameAs: "https://markavo.com/markavo-reviews",
+              },
+              datePublished: "2022-03-22 14:08:00",
+              reviewBody: "Very Helpful, answers all my Questions.",
+              reviewRating: {
+                "@type": "Rating",
+                bestRating: "5",
+                worstRating: "1",
+                ratingValue: "5",
+              }
+            },
+            {
+              "@type": "Review",
+              itemReviewed: {
+                "@type": "Organization",
+                name: "Markavo",
+                images: "https://markavo.com/markavo-reviews/markavo-reviews"
+              },
+              author: {
+                "@type": "Person",
+                name: "Anonymous",
+                url: 'https://markavo.com/markavo-reviews/markavo-reviews'
+              },
+              publisher: {
+                "@type": "Organization",
+                name: "markavowebsitestaging.gatsbyjs.io",
+                sameAs: "https://markavo.com/markavo-reviews",
+              },
+              datePublished: "2022-03-22 14:08:00",
+              reviewBody: "Very Helpful, answers all my Questions.",
+              reviewRating: {
+                "@type": "Rating",
+                bestRating: "5",
+                worstRating: "1",
+                ratingValue: "5",
+              }
+            },
+          ]
+        }}
+      />
       <div className="bg-white">
         <div className="ml-0 pb-0 px-4 sm:pb-0">
           <div
