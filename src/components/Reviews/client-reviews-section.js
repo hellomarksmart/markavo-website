@@ -26,7 +26,7 @@ const ClientReviewsSection = ({ reviews }) => {
       {dataReviews?.slice(startIndex, endIndex).map((item, i) => {
         <ArticleJsonLd key={i}
           overrides={{
-            "@context": `${item.reviewer_name.text}`,
+            "@context": "https://schema.org/",
             "review": [{
               "@type": "Review",
               "reviewRating": {
@@ -48,7 +48,7 @@ const ClientReviewsSection = ({ reviews }) => {
               "datePublished": "2022-03-22 14:08:00",
               "author": {
                 "@type": "Person",
-                "name": "John Doe"
+                "name": `{item.reviewer_name.text}`
               },
               "reviewBody": "I really enjoyed this book. It captures the essential challenge people face as they try make sense of their lives and grow to adulthood."
             }]
