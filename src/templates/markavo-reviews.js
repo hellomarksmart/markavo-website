@@ -6,7 +6,6 @@ import Layout from "../components/layout"
 import Banner from "../components/Reusable Components/banner"
 import ClientReviewsSection from "../components/Reviews/client-reviews-section"
 import Cta from "../components/Reusable Components/cta-section"
-// import { StructuredData } from "../components/structured-data"
 
 import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
