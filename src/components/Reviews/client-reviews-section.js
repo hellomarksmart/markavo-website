@@ -3,6 +3,8 @@ import { StarIcon } from "@heroicons/react/solid"
 import Pagination from "../Reusable Components/pagination-section"
 import { ArticleJsonLd } from 'gatsby-plugin-next-seo';
 
+// import { Helmet } from "react-helmet";
+// import { StructuredData } from "../../components/structured-data"
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
@@ -23,6 +25,42 @@ const ClientReviewsSection = ({ reviews }) => {
 
   return (
     <>
+      {dataReviews?.slice(startIndex, endIndex).map((item, i) => {
+        return (
+
+          <ArticleJsonLd
+            overrides={{
+              "@context": "https://schema.org/",
+              "review": [{
+                "@type": "Review",
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": `${item.reviewer_message.text}`,
+                  "bestRating": "THIS IS OUTSIDE",
+                  "worstRating": "1"
+                },
+                "itemReviewed": {
+                  "@type": "Organization",
+                  "name": "Markavo",
+                  "images": "https://markavo.com/markavo-reviews/markavo-reviews"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "markavowebsitestaging.gatsbyjs.io",
+                  "sameAs": "https://markavo.com/markavo-reviews"
+                },
+                "datePublished": "2022-03-22 14:08:00",
+                "author": {
+                  "@type": "Person",
+                  "name": `${item.reviewer_name.text}`
+                },
+                "reviewBody": `${item.reviewer_message.text}`
+              }]
+            }}
+          />
+
+        )
+      })}
       <div className="bg-white">
         <div className="ml-0 pb-0 px-4 sm:pb-0">
           <div
@@ -31,6 +69,36 @@ const ClientReviewsSection = ({ reviews }) => {
             {dataReviews?.slice(startIndex, endIndex).map((item, i) => {
               return (
                 <div key={i} className="sm:py-6 py-5">
+                  {/* <ArticleJsonLd
+                  // overrides={{
+                  //   "@context": "https://schema.org/",
+                  //   "review": [{
+                  //     "@type": "Review",
+                  //     "reviewRating": {
+                  //       "@type": "Rating",
+                  //       "ratingValue": `${item.reviewer_message.text}`,
+                  //       "bestRating": "THIS IS INSIDE",
+                  //       "worstRating": "1"
+                  //     },
+                  //     "itemReviewed": {
+                  //       "@type": "Organization",
+                  //       "name": "Markavo",
+                  //       "images": "https://markavo.com/markavo-reviews/markavo-reviews"
+                  //     },
+                  //     "publisher": {
+                  //       "@type": "Organization",
+                  //       "name": "markavowebsitestaging.gatsbyjs.io",
+                  //       "sameAs": "https://markavo.com/markavo-reviews"
+                  //     },
+                  //     "datePublished": "2022-03-22 14:08:00",
+                  //     "author": {
+                  //       "@type": "Person",
+                  //       "name": `${item.reviewer_name.text}`
+                  //     },
+                  //     "reviewBody": `${item.reviewer_message.text}`
+                  //   }]
+                  // }}
+                  /> */}
                   <div className="mt-6 flex items-start text-sm lg:mt-0 lg:col-start-1 lg:col-span-4 lg:row-start-1 sm-flex-col sm:items-start xl:col-span-3">
                     <p
                     >
@@ -82,7 +150,8 @@ const ClientReviewsSection = ({ reviews }) => {
         ) : (
           ""
         )}
-      </div></>
+      </div>
+    </>
   )
 }
 
