@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { StarIcon } from "@heroicons/react/solid"
 import Pagination from "../Reusable Components/pagination-section"
-import { ArticleJsonLd } from "gatsby-plugin-next-seo"
-import { data } from "autoprefixer"
 
 import { Helmet } from "react-helmet"
 // import { StructuredData } from "../../components/structured-data"
@@ -25,7 +23,7 @@ const ClientReviewsSection = ({ reviews }) => {
   const endIndex = startIndex + 50
 
   let review = []
-  
+
   console.log(review);
 
   return (
@@ -35,29 +33,29 @@ const ClientReviewsSection = ({ reviews }) => {
           <div className="max-w-default mx-auto px-4 sm:px-6 lg:px-8 mt-0 pb-10 border-b border-gray-200 divide-y divide-gray-200">
             {dataReviews?.slice(startIndex, endIndex).map((item, i) => {
               const newitem = {
-                "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": `${item.reviewer_message.text}`,
-                  "bestRating": "THIS IS INSIDE",
-                  "worstRating": "1"
+                "Review": {
+                  "@type": "AggregateRating",
+                  "itemReviewed": {
+                    "@type": "Organization",
+                    "name": "Markavo",
+                    "images": "https://markavo.com/markavo-reviews/markavo-reviews"
+                  },
+                  "author": {
+                    "@type": "Person",
+                    "name": `${item.reviewer_name.text}`
+                  },
+                  "publisher": {
+                    "@type": "Organization",
+                    "name": "markavowebsitestaging.gatsbyjs.io",
+                    "sameAs": "https://markavo.com/markavo-reviews"
+                  },
+                  "datePublished": "2022-03-22 14:08:00",
+                  "reviewBody": `${item.reviewer_message.text}`,
+                  "bestRating": "5",
+                  "worstRating": "1",
+                  "ratingValue": `${item.reviewer_rate}`,
+                  "ratingCount": "50",
                 },
-                "itemReviewed": {
-                  "@type": "Organization",
-                  "name": "Markavo",
-                  "images": "https://markavo.com/markavo-reviews/markavo-reviews"
-                },
-                "publisher": {
-                  "@type": "Organization",
-                  "name": "markavowebsitestaging.gatsbyjs.io",
-                  "sameAs": "https://markavo.com/markavo-reviews"
-                },
-                "datePublished": "2022-03-22 14:08:00",
-                "author": {
-                  "@type": "Person",
-                  "name": `${item.reviewer_name.text}`
-                },
-                "reviewBody": `${item.reviewer_message.text}`
               }
               review.push(newitem)
               return (
