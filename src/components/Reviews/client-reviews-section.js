@@ -3,7 +3,7 @@ import { StarIcon } from "@heroicons/react/solid"
 import Pagination from "../Reusable Components/pagination-section"
 
 import { Helmet } from "react-helmet"
-// import { StructuredData } from "../../components/structured-data"
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
@@ -24,8 +24,6 @@ const ClientReviewsSection = ({ reviews }) => {
 
   let review = []
 
-  console.log(review);
-
   return (
     <>
       <div className="bg-white">
@@ -38,7 +36,7 @@ const ClientReviewsSection = ({ reviews }) => {
                   "itemReviewed": {
                     "@type": "Organization",
                     "name": "Markavo",
-                    "images": "https://markavo.com/markavo-reviews/markavo-reviews"
+                    "images": "https://markavo.com/markavo-reviews"
                   },
                   "author": {
                     "@type": "Person",
@@ -46,7 +44,7 @@ const ClientReviewsSection = ({ reviews }) => {
                   },
                   "publisher": {
                     "@type": "Organization",
-                    "name": "markavowebsitestaging.gatsbyjs.io",
+                    "name": "Markavo",
                     "sameAs": "https://markavo.com/markavo-reviews"
                   },
                   "datePublished": "2022-03-22 14:08:00",
