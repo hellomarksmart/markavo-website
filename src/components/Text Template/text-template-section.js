@@ -139,7 +139,45 @@ const TextTemplateSection = ({
                 ) : (
                   ""
                 )}
-                <div className="rich-text">
+
+                {item?.image.url ? (
+                  <>
+                    <div className="flex flex-row items-center pb-3">
+                      <figure className="mb-0">
+                        <img
+                          className="w-full rounded-lg"
+                          src={item?.image.url}
+                          alt={item?.image.alt ? item?.image.alt : ""} />
+                        <figcaption>{item?.image_caption.text}</figcaption>
+                      </figure>
+
+                      {item?.rich_text.richText ? (
+                        <div className="rich-text pl-6 w-full">
+                          <RichText
+                            render={item?.rich_text.richText}
+                            linkResolver={linkResolver}
+                          />
+                        </div>
+                      ) : (
+                        ""
+                      )}
+
+                    </div>
+                  </>
+                ) : (
+                  <div className="rich-text">
+                    {item?.rich_text.richText ? (
+                      <RichText
+                        render={item?.rich_text.richText}
+                        linkResolver={linkResolver}
+                      />
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                )}
+
+                {/* <div className="rich-text">
                   {item?.rich_text.richText ? (
                     <RichText
                       render={item?.rich_text.richText}
@@ -148,23 +186,12 @@ const TextTemplateSection = ({
                   ) : (
                     ""
                   )}
-                </div>
+                </div> */}
+
                 {item?.blockquote.text ? (
                   <blockquote>
                     <p className="text-base">{item?.blockquote.text}</p>
                   </blockquote>
-                ) : (
-                  ""
-                )}
-                {item?.image.url ? (
-                  <figure>
-                    <img
-                      className="w-full rounded-lg"
-                      src={item?.image.url}
-                      alt={item?.image.alt ? item?.image.alt : ""}
-                    />
-                    <figcaption>{item?.image_caption.text}</figcaption>
-                  </figure>
                 ) : (
                   ""
                 )}

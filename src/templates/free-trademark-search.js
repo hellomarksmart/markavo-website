@@ -12,11 +12,11 @@ import { GatsbySeo } from 'gatsby-plugin-next-seo';
 const Search = ({ data }) => {
   if (!data) return null
 
-  const saerch = data.prismicSearchPage || {}
-  const saerchData = data.prismicSearchPage.data || {}
+  const search = data.prismicSearchPage || {}
+  const searchData = data.prismicSearchPage.data || {}
 
   const { lang, type, url } = data.prismicSearchPage || {}
-  const alternateLanguages = saerch.alternate_languages || []
+  const alternateLanguages = search.alternate_languages || []
   const activeDoc = {
     lang,
     type,
@@ -27,8 +27,8 @@ const Search = ({ data }) => {
   return (
     <>
       <GatsbySeo
-        title={saerchData.seo_title.text}
-        description={saerchData.seo_desc.text}
+        title={searchData.seo_title.text}
+        description={searchData.seo_desc.text}
         languageAlternates={[
           {
             hrefLang: 'en',
@@ -48,23 +48,30 @@ const Search = ({ data }) => {
         headerBody={data.prismicHeader}
         footerBody={data.prismicFooter}
       >
-        {/* <Seo title={saerchData.seo_title.text} /> */}
+        {/* <Seo title={searchData.seo_title.text} /> */}
         <SearchSection
-          heading={saerchData.banner_heading.text}
-          headingColored={saerchData.banner_heading_colored.text}
-          description={saerchData.banner_description.text} />
+          heading={searchData.banner_heading.text}
+          headingColored={searchData.banner_heading_colored.text}
+          description={searchData.banner_description.text}
+          searchResultDesc={searchData.search_result_desc.text}
+          coloredSearchResultDesc={searchData.colored_search_result_desc.text}
+          coloredSearchResultLink={searchData.colored_search_result_link.url}
+        />
         <FAQs
-          title={saerchData.faq_title.text}
-          heading={saerchData.faq_heading.text}
-          description={saerchData.faq_description.text}
-          faq_contents={saerchData.faq_contents} />
+          title={searchData.faq_title.text}
+          heading={searchData.faq_heading.text}
+          description={searchData.faq_description.text}
+          faq_contents={searchData.faq_contents}
+        />
         <Cta
-          heading={saerchData.cta_heading.text}
-          headingSecond={saerchData.cta_heading_2.text}
-          description={saerchData.cta_description.text}
-          buttonPlain={saerchData.cta_button_label.text}
-          buttonPlainLink={saerchData.cta_button.url} />
-      </Layout></>
+          heading={searchData.cta_heading.text}
+          headingSecond={searchData.cta_heading_2.text}
+          description={searchData.cta_description.text}
+          buttonPlain={searchData.cta_button_label.text}
+          buttonPlainLink={searchData.cta_button.url}
+        />
+      </Layout>
+    </>
   )
 }
 
@@ -96,6 +103,15 @@ export const SearchQuery = graphql`
         }
         banner_description {
           text
+        }
+        search_result_desc {
+          text
+        }
+        colored_search_result_desc {
+          text
+        }
+        colored_search_result_link {
+          url
         }
         faq_title {
           text
@@ -163,6 +179,9 @@ export const SearchQuery = graphql`
           text
         }
         header_logo {
+          url
+        }
+        header_link {
           url
         }
         services {
