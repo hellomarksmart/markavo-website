@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 // import Seo from "../components/seo"
 import Breadcrumb from "../components/Text Template/breadcrumbs"
 import TextTemplateSection from "../components/Text Template/text-template-section"
+import Cta from "../components/Reusable Components/cta-section"
 
 const TextTemplate = ({ data }) => {
   if (!data) return null
@@ -54,7 +55,14 @@ const TextTemplate = ({ data }) => {
           heading={textTemplateData.heading.text}
           description={textTemplateData.description.text}
           page_content={textTemplateData.page_contents} />
-      </Layout></>
+        <Cta
+          heading={textTemplateData.cta_heading.text}
+          headingSecond={textTemplateData.cta_heading_2.text}
+          description={textTemplateData.cta_description.text}
+          buttonPlain={textTemplateData.cta_button_label.text}
+          buttonPlainLink={textTemplateData.cta_button.url} />
+      </Layout>
+    </>
   )
 }
 
@@ -127,6 +135,21 @@ export const TextTemplateQuery = graphql`
             text
           }
         }
+        cta_heading {
+          text
+        }
+        cta_heading_2 {
+          text
+        }
+        cta_description {
+          text
+        }
+        cta_button_label {
+          text
+        }
+        cta_button {
+          url
+        }
       }
     }
     prismicHeader(lang: { eq: $lang }) {
@@ -159,6 +182,9 @@ export const TextTemplateQuery = graphql`
           text
         }
         header_logo {
+          url
+        }
+        header_link {
           url
         }
         services {

@@ -114,6 +114,9 @@ export const PaymentReceivedQuery = graphql`
         header_logo {
           url
         }
+        header_link {
+          url
+        }
         services {
           name {
             text

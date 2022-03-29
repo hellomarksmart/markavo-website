@@ -136,6 +136,9 @@ export const NotFoundQuery = graphql`
         header_logo {
           url
         }
+        header_link {
+          url
+        }
         services {
           name {
             text

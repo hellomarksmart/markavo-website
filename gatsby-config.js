@@ -7,22 +7,11 @@ const prismicConfig = require("./prismic-configuration")
 module.exports = {
   siteMetadata: {
     title: `Markavo`,
-    description: `We help Chinese companies register their trademarks in the United States.`,
-    author: `@gatsbyjs`,
+    description: `We help companies register their trademarks in the United States.`,
+    author: `Markavo.com`,
     siteUrl: `https://markavo.com`,
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: [
-          "G-G3MQ4ZK81G",
-        ],
-        gtagConfig: {
-          anonymize_ip: false,
-        },
-      },
-    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-canonical-urls`,
@@ -98,6 +87,7 @@ module.exports = {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-PSZSDRV",
+        selfHostedOrigin: "https://insight.markavo.com",
       },
     },
   ],

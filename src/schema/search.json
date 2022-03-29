@@ -41,6 +41,28 @@
         "label": "Banner Section Description"
       }
     },
+    "search_result_desc": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "Search Result Desc"
+      }
+    },
+    "colored_search_result_desc": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "Colored Search Result Desc"
+      }
+    },
+    "colored_search_result_link": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "Colored Desc Link",
+        "select": null
+      }
+    },
     "faq_title": {
       "type": "StructuredText",
       "config": {
