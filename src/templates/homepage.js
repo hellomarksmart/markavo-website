@@ -79,7 +79,8 @@ const HomepageTemplate = ({ data }) => {
           description={homeData.cta_description.text}
           buttonPlain={homeData.cta_button_label.text}
           buttonPlainLink={homeData.cta_button.url} />
-      </Layout></>
+      </Layout>
+    </>
   )
 }
 
@@ -248,6 +249,9 @@ export const query = graphql`
           text
         }
         header_logo {
+          url
+        }
+        header_link {
           url
         }
         services {
