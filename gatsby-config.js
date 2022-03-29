@@ -12,17 +12,6 @@ module.exports = {
     siteUrl: `https://markavo.com`,
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: [
-          "G-G3MQ4ZK81G",
-        ],
-        gtagConfig: {
-          anonymize_ip: false,
-        },
-      },
-    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-canonical-urls`,
@@ -98,7 +87,7 @@ module.exports = {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-PSZSDRV",
-        selfHostedOrigin: "https://insight.markavo.com", 
+        selfHostedOrigin: "https://insight.markavo.com",
       },
     },
   ],

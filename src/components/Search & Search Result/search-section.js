@@ -4,7 +4,7 @@ import api from "../../../api/api"
 import Pagination from "../Reusable Components/pagination-section"
 import loadingGIF from "../../images/Icons/Spinner-1s-200px.gif"
 
-const SearchSection = ({ heading, headingColored, description }) => {
+const SearchSection = ({ heading, headingColored, description, searchResultDesc, coloredSearchResultDesc, coloredSearchResultLink }) => {
   const [keyword, setKeyword] = useState("")
   let [responseData, setResponseData] = useState("")
   let [responseLength, setResponseLength] = useState("")
@@ -65,7 +65,6 @@ const SearchSection = ({ heading, headingColored, description }) => {
     setActiveItem("")
     if (e.key === "Enter") {
       if (!isNaN(e.target.value)) {
-        console.log(e.target.value, "is a number")
         e.preventDefault()
         setSerialSearch(false)
         setLoading(true)
@@ -82,7 +81,6 @@ const SearchSection = ({ heading, headingColored, description }) => {
             setLoading(false)
           })
       } else {
-        console.log(e.target.value, "is a string")
         e.preventDefault()
         setSerialSearch(false)
         setLoading(true)
@@ -312,21 +310,13 @@ const SearchSection = ({ heading, headingColored, description }) => {
                       </p>
                       {serial ? (
                         <p>
-                          <b className="text-emerald-500">{keyword}</b> may be
-                          available if it is not generic, descriptive, too
-                          confusingly similar to another unregistered trademark
-                          that is being used in commerce, or too confunsingly
-                          similar a live registered trademark.
-                          <b className="text-emerald-500">
-                            Work with Markavo to navigate this complicated legal
-                            process for as little as $185.
-                          </b>
+                          <b className="text-emerald-500">{keyword}</b>
+                          {searchResultDesc}
                           <Link
-                            to="/services/trademark-application"
+                            to={coloredSearchResultLink}
                             className="text-sm font-medium text-emerald-500 hover:text-emerald-800"
                           >
-                            Work with Markavo to navigate this complicated legal
-                            process for as little as $185.
+                            {coloredSearchResultDesc}
                           </Link>
                         </p>
                       ) : (
@@ -583,17 +573,13 @@ const SearchSection = ({ heading, headingColored, description }) => {
                         Trademark Search Results
                       </p>
                       <p>
-                        <b className="text-emerald-500">{keyword}</b> may be
-                        available if it is not generic, descriptive, too
-                        confusingly similar to another unregistered trademark
-                        that is being used in commerce, or too confunsingly
-                        similar a live registered trademark.
+                        <b className="text-emerald-500">{keyword} </b>
+                        {searchResultDesc}
                         <Link
-                          to="/services/trademark-application"
+                          to={coloredSearchResultLink}
                           className="text-sm font-medium text-emerald-500 hover:text-emerald-800 no-underline"
                         >
-                          Work with Markavo to navigate this complicated legal
-                          process for as little as $185.
+                          {coloredSearchResultDesc}
                         </Link>
                       </p>
                       <div className={

@@ -14,6 +14,7 @@ const Header = ({ topHeader, activeDoc }) => {
   const headerData = topHeader || []
 
   const headerLogo = headerData.data.header_logo.url
+  const headerLink = headerData.data.header_link.url
   const phoneNumber = headerData.data.phone_number.text
   const contactUs = headerData.data.contact_us.text
   const contactUsLink = headerData.data.contact_us_link.url
@@ -62,8 +63,8 @@ const Header = ({ topHeader, activeDoc }) => {
       </div>
       <div className="flex justify-between items-center px-4 py-4 border-b-gray-200 border border-t-0 border-r-0 border-l-0 sm:px-6 xl:justify-start 2xl:justify-between lg:space-x-10 xl:flex-col 2xl:flex-row xl:items-start 2xl:items-center">
         <div className="lg:w-auto sm:w-2/12 w-4/12">
-          <Link to="/" className="flex">
-            <span className="sr-only">Markvao</span>
+          <Link to={headerLink} className="flex">
+            <span className="sr-only">Markavo</span>
             <img className="mb-0" src={headerLogo} width={202} alt="Markavo" />
           </Link>
         </div>

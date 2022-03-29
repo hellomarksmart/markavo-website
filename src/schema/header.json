@@ -6,6 +6,14 @@
         "label" : "header"
       }
     },
+    "header_link" : {
+      "type" : "Link",
+      "config" : {
+        "allowTargetBlank" : true,
+        "label" : "Header Link",
+        "select" : null
+      }
+    },
     "header_logo" : {
       "type" : "Image",
       "config" : {
