@@ -87,6 +87,7 @@ module.exports = {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-PSZSDRV",
+        enableWebVitalsTracking: true,
         selfHostedOrigin: "https://insight.markavo.com",
       },
     },
