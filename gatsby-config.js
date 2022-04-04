@@ -90,5 +90,17 @@ module.exports = {
         selfHostedOrigin: "https://insight.markavo.com",
       },
     },
+     {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-G3MQ4ZK81G",
+        ],
+        gtagConfig: {
+          anonymize_ip: false,
+        },
+        pluginConfig: {
+          origin: "https://insight.markavo.com",
+        },
   ],
 }
