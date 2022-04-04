@@ -102,5 +102,4 @@ module.exports = {
         pluginConfig: {
           origin: "https://insight.markavo.com",
         },
-  ],
 }
