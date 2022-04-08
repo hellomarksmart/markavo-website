@@ -45,14 +45,14 @@ const Footer = ({ footerBody }) => {
   return (
     <footer className="bg-white" aria-labelledby="footer-heading">
       <div className="max-w-8xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-7">
-        <div className="pb-8 xl:grid xl:grid-cols-4 xl:gap-4">
-          <div className="grid grid-cols-2 gap-4 xl:col-span-4">
-            <div className="md:grid md:grid-cols-2 md:gap-4">
+        <div className="pb-8">
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:col-span-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4">
               <div>
                 <h3 className="text-sm font-bold text-gray-900 tracking-wider uppercase">
                   {applications}
                 </h3>
-                <ul className="mt-4 space-y-4 ml-0">
+                <ul className="mt-4 ml-0 space-y-4">
                   {footerData.data.applications.map((item, i) => {
                     return (
                       <li key={i}>
@@ -74,11 +74,11 @@ const Footer = ({ footerBody }) => {
                   })}
                 </ul>
               </div>
-              <div className="mt-12 md:mt-0">
+              <div className="mt-5 md:mt-0">
                 <h3 className="text-sm font-bold text-gray-900 tracking-wider uppercase">
                   {registrations}
                 </h3>
-                <ul className="mt-4 space-y-4 ml-0">
+                <ul className="mt-4 ml-0 space-y-4">
                   {footerData.data.registrations.map(
                     (item, i) => (
                       <li key={i}>
@@ -101,12 +101,12 @@ const Footer = ({ footerBody }) => {
                 </ul>
               </div>
             </div>
-            <div className="md:grid md:grid-cols-2 md:gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4">
               <div>
                 <h3 className="text-sm font-bold text-gray-900 tracking-wider uppercase">
                   {disputes}
                 </h3>
-                <ul className="mt-4 space-y-4 ml-0">
+                <ul className="mt-4 ml-0 space-y-4">
                   {footerData.data.disputes.map((item, i) => (
                     <li key={i}>
                       {item.link.url ? (
@@ -126,11 +126,11 @@ const Footer = ({ footerBody }) => {
                   ))}
                 </ul>
               </div>
-              <div className="mt-12 md:mt-0">
+              <div className="mt-5 md:mt-0">
                 <h3 className="text-sm font-bold text-gray-900 tracking-wider uppercase">
                   {company}
                 </h3>
-                <ul className="mt-4 space-y-4 ml-0">
+                <ul className="mt-4 ml-0 space-y-4">
                   {footerData.data.company.map((item, i) => (
                     <li key={i}>
                       {item.link.url ? (
@@ -154,7 +154,6 @@ const Footer = ({ footerBody }) => {
           </div>
         </div>
         <div className="border-t border-gray-200 pt-8 lg:flex lg:items-center lg:justify-between xl:mt-0">
-
           <div>
             <h3 className="text-sm font-bold text-gray-900 tracking-wider uppercase">
               {title}

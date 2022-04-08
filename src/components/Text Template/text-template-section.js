@@ -176,7 +176,6 @@ const TextTemplateSection = ({
                     )}
                   </div>
                 )}
-
                 {/* <div className="rich-text">
                   {item?.rich_text.richText ? (
                     <RichText
@@ -187,7 +186,6 @@ const TextTemplateSection = ({
                     ""
                   )}
                 </div> */}
-
                 {item?.blockquote.text ? (
                   <blockquote>
                     <p className="text-base">{item?.blockquote.text}</p>
