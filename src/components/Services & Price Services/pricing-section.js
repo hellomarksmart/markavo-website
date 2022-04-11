@@ -55,7 +55,7 @@ const PricingSection = ({ pricingBody }) => {
                                 </h4>
                                 <div className="flex-1 border-t-2 border-gray-200" />
                               </div>
-                              <div className="one-features mt-8 space-y-5 lg:space-y-0 ml-0">
+                              <div className="one-features mt-8 space-y-5 lg:space-y-0 ml-0" id="one-features">
                                 <RichText render={item.features.richText} />
                               </div>
                             </div>
