@@ -17,14 +17,14 @@ const AboutSection = ({ heading, description, about_items }) => {
                 return (
                   <li key={i} className="mb-0 sm:py-7">
                     <div className="w-full space-y-4 sm:space-y-0 sm:flex sm:flex-col md:flex-row">
-                      <div className="sm:pb-6 md:w-medium xl:max-w-medium">
+                      <div className="md:w-medium xl:max-w-medium">
                         <img
                           className="w-full h-imageH_sm object-cover shadow-lg rounded-lg sm:h-imageH sm:w-imageW "
                           src={item?.image.url}
                           alt={item?.image.alt ? item?.image.alt : ""}
                         />
                       </div>
-                      <div className="w-full w-full sm:col-span-2 md:w-twoThirds">
+                      <div className="w-full w-full sm:col-span-2 sm:pt-6 md:pt-0 md:w-twoThirds">
                         <div className="space-y-4 mt-0">
                           <div className="leading-6 font-medium space-y-1">
                             <h3 className="mb-1 text-base">

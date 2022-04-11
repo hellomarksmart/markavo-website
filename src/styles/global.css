@@ -172,11 +172,33 @@ html {
     width: 85%;
     min-width: 280px;
   }
+
+  #PricingCards #one-features ul {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  #PricingCards .one-features ul li {
+    width: 250px;
+  }
+
+  #PricingCards .one-features ul {
+    justify-items: center;
+  }
 }
 
 @media (max-width: 575px) {
   #PricingCards #PricingCard:nth-child(2),
   #PricingCards #PricingCard {
     width: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  #PricingCards .one-features ul {
+    justify-items: flex-start;
+  }
+
+  #PricingCards .one-features ul li {
+    width: 95%;
   }
 }

@@ -128,7 +128,7 @@ const TextTemplateSection = ({
           </p>
         </div>
 
-        <div className="mt-6 text-lg max-w-default mx-auto px-4 sm:px-6 lg:px-8 text-gray-500">
+        <div className="mt-6 text-lg max-w-default mx-auto px-4 sm:px-6 lg:px-8 text-gray-500" id="textTemplate">
           {page_content?.map((item, i) => {
             return (
               <div key={i}>
@@ -142,17 +142,17 @@ const TextTemplateSection = ({
 
                 {item?.image.url ? (
                   <>
-                    <div className="flex flex-row items-center pb-3">
+                    <div className="flex flex-col md:flex-row md:items-center pb-3">
                       <figure className="mb-0">
                         <img
-                          className="w-full rounded-lg"
+                          className="w-2/4 md:w-full rounded-lg"
                           src={item?.image.url}
                           alt={item?.image.alt ? item?.image.alt : ""} />
                         <figcaption>{item?.image_caption.text}</figcaption>
                       </figure>
 
                       {item?.rich_text.richText ? (
-                        <div className="rich-text pl-6 w-full">
+                        <div className="rich-text pl-0 md:pl-6 w-full">
                           <RichText
                             render={item?.rich_text.richText}
                             linkResolver={linkResolver}
