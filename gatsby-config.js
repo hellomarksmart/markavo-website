@@ -99,7 +99,7 @@ module.exports = {
           anonymize_ip: false,
         },
         pluginConfig: {
-          origin: "https://insight.markavo.com",
+          origin: "https://nrnumwbx.cuse.stape.io",
         },
       },
     }
